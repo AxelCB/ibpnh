@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Repository and Service layers
+-->
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+
+
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<context:annotation-config /> <!-- This Enables Autowiring -->
+      
+    <!-- Profile Unaware Beans -->
+    <beans>	    	    		
+    	<!-- Controllers -->
+
+		<!-- Language (Internationalization -->
+		<bean id="langCtrl" class="org.kairos.ibpnh.controller.LangCtrl" scope="request"/>
+
+    	<!-- Configuration -->
+    		<!--<bean id="parameterCtrl" class="org.universe.core.controller.configuration.parameter.ParameterCtrl" scope="request"/>-->
+
+   		<!-- Login -->
+    	<bean id="loginCtrl" class="org.kairos.ibpnh.controller.login.LoginCtrl" scope="request"/>
+    		
+    	<!-- User -->
+		<bean id="userCtrl" class="org.kairos.ibpnh.controller.user.UserCtrl" scope="request"/>
+			<!--<bean id="roleTypeCtrl" class="org.universe.core.controller.user.roleType.RoleTypeCtrl" scope="request"/>-->
+    		<!--<bean id="passwordRecoverCtrl" class="org.universe.core.controller.user.PasswordRecoverCtrl" scope="request"/>-->
+    	
+		<!-- Footer -->
+		<!--<bean id='footerCtrl' class='org.universe.core.controller.FooterCtrl' scope='application'/>-->
+
+		<!-- MenuOrder -->
+		<!--<bean id='menuOrderCtrl' class='org.universe.core.controller.configuration.menuOrder.MenuOrderCtrl' scope='request'/>-->
+		
+		<!-- Cache Profiler -->
+		<!--<bean id='cacheProfilerCtrl' class='org.universe.core.controller.adminPanel.CacheProfilerCtrl' scope='request'/>-->
+		
+		<!-- Log -->
+		<!--<bean id='logCtrl' class='org.universe.core.controller.log.LogCtrl' scope='request'/>-->
+
+		<!-- Registrarion -->
+		<!--<bean id='registrationCtrl' class='org.universe.core.controller.login.RegistrationCtrl' scope='request'/>-->
+    </beans>
+</beans>

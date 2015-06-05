@@ -1,0 +1,20 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="ibpnh:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="ibpnh/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="ibpnh" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Spring-3.2.13" />
+          <element id="library" level="project" name="Apache Commons" />
+          <element id="library" level="project" name="Dozer 5.5.1" />
+          <element id="library" level="project" name="Gson-2.3.1" />
+          <element id="library" level="project" name="Logger" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Extras">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/pojomatic-1.0-RC2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/jsr107cache-1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/javax.inject-1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/aspectjweaver-1.7.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/servlet-api-2.5.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

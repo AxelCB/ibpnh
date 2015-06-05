@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Repository and Service layers
+-->
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+
+
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<context:annotation-config /> <!-- This Enables Autowiring -->
+	
+	 <!-- Profile Unaware Beans -->
+    <beans>    
+    	<!-- DAOs -->
+    	<!-- Configuration -->
+    		<!--<bean id="functionDao" class="org.universe.core.dao.function.FunctionDaoImpl" scope="prototype"/>-->
+			<!--<bean id="menuOrderDao" class="org.universe.core.dao.configuration.menuOrder.MenuOrderDaoImpl" scope="prototype"/>-->
+		<!-- User -->
+    	    <bean id="userDao" class="org.kairos.ibpnh.dao.user.UserDaoJDOImpl" scope="prototype"/>
+			<bean id="roleDao" class="org.kairos.ibpnh.dao.user.RoleDaoJDOImpl" scope="prototype"/>
+    	    <bean id="roleTypeDao" class="org.kairos.ibpnh.dao.user.RoleTypeDaoJDOImpl" scope="prototype"/>
+    	    <!--<bean id="passwordRecoverDao" class="org.universe.core.dao.user.PasswordRecoverDaoImpl" scope="prototype"/>-->
+
+	    <!-- Log DAO -->
+	    <!--<bean id="logDaoImpl" class="org.universe.core.dao.log.LogDaoImpl" scope="prototype"/>-->
+	    
+    </beans>
+</beans>
