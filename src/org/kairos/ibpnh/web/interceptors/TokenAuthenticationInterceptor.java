@@ -65,7 +65,8 @@ public class TokenAuthenticationInterceptor extends HandlerInterceptorAdapter {
 			"/trackingService", // tracking service do not need authentication
 			"/lang", //just to know the a
 			// ccept language
-			"/user/init" // the dashboard is public
+			"/user/init" ,// the dashboard is public
+			"/user/addFunctions" // the dashboard is public
 	};
 
 	/**
