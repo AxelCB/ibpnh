@@ -2,118 +2,45 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a37d8b79-bbdd-4445-b1a5-713303e36029" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/utils/CollectionUtils.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/model/devotional/DailyDevotional.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/controller/devotional/DailyDevotionalCtrl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/app/controllers/devotional/DailyDevotionalCtrl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/dao/devotional/DailyDevotionalDaoJDOImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/app/services/devotional/DailyDevotionalService.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/vo/devotional/DailyDevotionalVo.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/utils/DateUtilsImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/json/E_DateFormat.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/fx/devotional/Fx_CreateDailyDevotional.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/fx/devotional/Fx_DeleteDailyDevotional.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/fx/devotional/Fx_ModifyDailyDevotional.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/app/controllers/home/HomeCtrl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/dao/devotional/I_DailyDevotionalDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/utils/I_DateUtils.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/app/views/devotional/devotional.html" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/app/views/admin/function/function.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/app/views/admin/pastor.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/app/views/admin/user/user.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/app/views/devocionales/devocionales.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/org/kairos/ibpnh/utils/DateUtils.java" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/app/views/admin/function/function.html" afterPath="$PROJECT_DIR$/web/app/views/function/function.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/app/views/admin/pastor.html" afterPath="$PROJECT_DIR$/web/app/views/pastor.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/app/views/admin/user/user.html" afterPath="$PROJECT_DIR$/web/app/views/user/user.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/app/views/devocionales/devocionales.html" afterPath="$PROJECT_DIR$/web/app/views/devotional/devocionales.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/dao/AbstractDao$MapMethod.class" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/dao/AbstractDao$MapMethod.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/dao/AbstractDao$MapMethod.class" afterPath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/dao/AbstractDao$MapMethod.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/dao/AbstractDao.class" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/dao/AbstractDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/dao/AbstractDao.class" afterPath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/dao/AbstractDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/model/user/E_RoleType.class" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/model/user/E_RoleType.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/model/user/E_RoleType.class" afterPath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/model/user/E_RoleType.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/fx/user/Fx_CreateUser.class" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/fx/user/Fx_CreateUser.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/fx/user/Fx_CreateUser.class" afterPath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/fx/user/Fx_CreateUser.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/fx/login/Fx_Login.class" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/fx/login/Fx_Login.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/fx/login/Fx_Login.class" afterPath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/fx/login/Fx_Login.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/fx/user/Fx_ModifyUser.class" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/fx/user/Fx_ModifyUser.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/fx/user/Fx_ModifyUser.class" afterPath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/fx/user/Fx_ModifyUser.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/services/caching/client/jcache/JCacheUserCacheImpl.class" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/services/caching/client/jcache/JCacheUserCacheImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/services/caching/client/jcache/JCacheUserCacheImpl.class" afterPath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/services/caching/client/jcache/JCacheUserCacheImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/model/user/Role.class" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/model/user/Role.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/model/user/Role.class" afterPath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/model/user/Role.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/vo/user/RoleFunctionVo.class" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/vo/user/RoleFunctionVo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/vo/user/RoleFunctionVo.class" afterPath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/vo/user/RoleFunctionVo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/model/user/RoleType.class" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/model/user/RoleType.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/model/user/RoleType.class" afterPath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/model/user/RoleType.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/dao/user/RoleTypeDaoJDOImpl.class" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/dao/user/RoleTypeDaoJDOImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/dao/user/RoleTypeDaoJDOImpl.class" afterPath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/dao/user/RoleTypeDaoJDOImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/vo/user/RoleTypeVo.class" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/vo/user/RoleTypeVo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/vo/user/RoleTypeVo.class" afterPath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/vo/user/RoleTypeVo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/vo/user/RoleVo.class" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/vo/user/RoleVo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/vo/user/RoleVo.class" afterPath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/vo/user/RoleVo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/web/interceptors/TokenAuthenticationInterceptor.class" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/web/interceptors/TokenAuthenticationInterceptor.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/web/interceptors/TokenAuthenticationInterceptor.class" afterPath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/web/interceptors/TokenAuthenticationInterceptor.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/controller/user/UserCtrl$1.class" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/controller/user/UserCtrl$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/controller/user/UserCtrl$1.class" afterPath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/controller/user/UserCtrl$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/controller/user/UserCtrl.class" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/controller/user/UserCtrl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/controller/user/UserCtrl.class" afterPath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/controller/user/UserCtrl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/dao/user/UserDaoJDOImpl.class" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/dao/user/UserDaoJDOImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/dao/user/UserDaoJDOImpl.class" afterPath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/dao/user/UserDaoJDOImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/vo/user/UserVo.class" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/vo/user/UserVo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/vo/user/UserVo.class" afterPath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/vo/user/UserVo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/kairos/ibpnh/dao/AbstractDao.java" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/dao/AbstractDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/kairos/ibpnh/model/user/E_RoleType.java" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/model/user/E_RoleType.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/kairos/ibpnh/fx/user/Fx_CreateUser.java" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/fx/user/Fx_CreateUser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/kairos/ibpnh/fx/user/Fx_ModifyUser.java" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/fx/user/Fx_ModifyUser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/kairos/ibpnh/dao/user/I_UserDao.java" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/dao/user/I_UserDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/kairos/ibpnh/services/caching/client/jcache/JCacheUserCacheImpl.java" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/services/caching/client/jcache/JCacheUserCacheImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/fx/configuration/parameter/Fx_CreateParameter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/fx/configuration/parameter/Fx_DeleteParameter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/fx/configuration/parameter/Fx_ModifyParameter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/controller/configuration/parameter/ParameterCtrl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/app/controllers/configuration/user/UserCtrl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/app/services/configuration/user/UserService.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/app/views/configuration/user/user.html" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/app/controllers/function/FunctionCtrl.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/app/controllers/user/UserCtrl.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/app/services/function/FunctionService.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/app/services/user/UserService.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/app/views/function/function.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/app/views/user/user.html" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/app/controllers/function/FunctionCtrl.js" afterPath="$PROJECT_DIR$/web/app/controllers/configuration/function/FunctionCtrl.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/app/controllers/user/UserCtrl.js" afterPath="$PROJECT_DIR$/web/app/controllers/configuration/parameter/ParameterCtrl.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/app/services/function/FunctionService.js" afterPath="$PROJECT_DIR$/web/app/services/configuration/function/FunctionService.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/app/services/user/UserService.js" afterPath="$PROJECT_DIR$/web/app/services/configuration/parameter/ParameterService.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/app/views/function/function.html" afterPath="$PROJECT_DIR$/web/app/views/configuration/function/function.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/app/views/user/user.html" afterPath="$PROJECT_DIR$/web/app/views/configuration/parameter/parameter.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/dao/configuration/parameter/ParameterDaoImpl$1.class" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/dao/configuration/parameter/ParameterDaoImpl$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/dao/configuration/parameter/ParameterDaoImpl$1.class" afterPath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/dao/configuration/parameter/ParameterDaoImpl$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/dao/configuration/parameter/ParameterDaoImpl.class" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/dao/configuration/parameter/ParameterDaoImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/dao/configuration/parameter/ParameterDaoImpl.class" afterPath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/dao/configuration/parameter/ParameterDaoImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/kairos/ibpnh/dao/configuration/parameter/I_ParameterDao.java" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/dao/configuration/parameter/I_ParameterDao.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/kairos/ibpnh/dao/configuration/parameter/ParameterDaoImpl.java" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/dao/configuration/parameter/ParameterDaoImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/kairos/ibpnh/vo/configuration/parameter/ParameterVo.java" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/vo/configuration/parameter/ParameterVo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/kairos/ibpnh/model/user/Role.java" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/model/user/Role.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/kairos/ibpnh/vo/user/RoleFunctionVo.java" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/vo/user/RoleFunctionVo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/kairos/ibpnh/model/user/RoleType.java" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/model/user/RoleType.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/kairos/ibpnh/dao/user/RoleTypeDaoJDOImpl.java" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/dao/user/RoleTypeDaoJDOImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/kairos/ibpnh/vo/user/RoleTypeVo.java" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/vo/user/RoleTypeVo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/kairos/ibpnh/vo/user/RoleVo.java" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/vo/user/RoleVo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/kairos/ibpnh/web/interceptors/TokenAuthenticationInterceptor.java" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/web/interceptors/TokenAuthenticationInterceptor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/kairos/ibpnh/controller/user/UserCtrl.java" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/controller/user/UserCtrl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/app/controllers/user/UserCtrl.js" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/app/controllers/user/UserCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/controllers/user/UserCtrl.js" afterPath="$PROJECT_DIR$/web/app/controllers/user/UserCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/kairos/ibpnh/dao/user/UserDaoJDOImpl.java" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/dao/user/UserDaoJDOImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/app/services/user/UserService.js" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/app/services/user/UserService.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/services/user/UserService.js" afterPath="$PROJECT_DIR$/web/app/services/user/UserService.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/kairos/ibpnh/vo/user/UserVo.java" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/vo/user/UserVo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/app/app.js" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/app/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/app.js" afterPath="$PROJECT_DIR$/web/app/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/META-INF/spring/ctrlServletContext.xml" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/META-INF/spring/ctrlServletContext.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ibpnh/META-INF/spring/ctrlServletContext.xml" afterPath="$PROJECT_DIR$/out/production/ibpnh/META-INF/spring/ctrlServletContext.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/META-INF/spring/ctrlServletContext.xml" afterPath="$PROJECT_DIR$/src/META-INF/spring/ctrlServletContext.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/META-INF/spring/daoServletContext.xml" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/META-INF/spring/daoServletContext.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ibpnh/META-INF/spring/daoServletContext.xml" afterPath="$PROJECT_DIR$/out/production/ibpnh/META-INF/spring/daoServletContext.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/META-INF/spring/daoServletContext.xml" afterPath="$PROJECT_DIR$/src/META-INF/spring/daoServletContext.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/META-INF/dozer/dozerGlobalConf.xml" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/META-INF/dozer/dozerGlobalConf.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ibpnh/META-INF/dozer/dozerGlobalConf.xml" afterPath="$PROJECT_DIR$/out/production/ibpnh/META-INF/dozer/dozerGlobalConf.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/META-INF/dozer/dozerGlobalConf.xml" afterPath="$PROJECT_DIR$/src/META-INF/dozer/dozerGlobalConf.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/resources/customCSS/estilosnico.css" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/resources/customCSS/estilosnico.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/META-INF/spring/fxServletContext.xml" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/META-INF/spring/fxServletContext.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ibpnh/META-INF/spring/fxServletContext.xml" afterPath="$PROJECT_DIR$/out/production/ibpnh/META-INF/spring/fxServletContext.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/META-INF/spring/fxServletContext.xml" afterPath="$PROJECT_DIR$/src/META-INF/spring/fxServletContext.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/app/views/layout/home.html" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/app/views/layout/home.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/index.html" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/index.html" afterPath="$PROJECT_DIR$/web/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/log4j.properties" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/log4j.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ibpnh/log4j.properties" afterPath="$PROJECT_DIR$/out/production/ibpnh/log4j.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/log4j.properties" afterPath="$PROJECT_DIR$/src/log4j.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/META-INF/spring/mainContext.xml" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/META-INF/spring/mainContext.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ibpnh/META-INF/spring/mainContext.xml" afterPath="$PROJECT_DIR$/out/production/ibpnh/META-INF/spring/mainContext.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/META-INF/spring/mainContext.xml" afterPath="$PROJECT_DIR$/src/META-INF/spring/mainContext.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/app/views/layout/menu.html" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/app/views/layout/menu.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/views/layout/menu.html" afterPath="$PROJECT_DIR$/web/app/views/layout/menu.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/META-INF/messages/messages_es.properties" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/META-INF/messages/messages_es.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ibpnh/META-INF/messages/messages_es.properties" afterPath="$PROJECT_DIR$/out/production/ibpnh/META-INF/messages/messages_es.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/META-INF/messages/messages_es.properties" afterPath="$PROJECT_DIR$/src/META-INF/messages/messages_es.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/app/routes/routes.js" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/app/routes/routes.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/routes/routes.js" afterPath="$PROJECT_DIR$/web/app/routes/routes.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/META-INF/spring/servletContext.xml" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/META-INF/spring/servletContext.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ibpnh/META-INF/spring/servletContext.xml" afterPath="$PROJECT_DIR$/out/production/ibpnh/META-INF/spring/servletContext.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/META-INF/spring/servletContext.xml" afterPath="$PROJECT_DIR$/src/META-INF/spring/servletContext.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ibpnh.iws" />
@@ -137,74 +64,77 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="HomeCtrl.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/app/controllers/home/HomeCtrl.js">
+      <file leaf-file-name="routes.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/app/routes/routes.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.384615">
-              <caret line="15" column="35" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="15" column="42" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DailyDevotionalCtrl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/controller/devotional/DailyDevotionalCtrl.java">
+      <file leaf-file-name="menu.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/app/views/layout/menu.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="367" column="34" selection-start-line="367" selection-start-column="34" selection-end-line="367" selection-end-column="34" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1974#1982#0" expanded="true" />
-                <element signature="e#12999#13000#0" expanded="true" />
-                <element signature="e#13031#13032#0" expanded="true" />
-                <element signature="e#13086#13087#0" expanded="true" />
-                <element signature="e#13128#13129#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DailyDevotionalDaoJDOImpl.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/dao/devotional/DailyDevotionalDaoJDOImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="2.2466166">
-              <caret line="87" column="45" selection-start-line="87" selection-start-column="45" selection-end-line="87" selection-end-column="45" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ParameterVo.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/vo/configuration/parameter/ParameterVo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="60" column="95" selection-start-line="60" selection-start-column="95" selection-end-line="60" selection-end-column="95" />
+            <state vertical-scroll-proportion="-4.678571">
+              <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ParameterDaoImpl.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ParameterService.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/app/services/configuration/parameter/ParameterService.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="24" column="52" selection-start-line="24" selection-start-column="52" selection-end-line="24" selection-end-column="52" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="parameter.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/app/views/configuration/parameter/parameter.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-9.074074">
+              <caret line="24" column="72" selection-start-line="24" selection-start-column="72" selection-end-line="24" selection-end-column="72" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ParameterCtrl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/controller/configuration/parameter/ParameterCtrl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="204" column="0" selection-start-line="204" selection-start-column="0" selection-end-line="204" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1941#1949#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ParameterCtrl.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/app/controllers/configuration/parameter/ParameterCtrl.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="21" column="60" selection-start-line="21" selection-start-column="60" selection-end-line="21" selection-end-column="60" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ParameterDaoImpl.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/dao/configuration/parameter/ParameterDaoImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.961538">
-              <caret line="156" column="46" selection-start-line="156" selection-start-column="46" selection-end-line="156" selection-end-column="46" />
+            <state vertical-scroll-proportion="0.33233082">
+              <caret line="113" column="29" selection-start-line="113" selection-start-column="29" selection-end-line="113" selection-end-column="29" />
               <folding>
-                <element signature="e#9863#9864#0" expanded="true" />
-                <element signature="e#9927#9928#0" expanded="true" />
+                <element signature="e#6487#6500#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DailyDevotionalCtrl.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/app/controllers/devotional/DailyDevotionalCtrl.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-30.666666">
-              <caret line="92" column="32" selection-start-line="92" selection-start-column="20" selection-end-line="92" selection-end-column="32" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -222,18 +152,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/META-INF/dozer/dozerGlobalConf.xml" />
-        <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/vo/user/RoleFunctionVo.java" />
-        <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/model/user/Role.java" />
-        <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/vo/user/RoleVo.java" />
-        <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/model/user/RoleType.java" />
-        <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/vo/user/RoleTypeVo.java" />
-        <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/vo/user/UserVo.java" />
-        <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/web/interceptors/TokenAuthenticationInterceptor.java" />
-        <option value="$PROJECT_DIR$/web/app/app.js" />
-        <option value="$PROJECT_DIR$/web/app/views/admin/user/user.html" />
-        <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/services/caching/client/jcache/JCacheUserCacheImpl.java" />
-        <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/model/user/E_RoleType.java" />
         <option value="$PROJECT_DIR$/web/app/services/user/UserService.js" />
         <option value="$PROJECT_DIR$/src/log4j.properties" />
         <option value="$PROJECT_DIR$/src/META-INF/messages/messages_es.properties" />
@@ -249,16 +167,12 @@
         <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/fx/devotional/Fx_CreateDailyDevotional.java" />
         <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/fx/devotional/Fx_DeleteDailyDevotional.java" />
         <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/fx/devotional/Fx_ModifyDailyDevotional.java" />
-        <option value="$PROJECT_DIR$/web/app/views/layout/menu.html" />
         <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/controller/user/UserCtrl.java" />
         <option value="$PROJECT_DIR$/src/META-INF/spring/daoServletContext.xml" />
-        <option value="$PROJECT_DIR$/src/META-INF/spring/fxServletContext.xml" />
-        <option value="$PROJECT_DIR$/src/META-INF/spring/ctrlServletContext.xml" />
         <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/model/devotional/DailyDevotional.java" />
         <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/vo/devotional/DailyDevotionalVo.java" />
         <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/fx/user/Fx_CreateUser.java" />
         <option value="$PROJECT_DIR$/web/app/views/devotional/devotional.html" />
-        <option value="$PROJECT_DIR$/web/app/routes/routes.js" />
         <option value="$PROJECT_DIR$/web/app/controllers/devotional/DailyDevotionalCtrl.js" />
         <option value="$PROJECT_DIR$/web/app/services/devotional/DailyDevotionalService.js" />
         <option value="$PROJECT_DIR$/web/app/controllers/home/HomeCtrl.js" />
@@ -269,10 +183,26 @@
         <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/controller/devotional/DailyDevotionalCtrl.java" />
         <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/vo/configuration/parameter/ParameterVo.java" />
         <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/dao/devotional/I_DailyDevotionalDao.java" />
-        <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/dao/configuration/parameter/ParameterDaoImpl.java" />
-        <option value="$PROJECT_DIR$/web/index.html" />
         <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/dao/user/UserDaoJDOImpl.java" />
         <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/dao/devotional/DailyDevotionalDaoJDOImpl.java" />
+        <option value="$PROJECT_DIR$/web/app/controllers/configuration/user/UserCtrl.js" />
+        <option value="$PROJECT_DIR$/src/META-INF/spring/mainContext.xml" />
+        <option value="$PROJECT_DIR$/src/META-INF/spring/servletContext.xml" />
+        <option value="$PROJECT_DIR$/web/app/routes/routes.js" />
+        <option value="$PROJECT_DIR$/web/app/views/layout/menu.html" />
+        <option value="$PROJECT_DIR$/web/index.html" />
+        <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/fx/configuration/parameter/Fx_ModifyUser.java" />
+        <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/fx/configuration/parameter/Fx_CreateParameter.java" />
+        <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/fx/configuration/parameter/Fx_DeleteParameter.java" />
+        <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/fx/configuration/parameter/Fx_ModifyParameter.java" />
+        <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/dao/configuration/parameter/I_ParameterDao.java" />
+        <option value="$PROJECT_DIR$/web/app/services/configuration/parameter/ParameterService.js" />
+        <option value="$PROJECT_DIR$/src/META-INF/spring/ctrlServletContext.xml" />
+        <option value="$PROJECT_DIR$/src/META-INF/spring/fxServletContext.xml" />
+        <option value="$PROJECT_DIR$/web/app/views/configuration/parameter/parameter.html" />
+        <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/controller/configuration/parameter/ParameterCtrl.java" />
+        <option value="$PROJECT_DIR$/web/app/controllers/configuration/parameter/ParameterCtrl.js" />
+        <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/dao/configuration/parameter/ParameterDaoImpl.java" />
       </list>
     </option>
   </component>
@@ -385,6 +315,132 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ibpnh" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ibpnh" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="configuration" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ibpnh" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ibpnh" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="configuration" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="parameter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ibpnh" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ibpnh" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="services" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ibpnh" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ibpnh" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="services" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="configuration" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ibpnh" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ibpnh" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="helpers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -421,32 +477,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="home" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ibpnh" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ibpnh" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -487,7 +517,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="dao" />
+              <option name="myItemId" value="fx" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -509,7 +539,107 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="dao" />
+              <option name="myItemId" value="fx" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="user" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ibpnh" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ibpnh" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ibpnh" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fx" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="parameter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ibpnh" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ibpnh" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ibpnh" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ibpnh" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ibpnh" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ibpnh" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="user" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ibpnh" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ibpnh" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ibpnh" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controller" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -547,18 +677,22 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.kairos.ibpnh.controller.configuration.parameter" />
       <recent name="org.kairos.ibpnh.controller.devotional" />
       <recent name="org.kairos.ibpnh.vo.devotional" />
       <recent name="org.kairos.ibpnh.model.devotional" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/org/kairos/ibpnh/fx/configuration/parameter" />
+      <recent name="$PROJECT_DIR$/web/app/controllers/configuration/parameter" />
+      <recent name="$PROJECT_DIR$/web/app/views/configuration/parameter" />
+      <recent name="$PROJECT_DIR$/web/app/services/configuration/parameter" />
       <recent name="$PROJECT_DIR$/src/org/kairos/ibpnh/utils" />
-      <recent name="$PROJECT_DIR$/src/org/kairos/ibpnh/json" />
-      <recent name="$PROJECT_DIR$/web/app/controllers/home" />
-      <recent name="$PROJECT_DIR$/web/app/services/devotional" />
-      <recent name="$PROJECT_DIR$/web/app/controllers/devotional" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/web/app/views/configuration" />
+      <recent name="$PROJECT_DIR$/web/app/services/configuration" />
+      <recent name="$PROJECT_DIR$/web/app/controllers/configuration" />
       <recent name="$PROJECT_DIR$/web/app/views" />
       <recent name="$PROJECT_DIR$/src" />
     </key>
@@ -885,12 +1019,12 @@
       <workItem from="1433472333773" duration="3774000" />
       <workItem from="1433539582867" duration="16121000" />
       <workItem from="1433600803759" duration="2371000" />
-      <workItem from="1433606405723" duration="11374000" />
+      <workItem from="1433606405723" duration="17794000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53032000" />
+    <option name="totallyTimeSpent" value="59452000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="999" extended-state="0" />
@@ -944,18 +1078,24 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/org/kairos/ibpnh/controller/user/UserCtrl.java</url>
-          <line>356</line>
+          <line>355</line>
           <properties />
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/org/kairos/ibpnh/controller/user/UserCtrl.java</url>
-          <line>407</line>
+          <line>406</line>
           <properties />
           <option name="timeStamp" value="8" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/org/kairos/ibpnh/controller/configuration/parameter/ParameterCtrl.java</url>
+          <line>204</line>
+          <properties />
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="13" />
+      <option name="time" value="15" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -964,118 +1104,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/model/user/E_RoleType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.20655738">
-          <caret line="13" column="23" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
-          <folding>
-            <element signature="e#494#495#0" expanded="false" />
-            <element signature="e#547#548#0" expanded="false" />
-            <element signature="e#637#638#0" expanded="false" />
-            <element signature="e#675#676#0" expanded="false" />
-            <element signature="e#830#831#0" expanded="false" />
-            <element signature="e#883#884#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/app/services/user/UserService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.90756303">
-          <caret line="24" column="31" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/app/views/user/user.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.2181816">
-          <caret line="19" column="64" selection-start-line="19" selection-start-column="56" selection-end-line="19" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/model/user/RoleType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="68" column="35" selection-start-line="68" selection-start-column="23" selection-end-line="68" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/web/I_MessageSolver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.056603774">
-          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/fx/AbstractFxImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24842767">
-          <caret line="249" column="26" selection-start-line="249" selection-start-column="26" selection-end-line="249" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/META-INF/messages/messages_es.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="22" selection-start-line="0" selection-start-column="22" selection-end-line="0" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/fx/user/Fx_DeleteUser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24842767">
-          <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/log4j.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="72" selection-start-line="13" selection-start-column="72" selection-end-line="13" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/dao/user/RoleDaoJDOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.13207547">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/dao/user/I_RoleTypeDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33225808">
-          <caret line="34" column="22" selection-start-line="34" selection-start-column="22" selection-end-line="34" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/dao/user/I_UserDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.83138174">
-          <caret line="87" column="4" selection-start-line="87" selection-start-column="4" selection-end-line="87" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/app/controllers/user/UserCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="130" column="4" selection-start-line="130" selection-start-column="4" selection-end-line="130" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/dao/user/RoleTypeDaoJDOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.40880504">
-          <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="83" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/dao/AbstractDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1105,7 +1133,7 @@
         <state vertical-scroll-proportion="-0.55834377">
           <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1123,18 +1151,9 @@
         <state vertical-scroll-proportion="0.95784545">
           <caret line="122" column="31" selection-start-line="122" selection-start-column="31" selection-end-line="122" selection-end-column="31" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3098#3099#0" expanded="true" />
-            <element signature="e#3120#3121#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#3120#3121#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/app/views/function/function.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1147,30 +1166,6 @@
             <element signature="e#4866#4925#0" expanded="false" />
             <element signature="e#12551#12570#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/META-INF/spring/daoServletContext.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/META-INF/spring/fxServletContext.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.93835616">
-          <caret line="40" column="103" selection-start-line="40" selection-start-column="103" selection-end-line="40" selection-end-column="103" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/META-INF/spring/ctrlServletContext.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.75342464">
-          <caret line="32" column="100" selection-start-line="32" selection-start-column="100" selection-end-line="32" selection-end-column="100" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1187,8 +1182,8 @@
         <state vertical-scroll-proportion="0.4528302">
           <caret line="26" column="25" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="25" />
           <folding>
-            <element signature="e#1130#1131#0" expanded="true" />
-            <element signature="e#1157#1158#0" expanded="true" />
+            <element signature="e#1130#1131#0" expanded="false" />
+            <element signature="e#1157#1158#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1198,9 +1193,9 @@
         <state vertical-scroll-proportion="0.8301887">
           <caret line="103" column="41" selection-start-line="103" selection-start-column="41" selection-end-line="103" selection-end-column="41" />
           <folding>
-            <element signature="e#1992#1993#0" expanded="true" />
-            <element signature="e#2056#2057#0" expanded="true" />
-            <element signature="e#2112#2113#0" expanded="true" />
+            <element signature="e#1992#1993#0" expanded="false" />
+            <element signature="e#2056#2057#0" expanded="false" />
+            <element signature="e#2112#2113#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1217,22 +1212,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-11.333333">
           <caret line="17" column="38" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/app/views/layout/menu.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7335423">
-          <caret line="26" column="63" selection-start-line="26" selection-start-column="63" selection-end-line="26" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/app/routes/routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.32481202">
-          <caret line="12" column="89" selection-start-line="12" selection-start-column="89" selection-end-line="12" selection-end-column="89" />
           <folding />
         </state>
       </provider>
@@ -1265,14 +1244,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.9744361">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/app/controllers/home/HomeCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.384615">
-          <caret line="15" column="35" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
           <folding />
         </state>
       </provider>
@@ -1314,7 +1285,7 @@
         <state vertical-scroll-proportion="0.6210526">
           <caret line="505" column="36" selection-start-line="505" selection-start-column="36" selection-end-line="505" selection-end-column="36" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1324,9 +1295,9 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#27159#27160#0" expanded="true" />
-            <element signature="e#27197#27198#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#27159#27160#0" expanded="false" />
+            <element signature="e#27197#27198#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1336,15 +1307,23 @@
         <state vertical-scroll-proportion="0.6481203">
           <caret line="42" column="66" selection-start-line="42" selection-start-column="66" selection-end-line="42" selection-end-column="66" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/dao/configuration/parameter/I_ParameterDao.java">
+    <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/dao/user/UserDaoJDOImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2706767">
-          <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.9458647">
+          <caret line="132" column="0" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/app/controllers/home/HomeCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4225352">
+          <caret line="15" column="35" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
           <folding />
         </state>
       </provider>
@@ -1364,47 +1343,226 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/dao/configuration/parameter/ParameterDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.961538">
-          <caret line="156" column="46" selection-start-line="156" selection-start-column="46" selection-end-line="156" selection-end-column="46" />
-          <folding>
-            <element signature="e#9863#9864#0" expanded="true" />
-            <element signature="e#9927#9928#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/vo/configuration/parameter/ParameterVo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="60" column="95" selection-start-line="60" selection-start-column="95" selection-end-line="60" selection-end-column="95" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42163008">
-          <caret line="78" column="38" selection-start-line="78" selection-start-column="38" selection-end-line="78" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/dao/user/UserDaoJDOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9458647">
-          <caret line="132" column="0" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.18947369">
+          <caret line="65" column="23" selection-start-line="65" selection-start-column="19" selection-end-line="65" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/dao/devotional/DailyDevotionalDaoJDOImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.2466166">
-          <caret line="87" column="45" selection-start-line="87" selection-start-column="45" selection-end-line="87" selection-end-column="45" />
+        <state vertical-scroll-proportion="0.054135337">
+          <caret line="2" column="53" selection-start-line="2" selection-start-column="53" selection-end-line="2" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/app/views/configuration/function/function.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.11285266">
+          <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/model/configuration/parameter/E_ParameterType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2706767">
+          <caret line="12" column="12" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/app/controllers/configuration/user/UserCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.9218045">
+          <caret line="71" column="13" selection-start-line="71" selection-start-column="13" selection-end-line="71" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/META-INF/spring/mainContext.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6752137">
+          <caret line="52" column="8" selection-start-line="52" selection-start-column="8" selection-end-line="52" selection-end-column="8" />
+          <folding>
+            <element signature="e#1982#2011#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/META-INF/spring/servletContext.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.0">
+          <caret line="80" column="72" selection-start-line="80" selection-start-column="72" selection-end-line="80" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/META-INF/spring/daoServletContext.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.73239434">
+          <caret line="26" column="123" selection-start-line="26" selection-start-column="123" selection-end-line="26" selection-end-column="123" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/app/views/configuration/user/user.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5924765">
+          <caret line="21" column="18" selection-start-line="16" selection-start-column="0" selection-end-line="21" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.94357365">
+          <caret line="87" column="39" selection-start-line="87" selection-start-column="39" selection-end-line="87" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/app/services/configuration/user/UserService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="23" column="8" selection-start-line="23" selection-start-column="8" selection-end-line="25" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/fx/configuration/parameter/Fx_CreateParameter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.2105262">
+          <caret line="7" column="36" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
+          <folding>
+            <element signature="e#2960#2961#0" expanded="true" />
+            <element signature="e#3001#3002#0" expanded="true" />
+            <element signature="e#3066#3067#0" expanded="true" />
+            <element signature="e#3088#3089#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/fx/configuration/parameter/Fx_DeleteParameter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#3303#3304#0" expanded="true" />
+            <element signature="e#3344#3345#0" expanded="true" />
+            <element signature="e#3409#3410#0" expanded="true" />
+            <element signature="e#3431#3432#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/fx/configuration/parameter/Fx_ModifyParameter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.32481202">
+          <caret line="81" column="46" selection-start-line="81" selection-start-column="46" selection-end-line="81" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3948#3949#0" expanded="true" />
+            <element signature="e#3989#3990#0" expanded="true" />
+            <element signature="e#4054#4055#0" expanded="true" />
+            <element signature="e#4076#4077#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/dao/configuration/parameter/I_ParameterDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.18309858">
+          <caret line="53" column="49" selection-start-line="53" selection-start-column="49" selection-end-line="53" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/META-INF/spring/fxServletContext.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.8461537">
+          <caret line="24" column="104" selection-start-line="24" selection-start-column="104" selection-end-line="24" selection-end-column="104" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/META-INF/spring/ctrlServletContext.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.35211268">
+          <caret line="14" column="32" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/app/views/layout/menu.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.678571">
+          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/app/routes/routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="42" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/app/services/configuration/parameter/ParameterService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="24" column="52" selection-start-line="24" selection-start-column="52" selection-end-line="24" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/model/configuration/parameter/Parameter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.108270675">
+          <caret line="55" column="25" selection-start-line="55" selection-start-column="25" selection-end-line="55" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/app/views/configuration/parameter/parameter.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.074074">
+          <caret line="24" column="72" selection-start-line="24" selection-start-column="72" selection-end-line="24" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/controller/configuration/parameter/ParameterCtrl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="204" column="0" selection-start-line="204" selection-start-column="0" selection-end-line="204" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1941#1949#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/app/controllers/configuration/parameter/ParameterCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="21" column="60" selection-start-line="21" selection-start-column="60" selection-end-line="21" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/dao/configuration/parameter/ParameterDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33233082">
+          <caret line="113" column="29" selection-start-line="113" selection-start-column="29" selection-end-line="113" selection-end-column="29" />
+          <folding>
+            <element signature="e#6487#6500#0" expanded="true" />
           </folding>
         </state>
       </provider>

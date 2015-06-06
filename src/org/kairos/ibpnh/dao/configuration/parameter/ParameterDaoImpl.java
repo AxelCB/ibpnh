@@ -14,6 +14,7 @@ import javax.jdo.Query;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Dao for the Parameter's entities.
@@ -86,31 +87,9 @@ public class ParameterDaoImpl extends AbstractDao<Parameter, ParameterVo>
 	public void loadGlobalParameters(JDOPersistenceManager pm) {
 		this.logger.debug("loading global parameters");
 
-		// builds the query
-        /*
-		CriteriaBuilder builder = em.getCriteriaBuilder();
-		CriteriaQuery<Parameter> query = builder.createQuery(this.getClazz());
-		Root<Parameter> root = query.from(this.getClazz());
-
-		Predicate filters = builder.conjunction();
-
-		// filters by global flag
-		filters = builder.and(filters, builder.equal(root
-				.get(Parameter_.global).as(Boolean.class), Boolean.TRUE));
-		// filters by the deleted flag
-		filters = builder.and(filters, builder.equal(
-				root.get(Parameter_.deleted).as(Boolean.class), Boolean.FALSE));
-		
-		query.where(filters);*/
-
-
-
-
-
-
-        /*
-		// fetch the parameters
-		List<Parameter> parameters = pm.createQuery(query).getResultList();
+		Query query = pm.newQuery(this.getClazz());
+		query.setFilter("deleted == false && global == true");
+		List<Parameter> parameters = (List<Parameter>) query.execute();
 
 		List<ParameterVo> parametersVo = this.map(parameters);
 
@@ -125,7 +104,18 @@ public class ParameterDaoImpl extends AbstractDao<Parameter, ParameterVo>
 		for (ParameterVo parameterVo : parametersVo) {
 			this.getParameterCacheManager().putParameter(parameterVo.getName(),
 					parameterVo);
-		}*/
+		}
+
+	}
+
+	@Override
+	public boolean checkNameUniqueness(JDOPersistenceManager pm, String name, String id) {
+		ParameterVo parameterVo = this.getByName(pm,name);
+		if(parameterVo!=null || parameterVo.getId().equals(id)){
+			return Boolean.TRUE;
+		}else{
+			return Boolean.FALSE;
+		}
 	}
 
 	/*
@@ -154,48 +144,20 @@ public class ParameterDaoImpl extends AbstractDao<Parameter, ParameterVo>
 			}
 
 			Query query = pm.newQuery(this.getClazz());
-			query.setFilter("deleted == false");
-
-			// builds the query
-			/*
-			CriteriaBuilder builder = em.getCriteriaBuilder();
-			CriteriaQuery<Parameter> query = builder.createQuery(this
-					.getClazz());
-			Root<Parameter> root = query.from(this.getClazz());
-
-			Predicate filters = builder.conjunction();
-
-			// filters by name
-			filters = builder.and(
-					filters,
-					builder.like(
-							builder.lower(root.get(Parameter_.name).as(
-									String.class)), name.toLowerCase()));
-			// filters by the deleted flag
-			filters = builder.and(filters, builder.equal(
-					root.get(Parameter_.deleted).as(Boolean.class),
-					Boolean.FALSE));
-
-			query.where(filters);
-			*/
-            /*
-			try {
-				// fetch the parameter
-				Parameter parameter = em.createQuery(query).getSingleResult();
+			//TODO SHOULD COMPARE WITH LIKE OPERATOR BUT IS NOT POSSIBLE IN DATASTORE
+			query.setFilter("deleted == false && name == nameParam");
+			query.declareParameters("String nameParam");
+			query.setUnique(Boolean.TRUE);
+			try{
+				Parameter parameter = (Parameter)query.execute(name);
 
 				return this.map(parameter);
-
-			}catch (Exception e) {
-                // there was no parameter with required name
-                return null;
-            }*/
-//            catch (NoResultException e) {
-//				// there was no parameter with required name
-//				return null;
-//			}
+			}catch(Exception e){
+				this.logger.debug("there was no parameter with required name");
+				// there was no parameter with required name
+				return null;
+			}
 		}
-
-        return null;
 	}
 
 	/*

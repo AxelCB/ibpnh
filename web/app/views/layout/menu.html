@@ -22,6 +22,7 @@
                 <!--Menu for logged users-->
                 <ul class="nav navbar-nav" ng-show="loggedUser">
                     <li ng-if="loggedUser.role.roleType.roleTypeEnum =='ADMIN'"> <a href="#/configuration/user">Usuarios</a></li>
+                    <li ng-if="loggedUser.role.roleType.roleTypeEnum =='ADMIN'"> <a href="#/configuration/parameter">Par&aacute;metros</a></li>
                     <li ng-if="loggedUser.role.roleType.roleTypeEnum =='ADMIN'
                         || loggedUser.role.roleType.roleTypeEnum =='PASTOR'">
                         <a href="#/devotional">Devocionales</a>

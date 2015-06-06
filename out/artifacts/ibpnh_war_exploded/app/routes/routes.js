@@ -17,8 +17,9 @@ angular.module('routes', []).config(['$routeProvider', function($routeProvider) 
         {path: '/ministerios', template: viewsPrefix+'/ministerios/ministerios.html', controller: null},
         {path: '/login', template: viewsPrefix+'/login/login.html', controller: 'LoginCtrl'},
         {path: '/pastor', template: viewsPrefix+'/pastor.html', controller: 'LoginCtrl'},
-        {path: '/configuration/user', template: viewsPrefix+'/user/user.html', controller: 'UserCtrl'},
-        {path: '/configuration/function', template: viewsPrefix+'/function/function.html', controller: 'FunctionCtrl'},
+        {path: '/configuration/user', template: viewsPrefix+'/configuration/user/user.html', controller: 'UserCtrl'},
+        {path: '/configuration/function', template: viewsPrefix+'/configuration/function/function.html', controller: 'FunctionCtrl'},
+        {path: '/configuration/parameter', template: viewsPrefix+'/configuration/parameter/parameter.html', controller: 'ParameterCtrl'},
         {path: '/devotional', template: viewsPrefix+'/devotional/devotional.html', controller: 'DailyDevotionalCtrl'},
 
     ];

@@ -19,7 +19,7 @@ Repository and Service layers
 		<bean id="langCtrl" class="org.kairos.ibpnh.controller.LangCtrl" scope="request"/>
 
     	<!-- Configuration -->
-    		<!--<bean id="parameterCtrl" class="org.universe.core.controller.configuration.parameter.ParameterCtrl" scope="request"/>-->
+		<bean id="parameterCtrl" class="org.kairos.ibpnh.controller.configuration.parameter.ParameterCtrl" scope="request"/>
 
    		<!-- Login -->
     	<bean id="loginCtrl" class="org.kairos.ibpnh.controller.login.LoginCtrl" scope="request"/>

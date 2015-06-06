@@ -21,9 +21,9 @@ Repository and Service layers
     	
     	<!-- Configuration -->
     	<!-- Parameters -->
-    		<!--<bean id="createParameter" class="org.universe.core.fx.configuration.parameter.Fx_CreateParameter" scope="prototype"/>-->
-    		<!--<bean id="deleteParameter" class="org.universe.core.fx.configuration.parameter.Fx_DeleteParameter" scope="prototype"/>-->
-    		<!--<bean id="modifyParameter" class="org.universe.core.fx.configuration.parameter.Fx_ModifyParameter" scope="prototype"/>-->
+		<bean id="createParameter" class="org.kairos.ibpnh.fx.configuration.parameter.Fx_CreateParameter" scope="prototype"/>
+		<bean id="deleteParameter" class="org.kairos.ibpnh.fx.configuration.parameter.Fx_DeleteParameter" scope="prototype"/>
+		<bean id="modifyParameter" class="org.kairos.ibpnh.fx.configuration.parameter.Fx_ModifyParameter" scope="prototype"/>
     	<!-- User -->
     		<!--<bean id="enableUser" class="org.universe.core.fx.user.Fx_EnableUser" scope="prototype"/>-->
     		<!--<bean id="disableUser" class="org.universe.core.fx.user.Fx_DisableUser" scope="prototype"/>-->
@@ -46,8 +46,8 @@ Repository and Service layers
     		<!--<bean id="deleteRoleType" class="org.universe.core.fx.user.roleType.Fx_DeleteRoleType" scope="prototype"/>-->
     	
     	<!-- Login -->
-    		<bean id="fxLogin" class="org.kairos.ibpnh.fx.login.Fx_Login" scope="prototype"/>
-    		<bean id="fxLogout" class="org.kairos.ibpnh.fx.login.Fx_Logout" scope="prototype"/>
+		<bean id="fxLogin" class="org.kairos.ibpnh.fx.login.Fx_Login" scope="prototype"/>
+		<bean id="fxLogout" class="org.kairos.ibpnh.fx.login.Fx_Logout" scope="prototype"/>
     		<!--<bean id="fxChangePassword" class="org.universe.core.fx.login.Fx_ChangePassword" scope="prototype"/>-->
     	
 		<!-- MenuOrder -->

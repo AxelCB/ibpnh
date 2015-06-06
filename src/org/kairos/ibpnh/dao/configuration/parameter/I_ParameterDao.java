@@ -63,4 +63,14 @@ public interface I_ParameterDao extends I_Dao<ParameterVo> {
 	 * @param pm persistence manager
 	 */
 	public void loadGlobalParameters(JDOPersistenceManager pm);
+
+	/**
+	 * Returns wether a parameter name is unique (there's no parameter with that name) or not.
+	 *
+	 * @param pm
+	 * @param name
+	 * @param id
+	 * @return
+	 */
+	public boolean checkNameUniqueness(JDOPersistenceManager pm, String name, String id);
 }

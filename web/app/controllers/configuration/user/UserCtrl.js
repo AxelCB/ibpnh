@@ -69,8 +69,6 @@ ibpnhControllers.controller('UserCtrl',['$scope', '$rootScope', 'UserService', '
 						$scope.initialize();
 					}
 				}, this.errorManager);
-			} else {
-				$rootScope.showErrorMessage(i18n.t('commissionSchema.validation.numberFormat'), true);
 			}
 		};
 	
