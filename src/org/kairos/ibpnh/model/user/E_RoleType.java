@@ -11,14 +11,38 @@ public enum E_RoleType {
 	/**
 	 * The role types enumerative.
 	 */
-	ADMIN,
-	PASTOR,
-	USER;
+	ADMIN(Boolean.FALSE),
+	PASTOR(Boolean.TRUE),
+	USER(Boolean.TRUE);
+
+	/**
+	 * Flag that indicates if a user can be created by an admin.
+	 */
+	private Boolean canBeCreatedByAdmin;
 
 	/**
 	 * Default constructor.
 	 */
 	private E_RoleType() {
+	}
+
+	private E_RoleType(Boolean canBeCreatedByAdmin) {
+		this.canBeCreatedByAdmin = canBeCreatedByAdmin;
+	}
+
+	/**
+	 * @return the canBeCreatedByAdmin
+	 */
+	public Boolean getCanBeCreatedByAdmin() {
+		return this.canBeCreatedByAdmin;
+	}
+
+	/**
+	 * @param canBeCreatedByAdmin
+	 *            the canBeCreatedByAdmin to set
+	 */
+	public void setCanBeCreatedByAdmin(Boolean canBeCreatedByAdmin) {
+		this.canBeCreatedByAdmin = canBeCreatedByAdmin;
 	}
 
 }

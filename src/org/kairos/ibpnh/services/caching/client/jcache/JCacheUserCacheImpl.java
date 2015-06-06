@@ -227,7 +227,7 @@ public class JCacheUserCacheImpl extends AbstractCacheProfiler implements
 	public void putUser(String key, UserVo userInCache) {
 		try {
 			//TODO: configurar valor y unidad
-			this.logger.error("HEEEELP Key:"+key+"  User:"+userInCache);
+//			this.logger.error("HEEEELP Key:"+key+"  User:"+userInCache);
             this.getUserCache().put(key,userInCache);
 //			cache.put(key,userInCache, this.getUserDuration(), TimeUnit.valueOf(this.getTimeUnit()));
 			this.logger.info("Insertado Sync {}", key);

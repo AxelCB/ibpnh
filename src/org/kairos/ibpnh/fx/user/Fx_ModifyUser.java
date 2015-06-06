@@ -6,6 +6,7 @@ import org.kairos.ibpnh.fx.FxValidationResponse;
 import org.kairos.ibpnh.fx.I_Fx;
 import org.kairos.ibpnh.json.JsonResponse;
 import org.kairos.ibpnh.utils.ErrorCodes;
+import org.kairos.ibpnh.utils.HashUtils;
 import org.kairos.ibpnh.vo.user.UserVo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -43,6 +44,7 @@ public class Fx_ModifyUser extends AbstractFxImpl implements I_Fx {
 			this.beginTransaction();
 
 			// we persist the entity
+			this.getVo().setPassword(HashUtils.hashPassword(this.getVo().getPassword(), this.getVo().getHashCost()));
 			UserVo userVo = this.getDao().persist(this.getPm(), this.getVo());
 
 			this.commitTransaction();

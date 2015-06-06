@@ -36,7 +36,7 @@ public class RoleTypeVo extends AbstractVo implements Serializable {
 	/**
 	 * THe Role Type Functions
 	 */
-	private List<RoleTypeFunctionVo> roleTypeFunctions = new ArrayList<RoleTypeFunctionVo>();
+//	private List<RoleTypeFunctionVo> roleTypeFunctions = new ArrayList<RoleTypeFunctionVo>();
 	
 	/**
 	 * The RoleType that can reset the user passwords with this RoleType.
@@ -60,18 +60,18 @@ public class RoleTypeVo extends AbstractVo implements Serializable {
 	 *
 	 * @return the role function or null
 	 */
-	public RoleTypeFunctionVo getRoleTypeFunctionByFunctionId(String functionId) {
-		RoleTypeFunctionVo roleTypeFunctionVo = null;
-
-		for (RoleTypeFunctionVo roleTypeFunctionVoAux : this.getRoleTypeFunctions()) {
-			if (roleTypeFunctionVoAux.getFunction().getId().equals(functionId)) {
-				roleTypeFunctionVo = roleTypeFunctionVoAux;
-				break;
-			}
-		}
-
-		return roleTypeFunctionVo;
-	}
+//	public RoleTypeFunctionVo getRoleTypeFunctionByFunctionId(String functionId) {
+//		RoleTypeFunctionVo roleTypeFunctionVo = null;
+//
+//		for (RoleTypeFunctionVo roleTypeFunctionVoAux : this.getRoleTypeFunctions()) {
+//			if (roleTypeFunctionVoAux.getFunction().getId().equals(functionId)) {
+//				roleTypeFunctionVo = roleTypeFunctionVoAux;
+//				break;
+//			}
+//		}
+//
+//		return roleTypeFunctionVo;
+//	}
 
 	/**
 	 * @return the name
@@ -104,16 +104,16 @@ public class RoleTypeVo extends AbstractVo implements Serializable {
 	/**
 	 * @return the roleTypeFunctions
 	 */
-	public List<RoleTypeFunctionVo> getRoleTypeFunctions() {
-		return this.roleTypeFunctions;
-	}
+//	public List<RoleTypeFunctionVo> getRoleTypeFunctions() {
+//		return this.roleTypeFunctions;
+//	}
 
 	/**
 	 * @param roleTypeFunctions the roleTypeFunctions to set
 	 */
-	public void setRoleTypeFunctions(List<RoleTypeFunctionVo> roleTypeFunctions) {
-		this.roleTypeFunctions = roleTypeFunctions;
-	}
+//	public void setRoleTypeFunctions(List<RoleTypeFunctionVo> roleTypeFunctions) {
+//		this.roleTypeFunctions = roleTypeFunctions;
+//	}
 
 	public RoleTypeVo getPasswordReseter() {
 		return passwordReseter;

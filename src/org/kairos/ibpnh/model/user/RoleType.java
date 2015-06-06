@@ -78,18 +78,18 @@ public class RoleType implements Serializable, I_Model { //, I_EntityCreationLis
 	/**
 	 * Fixes the collection created by Dozer.
 	 */
-	public void fixRoleTypeFunctions() {
-		if (this.getRoleTypeFunctions() != null) {
-			for (RoleTypeFunction roleTypeFunction : this.getRoleTypeFunctions()) {
-				//sets the deletion flag to false
-				roleTypeFunction.setDeleted(Boolean.FALSE);
-				//sets the other side of the relationship if it is not present
-				if (roleTypeFunction.getRoleType() == null) {
-					roleTypeFunction.setRoleType(this);
-				}
-			}
-		}
-	}
+//	public void fixRoleTypeFunctions() {
+//		if (this.getRoleTypeFunctions() != null) {
+//			for (RoleTypeFunction roleTypeFunction : this.getRoleTypeFunctions()) {
+//				//sets the deletion flag to false
+//				roleTypeFunction.setDeleted(Boolean.FALSE);
+//				//sets the other side of the relationship if it is not present
+//				if (roleTypeFunction.getRoleType() == null) {
+//					roleTypeFunction.setRoleType(this);
+//				}
+//			}
+//		}
+//	}
 /*
 	*//*
 	 * (non-Javadoc)
@@ -130,8 +130,8 @@ public class RoleType implements Serializable, I_Model { //, I_EntityCreationLis
 	/**
 	 * RoleType-Function associations for this role type.
 	 */
-	@Persistent(mappedBy = "roleType")
-	private List<RoleTypeFunction> roleTypeFunctions;
+//	@Persistent(mappedBy = "roleType")
+//	private List<RoleTypeFunction> roleTypeFunctions;
 
 	/*
 	 * (non-Javadoc)
@@ -214,16 +214,16 @@ public class RoleType implements Serializable, I_Model { //, I_EntityCreationLis
 	/**
 	 * @return the roleTypeFunctions
 	 */
-	public List<RoleTypeFunction> getRoleTypeFunctions() {
-		return this.roleTypeFunctions;
-	}
+//	public List<RoleTypeFunction> getRoleTypeFunctions() {
+//		return this.roleTypeFunctions;
+//	}
 
 	/**
 	 * @param roleTypeFunctions the roleTypeFunctions to set
 	 */
-	public void setRoleTypeFunctions(List<RoleTypeFunction> roleTypeFunctions) {
-		this.roleTypeFunctions = roleTypeFunctions;
-	}
+//	public void setRoleTypeFunctions(List<RoleTypeFunction> roleTypeFunctions) {
+//		this.roleTypeFunctions = roleTypeFunctions;
+//	}
 
 	/**
 	 * @return the passwordReseter

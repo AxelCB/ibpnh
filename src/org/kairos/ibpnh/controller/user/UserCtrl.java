@@ -7,6 +7,7 @@ import org.datanucleus.api.jdo.JDOPersistenceManager;
 import org.kairos.ibpnh.controller.I_URIValidator;
 import org.kairos.ibpnh.dao.PersistenceManagerHolder;
 import org.kairos.ibpnh.dao.configuration.parameter.I_ParameterDao;
+import org.kairos.ibpnh.dao.user.I_FunctionDao;
 import org.kairos.ibpnh.dao.user.I_RoleDao;
 import org.kairos.ibpnh.dao.user.I_RoleTypeDao;
 import org.kairos.ibpnh.dao.user.I_UserDao;
@@ -50,7 +51,7 @@ public class UserCtrl implements I_URIValidator {
      * List of excluded URIs
      */
     private static final Set<String> EXCLUDED_URIS = new HashSet<String>(
-            Arrays.asList(new String[]{"/user/init"}));
+            Arrays.asList(new String[]{"/user/init","/user/listRoleTypeForCreation"}));
 
     /**
      * Logger
@@ -80,6 +81,12 @@ public class UserCtrl implements I_URIValidator {
      */
     @Autowired
     private I_RoleDao roleDao;
+
+//    /**
+//     * Function Dao
+//     */
+//    @Autowired
+//    private I_FunctionDao functionDao;
 
     /**
      * Parameter Dao
@@ -155,9 +162,9 @@ public class UserCtrl implements I_URIValidator {
                 adminRoleTypeVo.setRoleTypeEnum(E_RoleType.ADMIN);
 
                 //We create the necessary functions for the admin role type
-                List<FunctionVo> functions = new ArrayList<FunctionVo>();
+//                List<FunctionVo> functions = new ArrayList<FunctionVo>();
 
-                FunctionVo functionVo = new FunctionVo();
+//                FunctionVo functionVo = new FunctionVo();
 //                functionVo.setActionName("user");
 //                functionVo.setDescription("CreateUser");
 //                functionVo.setMenuName("configuration");
@@ -185,13 +192,13 @@ public class UserCtrl implements I_URIValidator {
 //                functions.add(functionVo);
 
 //                functionVo = new FunctionVo();
-                functionVo.setActionName("user");
-                functionVo.setDescription("ListUser");
-                functionVo.setMenuName("configuration");
-                functionVo.setName("listUser");
-                functionVo.setSubmenuName(null);
-                functionVo.setUri("/user/list");
-                functions.add(functionVo);
+//                functionVo.setActionName("user");
+//                functionVo.setDescription("ListUser");
+//                functionVo.setMenuName("configuration");
+//                functionVo.setName("listUser");
+//                functionVo.setSubmenuName(null);
+//                functionVo.setUri("/user/list");
+//                functions.add(functionVo);
 
 //                functionVo = new FunctionVo();
 //                functionVo.setActionName("user");
@@ -202,19 +209,19 @@ public class UserCtrl implements I_URIValidator {
 //                functionVo.setUri("/user/search");
 //                functions.add(functionVo);
 
-                for (FunctionVo function : functions) {
-                    RoleTypeFunctionVo roleTypeFunctionVo = new RoleTypeFunctionVo();
-                    roleTypeFunctionVo.setEnabled(Boolean.TRUE);
-                    roleTypeFunctionVo.setFunction(function);
-                    roleTypeFunctionVo.setRoleType(adminRoleTypeVo);
-
-                    adminRoleTypeVo.getRoleTypeFunctions().add(roleTypeFunctionVo);
-                }
+//                for (FunctionVo function : functions) {
+//                    RoleTypeFunctionVo roleTypeFunctionVo = new RoleTypeFunctionVo();
+//                    roleTypeFunctionVo.setEnabled(Boolean.TRUE);
+//                    roleTypeFunctionVo.setFunction(function);
+//                    roleTypeFunctionVo.setRoleType(adminRoleTypeVo);
+//
+//                    adminRoleTypeVo.getRoleTypeFunctions().add(roleTypeFunctionVo);
+//                }
 
                 //We create the Admin role
                 RoleVo adminRoleVo = new RoleVo();
                 adminRoleVo.setRoleType(adminRoleTypeVo);
-                adminRoleVo.copyOrUpdateFromRoleType(adminRoleTypeVo);
+//                adminRoleVo.copyOrUpdateFromRoleType(adminRoleTypeVo);
 
                 //We create the Admin user
                 UserVo adminVo = new UserVo();
@@ -245,7 +252,7 @@ public class UserCtrl implements I_URIValidator {
     }
 
     /**
-     * Lists all document types.
+     * Lists all users.
      *
      * @return
      */
@@ -335,6 +342,102 @@ public class UserCtrl implements I_URIValidator {
     }
 
     /**
+     * Add Functions to admin.
+     *
+     * @return
+     */
+//    @ResponseBody
+//    @RequestMapping(value = "/addFunctions.json", method = RequestMethod.GET)
+//    public String addFunctions() {
+//        this.logger.debug("calling UserCtrl.addFunctions()");
+//        JDOPersistenceManager pm = this.getPersistenceManagerHolder().getPersistenceManager();
+//        JsonResponse jsonResponse = null;
+//
+//        try {
+//            UserVo userVo = this.getUserDao().getByUsername(pm, "admin");
+//            String responseData = this.getGson().toJson(Boolean.FALSE);
+//            if(userVo.getRole().getRoleFunctions().size()<=1){
+//                pm.currentTransaction().begin();
+//
+//                List<FunctionVo> functions = new ArrayList<FunctionVo>();
+//
+//                FunctionVo functionVo = new FunctionVo();
+//                functionVo.setActionName("user");
+//                functionVo.setDescription("CreateUser");
+//                functionVo.setMenuName("configuration");
+//                functionVo.setName("createUser");
+//                functionVo.setSubmenuName(null);
+//                functionVo.setUri("/user/create");
+//                functions.add(functionVo);
+//
+//                functionVo = new FunctionVo();
+//                functionVo.setActionName("user");
+//                functionVo.setDescription("DeleteUser");
+//                functionVo.setMenuName("configuration");
+//                functionVo.setName("deleteUser");
+//                functionVo.setSubmenuName(null);
+//                functionVo.setUri("/user/delete");
+//                functions.add(functionVo);
+//
+//                functionVo = new FunctionVo();
+//                functionVo.setActionName("user");
+//                functionVo.setDescription("ModifyUser");
+//                functionVo.setMenuName("configuration");
+//                functionVo.setName("modifyUser");
+//                functionVo.setSubmenuName(null);
+//                functionVo.setUri("/user/modify");
+//                functions.add(functionVo);
+//
+//                functionVo = new FunctionVo();
+//                functionVo.setActionName("user");
+//                functionVo.setDescription("SearchUser");
+//                functionVo.setMenuName("configuration");
+//                functionVo.setName("searchUser");
+//                functionVo.setSubmenuName(null);
+//                functionVo.setUri("/user/search");
+//                functions.add(functionVo);
+//
+//                for (FunctionVo function : functions){
+//                    function = this.getFunctionDao().persist(pm,function);
+//                    pm.flush();
+//
+//                    RoleFunctionVo roleFunctionVo = new RoleFunctionVo();
+//                    roleFunctionVo.setFunction(function);
+//                    roleFunctionVo.setRole(userVo.getRole());
+//                    userVo.getRole().getRoleFunctions().add(roleFunctionVo);
+////                    this.getUserDao().persist(pm,userVo);
+//                    this.getRoleDao().persist(pm,userVo.getRole());
+//                    userVo = this.getUserDao().getByUsername(pm, "admin");
+//
+//                    pm.flush();
+//                }
+//
+//                pm.currentTransaction().commit();
+//
+//                responseData = this.getGson().toJson(Boolean.TRUE);
+//            }
+//
+//            jsonResponse = JsonResponse.ok(responseData);
+////        } catch (ParseException e) {
+////            this.logger.error("error trying to read items.per.page parameter",
+////                    e);
+////
+////            jsonResponse = this.getWebContextHolder().unexpectedErrorResponse(
+////                    ErrorCodes.ERROR_PARAMETER_PARSING);
+//        } catch (Exception e) {
+//            this.logger.error("error trying to read items.per.page parameter",
+//                    e);
+//
+//            jsonResponse = this.getWebContextHolder().unexpectedErrorResponse(
+//                    ErrorCodes.ERROR_PARAMETER_MISSING);
+//        } finally {
+//            this.getPersistenceManagerHolder().closePersistenceManager(pm);
+//        }
+//
+//        return this.getGson().toJson(jsonResponse);
+//    }
+
+    /**
      * Creates a new user
      *
      * @return
@@ -353,7 +456,7 @@ public class UserCtrl implements I_URIValidator {
 
             RoleVo roleVo = new RoleVo();
             roleVo.setRoleType(roleTypeVo);
-            roleVo.copyOrUpdateFromRoleType(roleTypeVo);
+//            roleVo.copyOrUpdateFromRoleType(roleTypeVo);
 
             UserVo userVo = this.getGson().fromJson(jsonObject.get("user"), UserVo.class);
             userVo.setRole(roleVo);
@@ -442,6 +545,39 @@ public class UserCtrl implements I_URIValidator {
         return this.getGson().toJson(jsonResponse);
     }
 
+    /**
+     * Gets the list of role types available for creation.
+     *
+     * @return
+     */
+    @ResponseBody
+    @RequestMapping(value = "/listRoleTypeForCreation.json")
+    public String listRoleTypeForCreation() {
+        this.logger.debug("calling UserCtrl.listRoleTypeForCreation()");
+        JsonResponse jsonResponse = null;
+
+        try {
+            E_RoleType[] roleTypes = E_RoleType.values();
+
+            List<E_RoleType> finalRoleTypes = new ArrayList<>();
+
+            for (int i = 0; i < roleTypes.length; i++) {
+                if (roleTypes[i].getCanBeCreatedByAdmin()) {
+                    finalRoleTypes.add(roleTypes[i]);
+                }
+            }
+
+            jsonResponse = JsonResponse.ok(this.getGson()
+                    .toJson(finalRoleTypes));
+        } catch (Exception e) {
+            this.logger.debug("unexpected error", e);
+
+            jsonResponse = this.getWebContextHolder().unexpectedErrorResponse();
+        }
+
+        return this.getGson().toJson(jsonResponse);
+    }
+
     public Gson getGson() {
         return gson;
     }
@@ -505,4 +641,12 @@ public class UserCtrl implements I_URIValidator {
     public void setFxFactory(I_FxFactory fxFactory) {
         this.fxFactory = fxFactory;
     }
+
+//    public I_FunctionDao getFunctionDao() {
+//        return functionDao;
+//    }
+//
+//    public void setFunctionDao(I_FunctionDao functionDao) {
+//        this.functionDao = functionDao;
+//    }
 }

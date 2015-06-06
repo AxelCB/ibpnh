@@ -28,6 +28,9 @@ Repository and Service layers
 		<bean id="userCtrl" class="org.kairos.ibpnh.controller.user.UserCtrl" scope="request"/>
 			<!--<bean id="roleTypeCtrl" class="org.universe.core.controller.user.roleType.RoleTypeCtrl" scope="request"/>-->
     		<!--<bean id="passwordRecoverCtrl" class="org.universe.core.controller.user.PasswordRecoverCtrl" scope="request"/>-->
+
+		<!-- Devotional -->
+		<bean id="devotionalCtrl" class="org.kairos.ibpnh.controller.devotional.DailyDevotionalCtrl	" scope="request"/>
     	
 		<!-- Footer -->
 		<!--<bean id='footerCtrl' class='org.universe.core.controller.FooterCtrl' scope='application'/>-->

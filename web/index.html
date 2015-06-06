@@ -22,6 +22,18 @@
                 <!-- Menu -->
                 <div ng-include="'app/views/layout/menu.html'"></div>
             </div>
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <div ng-cloak ng-repeat="message in messages"
+                         class="ng-cloak alert alert-dismissable"
+                         ng-class="{'alert-success': !areErrorMessages, 'alert-danger': areErrorMessages}">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        {{ message }}
+                    </div>
+                </div>
+            </div>
+
             <div class="row">
                 <!-- View -->
                 <div ng-view></div>
@@ -52,6 +64,7 @@
 
     <!-- Helpers -->
     <script src="app/helpers/PaginationHelper.js"></script>
+    <script src="app/helpers/DateFormatHelper.js"></script>
 
     <!-- Internationalization -->
     <script src="resources/i18n/i18next-1.6.3.min.js"></script>
@@ -62,12 +75,15 @@
     <script src="app/controllers/user/UserCtrl.js"></script>
     <script src="app/controllers/function/FunctionCtrl.js"></script>
     <script src="app/controllers/login/MenuCtrl.js"></script>
+    <script src="app/controllers/devotional/DailyDevotionalCtrl.js"></script>
+    <script src="app/controllers/home/HomeCtrl.js"></script>
 
     <!-- Services -->
     <script src="app/services/IbpnhService.js"></script>
     <script src="app/services/login/LoginService.js"></script>
     <script src="app/services/user/UserService.js"></script>
     <script src="app/services/function/FunctionService.js"></script>
+    <script src="app/services/devotional/DailyDevotionalService.js"></script>
 
     <script src="app/filters/filters.js"></script>
     <script src="app/routes/routes.js"></script>

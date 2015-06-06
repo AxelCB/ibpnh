@@ -31,6 +31,14 @@ Repository and Service layers
     		<!--<bean id="resetAnyUserPassword" class="org.universe.core.fx.user.Fx_ResetAnyUserPassword" scope="prototype"/>-->
     		<!--<bean id="sendRecoverMail" class="org.universe.core.fx.user.Fx_SendRecoverMail" scope="prototype"/>-->
     		<!--<bean id="passwordRecover" class="org.universe.core.fx.user.Fx_PasswordRecover" scope="prototype"/>-->
+		<bean id='createUser' class='org.kairos.ibpnh.fx.user.Fx_CreateUser' scope="prototype"/>
+		<bean id='deleteUser' class='org.kairos.ibpnh.fx.user.Fx_DeleteUser' scope="prototype"/>
+		<bean id='modifyUser' class='org.kairos.ibpnh.fx.user.Fx_ModifyUser' scope="prototype"/>
+
+		<!-- Devotional -->
+		<bean id='createDailyDevotional' class='org.kairos.ibpnh.fx.devotional.Fx_CreateDailyDevotional' scope="prototype"/>
+		<bean id='deleteDailyDevotional' class='org.kairos.ibpnh.fx.devotional.Fx_DeleteDailyDevotional' scope="prototype"/>
+		<bean id='modifyDailyDevotional' class='org.kairos.ibpnh.fx.devotional.Fx_ModifyDailyDevotional' scope="prototype"/>
     	
     	<!-- RoleType -->
     		<!--<bean id="createRoleType" class="org.universe.core.fx.user.roleType.Fx_CreateRoleType" scope="prototype"/>-->

@@ -20,37 +20,53 @@
                 </ul>
 
                 <!--Menu for logged users-->
-                <div ng-repeat="m1 in menuItems" ng-show="loggedUser">
-                    <ul class="nav navbar-nav">
-                        <li class="dropdown" ng-show="m1.options.length != 0">
-                            <a href="" class="dropdown-toggle" data-toggle="dropdown">{{m1.title}} <b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <div class="removeLater" ng-repeat="m2 in m1.options" remove-later>
-                                    <!-- Single Option Case -->
-                                    <li ng-show="m2.enabled && m2.options.length == 0">
-                                        <a href="" ng-click="goTo(m2.uri)">{{m2.title}}</a>
-                                    </li>
+                <ul class="nav navbar-nav" ng-show="loggedUser">
+                    <li ng-if="loggedUser.role.roleType.roleTypeEnum =='ADMIN'"> <a href="#/configuration/user">Usuarios</a></li>
+                    <li ng-if="loggedUser.role.roleType.roleTypeEnum =='ADMIN'
+                        || loggedUser.role.roleType.roleTypeEnum =='PASTOR'">
+                        <a href="#/devotional">Devocionales</a>
+                    </li>
+                    <!--<li> <a href="#/ministerios"><span class="glyphicon glyphicon-globe"></span>Ministerios</a></li>-->
+                    <!--<li> <a href="#/devocionales"><span class="glyphicon glyphicon-road"></span>Devocionales</a></li>-->
+                    <!--<li> <a href="#/gbcs"><span class="glyphicon glyphicon-education"></span>GBCs</a></li>-->
+                    <li> <a href="#/contacto"><span class="glyphicon glyphicon-edit"></span>Contacto</a></li>
+                </ul>
 
-                                    <!-- Multiple SubOptions Case -->
-                                    <li class="divider" ng-show="m2.options.length != 0"></li>
-                                    <li class="dropdown-header" ng-show="m2.options.length != 0">{{m2.title}}</li>
-                                    <li ng-repeat="m3 in m2.options" ng-show="m3.enabled && m2.options.length != 0">
-                                        <a class="embed-right" href="" ng-click="goTo(m3.uri)">{{m3.title}}</a>
-                                    </li>
-                                    <li class="divider" ng-show="m2.options.length != 0"></li>
-                                </div>
-                            </ul>
-                        </li>
-                        <li class="dropdown" ng-show="m1.options.length == 0">
-                            <a class="embed-right" href="" ng-click="goTo(m1.uri)">{{m1.title}}</a>
-                        </li>
-                    </ul>
-                </div>
+                <!--<div ng-repeat="m1 in menuItems" ng-show="loggedUser">-->
+                    <!--<ul class="nav navbar-nav">-->
+                        <!--<li class="dropdown" ng-show="m1.options.length != 0">-->
+                            <!--<a href="" class="dropdown-toggle" data-toggle="dropdown">{{m1.title}} <b class="caret"></b></a>-->
+                            <!--<ul class="dropdown-menu">-->
+                                <!--<div class="removeLater" ng-repeat="m2 in m1.options" remove-later>-->
+                                    <!--&lt;!&ndash; Single Option Case &ndash;&gt;-->
+                                    <!--<li ng-show="m2.enabled && m2.options.length == 0">-->
+                                        <!--<a href="" ng-click="goTo(m2.uri)">{{m2.title}}</a>-->
+                                    <!--</li>-->
+
+                                    <!--&lt;!&ndash; Multiple SubOptions Case &ndash;&gt;-->
+                                    <!--<li class="divider" ng-show="m2.options.length != 0"></li>-->
+                                    <!--<li class="dropdown-header" ng-show="m2.options.length != 0">{{m2.title}}</li>-->
+                                    <!--<li ng-repeat="m3 in m2.options" ng-show="m3.enabled && m2.options.length != 0">-->
+                                        <!--<a class="embed-right" href="" ng-click="goTo(m3.uri)">{{m3.title}}</a>-->
+                                    <!--</li>-->
+                                    <!--<li class="divider" ng-show="m2.options.length != 0"></li>-->
+                                <!--</div>-->
+                            <!--</ul>-->
+                        <!--</li>-->
+                        <!--<li class="dropdown" ng-show="m1.options.length == 0">-->
+                            <!--<a class="embed-right" href="" ng-click="goTo(m1.uri)">{{m1.title}}</a>-->
+                        <!--</li>-->
+                    <!--</ul>-->
+                <!--</div>-->
+                <!--<p class="navbar-text pull-right" ng-show="loggedUser">-->
+                    <!--{{ globalInspectorFlag | iif:'blank':'default.welcome' | translate }}-->
+                    <!--{{ globalInspectorFlag | iif:'':', '}}-->
+                    <!--{{ globalInspectorFlag | iif:'':loggedUser.username }}-->
+                    <!--{{ globalInspectorFlag | iif:'':' - '}}-->
+                    <!--<a href="" class="navbar-link" ng-click="logout()">{{ 'default.logout' | translate }}</a>-->
+                <!--</p>-->
                 <p class="navbar-text pull-right" ng-show="loggedUser">
-                    {{ globalInspectorFlag | iif:'blank':'default.welcome' | translate }}
-                    {{ globalInspectorFlag | iif:'':', '}}
-                    {{ globalInspectorFlag | iif:'':loggedUser.username }}
-                    {{ globalInspectorFlag | iif:'':' - '}}
+                    {{ loggedUser.username }} -
                     <a href="" class="navbar-link" ng-click="logout()">{{ 'default.logout' | translate }}</a>
                 </p>
             </div>

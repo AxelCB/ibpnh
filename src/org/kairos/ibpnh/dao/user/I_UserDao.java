@@ -85,4 +85,5 @@ public interface I_UserDao extends I_Dao<UserVo> {
      * @return UserVo or null
      */
     public UserVo getUserByEnablingHash(JDOPersistenceManager pm, String enablingHash);
+
 }

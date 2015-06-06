@@ -27,19 +27,23 @@
 
 <div class="row">
     <div class="col-xs-6">
-        <button class="btn btn-success" id="btn_create" ng-click="create();" ng-disabled="editing" ng-show="canAccess('/configuration/user:createUser') && !user.id">
+        <button class="btn btn-success" id="btn_create" ng-click="create();" ng-disabled="editing" ng-show="!user.id">
+            <!--canAccess('/configuration/user:createUser') &&-->
             {{ 'default.create.new' | translate }}
         </button>
-        <button class="btn btn-success" id="btn_modify" ng-click="modify();" ng-disabled="!editing" ng-show="canAccess('/configuration/user:modifyUser') && user.id">
+        <button class="btn btn-success" id="btn_modify" ng-click="modify();" ng-disabled="!editing" ng-show="user.id">
+            <!--canAccess('/configuration/user:modifyUser') &&-->
             {{ 'default.edit' | translate }}
         </button>
         <button class="btn btn-danger" id="btn_cancel" ng-click="cancel();" ng-disabled="!editing" ng-show="user.id">
             {{ 'default.cancel' | translate }}
         </button>
-        <button class="btn btn-default" id="btn_search" ng-click="search();" ng-disabled="editing" ng-show="canAccess('/configuration/user:searchUser')">
+        <button class="btn btn-default" id="btn_search" ng-click="search();" ng-disabled="editing">
+            <!--ng-show="canAccess('/configuration/user:searchUser')"-->
             {{ 'default.search' | translate }}
         </button>
-        <button class="btn btn-default" id="btn_list" ng-click="list();" ng-disabled="editing" ng-show="canAccess('/configuration/user:listUser')">
+        <button class="btn btn-default" id="btn_list" ng-click="list();" ng-disabled="editing">
+            <!--ng-show="canAccess('/configuration/user:listUser')"-->
             {{ 'default.list.all' | translate }}
         </button>
         <button class="btn btn-default" id="btn_clean" ng-click="clean();" ng-disabled="editing">
@@ -63,8 +67,10 @@
                 <td class="col-xs-3">{{ user.username }}</td>
                 <td class="col-xs-3">{{ user.role.roleType.roleTypeEnum }}</td>
                 <td class="col-xs-3">
-                    <span class="glyphicon glyphicon-edit operation" ng-click="edit(user);" ng-show="canAccess('/configuration/user:modifyUser') && !editing"></span>
-                    <span class="glyphicon glyphicon-remove operation" ng-click="remove(user);" ng-show="canAccess('/configuration/user:deleteUser') && !editing"></span>
+                    <span class="glyphicon glyphicon-edit operation" ng-click="edit(user);" ng-show="!editing"></span>
+                    <!--canAccess('/configuration/user:modifyUser') &&-->
+                    <span class="glyphicon glyphicon-remove operation" ng-click="remove(user);" ng-show="!editing"></span>
+                    <!--canAccess('/configuration/user:deleteUser') &&-->
                 </td>
             </tr>
             </tbody>

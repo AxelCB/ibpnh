@@ -91,12 +91,12 @@ public class UserVo extends AbstractVo implements Serializable {
 	 * 
 	 * @return true if it can access
 	 */
-	public Boolean canAccess(String uri) {
-		RoleFunctionVo roleFunctionVo = this.getRole()
-				.getRoleFunctionByUri(uri);
-
-		return roleFunctionVo != null && roleFunctionVo.getEnabled();
-	}
+//	public Boolean canAccess(String uri) {
+//		RoleFunctionVo roleFunctionVo = this.getRole()
+//				.getRoleFunctionByUri(uri);
+//
+//		return roleFunctionVo != null && roleFunctionVo.getEnabled();
+//	}
 
 	/**
 	 * @return the username

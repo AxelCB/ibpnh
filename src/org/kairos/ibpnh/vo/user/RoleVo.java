@@ -29,7 +29,7 @@ public class RoleVo extends AbstractVo implements Serializable {
 	/**
 	 * Role functions
 	 */
-	private List<RoleFunctionVo> roleFunctions = new ArrayList<RoleFunctionVo>();
+//	private List<RoleFunctionVo> roleFunctions = new ArrayList<RoleFunctionVo>();
 	
 	/**
 	 * Gets a role function by the function URI.
@@ -38,18 +38,18 @@ public class RoleVo extends AbstractVo implements Serializable {
 	 * 
 	 * @return the role function or null
 	 */
-	public RoleFunctionVo getRoleFunctionByUri(String uri) {
-		RoleFunctionVo roleFunctionVo = null;
-
-		for (RoleFunctionVo roleFunctionVoAux : this.getRoleFunctions()) {
-			if (roleFunctionVoAux.getFunction().getUri().equals(uri)) {
-				roleFunctionVo = roleFunctionVoAux;
-				break;
-			}
-		}
-
-		return roleFunctionVo;
-	}
+//	public RoleFunctionVo getRoleFunctionByUri(String uri) {
+//		RoleFunctionVo roleFunctionVo = null;
+//
+//		for (RoleFunctionVo roleFunctionVoAux : this.getRoleFunctions()) {
+//			if (roleFunctionVoAux.getFunction().getUri().equals(uri)) {
+//				roleFunctionVo = roleFunctionVoAux;
+//				break;
+//			}
+//		}
+//
+//		return roleFunctionVo;
+//	}
 	
 	/**
 	 * Gets a role function by the function ID.
@@ -58,69 +58,69 @@ public class RoleVo extends AbstractVo implements Serializable {
 	 * 
 	 * @return the role function or null
 	 */
-	public RoleFunctionVo getRoleFunctionByFunctionId(String functionId) {
-		RoleFunctionVo roleFunctionVo = null;
-		
-		if (this.getRoleFunctions() != null) {
-			for (RoleFunctionVo roleFunctionVoAux : this.getRoleFunctions()) {
-				if (roleFunctionVoAux.getId().equals(functionId)) {
-					roleFunctionVo = roleFunctionVoAux;
-					break;
-				}
-			}
-		}
-		return roleFunctionVo;
-	}
+//	public RoleFunctionVo getRoleFunctionByFunctionId(String functionId) {
+//		RoleFunctionVo roleFunctionVo = null;
+//
+//		if (this.getRoleFunctions() != null) {
+//			for (RoleFunctionVo roleFunctionVoAux : this.getRoleFunctions()) {
+//				if (roleFunctionVoAux.getId().equals(functionId)) {
+//					roleFunctionVo = roleFunctionVoAux;
+//					break;
+//				}
+//			}
+//		}
+//		return roleFunctionVo;
+//	}
 	
 	/**
 	 * Copies or updates all functions from the Role Type to this Role.
 	 * 
 	 * @param roleTypeVo the role type to copy from. if null, uses it's current role type
 	 */
-	public void copyOrUpdateFromRoleType(RoleTypeVo roleTypeVo) {
-		if (roleTypeVo == null) {
-			roleTypeVo = this.getRoleType();
-		}
-
-		if (this.getRoleFunctions() == null) {
-			this.setRoleFunctions(new ArrayList<RoleFunctionVo>());
-		}
-
-		List<RoleFunctionVo> added = new ArrayList<>();
-		List<RoleFunctionVo> deleted = new ArrayList<>();
-
-		//adds the new functions or updates the actual functions
-		for (RoleTypeFunctionVo roleTypeFunctionVo : roleTypeVo.getRoleTypeFunctions()) {
-			RoleFunctionVo roleFunctionVo = null;
-
-			roleFunctionVo = this.getRoleFunctionByFunctionId(roleTypeFunctionVo.getFunction().getId());
-
-			if (roleFunctionVo == null) {
-				//we add it
-				roleFunctionVo = new RoleFunctionVo();
-				//roleFunctionVo.setId(roleTypeFunctionVo.getFunction().getId());
-				roleFunctionVo.setEnabled(roleTypeFunctionVo.getEnabled());
-				roleFunctionVo.setFunction(roleTypeFunctionVo.getFunction());
-				roleFunctionVo.setDisabledCause(roleTypeFunctionVo.getDisabledCause());
-				roleFunctionVo.setRole(this);
-
-				added.add(roleFunctionVo);
-			}
-
-			//we update the function
-			roleFunctionVo.setEnabled(roleTypeFunctionVo.getEnabled());
-			roleFunctionVo.setDisabledCause(roleTypeFunctionVo.getDisabledCause());
-		}
-		//deletes the removed functions
-		for (RoleFunctionVo roleFunctionVo : this.getRoleFunctions()) {
-			if (roleTypeVo.getRoleTypeFunctionByFunctionId(roleFunctionVo.getId()) == null) {
-				deleted.add(roleFunctionVo);
-			}
-		}
-
-		this.getRoleFunctions().removeAll(deleted);
-		this.getRoleFunctions().addAll(added);
-	}
+//	public void copyOrUpdateFromRoleType(RoleTypeVo roleTypeVo) {
+//		if (roleTypeVo == null) {
+//			roleTypeVo = this.getRoleType();
+//		}
+//
+//		if (this.getRoleFunctions() == null) {
+//			this.setRoleFunctions(new ArrayList<RoleFunctionVo>());
+//		}
+//
+//		List<RoleFunctionVo> added = new ArrayList<>();
+//		List<RoleFunctionVo> deleted = new ArrayList<>();
+//
+//		//adds the new functions or updates the actual functions
+//		for (RoleTypeFunctionVo roleTypeFunctionVo : roleTypeVo.getRoleTypeFunctions()) {
+//			RoleFunctionVo roleFunctionVo = null;
+//
+//			roleFunctionVo = this.getRoleFunctionByFunctionId(roleTypeFunctionVo.getFunction().getId());
+//
+//			if (roleFunctionVo == null) {
+//				//we add it
+//				roleFunctionVo = new RoleFunctionVo();
+//				//roleFunctionVo.setId(roleTypeFunctionVo.getFunction().getId());
+//				roleFunctionVo.setEnabled(roleTypeFunctionVo.getEnabled());
+//				roleFunctionVo.setFunction(roleTypeFunctionVo.getFunction());
+//				roleFunctionVo.setDisabledCause(roleTypeFunctionVo.getDisabledCause());
+//				roleFunctionVo.setRole(this);
+//
+//				added.add(roleFunctionVo);
+//			}
+//
+//			//we update the function
+//			roleFunctionVo.setEnabled(roleTypeFunctionVo.getEnabled());
+//			roleFunctionVo.setDisabledCause(roleTypeFunctionVo.getDisabledCause());
+//		}
+//		//deletes the removed functions
+//		for (RoleFunctionVo roleFunctionVo : this.getRoleFunctions()) {
+//			if (roleTypeVo.getRoleTypeFunctionByFunctionId(roleFunctionVo.getId()) == null) {
+//				deleted.add(roleFunctionVo);
+//			}
+//		}
+//
+//		this.getRoleFunctions().removeAll(deleted);
+//		this.getRoleFunctions().addAll(added);
+//	}
 	
 	/**
 	 * Convenience method to update this role using the role type functions.
@@ -146,14 +146,14 @@ public class RoleVo extends AbstractVo implements Serializable {
 	/**
 	 * @return the roleFunctions
 	 */
-	public List<RoleFunctionVo> getRoleFunctions() {
-		return this.roleFunctions;
-	}
+//	public List<RoleFunctionVo> getRoleFunctions() {
+//		return this.roleFunctions;
+//	}
 
 	/**
 	 * @param roleFunctions the roleFunctions to set
 	 */
-	public void setRoleFunctions(List<RoleFunctionVo> roleFunctions) {
-		this.roleFunctions = roleFunctions;
-	}
+//	public void setRoleFunctions(List<RoleFunctionVo> roleFunctions) {
+//		this.roleFunctions = roleFunctions;
+//	}
 }

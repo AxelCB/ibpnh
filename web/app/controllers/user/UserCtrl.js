@@ -7,6 +7,7 @@ var ibpnhControllers = angular.module('ibpnhControllers');
 ibpnhControllers.controller('UserCtrl',['$scope', '$rootScope', 'UserService', '$filter',
 	function($scope, $rootScope, UserService, $filter) {
 		$scope.user = {};
+		$scope.roleType = {};
 		$scope.users = [];
 		$scope.editing = false;
 	
@@ -14,7 +15,10 @@ ibpnhControllers.controller('UserCtrl',['$scope', '$rootScope', 'UserService', '
 		
 		$scope.create = function() {
 			if ($scope.myForm.$valid) {
-				UserService.create($scope.user, function(response) {
+				UserService.create(
+					{'user':$scope.user,
+					'roleType':$scope.roleType},
+				function(response) {
 					if (response.ok) {
 						// user successfully created
 						var par = JSON.parse(response.data);
@@ -42,20 +46,6 @@ ibpnhControllers.controller('UserCtrl',['$scope', '$rootScope', 'UserService', '
 					}
 				}
 			}, $rootScope.manageError);
-			//$.ajax({
-			//	url: "/user/list.json",
-			//	type: "post",
-			//	data: pagination,
-			//	dataType: 'json',
-			//	contentType:"text/json; charset=utf-8",
-			//	beforeSend : function(xhr) {
-			//		// set header
-			//		xhr.setRequestHeader("Authorization", $rootScope.loggedUser.token);
-			//	},
-			//	success: function (data) {
-			//		alert(data);
-			//	},
-			//});
 		};
 	
 		$scope.edit = function(user) {
@@ -137,13 +127,18 @@ ibpnhControllers.controller('UserCtrl',['$scope', '$rootScope', 'UserService', '
 	
 			$scope.editing = false;
 			$scope.user = null;
-	
-			if ($rootScope.canAccess('/configuration/user:listUser')) {
-				$scope.list();
-			}
-	
+
+				//if ($rootScope.canAccess('/configuration/user:listUser')) {
+			$scope.list();
+			//}
 			$rootScope.areErrorMessages = false;
 		};
 		$scope.initialize();
+
+		UserService.listRoleTypeForCreation(function(response) {
+			if (response.ok) {
+				$scope.roleTypeEnumsList = JSON.parse(response.data);
+			}
+		}, $rootScope.errorManager);
 	}
 ]);

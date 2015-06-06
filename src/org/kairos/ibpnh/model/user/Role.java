@@ -52,8 +52,8 @@ public class Role implements Serializable, I_Model {
 	/**
 	 * Role-Function associations for this Role.
 	 */
-    @Persistent(mappedBy="role")
-	private List<RoleFunction> roleFunctions;
+//    @Persistent(mappedBy="role")
+//	private List<RoleFunction> roleFunctions;
 	
 	/**
 	 * User that has this role.
@@ -62,21 +62,21 @@ public class Role implements Serializable, I_Model {
 	@Property(policy= PojomaticPolicy.NONE)
 	private User user;
 	
-	/**
-	 * Fixes the collection created by Dozer.
-	 */
-	public void fixRoleFunctions() {
-		if (this.getRoleFunctions() != null) {
-			for (RoleFunction roleFunction : this.getRoleFunctions()) {
-				//sets the deletion flag to false
-				roleFunction.setDeleted(Boolean.FALSE);
-				//sets the other side of the relationship if it is not present
-				if (roleFunction.getRole() == null) {
-					roleFunction.setRole(this);
-				}
-			}
-		}
-	}
+//	/**
+//	 * Fixes the collection created by Dozer.
+//	 */
+//	public void fixRoleFunctions() {
+//		if (this.getRoleFunctions() != null) {
+//			for (RoleFunction roleFunction : this.getRoleFunctions()) {
+//				//sets the deletion flag to false
+//				roleFunction.setDeleted(Boolean.FALSE);
+//				//sets the other side of the relationship if it is not present
+//				if (roleFunction.getRole() == null) {
+//					roleFunction.setRole(this);
+//				}
+//			}
+//		}
+//	}
 	
 	/*
 	 * (non-Javadoc)
@@ -173,19 +173,19 @@ public class Role implements Serializable, I_Model {
 		this.roleType = roleType;
 	}
 
-	/**
-	 * @return the roleFunctions
-	 */
-	public List<RoleFunction> getRoleFunctions() {
-		return this.roleFunctions;
-	}
-
-	/**
-	 * @param roleFunctions the roleFunctions to set
-	 */
-	public void setRoleFunctions(List<RoleFunction> roleFunctions) {
-		this.roleFunctions = roleFunctions;
-	}
+//	/**
+//	 * @return the roleFunctions
+//	 */
+//	public List<RoleFunction> getRoleFunctions() {
+//		return this.roleFunctions;
+//	}
+//
+//	/**
+//	 * @param roleFunctions the roleFunctions to set
+//	 */
+//	public void setRoleFunctions(List<RoleFunction> roleFunctions) {
+//		this.roleFunctions = roleFunctions;
+//	}
 
 	/**
 	 * @return the user

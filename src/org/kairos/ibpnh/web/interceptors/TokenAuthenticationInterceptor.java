@@ -155,28 +155,28 @@ public class TokenAuthenticationInterceptor extends HandlerInterceptorAdapter {
 						// validates it with the UserVo
 						if (!(handler instanceof I_URIValidator)
 								|| ((I_URIValidator) handler).validate(uri)) {
-							if (userVo.canAccess(uri)) {
-								this.logger
-										.debug("the user can access this URI");
-							} else {
-								this.logger
-										.debug("the user cannot access this URI");
-
-								JsonResponse jsonResponse = JsonResponse
-										.error(this.getGson().toJson(userVo),
-												this.getWebContextHolder()
-														.getMessage(
-																"security.validation.forbiddenAction",
-																null));
-								jsonResponse
-										.setAction(JsonResponse.ACTION_REFRESH_USER);
-
-								response.getOutputStream().write(
-										this.getGson().toJson(jsonResponse)
-												.getBytes());
-
-								return false;
-							}
+//							if (userVo.canAccess(uri)) {
+//								this.logger
+//										.debug("the user can access this URI");
+//							} else {
+//								this.logger
+//										.debug("the user cannot access this URI");
+//
+//								JsonResponse jsonResponse = JsonResponse
+//										.error(this.getGson().toJson(userVo),
+//												this.getWebContextHolder()
+//														.getMessage(
+//																"security.validation.forbiddenAction",
+//																null));
+//								jsonResponse
+//										.setAction(JsonResponse.ACTION_REFRESH_USER);
+//
+//								response.getOutputStream().write(
+//										this.getGson().toJson(jsonResponse)
+//												.getBytes());
+//
+//								return false;
+//							}
 						} else {
 							this.logger
 									.debug("the handler doesn't requires to validate the URI");

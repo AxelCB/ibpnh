@@ -77,9 +77,8 @@ public class RoleTypeDaoJDOImpl extends AbstractDao<RoleType,RoleTypeVo> impleme
         RoleType roleType = null;
 
         Query query = pm.newQuery(this.getClazz());
-        query.setFilter("deleted == FALSE");
-        query.setFilter("");
-        query.declareParameters("String usernameParam");
+        query.setFilter("deleted == false && roleTypeEnum == roleTypeEnumParam");
+        query.declareParameters("E_RoleType roleTypeEnumParam");
         query.setUnique(Boolean.TRUE);
         try{
             roleType = (RoleType) query.execute(roleTypeEnum);

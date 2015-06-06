@@ -10,6 +10,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import javax.jdo.Query;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -151,6 +152,9 @@ public class ParameterDaoImpl extends AbstractDao<Parameter, ParameterVo>
 
 				return null;
 			}
+
+			Query query = pm.newQuery(this.getClazz());
+			query.setFilter("deleted == false");
 
 			// builds the query
 			/*

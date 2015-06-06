@@ -37,7 +37,7 @@ public class RoleFunctionVo extends AbstractVo implements Serializable {
 	/**
 	 * Enabled flag.
 	 */
-	private Boolean enabled;
+	private Boolean enabled = Boolean.TRUE;
 
 	/**
 	 * Cause of the disqualification of the user for this function.

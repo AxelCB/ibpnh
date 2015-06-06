@@ -20,6 +20,9 @@ ibpnhModules.factory('UserService', function(IbpnhService){
 		},
 		search: function (params, successFn, errorFn) {
 			return IbpnhService.authPost('/user/search.json', params, successFn, errorFn);
-		}
+		},
+		listRoleTypeForCreation: function(successFn, errorFn) {
+			return IbpnhService.authPost('/user/listRoleTypeForCreation.json', "", successFn, errorFn);
+		},
 	};
 });

@@ -177,8 +177,8 @@ public abstract class AbstractDao<T extends I_Model, E extends AbstractVo>
      *            the total items per page
      * @return
      */
-    protected Integer getPageFirstResult(Long page, Long itemsPerPage) {
-        return ((Long) ((page - 1) * itemsPerPage)).intValue();
+    protected Long getPageFirstResult(Long page, Long itemsPerPage) {
+        return ((page - 1) * itemsPerPage);
     }
 
     /**
@@ -272,7 +272,7 @@ public abstract class AbstractDao<T extends I_Model, E extends AbstractVo>
         this.logger.debug("generating list all query");
 
         Query query = pm.newQuery(this.getClazz());
-        query.setFilter("deleted == FALSE");
+        query.setFilter("deleted == false");
 
         return query;
     }
@@ -537,21 +537,20 @@ public abstract class AbstractDao<T extends I_Model, E extends AbstractVo>
         this.logger.debug("listing page: {}", paginatedRequestVo.getPage());
 
         PaginatedListVo<E> paginatedListVo = new PaginatedListVo<>();
-        /*
+
         paginatedListVo.setPage(paginatedRequestVo.getPage());
         paginatedListVo.setItemsPerPage(itemsPerPage);
         if (paginatedRequestVo.getFetchTotal()) {
-            paginatedListVo.setTotalItems(this.countAll(em));
+            paginatedListVo.setTotalItems(this.countAll(pm));
         }
 
-        TypedQuery<T> query = em.createQuery(this.getListAllQuery(em, orderVo));
-        query.setFirstResult(this.getPageFirstResult(
-                paginatedRequestVo.getPage(), itemsPerPage));
-        query.setMaxResults(itemsPerPage.intValue());
+        Query query = this.getListAllQuery(pm, orderVo);
+        query.setRange(this.getPageFirstResult(paginatedRequestVo.getPage(), itemsPerPage), itemsPerPage);
 
-        List<T> entities = query.getResultList();
+
+        List<T> entities =(List<T>) query.execute();
         paginatedListVo.setItems(DozerUtils.map(entities, this.getMapMethod()));
-        */
+
         return paginatedListVo;
     }
 
@@ -680,7 +679,7 @@ public abstract class AbstractDao<T extends I_Model, E extends AbstractVo>
         // builds the query
 //        Query query = pm.newQuery(this.getClazz());
 //
-//        query.setFilter("deleted == FALSE");
+//        query.setFilter("deleted == false");
 //        query.setFilter("id == idParam");
 //        query.declareParameters("Long idParam");
 //        query.setUnique(Boolean.TRUE);
@@ -762,6 +761,8 @@ public abstract class AbstractDao<T extends I_Model, E extends AbstractVo>
 
         if (entityVo.getId() == null) {
             entity = this.map(entityVo);
+            entity.setDeleted(Boolean.FALSE);
+            entity = (T) pm.makePersistent(entity);
 
 //            if (entity instanceof I_EntityCreationListener) {
 //                ((I_EntityCreationListener) entity).beforeCreate(em);
@@ -770,20 +771,16 @@ public abstract class AbstractDao<T extends I_Model, E extends AbstractVo>
 
             entity = this.getEntityById(pm, entityVo.getId());
 
+
 //            if (entity instanceof I_EntityUpdateListener) {
 //                ((I_EntityUpdateListener) entity).beforeMap();
 //            }
-            System.out.println(entityVo.getId());
             this.map(entityVo, entity);
 
 //            if (entity instanceof I_EntityUpdateListener) {
 //                ((I_EntityUpdateListener) entity).beforeUpdate(em);
 //            }
         }
-
-        entity.setDeleted(Boolean.FALSE);
-        entity = (T) pm.makePersistent(entity);
-
         return this.map(entity);
     }
 

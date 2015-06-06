@@ -26,33 +26,33 @@ angular.module('ibpnhApp', ['ngRoute','ngAnimate','ngCookies','routes','ibpnhCon
                     _run();
                 }, _run);
 
-            $rootScope.generatePermissions = function(user) {
-                var permissions = [];
-                var functions = user.role.roleFunctions;
-                var index;
-                for (index = 0; index < user.role.roleFunctions.length; index++) {
-                    if (functions[index].enabled) {
-                        var menuPath = "";
-                        if (functions[index].function.menuName) {
-                            menuPath += "/" + functions[index].function.menuName;
-                        }
-                        if (functions[index].function.submenuName) {
-                            menuPath += "/" + functions[index].function.submenuName;
-                        }
-                        if (functions[index].function.actionName) {
-                            menuPath += "/" + functions[index].function.actionName;
-                        }
-                        if (functions[index].function.name) {
-                            menuPath += ":" + functions[index].function.name;
-                        }
-                        if (permissions.indexOf(menuPath) == -1) {
-                            permissions.push(menuPath);
-                        }
-                    }
-                }
-
-                return permissions;
-            };
+            //$rootScope.generatePermissions = function(user) {
+            //    var permissions = [];
+            //    var functions = user.role.roleFunctions;
+            //    var index;
+            //    for (index = 0; index < user.role.roleFunctions.length; index++) {
+            //        if (functions[index].enabled) {
+            //            var menuPath = "";
+            //            if (functions[index].function.menuName) {
+            //                menuPath += "/" + functions[index].function.menuName;
+            //            }
+            //            if (functions[index].function.submenuName) {
+            //                menuPath += "/" + functions[index].function.submenuName;
+            //            }
+            //            if (functions[index].function.actionName) {
+            //                menuPath += "/" + functions[index].function.actionName;
+            //            }
+            //            if (functions[index].function.name) {
+            //                menuPath += ":" + functions[index].function.name;
+            //            }
+            //            if (permissions.indexOf(menuPath) == -1) {
+            //                permissions.push(menuPath);
+            //            }
+            //        }
+            //    }
+            //
+            //    return permissions;
+            //};
 
             $rootScope.$on('$routeChangeStart', function (event, next, current) {
                 $("body").removeClass("modal-open");
@@ -136,9 +136,9 @@ angular.module('ibpnhApp', ['ngRoute','ngAnimate','ngCookies','routes','ibpnhCon
 
             $rootScope.errorManager = $rootScope.manageError;
 
-            $rootScope.canAccess = function(uri) {
-                return $rootScope.permissions.indexOf(uri) != -1;
-            };
+            //$rootScope.canAccess = function(uri) {
+            //    return $rootScope.permissions.indexOf(uri) != -1;
+            //};
 
             $rootScope.print = function() {
                 window.print();
@@ -181,14 +181,14 @@ angular.module('ibpnhApp', ['ngRoute','ngAnimate','ngCookies','routes','ibpnhCon
                 $rootScope.loggedUser = loggedUser;
 
                 // generate permissions
-                $rootScope.permissions = $rootScope.generatePermissions($rootScope.loggedUser);
+                //$rootScope.permissions = $rootScope.generatePermissions($rootScope.loggedUser);
 
                 // sets the cookie with the user
                 var userCookie = {};
                 angular.copy($rootScope.loggedUser, userCookie);
                 // before, delete all the big data so the cookie is not overflown
-                userCookie.role = null;
-                userCookie.roleType = null;
+                //userCookie.role = null;
+                //userCookie.roleType = null;
                 userCookie.menuOrder = null;
                 // store the cookie
                 $cookieStore.put("loggedUser", userCookie);
@@ -259,7 +259,7 @@ angular.module('ibpnhApp', ['ngRoute','ngAnimate','ngCookies','routes','ibpnhCon
                         function(response){
                             if (response.ok) {
                                 $rootScope.loggedUser = JSON.parse(response.data);
-                                $rootScope.permissions = $rootScope.generatePermissions($rootScope.loggedUser);
+                                //$rootScope.permissions = $rootScope.generatePermissions($rootScope.loggedUser);
                             }
                         },
                         function(){
