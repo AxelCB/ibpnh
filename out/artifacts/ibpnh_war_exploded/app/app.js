@@ -7,7 +7,7 @@
  * Main App Module. Includes all other modules.
  */
 
-angular.module('ibpnhApp', ['ngRoute','ngAnimate','ngCookies','routes','ibpnhControllers','filters','services']).
+angular.module('ibpnhApp', ['ngRoute','ngAnimate','ngCookies','routes','ibpnhControllers','filters','services','directives']).
     //, 'services', 'ui.bootstrap'
     config(['$routeProvider', function($routeProvider) {
     }])

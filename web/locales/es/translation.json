@@ -321,7 +321,7 @@
 	"user": {
 	  	"label":{
 			"username":"Nombre de Usuario",
-		    "password":"Contraseña",
+		    "password":"Contraseña"
 		},
 		"column": {
 			"username": "Nombre de Usuario",

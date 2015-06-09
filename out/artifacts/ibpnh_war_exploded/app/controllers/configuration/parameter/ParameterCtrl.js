@@ -10,6 +10,7 @@ ibpnhControllers.controller('ParameterCtrl',['$scope', '$rootScope', 'ParameterS
 		$scope.roleType = {};
 		$scope.parameters = [];
 		$scope.editing = false;
+		$scope.parameterTypeEnumsList=[];
 	
 		var paginationHelper;
 		
@@ -120,7 +121,10 @@ ibpnhControllers.controller('ParameterCtrl',['$scope', '$rootScope', 'ParameterS
 		$scope.initialize = function() {
 	
 			$scope.editing = false;
-			$scope.parameter = null;
+			$scope.parameter = {'fixed':true,'global':true};
+			if($scope.parameterTypeEnumsList.length>0){
+				$scope.parameter.type=parameterTypeEnumsList[0];
+			}
 
 				//if ($rootScope.canAccess('/configuration/parameter:listParameter')) {
 			$scope.list();

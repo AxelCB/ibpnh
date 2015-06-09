@@ -48,7 +48,7 @@
 		</bean>
 
 		<!-- DAOs that need initializing -->
-		<bean id="parameterDao"	class="org.kairos.ibpnh.dao.configuration.parameter.ParameterDaoImpl" scope="prototype"  />
+		<bean id="parameterDao"	class="org.kairos.ibpnh.dao.configuration.parameter.ParameterDaoImpl" scope="prototype" init-method="init" />
 		<!--init-method="init"-->
 		
 		<!-- Default Charset Post Processor -->

@@ -72,5 +72,5 @@ public interface I_ParameterDao extends I_Dao<ParameterVo> {
 	 * @param id
 	 * @return
 	 */
-	public boolean checkNameUniqueness(JDOPersistenceManager pm, String name, String id);
+	public boolean checkNameUniqueness(JDOPersistenceManager pm, String name, String excludeId);
 }

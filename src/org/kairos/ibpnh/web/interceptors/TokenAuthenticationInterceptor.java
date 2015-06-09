@@ -63,10 +63,9 @@ public class TokenAuthenticationInterceptor extends HandlerInterceptorAdapter {
 			"/mobile", // the mobile WS don need to be authenticated with this
 			"/images", //any images
 			"/trackingService", // tracking service do not need authentication
-			"/lang", //just to know the a
-			// ccept language
+			"/lang", //just to know the accept language
 			"/user/init" ,// the dashboard is public
-			"/user/addFunctions" // the dashboard is public
+			"/dailyDevotional/lastDevotionals" // the dashboard is public
 	};
 
 	/**

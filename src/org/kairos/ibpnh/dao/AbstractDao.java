@@ -545,7 +545,8 @@ public abstract class AbstractDao<T extends I_Model, E extends AbstractVo>
         }
 
         Query query = this.getListAllQuery(pm, orderVo);
-        query.setRange(this.getPageFirstResult(paginatedRequestVo.getPage(), itemsPerPage), itemsPerPage);
+        query.setRange(this.getPageFirstResult(paginatedRequestVo.getPage(), itemsPerPage),
+                this.getPageFirstResult(paginatedRequestVo.getPage(), itemsPerPage)+itemsPerPage);
 
 
         List<T> entities =(List<T>) query.execute();

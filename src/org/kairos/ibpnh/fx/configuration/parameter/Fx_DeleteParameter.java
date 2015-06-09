@@ -52,7 +52,7 @@ public class Fx_DeleteParameter extends AbstractFxImpl implements I_Fx {
 					this.getRealMessageSolver().getMessage(
 							"default.entity.deleted.ok",
 							new String[]{this.getRealMessageSolver()
-									.getMessage("entity.parameter.parametername",
+									.getMessage("entity.parameter.name",
 											null)}));
 		} catch (Exception e) {
 			this.logger.error("error executing Fx_DeleteFunction._execute()", e);

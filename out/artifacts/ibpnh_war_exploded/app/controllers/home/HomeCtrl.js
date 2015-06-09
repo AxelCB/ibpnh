@@ -22,5 +22,7 @@ ibpnhControllers.controller('HomeCtrl',['$scope', '$rootScope', 'DailyDevotional
 				},$scope.errorManager);
 		}
 
+		$scope.lastDevotionals();
+
 	}
 ]);

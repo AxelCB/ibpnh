@@ -8,11 +8,13 @@ ibpnhControllers.controller('DailyDevotionalCtrl',['$scope', '$rootScope', 'Dail
 	function($scope, $rootScope, DailyDevotionalService, $filter) {
 		$scope.dailyDevotional = {};
 		$scope.editing = false;
+		$scope.dailyDevotionalDate = new Date();
 	
 		var paginationHelper;
 		
 		$scope.create = function() {
 			if ($scope.myForm.$valid) {
+				$scope.dailyDevotional.date = DateFormatHelper.fullDateTimeToString($scope.dailyDevotionalDate);
 				DailyDevotionalService.create($scope.dailyDevotional,
 				function(response) {
 					if (response.ok) {
@@ -54,6 +56,7 @@ ibpnhControllers.controller('DailyDevotionalCtrl',['$scope', '$rootScope', 'Dail
 	
 		$scope.modify = function() {
 			if ($scope.myForm.$valid) {
+				$scope.dailyDevotional.date = DateFormatHelper.fullDateTimeToString($scope.dailyDevotionalDate);
 				DailyDevotionalService.modify($scope.dailyDevotional, function(response) {
 					if (response.ok) {
 						// dailyDevotional successfully edited

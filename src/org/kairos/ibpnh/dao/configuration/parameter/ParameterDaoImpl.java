@@ -94,11 +94,11 @@ public class ParameterDaoImpl extends AbstractDao<Parameter, ParameterVo>
 		List<ParameterVo> parametersVo = this.map(parameters);
 
 		// removes all the current load parameters on the cache
-		Set<String> currentLoadedParameters = this.getParameterCacheManager()
-				.keySet();
-		for (String name : currentLoadedParameters) {
-			this.getParameterCacheManager().removeParameter(name);
-		}
+//		Set<String> currentLoadedParameters = this.getParameterCacheManager()
+//				.keySet();
+//		for (String name : currentLoadedParameters) {
+//			this.getParameterCacheManager().removeParameter(name);
+//		}
 
 		// puts the parameters currently stated as global onto the cache
 		for (ParameterVo parameterVo : parametersVo) {
@@ -109,9 +109,9 @@ public class ParameterDaoImpl extends AbstractDao<Parameter, ParameterVo>
 	}
 
 	@Override
-	public boolean checkNameUniqueness(JDOPersistenceManager pm, String name, String id) {
+	public boolean checkNameUniqueness(JDOPersistenceManager pm, String name, String excludeId) {
 		ParameterVo parameterVo = this.getByName(pm,name);
-		if(parameterVo!=null || parameterVo.getId().equals(id)){
+		if(parameterVo==null || parameterVo.getId().equals(excludeId)){
 			return Boolean.TRUE;
 		}else{
 			return Boolean.FALSE;

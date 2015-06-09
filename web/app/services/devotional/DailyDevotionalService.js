@@ -22,7 +22,7 @@ ibpnhModules.factory('DailyDevotionalService', function(IbpnhService){
 			return IbpnhService.authPost('/dailyDevotional/search.json', params, successFn, errorFn);
 		},
 		lastDevotionals: function(params,successFn, errorFn) {
-			return IbpnhService.authPost('/dailyDevotional/lastDevotionals.json',params, successFn, errorFn);
+			return IbpnhService.post('/dailyDevotional/lastDevotionals.json',params, successFn, errorFn);
 		},
 	};
 });

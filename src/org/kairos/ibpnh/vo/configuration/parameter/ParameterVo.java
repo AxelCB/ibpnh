@@ -50,13 +50,13 @@ public class ParameterVo extends AbstractVo {
 	public final static String LOCALE_LANGUAGE_TAG = "locale.language.tag";
 	public final static String USER_REGISTRATION = "user.registration";
 	public final static String DATE_FORMAT = "date.format";
-	public final static String DATETIME_FORMAT = "datetime_format";
-	public final static String DATETIME_FORMAT_WITHOUT_MILLISECONDS = "datetime.format.without.milliseconds";
-	public final static String DATETIME_FORMAT_WITHOUT_SECONDS = "datetime.format.without.seconds";
-	public final static String DATETIME_FORMAT_WITHOUT_SECONDS_AND_YEAR = "datetime.format.without.seconds.and.year";
+	public final static String DATETIME_FORMAT = "date.time.format";
+	public final static String DATETIME_FORMAT_WITHOUT_MILLISECONDS = "date.time.format.without.milliseconds";
+	public final static String DATETIME_FORMAT_WITHOUT_SECONDS = "date.time.format.without.seconds";
+	public final static String DATETIME_FORMAT_WITHOUT_SECONDS_AND_YEAR = "date.time.format.without.seconds.and.year";
 	public final static String HOUR_FORMAT = "hour.format";
 	public final static String NATIVE_SQL_DATE_FORMAT = "native.sql.date.format";
-	public final static String NATIVE_SQL_DATE_TIME_FORMAT = "native.sql.datetime.format";
+	public final static String NATIVE_SQL_DATE_TIME_FORMAT = "native.sql.date.time.format";
 	public final static String SMS_WS_DATE_FORMAT = "sms.ws.date.format";
 	public final static String JSON_DATE_TIME_EXCHANGE_FORMAT = "json.date.time.exchange.format";
 

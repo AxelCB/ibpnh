@@ -313,7 +313,7 @@ public class DailyDevotionalCtrl implements I_URIValidator {
         try {
             JsonObject jsonObject = this.getGson().fromJson(data,JsonObject.class);
             Long lastDevotionalsAmount = jsonObject.get("amount").getAsLong();
-            Date date = this.getDateUtils().parseDate(jsonObject.get("date").getAsString());
+            Date date = this.getDateUtils().parseDate(jsonObject.get("today").getAsString());
             List<DailyDevotionalVo> dailyDevotionalVos =
                     this.getDailyDevotionalDao().listLastDevotionals(pm,lastDevotionalsAmount,date);
 

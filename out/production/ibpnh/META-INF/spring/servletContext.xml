@@ -78,7 +78,7 @@ Repository and Service layers
 		<bean id="passwordUtils" class="org.kairos.ibpnh.utils.PasswordUtils" scope="singleton" />
 
 		<!--Date Utils-->
-		<bean id="dateUtils" class="org.kairos.ibpnh.utils.DateUtilsImpl" scope="singleton" />
+		<bean id="dateUtils" class="org.kairos.ibpnh.utils.DateUtilsImpl" scope="singleton" init-method="init" />
 		<!-- BigDecimal Utils -->
 		<!--<bean id="bigDecimalUtils" class="org.universe.core.utils.BigDecimalUtils" scope="singleton" />-->
 

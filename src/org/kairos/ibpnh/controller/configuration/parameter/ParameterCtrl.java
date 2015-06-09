@@ -206,8 +206,8 @@ public class ParameterCtrl implements I_URIValidator {
 //                    jsonObject.get("parameter"), ParameterVo.class);
 //            parameterVo.setType(parameterTypeEnum);
 
-                    Fx_CreateParameter fx = this.getFxFactory().getNewFxInstance(
-                            Fx_CreateParameter.class);
+            Fx_CreateParameter fx = this.getFxFactory().getNewFxInstance(
+                    Fx_CreateParameter.class);
 
             fx.setVo(parameterVo);
             fx.setPm(pm);

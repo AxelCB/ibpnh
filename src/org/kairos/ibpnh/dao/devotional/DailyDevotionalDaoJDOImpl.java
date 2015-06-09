@@ -85,9 +85,8 @@ public class DailyDevotionalDaoJDOImpl extends AbstractDao<DailyDevotional,Daily
 
         Query query = pm.newQuery(this.getClazz());
 
-        query.setFilter("deleted == false && date >= dateParam");
-        query.declareParameters("Date dateParam");
-        query.setUnique(Boolean.TRUE);
+        query.setFilter("deleted == false && date <= dateParam");
+        query.declareParameters("java.util.Date dateParam");
         query.setRange(0,amount);
         try{
             dailyDevotionals = (List<DailyDevotional>) query.execute(date);

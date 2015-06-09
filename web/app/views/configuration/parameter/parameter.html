@@ -78,13 +78,22 @@
             <thead>
             <tr>
                 <th class="col-xs-3">{{ 'parameter.column.name' | translate }}</th>
-                <th class="col-xs-3">{{ 'parameter.column.roleType' | translate }}</th>
+                <th class="col-xs-3">{{ 'parameter.column.value' | translate }}</th>
+                <!--<th class="col-xs-3">{{ 'parameter.column.description' | translate }}</th>-->
+                <!--<th class="col-xs-3">{{ 'parameter.column.type' | translate }}</th>-->
+                <th class="col-xs-3">{{ 'parameter.column.fixed' | translate }}</th>
+                <th class="col-xs-3">{{ 'parameter.column.global' | translate }}</th>
                 <th class="col-xs-3">{{ 'default.operations' | translate }}</th>
             </tr>
             </thead>
             <tbody>
             <tr ng-repeat="parameter in parameters" >
                 <td class="col-xs-3">{{ parameter.name }}</td>
+                <td class="col-xs-4">{{ parameter.value }}</td>
+                <!--<td class="col-xs-3">{{ parameter.description }}</td>-->
+                <!--<td class="col-xs-3">{{ parameter.type }}</td>-->
+                <td class="col-xs-1">{{ parameter.fixed }}</td>
+                <td class="col-xs-1">{{ parameter.global }}</td>
                 <td class="col-xs-3">
                     <span class="glyphicon glyphicon-edit operation" ng-click="edit(parameter);" ng-show="!editing"></span>
                     <!--canAccess('/configuration/parameter:modifyUser') &&-->
