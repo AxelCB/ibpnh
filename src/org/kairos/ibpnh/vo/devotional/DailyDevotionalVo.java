@@ -67,4 +67,12 @@ public class DailyDevotionalVo extends AbstractVo {
     public void setDate(Date date) {
         this.date = date;
     }
+
+    public String getShortDescription() {
+        return shortDescription;
+    }
+
+    public void setShortDescription(String shortDescription) {
+        this.shortDescription = shortDescription;
+    }
 }

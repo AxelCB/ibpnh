@@ -17,8 +17,11 @@
                     <li> <a href="#/devocionales"><span class="glyphicon glyphicon-road"></span>Devocionales</a></li>
                     <li> <a href="#/gbcs"><span class="glyphicon glyphicon-education"></span>GBCs</a></li>
                     <li> <a href="#/contacto"><span class="glyphicon glyphicon-edit"></span>Contacto</a></li>
-                    <li> <a href="#/login">Login</a></li>
                 </ul>
+
+                <p class="navbar-text pull-right" ng-hide="loggedUser">
+                    <a href="#/login" class="navbar-link">Login</a>
+                </p>
 
                 <!--Menu for logged users-->
                 <ul class="nav navbar-nav" ng-show="loggedUser">
@@ -28,9 +31,6 @@
                         || loggedUser.role.roleType.roleTypeEnum =='PASTOR'">
                         <a href="#/devotional">Devocionales</a>
                     </li>
-                    <!--<li> <a href="#/ministerios"><span class="glyphicon glyphicon-globe"></span>Ministerios</a></li>-->
-                    <!--<li> <a href="#/devocionales"><span class="glyphicon glyphicon-road"></span>Devocionales</a></li>-->
-                    <!--<li> <a href="#/gbcs"><span class="glyphicon glyphicon-education"></span>GBCs</a></li>-->
                     <li> <a href="#/contacto"><span class="glyphicon glyphicon-edit"></span>Contacto</a></li>
                 </ul>
 

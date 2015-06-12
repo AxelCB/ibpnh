@@ -123,7 +123,7 @@ ibpnhControllers.controller('ParameterCtrl',['$scope', '$rootScope', 'ParameterS
 			$scope.editing = false;
 			$scope.parameter = {'fixed':true,'global':true};
 			if($scope.parameterTypeEnumsList.length>0){
-				$scope.parameter.type=parameterTypeEnumsList[0];
+				$scope.parameter.type=$scope.parameterTypeEnumsList[0];
 			}
 
 				//if ($rootScope.canAccess('/configuration/parameter:listParameter')) {

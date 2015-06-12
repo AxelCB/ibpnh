@@ -321,7 +321,7 @@
 	"user": {
 	  	"label":{
 			"username":"Nombre de Usuario",
-		    "password":"Contraseña",
+		    "password":"Contraseña"
 		},
 		"column": {
 			"username": "Nombre de Usuario",
@@ -521,6 +521,26 @@
 			}
 		}
 	},
-
+  	"dailyDevotional":{
+		"label":{
+			"title":"Título",
+		  	"imageUrl":"Ubicación de la imagen",
+		  	"shortDescription":"Descripción Corta o Resumen",
+		  	"description":"Descripción",
+		  	"date":"Fecha"
+		},
+	  	"placeholder":{
+			"title":"Ingrese un Título",
+		  	"imageUrl":"Ingrese la ubicación de la imagen",
+		  	"shortDescription":"Ingrese la descripción Corta o el Resumen",
+			"description":"Ingrese la descripción",
+			"date":"Ingrese la fecha"
+		},
+	  	"column":{
+		  "title":"Título",
+		  "imageUrl":"Imagen",
+		  "date":"Fecha"
+		}
+	},
   	"ant mark":{"desc":"Ant append text after this, allways remain it at bottom"}
 }

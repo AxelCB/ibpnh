@@ -161,6 +161,8 @@ public class UserCtrl implements I_URIValidator {
                 adminRoleTypeVo.setName("Administrador");
                 adminRoleTypeVo.setRoleTypeEnum(E_RoleType.ADMIN);
 
+                this.getRoleTypeDao().persist(pm,adminRoleTypeVo);
+
                 //We create the necessary functions for the admin role type
 //                List<FunctionVo> functions = new ArrayList<FunctionVo>();
 
@@ -218,6 +220,8 @@ public class UserCtrl implements I_URIValidator {
 //                    adminRoleTypeVo.getRoleTypeFunctions().add(roleTypeFunctionVo);
 //                }
 
+                adminRoleTypeVo=this.getRoleTypeDao().getByRoleTypeEnum(pm,E_RoleType.ADMIN);
+
                 //We create the Admin role
                 RoleVo adminRoleVo = new RoleVo();
                 adminRoleVo.setRoleType(adminRoleTypeVo);
@@ -240,7 +244,7 @@ public class UserCtrl implements I_URIValidator {
 
             this.logger.debug("executing Init_User(Admin)");
         } catch (Exception e) {
-            this.logger.debug("unexpected error", e);
+            this.logger.error("unexpected error", e);
 
             jsonResponse = this.getWebContextHolder().unexpectedErrorResponse(
                     ErrorCodes.ERROR_UNEXPECTED);
