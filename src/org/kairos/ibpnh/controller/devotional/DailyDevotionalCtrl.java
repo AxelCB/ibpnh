@@ -317,7 +317,9 @@ public class DailyDevotionalCtrl implements I_URIValidator {
             List<DailyDevotionalVo> dailyDevotionalVos =
                     this.getDailyDevotionalDao().listLastDevotionals(pm,lastDevotionalsAmount,date);
 
-            jsonResponse = JsonResponse.ok(this.getGson().toJson(dailyDevotionalVos));
+            String dataResponse = this.getGson().toJson(dailyDevotionalVos);
+            jsonResponse = JsonResponse.ok(dataResponse);
+            this.logger.error(this.getGson().toJson(jsonResponse));
         } catch (Exception e) {
             this.logger.debug("unexpected error", e);
 

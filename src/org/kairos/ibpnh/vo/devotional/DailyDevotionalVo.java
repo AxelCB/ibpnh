@@ -1,9 +1,7 @@
 package org.kairos.ibpnh.vo.devotional;
 
-import org.kairos.ibpnh.model.I_Model;
 import org.kairos.ibpnh.vo.AbstractVo;
 
-import javax.jdo.annotations.*;
 import java.util.Date;
 
 /**
@@ -35,6 +33,13 @@ public class DailyDevotionalVo extends AbstractVo {
      * Devotional's date
      */
     private Date date;
+
+    /**
+     * Default Contstructor
+     */
+    public DailyDevotionalVo() {
+        super();
+    }
 
     public String getTitle() {
         return title;

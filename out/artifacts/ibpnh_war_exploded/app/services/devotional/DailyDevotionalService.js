@@ -24,5 +24,8 @@ ibpnhModules.factory('DailyDevotionalService', function(IbpnhService){
 		lastDevotionals: function(params,successFn, errorFn) {
 			return IbpnhService.post('/dailyDevotional/lastDevotionals.json',params, successFn, errorFn);
 		},
+		listView: function (params, successFn, errorFn) {
+			return IbpnhService.post('/dailyDevotional/list.json', params, successFn, errorFn);
+		},
 	};
 });
