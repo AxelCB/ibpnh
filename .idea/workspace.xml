@@ -2,31 +2,77 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a37d8b79-bbdd-4445-b1a5-713303e36029" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/app/controllers/devotional/DevotionalCtrl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/utils/singleton/BlobstoreServiceFactoryBean.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/utils/singleton/ImagesServiceFactoryBean.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/app/views/devotional/detalleDevocional.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/model/devotional/DailyDevotional.class" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/model/devotional/DailyDevotional.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/model/devotional/DailyDevotional.class" afterPath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/model/devotional/DailyDevotional.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/controller/devotional/DailyDevotionalCtrl$1.class" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/controller/devotional/DailyDevotionalCtrl$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/controller/devotional/DailyDevotionalCtrl$1.class" afterPath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/controller/devotional/DailyDevotionalCtrl$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/controller/devotional/DailyDevotionalCtrl.class" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/controller/devotional/DailyDevotionalCtrl.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/controller/devotional/DailyDevotionalCtrl.class" afterPath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/controller/devotional/DailyDevotionalCtrl.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/vo/devotional/DailyDevotionalVo.class" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/vo/devotional/DailyDevotionalVo.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/vo/devotional/DailyDevotionalVo.class" afterPath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/vo/devotional/DailyDevotionalVo.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/fx/devotional/Fx_DeleteDailyDevotional.class" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/fx/devotional/Fx_DeleteDailyDevotional.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/fx/devotional/Fx_DeleteDailyDevotional.class" afterPath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/fx/devotional/Fx_DeleteDailyDevotional.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/fx/login/Fx_Login.class" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/fx/login/Fx_Login.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/fx/login/Fx_Login.class" afterPath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/fx/login/Fx_Login.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/fx/devotional/Fx_ModifyDailyDevotional.class" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/fx/devotional/Fx_ModifyDailyDevotional.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/fx/devotional/Fx_ModifyDailyDevotional.class" afterPath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/fx/devotional/Fx_ModifyDailyDevotional.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/json/GsonSpringFactoryBean.class" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/json/GsonSpringFactoryBean.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/json/GsonSpringFactoryBean.class" afterPath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/json/GsonSpringFactoryBean.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/dao/I_Dao.class" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/dao/I_Dao.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/dao/I_Dao.class" afterPath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/dao/I_Dao.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/web/interceptors/TokenAuthenticationInterceptor.class" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/web/interceptors/TokenAuthenticationInterceptor.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/web/interceptors/TokenAuthenticationInterceptor.class" afterPath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/web/interceptors/TokenAuthenticationInterceptor.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/controller/user/UserCtrl.class" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/controller/user/UserCtrl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/controller/user/UserCtrl.class" afterPath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/controller/user/UserCtrl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/kairos/ibpnh/controller/BlobstoreCtrl.java" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/controller/BlobstoreCtrl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/services/BlobstoreService.js" afterPath="$PROJECT_DIR$/web/app/services/BlobstoreService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/kairos/ibpnh/model/devotional/DailyDevotional.java" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/model/devotional/DailyDevotional.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/kairos/ibpnh/controller/devotional/DailyDevotionalCtrl.java" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/controller/devotional/DailyDevotionalCtrl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/app/controllers/devotional/DailyDevotionalCtrl.js" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/app/controllers/devotional/DailyDevotionalCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/controllers/devotional/DailyDevotionalCtrl.js" afterPath="$PROJECT_DIR$/web/app/controllers/devotional/DailyDevotionalCtrl.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/app/services/devotional/DailyDevotionalService.js" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/app/services/devotional/DailyDevotionalService.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/services/devotional/DailyDevotionalService.js" afterPath="$PROJECT_DIR$/web/app/services/devotional/DailyDevotionalService.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/kairos/ibpnh/vo/devotional/DailyDevotionalVo.java" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/vo/devotional/DailyDevotionalVo.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/kairos/ibpnh/fx/devotional/Fx_DeleteDailyDevotional.java" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/fx/devotional/Fx_DeleteDailyDevotional.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/kairos/ibpnh/fx/devotional/Fx_ModifyDailyDevotional.java" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/fx/devotional/Fx_ModifyDailyDevotional.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/kairos/ibpnh/json/GsonSpringFactoryBean.java" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/json/GsonSpringFactoryBean.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/app/controllers/home/HomeCtrl.js" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/app/controllers/home/HomeCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/controllers/home/HomeCtrl.js" afterPath="$PROJECT_DIR$/web/app/controllers/home/HomeCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/kairos/ibpnh/dao/I_Dao.java" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/dao/I_Dao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/app/services/IbpnhService.js" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/app/services/IbpnhService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/services/IbpnhService.js" afterPath="$PROJECT_DIR$/web/app/services/IbpnhService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/kairos/ibpnh/controller/configuration/parameter/ParameterCtrl.java" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/controller/configuration/parameter/ParameterCtrl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/kairos/ibpnh/web/interceptors/TokenAuthenticationInterceptor.java" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/web/interceptors/TokenAuthenticationInterceptor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/appengine-web.xml" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/appengine-web.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/appengine-web.xml" afterPath="$PROJECT_DIR$/web/WEB-INF/appengine-web.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/kairos/ibpnh/controller/user/UserCtrl.java" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/controller/user/UserCtrl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/app/app.js" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/app/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/app.js" afterPath="$PROJECT_DIR$/web/app/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/META-INF/spring/ctrlServletContext.xml" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/META-INF/spring/ctrlServletContext.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ibpnh/META-INF/spring/ctrlServletContext.xml" afterPath="$PROJECT_DIR$/out/production/ibpnh/META-INF/spring/ctrlServletContext.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/META-INF/spring/ctrlServletContext.xml" afterPath="$PROJECT_DIR$/src/META-INF/spring/ctrlServletContext.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/app/views/devotional/devocionales.html" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/app/views/devotional/devocionales.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/views/devotional/devocionales.html" afterPath="$PROJECT_DIR$/web/app/views/devotional/devocionales.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/app/views/devotional/devotional.html" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/app/views/devotional/devotional.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/views/devotional/devotional.html" afterPath="$PROJECT_DIR$/web/app/views/devotional/devotional.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/META-INF/dozer/dozerGlobalConf.xml" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/META-INF/dozer/dozerGlobalConf.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ibpnh/META-INF/dozer/dozerGlobalConf.xml" afterPath="$PROJECT_DIR$/out/production/ibpnh/META-INF/dozer/dozerGlobalConf.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/META-INF/dozer/dozerGlobalConf.xml" afterPath="$PROJECT_DIR$/src/META-INF/dozer/dozerGlobalConf.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/resources/customCSS/estilosnico.css" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/resources/customCSS/estilosnico.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/resources/customCSS/estilosnico.css" afterPath="$PROJECT_DIR$/web/resources/customCSS/estilosnico.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/app/views/layout/home.html" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/app/views/layout/home.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/views/layout/home.html" afterPath="$PROJECT_DIR$/web/app/views/layout/home.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/index.html" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/index.html" afterPath="$PROJECT_DIR$/web/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/log4j.properties" afterPath="$PROJECT_DIR$/src/log4j.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/META-INF/spring/mainContext.xml" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/META-INF/spring/mainContext.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ibpnh/META-INF/spring/mainContext.xml" afterPath="$PROJECT_DIR$/out/production/ibpnh/META-INF/spring/mainContext.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/META-INF/spring/mainContext.xml" afterPath="$PROJECT_DIR$/src/META-INF/spring/mainContext.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/app/routes/routes.js" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/app/routes/routes.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/routes/routes.js" afterPath="$PROJECT_DIR$/web/app/routes/routes.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/web.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/locales/es/translation.json" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/locales/es/translation.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/locales/es/translation.json" afterPath="$PROJECT_DIR$/web/locales/es/translation.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ibpnh.iws" />
@@ -50,115 +96,57 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="9" column="49" selection-start-line="9" selection-start-column="49" selection-end-line="9" selection-end-column="49" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DevotionalCtrl.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/app/controllers/devotional/DevotionalCtrl.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="13" column="39" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DailyDevotionalCtrl.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="DailyDevotionalCtrl.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/controller/devotional/DailyDevotionalCtrl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="319" column="0" selection-start-line="319" selection-start-column="0" selection-end-line="319" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.39116204">
+              <caret line="268" column="30" selection-start-line="268" selection-start-column="30" selection-end-line="269" selection-end-column="30" />
               <folding>
-                <element signature="e#11864#11865#0" expanded="true" />
-                <element signature="e#11891#11892#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HandlerMethodInvoker.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/web/WEB-INF/lib/spring-web-3.2.13.RELEASE.jar!/org/springframework/web/bind/annotation/support/HandlerMethodInvoker.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.1153846">
-              <caret line="161" column="149" selection-start-line="161" selection-start-column="139" selection-end-line="161" selection-end-column="149" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AnnotationMethodHandlerAdapter.class" pinned="false" current-in-tab="true">
-        <entry file="jar://$PROJECT_DIR$/web/WEB-INF/lib/spring-webmvc-3.2.13.RELEASE.jar!/org/springframework/web/servlet/mvc/annotation/AnnotationMethodHandlerAdapter.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4626506">
-              <caret line="714" column="59" selection-start-line="714" selection-start-column="59" selection-end-line="714" selection-end-column="59" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Gson.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/web/WEB-INF/lib/gson-2.3.1.jar!/com/google/gson/Gson.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.6153846">
-              <caret line="297" column="0" selection-start-line="297" selection-start-column="0" selection-end-line="297" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="web.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
+      <file leaf-file-name="routes.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/app/routes/routes.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="55" column="22" selection-start-line="55" selection-start-column="22" selection-end-line="55" selection-end-column="22" />
+              <caret line="23" column="38" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="51" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Fx_ModifyDailyDevotional.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/fx/devotional/Fx_ModifyDailyDevotional.java">
+      <file leaf-file-name="detalleDevocional.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/app/views/devotional/detalleDevocional.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-              <folding>
-                <element signature="e#4025#4026#0" expanded="true" />
-                <element signature="e#4072#4073#0" expanded="true" />
-                <element signature="e#4143#4144#0" expanded="true" />
-                <element signature="e#4165#4166#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AbstractDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/dao/AbstractDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="787" column="7" selection-start-line="787" selection-start-column="7" selection-end-line="787" selection-end-column="7" />
+            <state vertical-scroll-proportion="-13.333333">
+              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FxFactoryImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/fx/FxFactoryImpl.java">
+      <file leaf-file-name="DailyDevotionalCtrl.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/app/controllers/devotional/DailyDevotionalCtrl.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+            <state vertical-scroll-proportion="-17.038462">
+              <caret line="29" column="45" selection-start-line="29" selection-start-column="45" selection-end-line="29" selection-end-column="45" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Html5" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -171,56 +159,56 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/fx/devotional/Fx_DeleteDailyDevotional.java" />
-        <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/fx/devotional/Fx_ModifyDailyDevotional.java" />
-        <option value="$PROJECT_DIR$/src/META-INF/spring/daoServletContext.xml" />
-        <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/model/devotional/DailyDevotional.java" />
-        <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/fx/user/Fx_CreateUser.java" />
-        <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/json/E_DateFormat.java" />
-        <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/utils/CollectionUtils.java" />
-        <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/utils/I_DateUtils.java" />
-        <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/utils/DateUtilsImpl.java" />
-        <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/dao/devotional/I_DailyDevotionalDao.java" />
-        <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/dao/user/UserDaoJDOImpl.java" />
-        <option value="$PROJECT_DIR$/web/app/controllers/configuration/user/UserCtrl.js" />
-        <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/fx/configuration/parameter/Fx_ModifyUser.java" />
-        <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/fx/configuration/parameter/Fx_CreateParameter.java" />
-        <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/fx/configuration/parameter/Fx_ModifyParameter.java" />
         <option value="$PROJECT_DIR$/web/app/services/configuration/parameter/ParameterService.js" />
-        <option value="$PROJECT_DIR$/src/META-INF/spring/ctrlServletContext.xml" />
         <option value="$PROJECT_DIR$/src/META-INF/spring/fxServletContext.xml" />
         <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/dao/configuration/parameter/I_ParameterDao.java" />
-        <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/controller/configuration/parameter/ParameterCtrl.java" />
         <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/fx/configuration/parameter/Fx_DeleteParameter.java" />
         <option value="$PROJECT_DIR$/web/app/views/configuration/parameter/parameter.html" />
-        <option value="$PROJECT_DIR$/web/app/app.js" />
         <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/dao/AbstractDao.java" />
-        <option value="$PROJECT_DIR$/src/META-INF/spring/mainContext.xml" />
         <option value="$PROJECT_DIR$/src/META-INF/spring/servletContext.xml" />
         <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/dao/configuration/parameter/ParameterDaoImpl.java" />
-        <option value="$PROJECT_DIR$/web/app/controllers/home/HomeCtrl.js" />
         <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/vo/configuration/parameter/ParameterVo.java" />
-        <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/json/GsonSpringFactoryBean.java" />
-        <option value="$PROJECT_DIR$/web/app/controllers/devotional/DailyDevotionalCtrl.js" />
         <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/dao/devotional/DailyDevotionalDaoJDOImpl.java" />
         <option value="$PROJECT_DIR$/web/app/views/layout/menu.html" />
-        <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/controller/user/UserCtrl.java" />
-        <option value="$PROJECT_DIR$/src/log4j.properties" />
         <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/model/configuration/parameter/Parameter.java" />
         <option value="$PROJECT_DIR$/web/app/controllers/configuration/parameter/ParameterCtrl.js" />
         <option value="$PROJECT_DIR$/src/META-INF/messages/messages_es.properties" />
-        <option value="$PROJECT_DIR$/web/app/views/devotional/devotional.html" />
-        <option value="$PROJECT_DIR$/web/locales/es/translation.json" />
-        <option value="$PROJECT_DIR$/web/app/views/devotional/devocionales.html" />
-        <option value="$PROJECT_DIR$/web/app/views/layout/home.html" />
-        <option value="$PROJECT_DIR$/web/app/routes/routes.js" />
-        <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/vo/devotional/DailyDevotionalVo.java" />
         <option value="$PROJECT_DIR$/web/app/controllers/devotional/DevotionalCtrl.js" />
-        <option value="$PROJECT_DIR$/web/app/services/devotional/DailyDevotionalService.js" />
-        <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/web/interceptors/TokenAuthenticationInterceptor.java" />
-        <option value="$PROJECT_DIR$/web/index.html" />
         <option value="$PROJECT_DIR$/web/WEB-INF/appengine-web.xml" />
         <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/src/META-INF/spring/ctrlServletContext.xml" />
+        <option value="$PROJECT_DIR$/web/index.html" />
+        <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/model/devotional/DailyDevotional.java" />
+        <option value="$PROJECT_DIR$/web/app/services/BlobstoreService.js" />
+        <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/vo/devotional/DailyDevotionalVo.java" />
+        <option value="$PROJECT_DIR$/web/app/controllers/home/HomeCtrl.js" />
+        <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/json/GsonSpringFactoryBean.java" />
+        <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/utils/singleton/ImageServiceFactoryBean.java" />
+        <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/utils/singleton/BlobstoreServiceFactoryBean.java" />
+        <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/utils/singleton/ImagesServiceFactoryBean.java" />
+        <option value="$PROJECT_DIR$/src/META-INF/spring/mainContext.xml" />
+        <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/fx/devotional/Fx_DeleteDailyDevotional.java" />
+        <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/dao/I_Dao.java" />
+        <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/fx/devotional/Fx_ModifyDailyDevotional.java" />
+        <option value="$PROJECT_DIR$/src/META-INF/dozer/dozerGlobalConf.xml" />
+        <option value="$PROJECT_DIR$/web/locales/es/translation.json" />
+        <option value="$PROJECT_DIR$/web/app/views/devotional/devotional.html" />
+        <option value="$PROJECT_DIR$/web/app/views/devotional/devocionales.html" />
+        <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/controller/user/UserCtrl.java" />
+        <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/web/interceptors/TokenAuthenticationInterceptor.java" />
+        <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/vo/PaginatedSearchRequestVo.java" />
+        <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/vo/PaginatedRequestVo.java" />
+        <option value="$PROJECT_DIR$/web/app/services/devotional/DailyDevotionalService.js" />
+        <option value="$PROJECT_DIR$/web/app/routes/routes.js" />
+        <option value="$PROJECT_DIR$/web/app/views/layout/home.html" />
+        <option value="$PROJECT_DIR$/web/app/app.js" />
+        <option value="$PROJECT_DIR$/web/app/views/devotional/detalleDevocional.html" />
+        <option value="$PROJECT_DIR$/web/resources/customCSS/estilosnico.css" />
+        <option value="$PROJECT_DIR$/web/app/services/IbpnhService.js" />
+        <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/controller/BlobstoreCtrl.java" />
+        <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/controller/configuration/parameter/ParameterCtrl.java" />
+        <option value="$PROJECT_DIR$/src/log4j.properties" />
+        <option value="$PROJECT_DIR$/web/app/controllers/devotional/DailyDevotionalCtrl.js" />
         <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/controller/devotional/DailyDevotionalCtrl.java" />
       </list>
     </option>
@@ -268,6 +256,7 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -314,7 +303,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ng-fileupload-danialfarid" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -332,29 +325,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="WEB-INF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ibpnh" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ibpnh" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
+              <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -373,10 +344,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -398,7 +365,29 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ibpnh" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ibpnh" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -406,10 +395,63 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ibpnh" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ibpnh" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ibpnh" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ibpnh" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ibpnh" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ibpnh" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ibpnh" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ibpnh" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -419,7 +461,7 @@
     <property name="MemberChooser.sorted" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.copyJavadoc" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../ProyectosFacultad/WorkspaceJava/ibpnh" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="recentsLimit" value="5" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -432,20 +474,22 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="OverrideImplement.combined" value="true" />
     <property name="OverrideImplement.overriding.sorted" value="false" />
+    <property name="DefaultHtmlFileTemplate" value="Html5" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.kairos.ibpnh.utils.singleton" />
+      <recent name="org.kairos.ibpnh.controller" />
       <recent name="org.kairos.ibpnh.controller.configuration.parameter" />
       <recent name="org.kairos.ibpnh.controller.devotional" />
       <recent name="org.kairos.ibpnh.vo.devotional" />
-      <recent name="org.kairos.ibpnh.model.devotional" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/web/app/services" />
       <recent name="$PROJECT_DIR$/web/app/controllers/devotional" />
       <recent name="$PROJECT_DIR$/web/resources/bootstrap/js" />
       <recent name="$PROJECT_DIR$/web/resources/bootstrap/css" />
       <recent name="$PROJECT_DIR$/web/app/views/layout" />
-      <recent name="$PROJECT_DIR$/web/app/directives" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/web/app/views/configuration" />
@@ -802,11 +846,21 @@
       <workItem from="1434079350031" duration="1482000" />
       <workItem from="1434156002263" duration="3980000" />
       <workItem from="1434161443597" duration="2141000" />
+      <workItem from="1434328014992" duration="223000" />
+      <workItem from="1434328824276" duration="5000" />
+      <workItem from="1434582787043" duration="275000" />
+      <workItem from="1434584862217" duration="1486000" />
+      <workItem from="1434592938353" duration="1728000" />
+      <workItem from="1434660778863" duration="5057000" />
+      <workItem from="1434715289603" duration="717000" />
+      <workItem from="1434770281555" duration="2799000" />
+      <workItem from="1434804135747" duration="16202000" />
+      <workItem from="1434824319555" duration="5276000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="90536000" />
+    <option name="totallyTimeSpent" value="124304000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="0" width="1282" height="999" extended-state="6" />
@@ -817,25 +871,25 @@
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3291714" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3291714" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.46878546" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27582294" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3291714" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3291714" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13834952" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13812602" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21452895" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18901454" sideWeight="0.5" order="1" side_tool="true" content_ui="combo" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13961408" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18901454" sideWeight="0.5" order="1" side_tool="true" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36662883" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3291714" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -900,30 +954,18 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>jar://$PROJECT_DIR$/web/WEB-INF/lib/spring-webmvc-3.2.13.RELEASE.jar!/org/springframework/web/servlet/mvc/annotation/AnnotationMethodHandlerAdapter.class</url>
-          <line>257</line>
-          <properties />
-          <option name="timeStamp" value="35" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>jar://$PROJECT_DIR$/web/WEB-INF/lib/spring-webmvc-3.2.13.RELEASE.jar!/org/springframework/web/servlet/mvc/annotation/AnnotationMethodHandlerAdapter.class</url>
-          <line>258</line>
-          <properties />
-          <option name="timeStamp" value="36" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>jar://$PROJECT_DIR$/web/WEB-INF/lib/spring-webmvc-3.2.13.RELEASE.jar!/org/springframework/web/servlet/mvc/annotation/AnnotationMethodHandlerAdapter.class</url>
-          <line>634</line>
-          <properties />
-          <option name="timeStamp" value="37" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>jar://$PROJECT_DIR$/web/WEB-INF/lib/spring-webmvc-3.2.13.RELEASE.jar!/org/springframework/web/servlet/mvc/annotation/AnnotationMethodHandlerAdapter.class</url>
           <line>711</line>
           <properties />
           <option name="timeStamp" value="40" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/org/kairos/ibpnh/controller/devotional/DailyDevotionalCtrl.java</url>
+          <line>266</line>
+          <properties />
+          <option name="timeStamp" value="55" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="41" />
+      <option name="time" value="56" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -932,345 +974,182 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/app/views/layout/pagination.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.666667">
-          <caret line="16" column="54" selection-start-line="16" selection-start-column="54" selection-end-line="16" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/META-INF/spring/mainContext.xml">
+    <entry file="jar://$PROJECT_DIR$/web/WEB-INF/lib/spring-web-3.2.13.RELEASE.jar!/org/springframework/web/bind/annotation/support/HandlerMethodInvoker.class">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="50" column="138" selection-start-line="50" selection-start-column="138" selection-end-line="50" selection-end-column="138" />
-          <folding />
+          <caret line="161" column="149" selection-start-line="161" selection-start-column="139" selection-end-line="161" selection-end-column="149" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/META-INF/spring/daoServletContext.xml">
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6625">
-          <caret line="28" column="61" selection-start-line="28" selection-start-column="59" selection-end-line="28" selection-end-column="61" />
+        <state vertical-scroll-proportion="0.38875878">
+          <caret line="55" column="22" selection-start-line="55" selection-start-column="22" selection-end-line="55" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/app/controllers/devotional/DevotionalCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2740047">
+          <caret line="13" column="39" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/fx/FxFactoryImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.49414518">
+          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/vo/configuration/parameter/ParameterVo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="57" column="31" selection-start-line="57" selection-start-column="31" selection-end-line="57" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///opt/java/jdk1.7.0_79/src.zip!/java/text/SimpleDateFormat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="577" column="0" selection-start-line="577" selection-start-column="0" selection-end-line="577" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///opt/java/jdk1.7.0_79/jre/lib/rt.jar!/sun/util/locale/LocaleUtils.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.35049504">
+          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/web/WEB-INF/lib/spring-webmvc-3.2.13.RELEASE.jar!/org/springframework/web/servlet/mvc/annotation/AnnotationMethodHandlerAdapter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3325301">
+          <caret line="634" column="0" selection-start-line="634" selection-start-column="0" selection-end-line="634" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/META-INF/spring/ctrlServletContext.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.907455">
+          <caret line="50" column="81" selection-start-line="50" selection-start-column="81" selection-end-line="50" selection-end-column="81" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/utils/DateUtilsImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8135593">
+          <caret line="125" column="64" selection-start-line="125" selection-start-column="64" selection-end-line="125" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/resources/ng-fileupload-danialfarid/ng-file-upload.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.5683168">
+          <caret line="1" column="4847" selection-start-line="1" selection-start-column="4835" selection-end-line="1" selection-end-column="4847" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/model/devotional/DailyDevotional.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.056603774">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/web/WEB-INF/lib/appengine-api-1.0-sdk-1.9.19.jar!/com/google/appengine/api/blobstore/BlobKey.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.06393442">
+          <caret line="9" column="59" selection-start-line="9" selection-start-column="59" selection-end-line="9" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/web/WEB-INF/lib/appengine-api-1.0-sdk-1.9.19.jar!/com/google/appengine/api/blobstore/BlobstoreService.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2918919">
+          <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/app/controllers/home/HomeCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.076923">
+          <caret line="18" column="26" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/utils/singleton/BlobstoreServiceFactoryBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.19612591">
+          <caret line="9" column="36" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/utils/singleton/ImagesServiceFactoryBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.08430913">
+          <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/json/GsonSpringFactoryBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="39" column="7" selection-start-line="39" selection-start-column="7" selection-end-line="39" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/META-INF/spring/mainContext.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.35507247">
+          <caret line="37" column="97" selection-start-line="37" selection-start-column="97" selection-end-line="37" selection-end-column="97" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/META-INF/spring/servletContext.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="80" column="111" selection-start-line="80" selection-start-column="111" selection-end-line="80" selection-end-column="111" />
+        <state vertical-scroll-proportion="0.35507247">
+          <caret line="32" column="40" selection-start-line="32" selection-start-column="39" selection-end-line="32" selection-end-column="40" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/services/caching/client/jcache/JCacheUserCacheImpl.java">
+    <entry file="file://$PROJECT_DIR$/web/app/services/BlobstoreService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="325" column="0" selection-start-line="325" selection-start-column="0" selection-end-line="325" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.2826087">
+          <caret line="13" column="10" selection-start-line="13" selection-start-column="10" selection-end-line="13" selection-end-column="10" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/web/WEB-INF/lib/gson-2.3.1.jar!/com/google/gson/JsonObject.class">
+    <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/fx/devotional/Fx_DeleteDailyDevotional.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.6923075">
-          <caret line="75" column="0" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/utils/I_DateUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334">
-          <caret line="32" column="16" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/dao/configuration/parameter/ParameterDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33257404">
-          <caret line="112" column="0" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/controller/configuration/parameter/ParameterCtrl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="204" column="0" selection-start-line="204" selection-start-column="0" selection-end-line="204" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///opt/java/jdk1.7.0_79/src.zip!/java/text/SimpleDateFormat.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33257404">
-          <caret line="574" column="11" selection-start-line="574" selection-start-column="11" selection-end-line="574" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/vo/configuration/parameter/ParameterVo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="60" column="37" selection-start-line="60" selection-start-column="37" selection-end-line="60" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/dao/devotional/I_DailyDevotionalDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6309795">
-          <caret line="49" column="35" selection-start-line="49" selection-start-column="35" selection-end-line="49" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/utils/DateUtilsImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="113" column="0" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/resources/bootstrap/css/bootstrap-datetimepicker.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/resources/bootstrap/js/bootstrap-datetimepicker.es.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/resources/bootstrap/js/moment.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/fx/devotional/Fx_CreateDailyDevotional.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.6836158">
-          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/web/WEB-INF/lib/gson-2.3.1.jar!/com/google/gson/DefaultDateTypeAdapter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35049504">
-          <caret line="90" column="0" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/app/helpers/DateFormatHelper.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3747646">
-          <caret line="76" column="24" selection-start-line="76" selection-start-column="4" selection-end-line="76" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/app/controllers/home/HomeCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.27118644">
-          <caret line="8" column="31" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/dao/devotional/DailyDevotionalDaoJDOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="94" column="0" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/app/views/layout/menu.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-36.0">
-          <caret line="69" column="18" selection-start-line="69" selection-start-column="18" selection-end-line="69" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/controller/user/UserCtrl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="217" column="19" selection-start-line="217" selection-start-column="19" selection-end-line="217" selection-end-column="19" />
-          <folding>
-            <element signature="e#21702#21703#0" expanded="false" />
-            <element signature="e#21729#21730#0" expanded="false" />
-            <element signature="e#21767#21768#0" expanded="false" />
-            <element signature="e#21799#21800#0" expanded="false" />
-            <element signature="e#21868#21869#0" expanded="false" />
-            <element signature="e#21915#21916#0" expanded="false" />
-            <element signature="e#22138#22139#0" expanded="false" />
-            <element signature="e#22177#22178#0" expanded="false" />
-            <element signature="e#22251#22252#0" expanded="false" />
-            <element signature="e#22307#22308#0" expanded="false" />
-            <element signature="e#22344#22345#0" expanded="false" />
-            <element signature="e#22374#22375#0" expanded="false" />
-            <element signature="e#22423#22424#0" expanded="false" />
-            <element signature="e#22461#22462#0" expanded="false" />
-            <element signature="e#22506#22507#0" expanded="false" />
-            <element signature="e#22540#22541#0" expanded="false" />
-            <element signature="e#22601#22602#0" expanded="false" />
-            <element signature="e#22647#22648#0" expanded="false" />
-            <element signature="e#22684#22685#0" expanded="false" />
-            <element signature="e#22714#22715#0" expanded="false" />
-            <element signature="e#22763#22764#0" expanded="false" />
-            <element signature="e#22801#22802#0" expanded="false" />
-            <element signature="e#22848#22849#0" expanded="false" />
-            <element signature="e#22883#22884#0" expanded="false" />
-            <element signature="e#22947#22948#0" expanded="false" />
-            <element signature="e#22995#22996#0" expanded="false" />
-            <element signature="e#23036#23037#0" expanded="false" />
-            <element signature="e#23068#23069#0" expanded="false" />
-            <element signature="e#23123#23124#0" expanded="false" />
-            <element signature="e#23165#23166#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/app/controllers/configuration/user/UserCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.031914894">
-          <caret line="100" column="4" selection-start-line="100" selection-start-column="4" selection-end-line="100" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/model/configuration/parameter/Parameter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.429078">
-          <caret line="42" column="4" selection-start-line="42" selection-start-column="4" selection-end-line="42" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/app/controllers/configuration/parameter/ParameterCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.51301116">
-          <caret line="125" column="37" selection-start-line="125" selection-start-column="37" selection-end-line="125" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/log4j.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="48" selection-start-line="15" selection-start-column="48" selection-end-line="15" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/META-INF/messages/messages_es.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/locales/es/translation.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42857143">
-          <caret line="535" column="51" selection-start-line="535" selection-start-column="51" selection-end-line="535" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/app/views/devotional/devotional.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="100" column="6" selection-start-line="100" selection-start-column="6" selection-end-line="100" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/app/views/devotional/devocionales.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1" column="86" selection-start-line="1" selection-start-column="70" selection-end-line="1" selection-end-column="86" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/app/controllers/devotional/DailyDevotionalCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="80" column="33" selection-start-line="80" selection-start-column="33" selection-end-line="80" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/vo/devotional/DailyDevotionalVo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.09416196">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/app/views/layout/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.53571427">
-          <caret line="15" column="59" selection-start-line="15" selection-start-column="59" selection-end-line="15" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/app/services/devotional/DailyDevotionalService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7288136">
-          <caret line="25" column="10" selection-start-line="25" selection-start-column="10" selection-end-line="25" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/app/routes/routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.29566854">
-          <caret line="14" column="100" selection-start-line="14" selection-start-column="100" selection-end-line="14" selection-end-column="100" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/web/interceptors/TokenAuthenticationInterceptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="65" column="41" selection-start-line="65" selection-start-column="40" selection-end-line="65" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="49" selection-start-line="9" selection-start-column="49" selection-end-line="9" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/app/controllers/devotional/DevotionalCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="39" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/appengine-web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33898306">
-          <caret line="10" column="58" selection-start-line="10" selection-start-column="58" selection-end-line="10" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/fx/FxFactoryImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="0.39130434">
+          <caret line="47" column="88" selection-start-line="47" selection-start-column="88" selection-end-line="47" selection-end-column="88" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/dao/AbstractDao.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6598063">
+          <caret line="871" column="4" selection-start-line="871" selection-start-column="4" selection-end-line="871" selection-end-column="38" />
+          <folding>
+            <element signature="e#25913#25914#0" expanded="false" />
+            <element signature="e#25947#25948#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/dao/I_Dao.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="787" column="7" selection-start-line="787" selection-start-column="7" selection-end-line="787" selection-end-column="7" />
+          <caret line="237" column="39" selection-start-line="237" selection-start-column="39" selection-end-line="237" selection-end-column="39" />
           <folding />
         </state>
       </provider>
@@ -1278,75 +1157,214 @@
     <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/fx/devotional/Fx_ModifyDailyDevotional.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <caret line="46" column="46" selection-start-line="46" selection-start-column="46" selection-end-line="46" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/vo/devotional/DailyDevotionalVo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="31" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/META-INF/dozer/dozerGlobalConf.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.44067797">
+          <caret line="15" column="38" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/app/filters/filters.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/locales/es/translation.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6785714">
+          <caret line="543" column="34" selection-start-line="543" selection-start-column="9" selection-end-line="543" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/app/views/devotional/devocionales.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.21428572">
+          <caret line="6" column="38" selection-start-line="6" selection-start-column="38" selection-end-line="6" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/web/interceptors/TokenAuthenticationInterceptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5809179">
+          <caret line="103" column="0" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.26118502">
+          <caret line="30" column="20" selection-start-line="30" selection-start-column="20" selection-end-line="35" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/app/views/devotional/devotional.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.35762483">
+          <caret line="59" column="54" selection-start-line="59" selection-start-column="54" selection-end-line="59" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/controller/user/UserCtrl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="317" column="0" selection-start-line="317" selection-start-column="0" selection-end-line="317" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/vo/PaginatedSearchRequestVo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.21077283">
+          <caret line="10" column="57" selection-start-line="10" selection-start-column="57" selection-end-line="10" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/vo/PaginatedRequestVo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.44262296">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/app/services/devotional/DailyDevotionalService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9491525">
+          <caret line="28" column="66" selection-start-line="28" selection-start-column="66" selection-end-line="28" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/app/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="87" column="28" selection-start-line="87" selection-start-column="28" selection-end-line="87" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/app/views/layout/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.35714287">
+          <caret line="15" column="121" selection-start-line="15" selection-start-column="121" selection-end-line="15" selection-end-column="121" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/app/routes/routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="23" column="38" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/resources/customCSS/estilosnico.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.09863014">
+          <caret line="4" column="31" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/services/caching/client/api/I_ParameterCacheManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/dao/configuration/parameter/ParameterDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/services/caching/client/jcache/JCacheUserCacheImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="268" column="13" selection-start-line="268" selection-start-column="13" selection-end-line="268" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/controller/BlobstoreCtrl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-22.153847">
+          <caret line="54" column="40" selection-start-line="54" selection-start-column="40" selection-end-line="54" selection-end-column="40" />
           <folding>
-            <element signature="e#4025#4026#0" expanded="true" />
-            <element signature="e#4072#4073#0" expanded="true" />
-            <element signature="e#4143#4144#0" expanded="true" />
-            <element signature="e#4165#4166#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/fx/AbstractFxImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/controller/configuration/parameter/ParameterCtrl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="170" column="0" selection-start-line="170" selection-start-column="0" selection-end-line="170" selection-end-column="0" />
-          <folding>
-            <element signature="e#6302#6303#0" expanded="true" />
-            <element signature="e#6327#6328#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/json/GsonSpringFactoryBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4028103">
-          <caret line="122" column="0" selection-start-line="122" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
+          <caret line="336" column="48" selection-start-line="336" selection-start-column="48" selection-end-line="336" selection-end-column="48" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
+    <entry file="file://$PROJECT_DIR$/src/log4j.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="55" column="22" selection-start-line="55" selection-start-column="22" selection-end-line="55" selection-end-column="22" />
+          <caret line="0" column="20" selection-start-line="0" selection-start-column="20" selection-end-line="0" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/web/WEB-INF/lib/gson-2.3.1.jar!/com/google/gson/Gson.class">
+    <entry file="file://$PROJECT_DIR$/web/app/services/IbpnhService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.6153846">
-          <caret line="297" column="0" selection-start-line="297" selection-start-column="0" selection-end-line="297" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="152" column="42" selection-start-line="152" selection-start-column="42" selection-end-line="152" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/web/WEB-INF/lib/spring-web-3.2.13.RELEASE.jar!/org/springframework/web/bind/annotation/support/HandlerMethodInvoker.class">
+    <entry file="file://$PROJECT_DIR$/web/app/controllers/devotional/DailyDevotionalCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.1153846">
-          <caret line="161" column="149" selection-start-line="161" selection-start-column="139" selection-end-line="161" selection-end-column="149" />
+        <state vertical-scroll-proportion="-17.038462">
+          <caret line="29" column="45" selection-start-line="29" selection-start-column="45" selection-end-line="29" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/app/views/devotional/detalleDevocional.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.333333">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/controller/devotional/DailyDevotionalCtrl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="319" column="0" selection-start-line="319" selection-start-column="0" selection-end-line="319" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.39116204">
+          <caret line="268" column="30" selection-start-line="268" selection-start-column="30" selection-end-line="269" selection-end-column="30" />
           <folding>
-            <element signature="e#11864#11865#0" expanded="true" />
-            <element signature="e#11891#11892#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/web/WEB-INF/lib/spring-webmvc-3.2.13.RELEASE.jar!/org/springframework/web/servlet/mvc/annotation/AnnotationMethodHandlerAdapter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4626506">
-          <caret line="714" column="59" selection-start-line="714" selection-start-column="59" selection-end-line="714" selection-end-column="59" />
-          <folding />
         </state>
       </provider>
     </entry>

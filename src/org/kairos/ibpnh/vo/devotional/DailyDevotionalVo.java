@@ -25,7 +25,12 @@ public class DailyDevotionalVo extends AbstractVo {
     private String shortDescription;
 
     /**
-     * Image Url
+     * Image blobkey
+     */
+    private String imageBlobKey;
+
+    /**
+     * Image url ( for the view only)
      */
     private String imageUrl;
 
@@ -57,12 +62,12 @@ public class DailyDevotionalVo extends AbstractVo {
         this.description = description;
     }
 
-    public String getImageUrl() {
-        return imageUrl;
+    public String getImageBlobKey() {
+        return imageBlobKey;
     }
 
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
+    public void setImageBlobKey(String imageBlobKey) {
+        this.imageBlobKey = imageBlobKey;
     }
 
     public Date getDate() {
@@ -79,5 +84,13 @@ public class DailyDevotionalVo extends AbstractVo {
 
     public void setShortDescription(String shortDescription) {
         this.shortDescription = shortDescription;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 }

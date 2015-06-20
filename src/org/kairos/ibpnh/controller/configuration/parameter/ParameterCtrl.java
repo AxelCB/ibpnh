@@ -321,6 +321,31 @@ public class ParameterCtrl implements I_URIValidator {
         return this.getGson().toJson(jsonResponse);
     }
 
+    /**
+     * Gets the list of role types available for creation.
+     *
+     * @return
+     */
+    @ResponseBody
+    @RequestMapping(value = "/public/init.json")
+    public String init() {
+        this.logger.debug("calling ParameterCtrl.init()");
+        JsonResponse jsonResponse = null;
+        JDOPersistenceManager pm = this.getPersistenceManagerHolder().getPersistenceManager();
+        try {
+            this.getParameterDao().loadGlobalParameters(pm);
+            jsonResponse = JsonResponse.ok("true");
+        } catch (Exception e) {
+            this.logger.debug("unexpected error", e);
+
+            jsonResponse = this.getWebContextHolder().unexpectedErrorResponse();
+        }
+
+        return this.getGson().toJson(jsonResponse);
+    }
+
+
+
     public Gson getGson() {
         return gson;
     }

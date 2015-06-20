@@ -2,8 +2,8 @@ var server = angular.module('services', []);
 /**
  * Main Universe Service Facade
  */
-server.factory('IbpnhService', ['$http', '$rootScope', '$location', '$cookieStore', '$injector',
-	function($http, $rootScope, $location,  $cookieStore, $injector) {
+server.factory('IbpnhService', ['$http', '$rootScope', '$location', '$cookieStore', '$injector','Upload',
+	function($http, $rootScope, $location,  $cookieStore, $injector,Upload) {
 
 		$rootScope.reLoginCount = 0;
 		$rootScope.ibpnhCoreServiceUrl = "/";
@@ -107,7 +107,7 @@ server.factory('IbpnhService', ['$http', '$rootScope', '$location', '$cookieStor
 					headers: {
 						'Content-Type': 'text/json;charset=utf8',
 						'Authorization': $rootScope.loggedUser.token,
-						 'Accept':'text/json;charset=utf8'
+						'Accept':'text/json;charset=utf8'
 					}}).
 					success(wrapperFunction(successFn)).
 					error(wrapperFunction(errorFn));
@@ -146,6 +146,36 @@ server.factory('IbpnhService', ['$http', '$rootScope', '$location', '$cookieStor
 					}}).
 					success(wrapperFunction(successFn)).
 					error(wrapperFunction(errorFn));
+			},
+			/*
+			 * Posts The Data As JSON, and expects JSON (WITH authorization header)
+			 */
+			fileAuthPost: function(url,params,file,successFn,errorFn) {
+				Upload.upload({
+						method: 'POST',
+						url: url,
+						data: params,
+						file: file,
+						headers: {
+							'Content-Type': 'multipart/form-data;charset=utf8',
+							'Authorization': $rootScope.loggedUser.token,
+							'Accept':'text/json;charset=utf8'
+						}
+					}).progress(function (evt) {
+						var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
+						console.log('progress: ' + progressPercentage + '% ' + evt.config.file.name);
+					}).
+					success(wrapperFunction(successFn)).
+					error(wrapperFunction(errorFn));
+
+
+				//$http({method: 'POST', url: ibpnhServiceUrl + url, data: $.param(params),
+				//	headers: {
+				//		'Content-Type': 'multipart/form-data',
+				//		'Accept':'text/json;charset=utf8'
+				//	}}).
+				//	success(wrapperFunction(successFn)).
+				//	error(wrapperFunction(errorFn));
 			}
 		};
 	}

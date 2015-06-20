@@ -4,8 +4,8 @@
  */
 var ibpnhControllers = angular.module('ibpnhControllers');
 
-ibpnhControllers.controller('HomeCtrl',['$scope', '$rootScope', 'DailyDevotionalService', '$filter',
-	function($scope, $rootScope, DailyDevotionalService, $filter) {
+ibpnhControllers.controller('HomeCtrl',['$scope', '$rootScope', 'DailyDevotionalService', '$filter','BlobstoreService',
+	function($scope, $rootScope, DailyDevotionalService, $filter,BlobstoreService) {
 		$scope.dailyDevotionals = {};
 		$scope.todayDate = new Date();
 

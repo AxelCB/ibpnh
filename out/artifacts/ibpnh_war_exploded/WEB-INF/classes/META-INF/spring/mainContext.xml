@@ -28,8 +28,14 @@
 			</property>
 		</bean>
 
-		<!-- JSON -->
+		<!-- GSON -->
 		<bean id="gson" class="org.kairos.ibpnh.json.GsonSpringFactoryBean" scope="singleton" />
+
+		<!-- Blobstore Service -->
+		<bean id="blobstoreService" class="org.kairos.ibpnh.utils.singleton.BlobstoreServiceFactoryBean" scope="singleton" />
+
+		<!-- Images Service -->
+		<bean id="imagesService" class="org.kairos.ibpnh.utils.singleton.ImagesServiceFactoryBean" scope="singleton" />
 
 		<!-- Cache -->
 		<bean id="JCacheUserCacheImpl"

@@ -1,7 +1,6 @@
 package org.kairos.ibpnh.model.devotional;
 
 import org.kairos.ibpnh.model.I_Model;
-import org.kairos.ibpnh.model.user.Role;
 
 import javax.jdo.annotations.*;
 import java.util.Date;
@@ -45,10 +44,10 @@ public class DailyDevotional implements I_Model {
     private String description;
 
     /**
-     * Image Url
+     * Image Blob Key
      */
     @Persistent
-    private String imageUrl;
+    private String imageBlobKey;
 
     /**
      * Devotional's date
@@ -85,14 +84,6 @@ public class DailyDevotional implements I_Model {
         this.description = description;
     }
 
-    public String getImageUrl() {
-        return imageUrl;
-    }
-
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
-    }
-
     public Date getDate() {
         return date;
     }
@@ -107,5 +98,13 @@ public class DailyDevotional implements I_Model {
 
     public void setShortDescription(String shortDescription) {
         this.shortDescription = shortDescription;
+    }
+
+    public String getImageBlobKey() {
+        return imageBlobKey;
+    }
+
+    public void setImageBlobKey(String imageBlobKey) {
+        this.imageBlobKey = imageBlobKey;
     }
 }

@@ -43,6 +43,7 @@ public class Fx_ModifyDailyDevotional extends AbstractFxImpl implements I_Fx {
 			this.beginTransaction();
 
 			// we persist the entity
+//			this.getDao().setMapId("non-blob-"+this.getDao().getVoClazz());
 			DailyDevotionalVo dailyDevotionalVo = this.getDao().persist(this.getPm(), this.getVo());
 
 			this.commitTransaction();

@@ -229,4 +229,11 @@ public interface I_Dao<E extends AbstractVo> {
      *
      */
     public void searchDistinct(Boolean distinct);
+
+    /**
+     * Allows to set any map id for dozer mappings
+     *
+     * @param mapId
+     */
+    public void setMapId(String mapId);
 }

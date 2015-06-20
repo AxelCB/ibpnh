@@ -20,6 +20,17 @@
 
 	</mapping>
 
+	<mapping type="one-way" map-id="non-blob-DailyDevotionalVo">
+		<class-a>org.kairos.ibpnh.vo.devotional.DailyDevotionalVo</class-a>
+		<class-b>org.kairos.ibpnh.model.devotional.DailyDevotional</class-b>
+
+		<field-exclude>
+			<a>imageBlobKey</a>
+			<b>imageBlobKey</b>
+		</field-exclude>
+
+	</mapping>
+
 	<!--<mapping>-->
 		<!--<class-a map-null="false">org.kairos.ibpnh.model.user.RoleType-->
 		<!--</class-a>-->

@@ -129,7 +129,7 @@ public class UserCtrl implements I_URIValidator {
      * @return
      */
     @ResponseBody
-    @RequestMapping(value = "/init", method = RequestMethod.GET)
+    @RequestMapping(value = "/public/init", method = RequestMethod.GET)
     public String init() {
         this.logger.debug("calling UserCtrl.init()");
         JDOPersistenceManager pm = null;

@@ -4,28 +4,41 @@
  */
 var ibpnhControllers = angular.module('ibpnhControllers');
 
-ibpnhControllers.controller('DailyDevotionalCtrl',['$scope', '$rootScope', 'DailyDevotionalService', '$filter',
-	function($scope, $rootScope, DailyDevotionalService, $filter) {
+ibpnhControllers.controller('DailyDevotionalCtrl',['$scope', '$rootScope','BlobstoreService',
+		'DailyDevotionalService', '$filter','Upload','$routeParams',
+	function($scope, $rootScope, BlobstoreService, DailyDevotionalService, $filter,Upload,$routeParams) {
 		$scope.dailyDevotional = {};
 		$scope.editing = false;
 		$scope.dailyDevotionalDate = new Date();
+		$scope.uploadUrl="";
+		$scope.imageFile;
 	
 		var paginationHelper;
-		
+
 		$scope.create = function() {
 			if ($scope.myForm.$valid) {
 				$scope.dailyDevotional.date = DateFormatHelper.fullDateTimeToString($scope.dailyDevotionalDate);
-				DailyDevotionalService.create($scope.dailyDevotional,
-				function(response) {
-					if (response.ok) {
-						// dailyDevotional successfully created
-						var par = JSON.parse(response.data);
-		
-						$rootScope.keepMessages = true;
-						$scope.initialize();
-					}
-		
-				}, $scope.errorManager);
+				
+				BlobstoreService.uploadUrl("/dailyDevotional/create.json",
+					function(response){
+						$scope.uploadUrl=response;
+						$scope.dailyDevotional.imageUrl="sinImagen";
+
+						DailyDevotionalService.create(
+							$scope.uploadUrl,
+							$scope.dailyDevotional,
+							$scope.imageFile,
+							function(response) {
+								if (response.ok) {
+									// dailyDevotional successfully created
+									var par = JSON.parse(response.data);
+
+									$rootScope.keepMessages = true;
+									$scope.initialize();
+								}
+
+							}, $scope.errorManager);
+					}, $scope.errorManager);
 			} else {
 				$rootScope.showErrorMessage(i18n.t('commissionSchema.validation.numberFormat'), true);
 			}
@@ -119,6 +132,14 @@ ibpnhControllers.controller('DailyDevotionalCtrl',['$scope', '$rootScope', 'Dail
 				}
 			}, $rootScope.manageError);
 		};
+
+		$scope.find = function() {
+			DailyDevotionalService.find($scope.dailyDevotional, function(response) {
+				if (response.ok) {
+					$scope.dailyDevotional = JSON.parse(response.data);
+				}
+			}, $rootScope.manageError);
+		};
 	
 		paginationHelper = PaginationHelper($scope, 'dailyDevotionalNameSpace', true);
 		
@@ -128,7 +149,12 @@ ibpnhControllers.controller('DailyDevotionalCtrl',['$scope', '$rootScope', 'Dail
 			$scope.dailyDevotional = null;
 
 				//if ($rootScope.canAccess('/configuration/dailyDevotional:listDailyDevotional')) {
-			$scope.list();
+			if($routeParams.devotionalId){
+				$scope.dailyDevotional={'id':$routeParams.devotionalId};
+				$scope.find();
+			}else{
+				$scope.list();
+			}
 			//}
 			$rootScope.areErrorMessages = false;
 		};

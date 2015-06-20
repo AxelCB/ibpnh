@@ -64,9 +64,9 @@ public class TokenAuthenticationInterceptor extends HandlerInterceptorAdapter {
 			"/images", //any images
 			"/trackingService", // tracking service do not need authentication
 			"/lang", //just to know the accept language
-			"/user/init" ,// the dashboard is public
-			"/dailyDevotional/lastDevotionals",
-			"/dailyDevotional/list"
+//			"/user/init" ,// the dashboard is public
+//			"/dailyDevotional/lastDevotionals",
+//			"/dailyDevotional/list"
 	};
 
 	/**
@@ -81,6 +81,9 @@ public class TokenAuthenticationInterceptor extends HandlerInterceptorAdapter {
 			if (uri.replace("/universe-core", "").startsWith(itemToPass)) {
 				return Boolean.TRUE;
 			}
+		}
+		if (uri.replace("/universe-core", "").contains("/public/")){
+			return Boolean.TRUE;
 		}
 		return Boolean.FALSE;
 	}
