@@ -22,7 +22,6 @@ ibpnhControllers.controller('DailyDevotionalCtrl',['$scope', '$rootScope','Blobs
 				BlobstoreService.uploadUrl("/dailyDevotional/create.json",
 					function(response){
 						$scope.uploadUrl=response;
-						$scope.dailyDevotional.imageUrl="sinImagen";
 
 						DailyDevotionalService.create(
 							$scope.uploadUrl,

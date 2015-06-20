@@ -30,10 +30,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.lang.reflect.Type;
@@ -256,7 +253,7 @@ public class DailyDevotionalCtrl implements I_URIValidator {
      */
     @ResponseBody
     @RequestMapping(value = "/create.json", method = RequestMethod.POST)
-    public String create(@RequestBody String formData,HttpServletRequest req) {
+    public String create(@RequestBody String formData,HttpServletRequest req,@RequestParam("data") String data) {
         this.logger.debug("calling DailyDevotionalCtrl.create()");
         JDOPersistenceManager pm = this.getPersistenceManagerHolder().getPersistenceManager();
         JsonResponse jsonResponse = null;
@@ -266,8 +263,8 @@ public class DailyDevotionalCtrl implements I_URIValidator {
             Map<String, List<BlobKey>> blobs = blobstoreService.getUploads(req);
 //            String data = formData.substring(formData.indexOf("{\"title\""),
 //                    formData.indexOf("\"imageUrl\":\"sinImagen\"}"+"\"imageUrl\":\"sinImagen\"}".length()));
-            String data = formData.substring(formData.indexOf("name=\"data\"\r\n\r\n")+"name=\"data\"\r\n\r\n".length(),formData.indexOf("\r\n",
-                    formData.indexOf("name=\"data\"\r\n\r\n")+"name=\"data\"\r\n\r\n".length()));
+//            String data = formData.substring(formData.indexOf("name=\"data\"\r\n\r\n")+"name=\"data\"\r\n\r\n".length(),formData.indexOf("\r\n",
+//                    formData.indexOf("name=\"data\"\r\n\r\n")+"name=\"data\"\r\n\r\n".length()));
             DailyDevotionalVo dailyDevotionalVo = this.getGson().fromJson(data,DailyDevotionalVo.class);
             dailyDevotionalVo.setImageBlobKey(blobs.get("file").get(0).getKeyString());
 

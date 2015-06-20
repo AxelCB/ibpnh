@@ -2,77 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a37d8b79-bbdd-4445-b1a5-713303e36029" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/utils/singleton/BlobstoreServiceFactoryBean.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/utils/singleton/ImagesServiceFactoryBean.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/app/views/devotional/detalleDevocional.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/model/devotional/DailyDevotional.class" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/model/devotional/DailyDevotional.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/model/devotional/DailyDevotional.class" afterPath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/model/devotional/DailyDevotional.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/controller/devotional/DailyDevotionalCtrl$1.class" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/controller/devotional/DailyDevotionalCtrl$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/controller/devotional/DailyDevotionalCtrl$1.class" afterPath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/controller/devotional/DailyDevotionalCtrl$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/controller/devotional/DailyDevotionalCtrl.class" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/controller/devotional/DailyDevotionalCtrl.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/controller/devotional/DailyDevotionalCtrl.class" afterPath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/controller/devotional/DailyDevotionalCtrl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/vo/devotional/DailyDevotionalVo.class" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/vo/devotional/DailyDevotionalVo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/vo/devotional/DailyDevotionalVo.class" afterPath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/vo/devotional/DailyDevotionalVo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/fx/devotional/Fx_DeleteDailyDevotional.class" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/fx/devotional/Fx_DeleteDailyDevotional.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/fx/devotional/Fx_DeleteDailyDevotional.class" afterPath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/fx/devotional/Fx_DeleteDailyDevotional.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/fx/login/Fx_Login.class" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/fx/login/Fx_Login.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/fx/login/Fx_Login.class" afterPath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/fx/login/Fx_Login.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/fx/devotional/Fx_ModifyDailyDevotional.class" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/fx/devotional/Fx_ModifyDailyDevotional.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/fx/devotional/Fx_ModifyDailyDevotional.class" afterPath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/fx/devotional/Fx_ModifyDailyDevotional.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/json/GsonSpringFactoryBean.class" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/json/GsonSpringFactoryBean.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/json/GsonSpringFactoryBean.class" afterPath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/json/GsonSpringFactoryBean.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/dao/I_Dao.class" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/dao/I_Dao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/dao/I_Dao.class" afterPath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/dao/I_Dao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/web/interceptors/TokenAuthenticationInterceptor.class" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/web/interceptors/TokenAuthenticationInterceptor.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/web/interceptors/TokenAuthenticationInterceptor.class" afterPath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/web/interceptors/TokenAuthenticationInterceptor.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/controller/user/UserCtrl.class" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/org/kairos/ibpnh/controller/user/UserCtrl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/controller/user/UserCtrl.class" afterPath="$PROJECT_DIR$/out/production/ibpnh/org/kairos/ibpnh/controller/user/UserCtrl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/kairos/ibpnh/controller/BlobstoreCtrl.java" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/controller/BlobstoreCtrl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/services/BlobstoreService.js" afterPath="$PROJECT_DIR$/web/app/services/BlobstoreService.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/kairos/ibpnh/model/devotional/DailyDevotional.java" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/model/devotional/DailyDevotional.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/kairos/ibpnh/controller/devotional/DailyDevotionalCtrl.java" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/controller/devotional/DailyDevotionalCtrl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/app/controllers/devotional/DailyDevotionalCtrl.js" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/app/controllers/devotional/DailyDevotionalCtrl.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/controllers/devotional/DailyDevotionalCtrl.js" afterPath="$PROJECT_DIR$/web/app/controllers/devotional/DailyDevotionalCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/app/services/devotional/DailyDevotionalService.js" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/app/services/devotional/DailyDevotionalService.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/services/devotional/DailyDevotionalService.js" afterPath="$PROJECT_DIR$/web/app/services/devotional/DailyDevotionalService.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/kairos/ibpnh/vo/devotional/DailyDevotionalVo.java" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/vo/devotional/DailyDevotionalVo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/kairos/ibpnh/fx/devotional/Fx_DeleteDailyDevotional.java" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/fx/devotional/Fx_DeleteDailyDevotional.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/kairos/ibpnh/fx/devotional/Fx_ModifyDailyDevotional.java" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/fx/devotional/Fx_ModifyDailyDevotional.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/kairos/ibpnh/json/GsonSpringFactoryBean.java" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/json/GsonSpringFactoryBean.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/app/controllers/home/HomeCtrl.js" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/app/controllers/home/HomeCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/controllers/home/HomeCtrl.js" afterPath="$PROJECT_DIR$/web/app/controllers/home/HomeCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/kairos/ibpnh/dao/I_Dao.java" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/dao/I_Dao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/app/services/IbpnhService.js" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/app/services/IbpnhService.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/services/IbpnhService.js" afterPath="$PROJECT_DIR$/web/app/services/IbpnhService.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/kairos/ibpnh/controller/configuration/parameter/ParameterCtrl.java" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/controller/configuration/parameter/ParameterCtrl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/kairos/ibpnh/web/interceptors/TokenAuthenticationInterceptor.java" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/web/interceptors/TokenAuthenticationInterceptor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/kairos/ibpnh/controller/user/UserCtrl.java" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/controller/user/UserCtrl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/app/app.js" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/app/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/app.js" afterPath="$PROJECT_DIR$/web/app/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/META-INF/spring/ctrlServletContext.xml" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/META-INF/spring/ctrlServletContext.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ibpnh/META-INF/spring/ctrlServletContext.xml" afterPath="$PROJECT_DIR$/out/production/ibpnh/META-INF/spring/ctrlServletContext.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/META-INF/spring/ctrlServletContext.xml" afterPath="$PROJECT_DIR$/src/META-INF/spring/ctrlServletContext.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/app/views/devotional/devocionales.html" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/app/views/devotional/devocionales.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/views/devotional/devocionales.html" afterPath="$PROJECT_DIR$/web/app/views/devotional/devocionales.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/app/views/devotional/devotional.html" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/app/views/devotional/devotional.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/views/devotional/devotional.html" afterPath="$PROJECT_DIR$/web/app/views/devotional/devotional.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/META-INF/dozer/dozerGlobalConf.xml" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/META-INF/dozer/dozerGlobalConf.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ibpnh/META-INF/dozer/dozerGlobalConf.xml" afterPath="$PROJECT_DIR$/out/production/ibpnh/META-INF/dozer/dozerGlobalConf.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/META-INF/dozer/dozerGlobalConf.xml" afterPath="$PROJECT_DIR$/src/META-INF/dozer/dozerGlobalConf.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/resources/customCSS/estilosnico.css" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/resources/customCSS/estilosnico.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/resources/customCSS/estilosnico.css" afterPath="$PROJECT_DIR$/web/resources/customCSS/estilosnico.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/app/views/layout/home.html" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/app/views/layout/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/views/layout/home.html" afterPath="$PROJECT_DIR$/web/app/views/layout/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/index.html" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/index.html" afterPath="$PROJECT_DIR$/web/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/log4j.properties" afterPath="$PROJECT_DIR$/src/log4j.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/META-INF/spring/mainContext.xml" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/WEB-INF/classes/META-INF/spring/mainContext.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ibpnh/META-INF/spring/mainContext.xml" afterPath="$PROJECT_DIR$/out/production/ibpnh/META-INF/spring/mainContext.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/META-INF/spring/mainContext.xml" afterPath="$PROJECT_DIR$/src/META-INF/spring/mainContext.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/app/routes/routes.js" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/app/routes/routes.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/routes/routes.js" afterPath="$PROJECT_DIR$/web/app/routes/routes.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/locales/es/translation.json" afterPath="$PROJECT_DIR$/out/artifacts/ibpnh_war_exploded/locales/es/translation.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/locales/es/translation.json" afterPath="$PROJECT_DIR$/web/locales/es/translation.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ibpnh.iws" />
@@ -96,14 +29,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="DailyDevotionalCtrl.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DailyDevotionalCtrl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/controller/devotional/DailyDevotionalCtrl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.39116204">
-              <caret line="268" column="30" selection-start-line="268" selection-start-column="30" selection-end-line="269" selection-end-column="30" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="249" column="36" selection-start-line="249" selection-start-column="36" selection-end-line="249" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IbpnhService.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/app/services/IbpnhService.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="98" column="47" selection-start-line="98" selection-start-column="47" selection-end-line="98" selection-end-column="47" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -121,18 +64,18 @@
       <file leaf-file-name="detalleDevocional.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/app/views/devotional/detalleDevocional.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.333333">
+            <state vertical-scroll-proportion="0.0">
               <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DailyDevotionalCtrl.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="DailyDevotionalCtrl.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/app/controllers/devotional/DailyDevotionalCtrl.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-17.038462">
-              <caret line="29" column="45" selection-start-line="29" selection-start-column="45" selection-end-line="29" selection-end-column="45" />
+            <state vertical-scroll-proportion="0.39398086">
+              <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -204,12 +147,12 @@
         <option value="$PROJECT_DIR$/web/app/app.js" />
         <option value="$PROJECT_DIR$/web/app/views/devotional/detalleDevocional.html" />
         <option value="$PROJECT_DIR$/web/resources/customCSS/estilosnico.css" />
-        <option value="$PROJECT_DIR$/web/app/services/IbpnhService.js" />
         <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/controller/BlobstoreCtrl.java" />
         <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/controller/configuration/parameter/ParameterCtrl.java" />
         <option value="$PROJECT_DIR$/src/log4j.properties" />
-        <option value="$PROJECT_DIR$/web/app/controllers/devotional/DailyDevotionalCtrl.js" />
+        <option value="$PROJECT_DIR$/web/app/services/IbpnhService.js" />
         <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/controller/devotional/DailyDevotionalCtrl.java" />
+        <option value="$PROJECT_DIR$/web/app/controllers/devotional/DailyDevotionalCtrl.js" />
       </list>
     </option>
   </component>
@@ -499,7 +442,7 @@
       <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
-  <component name="RunManager" selected="Google AppEngine Dev Server.AppEngine Dev 1.9.19">
+  <component name="RunManager" selected="Google App Engine Deployment.Deploy to ibpnh">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
@@ -856,15 +799,25 @@
       <workItem from="1434770281555" duration="2799000" />
       <workItem from="1434804135747" duration="16202000" />
       <workItem from="1434824319555" duration="5276000" />
+      <workItem from="1434836540166" duration="992000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="124304000" />
+    <option name="totallyTimeSpent" value="125296000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="0" width="1282" height="999" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -874,17 +827,17 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3291714" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3291714" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27582294" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3291714" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3291714" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3291714" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13812602" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13741064" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3291714" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13961408" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13961408" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18901454" sideWeight="0.5" order="1" side_tool="true" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36662883" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -894,18 +847,18 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18932039" sideWeight="0.5" order="1" side_tool="true" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21452895" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21452895" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -917,8 +870,8 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3291714" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13834952" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
@@ -960,12 +913,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/org/kairos/ibpnh/controller/devotional/DailyDevotionalCtrl.java</url>
-          <line>266</line>
+          <line>261</line>
           <properties />
-          <option name="timeStamp" value="55" />
+          <option name="timeStamp" value="56" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="56" />
+      <option name="time" value="57" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1079,7 +1032,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-10.076923">
           <caret line="18" column="26" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1139,10 +1091,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6598063">
           <caret line="871" column="4" selection-start-line="871" selection-start-column="4" selection-end-line="871" selection-end-column="38" />
-          <folding>
-            <element signature="e#25913#25914#0" expanded="false" />
-            <element signature="e#25947#25948#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1150,7 +1098,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="237" column="39" selection-start-line="237" selection-start-column="39" selection-end-line="237" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1173,7 +1120,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.44067797">
           <caret line="15" column="38" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1232,7 +1178,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.21077283">
           <caret line="10" column="57" selection-start-line="10" selection-start-column="57" selection-end-line="10" selection-end-column="57" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1240,7 +1185,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.44262296">
           <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1256,7 +1200,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="87" column="28" selection-start-line="87" selection-start-column="28" selection-end-line="87" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1264,7 +1207,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.35714287">
           <caret line="15" column="121" selection-start-line="15" selection-start-column="121" selection-end-line="15" selection-end-column="121" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1280,7 +1222,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.09863014">
           <caret line="4" column="31" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1288,7 +1229,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1304,7 +1244,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="268" column="13" selection-start-line="268" selection-start-column="13" selection-end-line="268" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1312,9 +1251,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-22.153847">
           <caret line="54" column="40" selection-start-line="54" selection-start-column="40" selection-end-line="54" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1330,6 +1266,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="20" selection-start-line="0" selection-start-column="20" selection-end-line="0" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/app/views/devotional/detalleDevocional.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1337,34 +1280,26 @@
     <entry file="file://$PROJECT_DIR$/web/app/services/IbpnhService.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="152" column="42" selection-start-line="152" selection-start-column="42" selection-end-line="152" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/app/controllers/devotional/DailyDevotionalCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.038462">
-          <caret line="29" column="45" selection-start-line="29" selection-start-column="45" selection-end-line="29" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/app/views/devotional/detalleDevocional.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.333333">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <caret line="98" column="47" selection-start-line="98" selection-start-column="47" selection-end-line="98" selection-end-column="47" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/controller/devotional/DailyDevotionalCtrl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39116204">
-          <caret line="268" column="30" selection-start-line="268" selection-start-column="30" selection-end-line="269" selection-end-column="30" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="249" column="36" selection-start-line="249" selection-start-column="36" selection-end-line="249" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/app/controllers/devotional/DailyDevotionalCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.39398086">
+          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
