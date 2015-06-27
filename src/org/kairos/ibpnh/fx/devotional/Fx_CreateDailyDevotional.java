@@ -81,16 +81,16 @@ public class Fx_CreateDailyDevotional extends AbstractFxImpl implements I_Fx {
 //			return FxValidationResponse.error(result);
 //		}
 
-		if (!this.getDao().checkDateUniqueness(this.getPm(),
-				this.getVo().getDate(), null)) {
-			String jsonResponseMessage = this.getRealMessageSolver()
-					.getMessage("fx.user.validation.nonUniqueDate",
-							new String[] { this.getVo().getDate().toString() });
-
-			return FxValidationResponse.error(jsonResponseMessage);
-		} else {
+//		if (!this.getDao().checkDateUniqueness(this.getPm(),
+//				this.getVo().getDate(), null)) {
+//			String jsonResponseMessage = this.getRealMessageSolver()
+//					.getMessage("fx.user.validation.nonUniqueDate",
+//							new String[] { this.getVo().getDate().toString() });
+//
+//			return FxValidationResponse.error(jsonResponseMessage);
+//		} else {
 			return FxValidationResponse.ok();
-		}
+//		}
 	}
 
 	/*
