@@ -1,6 +1,7 @@
 package org.kairos.ibpnh.utils;
 
-import org.kairos.ibpnh.vo.user.UserVo;
+
+import org.kairos.ibpnh.model.user.User;
 
 /**
  * Interface for Password utils
@@ -22,11 +23,11 @@ public interface I_PasswordUtils {
 	 * Check password of a user.
 	 * 
 	 * @param password
-	 * @param userVo
+	 * @param user
 	 * @param currentCost
 	 * @return
 	 */
-	public Boolean checkPassword(String password, UserVo userVo,
+	public Boolean checkPassword(String password, User user,
 								 Long currentCost);
 
 }

@@ -53,7 +53,7 @@ public class Fx_Logout extends AbstractFxImpl implements I_Fx {
 	 * vo.alert.AlertVo)
 	 */
 //	@Override
-//	protected void _completeAlert(AlertVo alertVo) {
+//	protected void _completeAlert(Alert alertVo) {
 //		alertVo.setPriority(E_Priority.LOW);
 //
 //		alertVo.setDescription(this.getRealMessageSolver().getMessage(

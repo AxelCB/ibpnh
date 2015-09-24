@@ -1,12 +1,13 @@
+/**
+ * Created by Axel on 06/01/2015.
+ */
+
 'use strict';
 /**
  * Main App Module. Includes all other modules.
- *
- * Created by Axel on 06/01/2015.
- *
  */
 
-angular.module('ibpnhApp', ['ngRoute','ngAnimate','ngCookies','routes','ibpnhControllers','filters','services','directives','ngFileUpload']).
+angular.module('ibpnhApp', ['ngRoute','ngAnimate','ngCookies','routes','ibpnhControllers','filters','services','directives']).
     //, 'services', 'ui.bootstrap'
     config(['$routeProvider', function($routeProvider) {
     }])
@@ -66,7 +67,7 @@ angular.module('ibpnhApp', ['ngRoute','ngAnimate','ngCookies','routes','ibpnhCon
                         $rootScope.messages = [];
                     }
 
-                    var pathsWithoutAuthorization=['/home','/contacto','/devocionales','/gbcs','/ministerios','/login','/devocionales/detalle/'];
+                    var pathsWithoutAuthorization=['/home','/contacto','/devocionales','/gbcs','/ministerios','/login'];
                     var path = $location.path();
                     var auxArray = path.substr(1, path.length).split("/");
                     $rootScope.currentArray = [];
@@ -77,15 +78,8 @@ angular.module('ibpnhApp', ['ngRoute','ngAnimate','ngCookies','routes','ibpnhCon
                         }
                     }
 
-                    var inArray = false;
-                    angular.forEach(pathsWithoutAuthorization, function(value, key) {
-                        if(path.slice(0, value.length)==value){
-                            inArray = true;
-                        }
-                    });
+                    if ($.inArray(path, pathsWithoutAuthorization) > -1){
 
-                    //if ($.inArray(path, pathsWithoutAuthorization) > -1){
-                    if (inArray){
                     } else {
                         if (($rootScope.loggedUser)){
                             //if ($rootScope.loggedUser.firstLogin && path != "/changePassword") {

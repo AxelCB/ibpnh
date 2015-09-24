@@ -3,8 +3,8 @@ package org.kairos.ibpnh.web.interceptors;
 import com.google.gson.Gson;
 import org.kairos.ibpnh.controller.I_URIValidator;
 import org.kairos.ibpnh.json.JsonResponse;
+import org.kairos.ibpnh.model.user.User;
 import org.kairos.ibpnh.services.caching.client.api.I_UserCacheManager;
-import org.kairos.ibpnh.vo.user.UserVo;
 import org.kairos.ibpnh.web.WebContextHolder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -64,9 +64,8 @@ public class TokenAuthenticationInterceptor extends HandlerInterceptorAdapter {
 			"/images", //any images
 			"/trackingService", // tracking service do not need authentication
 			"/lang", //just to know the accept language
-//			"/user/init" ,// the dashboard is public
-//			"/dailyDevotional/lastDevotionals",
-//			"/dailyDevotional/list"
+			"/user/init" ,// the dashboard is public
+			"/dailyDevotional/lastDevotionals" // the dashboard is public
 	};
 
 	/**
@@ -81,9 +80,6 @@ public class TokenAuthenticationInterceptor extends HandlerInterceptorAdapter {
 			if (uri.replace("/universe-core", "").startsWith(itemToPass)) {
 				return Boolean.TRUE;
 			}
-		}
-		if (uri.replace("/universe-core", "").contains("/public/")){
-			return Boolean.TRUE;
 		}
 		return Boolean.FALSE;
 	}
@@ -119,16 +115,16 @@ public class TokenAuthenticationInterceptor extends HandlerInterceptorAdapter {
 			} else {
 				String token = request.getHeader("Authorization");
 
-				UserVo userVo = this.getUserCacheManager().getUser(token);
+				User user = this.getUserCacheManager().getUser(token);
 
-				if (userVo != null) {
-					this.getWebContextHolder().setUserVo(userVo);
+				if (user != null) {
+					this.getWebContextHolder().setUser(user);
 					this.logger.debug("user {} retreived by token",
-							userVo.getUsername());
+							user.getUsername());
 
 					// if it's the first login, we only let the user to reach
 					// the change password functionality
-					if (userVo.getFirstLogin()
+					if (user.getFirstLogin()
 							&& !request.getRequestURI().contains(
 									"login/changePassword.json")
 							&& !request.getRequestURI().contains(

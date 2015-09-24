@@ -1,8 +1,7 @@
 package org.kairos.ibpnh.dao.configuration.parameter;
 
-import org.datanucleus.api.jdo.JDOPersistenceManager;
 import org.kairos.ibpnh.dao.I_Dao;
-import org.kairos.ibpnh.vo.configuration.parameter.ParameterVo;
+import org.kairos.ibpnh.model.configuration.parameter.Parameter;
 
 import java.util.Collection;
 import java.util.List;
@@ -13,7 +12,7 @@ import java.util.List;
  * @author AxelCollardBovy ,created on 08/03/2015.
  *
  */
-public interface I_ParameterDao extends I_Dao<ParameterVo> {
+public interface I_ParameterDao extends I_Dao<Parameter> {
 
 	/**
 	 * Finds a parameter by name
@@ -21,9 +20,9 @@ public interface I_ParameterDao extends I_Dao<ParameterVo> {
 	 * @param name name to find
 	 * @param pm persistence manager
 	 * 
-	 * @return parameterVo or null
+	 * @return parameter or null
 	 */
-	public ParameterVo getByName(JDOPersistenceManager pm, String name);
+	public Parameter getByName(Objectify ofy, String name);
 	
 	/**
 	 * Finds the parameters that match with the name
@@ -33,7 +32,7 @@ public interface I_ParameterDao extends I_Dao<ParameterVo> {
 	 * 
 	 * @return list of parameterVo
 	 */
-	public List<ParameterVo> getsByName(JDOPersistenceManager pm, String name);
+	public List<Parameter> getsByName(Objectify ofy, String name);
 	
 	/**
 	 * Finds the parameters that match the names in the collection
@@ -43,17 +42,17 @@ public interface I_ParameterDao extends I_Dao<ParameterVo> {
 	 * 
 	 * @return list of parameterVo
 	 */
-	public List<ParameterVo> getByName(JDOPersistenceManager pm, Collection<String> names);
+	public List<Parameter> getByName(Objectify ofy, Collection<String> names);
 	
 	/**
 	 * Saves a history.
 	 * 
 	 * @param pm persistence manager
-	 * @param parameterVo the vo that contains the data
+	 * @param parameter the  that contains the data
 	 * @param username username of the user that made the operation
 	 * @param operationType type of the operation
 	 */
-//	public void persistHistory(JDOPersistenceManager pm, ParameterVo parameterVo, String username,
+//	public void persistHistory(Objectify ofy, Parameter parameterVo, String username,
 //                               E_HistoricOperationType operationType);
 	
 	/**
@@ -62,7 +61,7 @@ public interface I_ParameterDao extends I_Dao<ParameterVo> {
 	 * 
 	 * @param pm persistence manager
 	 */
-	public void loadGlobalParameters(JDOPersistenceManager pm);
+	public void loadGlobalParameters(Objectify ofy);
 
 	/**
 	 * Returns wether a parameter name is unique (there's no parameter with that name) or not.
@@ -72,5 +71,5 @@ public interface I_ParameterDao extends I_Dao<ParameterVo> {
 	 * @param id
 	 * @return
 	 */
-	public boolean checkNameUniqueness(JDOPersistenceManager pm, String name, String excludeId);
+	public boolean checkNameUniqueness(Objectify ofy, String name, String excludeId);
 }

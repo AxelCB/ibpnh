@@ -12,7 +12,7 @@ angular.module('routes', []).config(['$routeProvider', function($routeProvider) 
     var routes = [
         {path: '/home', template: viewsPrefix+'/layout/home.html', controller: 'HomeCtrl'},
         {path: '/contacto', template: viewsPrefix+'/contacto/contacto.html', controller: null},
-        {path: '/devocionales', template: viewsPrefix+'/devotional/devocionales.html', controller: 'DailyDevotionalCtrl'},
+        {path: '/devocionales', template: viewsPrefix+'/devotional/devocionales.html', controller: null},
         {path: '/gbcs', template: viewsPrefix+'/gbcs/gbcs.html', controller: null},
         {path: '/ministerios', template: viewsPrefix+'/ministerios/ministerios.html', controller: null},
         {path: '/login', template: viewsPrefix+'/login/login.html', controller: 'LoginCtrl'},
@@ -21,7 +21,6 @@ angular.module('routes', []).config(['$routeProvider', function($routeProvider) 
         {path: '/configuration/function', template: viewsPrefix+'/configuration/function/function.html', controller: 'FunctionCtrl'},
         {path: '/configuration/parameter', template: viewsPrefix+'/configuration/parameter/parameter.html', controller: 'ParameterCtrl'},
         {path: '/devotional', template: viewsPrefix+'/devotional/devotional.html', controller: 'DailyDevotionalCtrl'},
-        {path: '/devocionales/detalle/:devotionalId', template: viewsPrefix+'/devotional/detalleDevocional.html', controller: 'DailyDevotionalCtrl'},
 
     ];
 

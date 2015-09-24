@@ -1,14 +1,12 @@
 package org.kairos.ibpnh.fx.devotional;
 
-import com.google.appengine.api.blobstore.BlobKey;
-import com.google.appengine.api.blobstore.BlobstoreService;
 import org.kairos.ibpnh.dao.devotional.I_DailyDevotionalDao;
 import org.kairos.ibpnh.fx.AbstractFxImpl;
 import org.kairos.ibpnh.fx.FxValidationResponse;
 import org.kairos.ibpnh.fx.I_Fx;
 import org.kairos.ibpnh.json.JsonResponse;
+import org.kairos.ibpnh.model.devotional.DailyDevotional;
 import org.kairos.ibpnh.utils.ErrorCodes;
-import org.kairos.ibpnh.vo.devotional.DailyDevotionalVo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,9 +30,6 @@ public class Fx_DeleteDailyDevotional extends AbstractFxImpl implements I_Fx {
 	@Autowired
 	private I_DailyDevotionalDao dao;
 
-	@Autowired
-	private BlobstoreService blobstoreService;
-
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -45,12 +40,10 @@ public class Fx_DeleteDailyDevotional extends AbstractFxImpl implements I_Fx {
 		this.logger.debug("executing Fx_DeleteFunction._execute()");
 
 		try {
-			this.getBlobstoreService().delete(new BlobKey(this.getVo().getImageBlobKey()));
-
 			this.beginTransaction();
 
 			// we persist the entity
-			this.getDao().delete(this.getPm(), this.getVo());
+			this.getDao().delete(this.getOfy(), this.getEntity());
 
 			this.commitTransaction();
 
@@ -82,16 +75,16 @@ public class Fx_DeleteDailyDevotional extends AbstractFxImpl implements I_Fx {
 	protected FxValidationResponse validate() {
 		this.logger.debug("executing Fx_DeleteFunction.validate()");
 
-		if (this.getVo().getId() == null) {
+		if (this.getEntity().getId() == null) {
 
 			String errorCodeMessage = this.getRealMessageSolver().getMessage("default.error.code", new Object[] { ErrorCodes.ERROR_ENTITY_ID_UNDEFINED });
 			String jsonResponseMessage = this.getRealMessageSolver().getMessage("default.entity.deleted.error", new String[] { this.getRealMessageSolver().getMessage("entity.dailyDevotional.name", null), errorCodeMessage });
 
 			return FxValidationResponse.error(jsonResponseMessage);
 		} else {
-			DailyDevotionalVo dailyDevotionalVo = this.getDao().getById(this.getPm(),this.getVo().getId());
+			DailyDevotional dailyDevotional = this.getDao().getById(this.getOfy(),this.getEntity().getId());
 
-			if (dailyDevotionalVo == null) {
+			if (dailyDevotional == null) {
 				String jsonResponseMessage = this.getRealMessageSolver().getMessage("fx.dailyDevotional.validation.entityNotExists", new String[] { this.getRealMessageSolver().getMessage("default.delete", null) });
 
 				return FxValidationResponse.error(jsonResponseMessage);
@@ -109,20 +102,20 @@ public class Fx_DeleteDailyDevotional extends AbstractFxImpl implements I_Fx {
 	 * vo.alert.AlertVo)
 	 */
 //	@Override
-//	protected void _completeAlert(AlertVo alertVo) {
+//	protected void _completeAlert(Alert alertVo) {
 //		alertVo.setPriority(E_Priority.HIGH);
 //
 //		alertVo.setDescription(this.getRealMessageSolver().getMessage(
 //				"fx.user.alert.description.deleted",
-//				new String[] { this.getVo().getAcronym() }));
+//				new String[] { this.getEntity().getAcronym() }));
 //	}
 
 	/**
 	 * Casted VO.
 	 */
 	@Override
-	public DailyDevotionalVo getVo() {
-		return (DailyDevotionalVo) super.getVo();
+	public DailyDevotional getEntity() {
+		return (DailyDevotional) super.getEntity();
 	}
 
 	/**
@@ -140,11 +133,4 @@ public class Fx_DeleteDailyDevotional extends AbstractFxImpl implements I_Fx {
 		this.dao = dao;
 	}
 
-	public BlobstoreService getBlobstoreService() {
-		return blobstoreService;
-	}
-
-	public void setBlobstoreService(BlobstoreService blobstoreService) {
-		this.blobstoreService = blobstoreService;
-	}
 }

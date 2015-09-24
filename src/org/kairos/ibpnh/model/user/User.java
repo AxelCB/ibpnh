@@ -1,83 +1,72 @@
 package org.kairos.ibpnh.model.user;
 
+import com.googlecode.objectify.annotation.Entity;
+import com.googlecode.objectify.annotation.Id;
 import org.kairos.ibpnh.model.I_Model;
-
-import javax.jdo.annotations.*;
 
 /**
  * @author AxelCollardBovy ,created on 24/02/2015.
  */
-@PersistenceCapable
+@Entity
 public class User implements I_Model {
 
-    /**
-     * Entity id
-     */
-    @PrimaryKey
-    @Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
-    @Extension(vendorName="datanucleus", key="gae.encoded-pk", value="true")
+    @Id
     private String id;
 
     /**
      * Deteled flag
      */
-    @Persistent
     private Boolean deleted;
 
     /**
      * User's username.
      */
-    @Persistent
-    @Unique
     private String username;
 
     /**
      * User's hashed password.
      */
-    @Persistent
     private String password;
 
     /**
      * Total login Attempts
      */
-    @Persistent
     private Integer loginAttempts;
 
     /**
      * Enabled flag.
      */
-    @Persistent
     private Boolean enabled;
 
     /**
      * First login flag.
      */
-    @Persistent
     private Boolean firstLogin;
 
     /**
      * Disabled cause.
      */
-    @Persistent
     private String disabledCause;
 
     /**
      * Hash cost for the BCrypt algorithm.
      */
-    @Persistent
     public Long hashCost;
 
     /**
      * Enabling hash.
      */
-    @Persistent
     private String enablingHash;
+
+    /**
+     * User session's token.
+     */
+    private String token;
 
     /**
      * User's Role
      */
-    @Persistent
-    private Role role;
+    private E_RoleType roleType;
 
     @Override
     public String getId() { return id; }
@@ -155,11 +144,19 @@ public class User implements I_Model {
         this.enablingHash = enablingHash;
     }
 
-    public Role getRole() {
-        return role;
+    public String getToken() {
+        return token;
     }
 
-    public void setRole(Role role) {
-        this.role = role;
+    public void setToken(String token) {
+        this.token = token;
+    }
+
+    public E_RoleType getRoleType() {
+        return roleType;
+    }
+
+    public void setRoleType(E_RoleType roleType) {
+        this.roleType = roleType;
     }
 }

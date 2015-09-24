@@ -1,4 +1,4 @@
-package org.kairos.ibpnh.controller;
+package ibpnh.controller;
 
 import com.google.gson.Gson;
 import org.kairos.ibpnh.utils.HttpUtils;

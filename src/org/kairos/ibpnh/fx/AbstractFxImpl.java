@@ -1,9 +1,9 @@
 package org.kairos.ibpnh.fx;
 
 import com.google.gson.Gson;
-import org.datanucleus.api.jdo.JDOPersistenceManager;
+import com.googlecode.objectify.Objectify;
 import org.kairos.ibpnh.json.JsonResponse;
-import org.kairos.ibpnh.vo.AbstractVo;
+import org.kairos.ibpnh.model.I_Model;
 import org.kairos.ibpnh.web.I_MessageSolver;
 import org.kairos.ibpnh.web.MessageSolver;
 import org.kairos.ibpnh.web.WebContextHolder;
@@ -28,7 +28,7 @@ public abstract class AbstractFxImpl implements I_Fx {
 	/**
 	 * Persistence manager.
 	 */
-	private JDOPersistenceManager pm;
+	private Objectify ofy;
 
 	/**
 	 * Gson formatter
@@ -39,7 +39,7 @@ public abstract class AbstractFxImpl implements I_Fx {
 	/**
 	 * Generic VO.
 	 */
-	private AbstractVo vo;
+	private I_Model entity;
 
 	/**
 	 * Alert Server.
@@ -71,7 +71,7 @@ public abstract class AbstractFxImpl implements I_Fx {
 
 	/**
 	 * Checks if the function can be executed.
-	 * 
+	 *
 	 * @return an FxValidationResponse
 	 */
 	protected abstract FxValidationResponse validate();
@@ -82,21 +82,21 @@ public abstract class AbstractFxImpl implements I_Fx {
 	 * @param alertVo
 	 *            alert VO
 	 */
-	//protected abstract void _completeAlert(AlertVo alertVo);
+	//protected abstract void _completeAlert(Alert alertVo);
 
 	/**
 	 * Generates an alert to sent to the Alert Server.
 	 * 
 	 * @return alertVo
 	 */
-	/*protected AlertVo generateAlert() {
+	/*protected Alert generateAlert() {
 		this.logger.debug("generating alert for the FX execution");
 
-		AlertVo alertVo = new AlertVo();
+		Alert alert = new AlertVo();
 		Calendar calendar = Calendar.getInstance();
 
-		alertVo.setObjectId(this.getVo() == null ? null : this.getVo().getId());
-		alertVo.setObjectClassName(this.getVo() == null ? null : this.getVo()
+		alertVo.setObjectId(this.getEntity() == null ? null : this.getEntity().getId());
+		alertVo.setObjectClassName(this.getEntity() == null ? null : this.getEntity()
 				.getClass().getCanonicalName());
 		alertVo.setTimestamp(calendar.getTime());
 
@@ -157,7 +157,7 @@ public abstract class AbstractFxImpl implements I_Fx {
 				this.logger.debug("executing fx - alert generation phase");
                 /*
 				if (this.getFireAlert()) {
-					AlertVo alertVo = this.generateAlert();
+					Alert alert = this.generateAlert();
 
 					if (alertVo.getSendAlert()) {
 						this.getAlertSrv().saveAlert(alertVo);
@@ -179,34 +179,34 @@ public abstract class AbstractFxImpl implements I_Fx {
 	/**
 	 * Starts transaction if it was not active.
 	 */
-	public void beginTransaction() {
-        this.setWasActive(this.getPm().currentTransaction().isActive());
-		if (!this.getWasActive()) {
-			this.getPm().currentTransaction().begin();
-		}
-	}
+//	public void beginTransaction() {
+//        this.setWasActive(this.getOfy().currentTransaction().isActive());
+//		if (!this.getWasActive()) {
+//			this.getOfy().currentTransaction().begin();
+//		}
+//	}
 
 	/**
 	 * Commits transaction if it was not active when fx was called.
 	 */
-	public void commitTransaction() {
-		if (!this.getWasActive()) {
-            this.getPm().currentTransaction().commit();
-		}
-	}
+//	public void commitTransaction() {
+//		if (!this.getWasActive()) {
+//            this.getOfy().currentTransaction().commit();
+//		}
+//	}
 
 	/**
 	 * Rollback transaction if it was active.
 	 */
-	public void rollbackTransaction() {
-		if (this.getPm().currentTransaction().isActive()) {
-			try {
-                this.getPm().currentTransaction().rollback();
-			} catch (Exception e) {
-				this.logger.error("error rollbacking transaction", e);
-			}
-		}
-	}
+//	public void rollbackTransaction() {
+//		if (this.getOfy().currentTransaction().isActive()) {
+//			try {
+//                this.getOfy().currentTransaction().rollback();
+//			} catch (Exception e) {
+//				this.logger.error("error rollbacking transaction", e);
+//			}
+//		}
+//	}
 
 	/**
 	 * Gets a new error message with the specified code.
@@ -269,13 +269,13 @@ public abstract class AbstractFxImpl implements I_Fx {
 	}
 
     @Override
-    public JDOPersistenceManager getPm() {
-        return pm;
+    public Objectify getOfy() {
+        return ofy;
     }
 
     @Override
-    public void setPm(JDOPersistenceManager pm) {
-        this.pm = pm;
+    public void setOfy(Objectify ofy) {
+        this.ofy = ofy;
     }
 
     /**
@@ -309,19 +309,19 @@ public abstract class AbstractFxImpl implements I_Fx {
 //	}
 
 	/**
-	 * @return the vo
+	 * @return the entity
 	 */
-	public AbstractVo getVo() {
-		return this.vo;
+	public I_Model getEntity() {
+		return this.entity;
 	}
 
 	/**
-	 * @param vo
-	 *            the vo to set
+	 * @param entity
+	 *            the  to set
 	 */
 	@Override
-	public void setVo(AbstractVo vo) {
-		this.vo = vo;
+	public void setEntity(I_Model entity) {
+		this.entity = entity;
 	}
 
 	/**

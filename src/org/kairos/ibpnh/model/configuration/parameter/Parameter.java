@@ -2,11 +2,6 @@ package org.kairos.ibpnh.model.configuration.parameter;
 
 import org.kairos.ibpnh.model.I_Model;
 import org.pojomatic.Pojomatic;
-import org.pojomatic.annotations.AutoProperty;
-import org.pojomatic.annotations.DefaultPojomaticPolicy;
-
-import javax.jdo.annotations.*;
-import java.io.Serializable;
 
 /**
  * System Global Parameter
@@ -14,69 +9,43 @@ import java.io.Serializable;
  * @author AxelCollardBovy ,created on 08/03/2015.
  *
  */
-@PersistenceCapable
-@AutoProperty(policy= DefaultPojomaticPolicy.TO_STRING)
-public class Parameter implements Serializable, I_Model {
-	
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 7553642112124826241L;
+public class Parameter implements I_Model{
 
-	/**
-	 * Entity ID.
-	 */
-	@PrimaryKey
-	@Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
-	@Extension(vendorName="datanucleus", key="gae.encoded-pk", value="true")
 	private String id;
 	
 	/**
 	 * Parameter's name.
 	 */
-    @Persistent
 	private String name;
 	
 	/**
 	 * Parameter's value.
 	 */
-    @Persistent(serialized = "true")
 	private String value;
 	
 	/**
 	 * Description.
 	 */
-    @Persistent
 	private String description;
 	
 	/**
 	 * Parameter's type.
 	 */
-    @Persistent
 	private E_ParameterType type;
-	
+
 	/**
 	 * Global flag.
 	 */
-    @Persistent
 	private Boolean global;
 
 	/**
-	 * Parameter History.
-	 */
-//    @Persistent(mappedBy="parameter")
-//	private List<ParameterHistory> history;
-	
-	/**
 	 * Logic deletion flag.
 	 */
-    @Persistent
 	private Boolean deleted;
-	
+
 	/**
-	 * If this parameter is fixed. (name, type, and description cannot be changed). 
+	 * If this parameter is fixed. (name, type, and description cannot be changed).
 	 */
-    @Persistent
 	private Boolean fixed;
 
 	/*
@@ -124,7 +93,7 @@ public class Parameter implements Serializable, I_Model {
 	public void setValue(String value) {
 		this.value = value;
 	}
-	
+
 	/**
 	 * @return the type
 	 */
@@ -139,19 +108,6 @@ public class Parameter implements Serializable, I_Model {
 		this.type = type;
 	}
 
-//	/**
-//	 * @return the history
-//	 */
-//	public List<ParameterHistory> getHistory() {
-//		return this.history;
-//	}
-//
-//	/**
-//	 * @param history the history to set
-//	 */
-//	public void setHistory(List<ParameterHistory> history) {
-//		this.history = history;
-//	}
 
 	/*
 	 * (non-Javadoc)

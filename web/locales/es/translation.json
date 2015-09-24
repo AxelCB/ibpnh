@@ -540,8 +540,7 @@
 		  "title":"Título",
 		  "imageUrl":"Imagen",
 		  "date":"Fecha"
-		},
-	  	"modifyImageFileNotallowed":"No se permite modificar la imagen del devocional. De ser necesario, eliminelo y vuelvalo a cargar"
+		}
 	},
   	"ant mark":{"desc":"Ant append text after this, allways remain it at bottom"}
 }

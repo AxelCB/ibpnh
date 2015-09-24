@@ -105,13 +105,13 @@ public class GsonSpringFactoryBean implements FactoryBean<Gson> {
      *            GSON builder
      */
     private void setDateTimeFormat(GsonBuilder gsb) {
-        JDOPersistenceManager pm = null;
+        Objectify ofy = null;
         try {
             // try to get date time format parameter
             pm = this.getPersistenceManagerHolder().getPersistenceManager();
-            ParameterVo parameterVo = this.getParameterDao().getByName(pm,
+            Parameter parameter = this.getParameterDao().getByName(pm,
                     ParameterVo.JSON_DATE_TIME_EXCHANGE_FORMAT);
-            if (parameterVo == null) {
+            if (parameter == null) {
                 this.logger
                         .debug("parameter {} not found, defaulting to dd/MM/yyyy HH:mm:ss.SSS",
                                 ParameterVo.JSON_DATE_TIME_EXCHANGE_FORMAT);

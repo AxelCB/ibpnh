@@ -5,6 +5,7 @@ import org.kairos.ibpnh.fx.AbstractFxImpl;
 import org.kairos.ibpnh.fx.FxValidationResponse;
 import org.kairos.ibpnh.fx.I_Fx;
 import org.kairos.ibpnh.json.JsonResponse;
+import org.kairos.ibpnh.model.user.User;
 import org.kairos.ibpnh.utils.ErrorCodes;
 import org.kairos.ibpnh.utils.HashUtils;
 import org.kairos.ibpnh.vo.user.UserVo;
@@ -44,13 +45,13 @@ public class Fx_ModifyUser extends AbstractFxImpl implements I_Fx {
 			this.beginTransaction();
 
 			// we persist the entity
-			this.getVo().setPassword(HashUtils.hashPassword(this.getVo().getPassword(), this.getVo().getHashCost()));
-			UserVo userVo = this.getDao().persist(this.getPm(), this.getVo());
+			this.getEntity().setPassword(HashUtils.hashPassword(this.getEntity().getPassword(), this.getEntity().getHashCost()));
+			User user = this.getDao().persist(this.getOfy(), this.getEntity());
 
 			this.commitTransaction();
 
 			return JsonResponse.ok(
-					this.getGson().toJson(userVo),
+					this.getGson().toJson(user),
 					this.getRealMessageSolver().getMessage(
 							"default.entity.modified.ok",
 							new String[]{this.getRealMessageSolver()
@@ -76,19 +77,19 @@ public class Fx_ModifyUser extends AbstractFxImpl implements I_Fx {
 	protected FxValidationResponse validate() {
 		this.logger.debug("executing Fx_ModifyUser.validate()");
 
-//		String result = this.getVo().validate(this.getWebContextHolder());
+//		String result = this.getEntity().validate(this.getWebContextHolder());
 //		if (result != null) {
 //			return FxValidationResponse.error(result);
 //		}
 
-		if (!this.getDao().checkUsernameUniqueness(this.getPm(),
-				this.getVo().getUsername(), this.getVo().getId())) {
+		if (!this.getDao().checkUsernameUniqueness(this.getOfy(),
+				this.getEntity().getUsername(), this.getEntity().getId())) {
 			String jsonResponseMessage = this.getRealMessageSolver()
 					.getMessage("fx.user.validation.nonUniqueCode",
-							new String[] { this.getVo().getUsername() });
+							new String[] { this.getEntity().getUsername() });
 
 			return FxValidationResponse.error(jsonResponseMessage);
-		} else if (this.getVo().getId() == null) {
+		} else if (this.getEntity().getId() == null) {
 
 			String errorCodeMessage = this.getRealMessageSolver().getMessage(
 					"default.error.code",
@@ -103,10 +104,10 @@ public class Fx_ModifyUser extends AbstractFxImpl implements I_Fx {
 
 			return FxValidationResponse.error(jsonResponseMessage);
 		} else {
-			UserVo userVo = this.getDao().getById(this.getPm(),
-					this.getVo().getId());
+			User user = this.getDao().getById(this.getOfy(),
+					this.getEntity().getId());
 
-			if (userVo == null) {
+			if (user == null) {
 
 				String jsonResponseMessage = this.getRealMessageSolver()
 						.getMessage(
@@ -129,20 +130,20 @@ public class Fx_ModifyUser extends AbstractFxImpl implements I_Fx {
 	 * vo.alert.AlertVo)
 	 */
 //	@Override
-//	protected void _completeAlert(AlertVo alertVo) {
+//	protected void _completeAlert(Alert alertVo) {
 //		alertVo.setPriority(E_Priority.LOW);
 //
 //		alertVo.setDescription(this.getRealMessageSolver().getMessage(
 //				"fx.user.alert.description.modified",
-//				new String[] { this.getVo().getDescription() }));
+//				new String[] { this.getEntity().getDescription() }));
 //	}
 
 	/**
 	 * Class VO
 	 */
 	@Override
-	public UserVo getVo() {
-		return (UserVo) super.getVo();
+	public User getEntity() {
+		return (User) super.getEntity();
 	}
 
 	/**

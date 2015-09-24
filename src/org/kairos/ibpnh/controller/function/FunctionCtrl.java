@@ -1,4 +1,4 @@
-package org.kairos.ibpnh.controller.function;
+package ibpnh.controller.function;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -109,12 +109,12 @@ public class FunctionCtrl implements I_URIValidator {
     @RequestMapping(value = "/list.json", method = RequestMethod.POST)
     public String list(@RequestBody String paginationData) {
         this.logger.debug("calling FunctionCtrl.list()");
-        JDOPersistenceManager pm = this.getPersistenceManagerHolder().getPersistenceManager();
+        Objectify ofy = this.getPersistenceManagerHolder().getPersistenceManager();
         JsonResponse jsonResponse = null;
 
         try {
-            PaginatedRequestVo paginatedRequestVo = this.getGson().fromJson(paginationData, PaginatedRequestVo.class);
-            PaginatedListVo<FunctionVo> paginatedListVo = this.getFunctionDao()
+            PaginatedRequest paginatedRequest = this.getGson().fromJson(paginationData, PaginatedRequestVo.class);
+            PaginatedListVo<FunctionVo> paginatedList = this.getFunctionDao()
                     .listPage(
                             pm,
                             paginatedRequestVo,
@@ -153,13 +153,13 @@ public class FunctionCtrl implements I_URIValidator {
     @RequestMapping(value = "/search.json", method = RequestMethod.POST)
     public String search(@RequestBody String data) {
         this.logger.debug("calling FunctionCtrl.search()");
-        JDOPersistenceManager pm = this.getPersistenceManagerHolder().getPersistenceManager();
+        Objectify ofy = this.getPersistenceManagerHolder().getPersistenceManager();
         JsonResponse jsonResponse = null;
 
         try {
             Type type = new TypeToken<PaginatedSearchRequestVo<FunctionVo>>() {}.getType();
-            PaginatedSearchRequestVo<FunctionVo> paginatedSearchRequestVo = this.getGson().fromJson(data, type);
-            PaginatedListVo<FunctionVo> paginatedListVo = this.getFunctionDao()
+            PaginatedSearchRequestVo<FunctionVo> paginatedSearchRequest = this.getGson().fromJson(data, type);
+            PaginatedListVo<FunctionVo> paginatedList = this.getFunctionDao()
                     .searchPage(
                             pm,
                             paginatedSearchRequestVo,
@@ -198,11 +198,11 @@ public class FunctionCtrl implements I_URIValidator {
     @RequestMapping(value = "/create.json", method = RequestMethod.POST)
     public String create(@RequestBody String data) {
         this.logger.debug("calling FunctionCtrl.create()");
-        JDOPersistenceManager pm = this.getPersistenceManagerHolder().getPersistenceManager();
+        Objectify ofy = this.getPersistenceManagerHolder().getPersistenceManager();
         JsonResponse jsonResponse = null;
 
         try {
-            FunctionVo functionVo = this.getGson().fromJson(data, FunctionVo.class);
+            Function function = this.getGson().fromJson(data, FunctionVo.class);
 
             Fx_CreateFunction fx = this.getFxFactory().getNewFxInstance(
                     Fx_CreateFunction.class);
@@ -231,11 +231,11 @@ public class FunctionCtrl implements I_URIValidator {
     @RequestMapping(value = "/delete.json", method = RequestMethod.POST)
     public String delete(@RequestBody String data) {
         this.logger.debug("calling FunctionCtrl.delete()");
-        JDOPersistenceManager pm = this.getPersistenceManagerHolder().getPersistenceManager();
+        Objectify ofy = this.getPersistenceManagerHolder().getPersistenceManager();
         JsonResponse jsonResponse = null;
 
         try {
-            FunctionVo functionVo = this.getGson().fromJson(data, FunctionVo.class);
+            Function function = this.getGson().fromJson(data, FunctionVo.class);
 
             Fx_DeleteFunction fx = this.getFxFactory().getNewFxInstance(
                     Fx_DeleteFunction.class);
@@ -264,11 +264,11 @@ public class FunctionCtrl implements I_URIValidator {
     @RequestMapping(value = "/modify.json", method = RequestMethod.POST)
     public String modifiy(@RequestBody String data) {
         this.logger.debug("calling FunctionCtrl.modifiy()");
-        JDOPersistenceManager pm = this.getPersistenceManagerHolder().getPersistenceManager();
+        Objectify ofy = this.getPersistenceManagerHolder().getPersistenceManager();
         JsonResponse jsonResponse = null;
 
         try {
-            FunctionVo functionVo = this.getGson().fromJson(data, FunctionVo.class);
+            Function function = this.getGson().fromJson(data, FunctionVo.class);
 
             Fx_ModifyFunction fx = this.getFxFactory().getNewFxInstance(
                     Fx_ModifyFunction.class);

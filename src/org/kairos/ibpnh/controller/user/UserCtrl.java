@@ -1,4 +1,4 @@
-package org.kairos.ibpnh.controller.user;
+package ibpnh.controller.user;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
@@ -82,11 +82,11 @@ public class UserCtrl implements I_URIValidator {
     @Autowired
     private I_RoleDao roleDao;
 
-//    /**
-//     * Function Dao
-//     */
-//    @Autowired
-//    private I_FunctionDao functionDao;
+    /**
+     * Function Dao
+     */
+    @Autowired
+    private I_FunctionDao functionDao;
 
     /**
      * Parameter Dao
@@ -129,10 +129,10 @@ public class UserCtrl implements I_URIValidator {
      * @return
      */
     @ResponseBody
-    @RequestMapping(value = "/public/init", method = RequestMethod.GET)
+    @RequestMapping(value = "/init", method = RequestMethod.GET)
     public String init() {
         this.logger.debug("calling UserCtrl.init()");
-        JDOPersistenceManager pm = null;
+        Objectify ofy = null;
         JsonResponse jsonResponse = null;
 
         try {
@@ -141,94 +141,95 @@ public class UserCtrl implements I_URIValidator {
             if(this.getUserDao().listAll(pm).size()==0){
 
                 //We create the PASTOR role type
-                RoleTypeVo pastorRoleTypeVo = new RoleTypeVo();
+                RoleType pastorRoleType = new RoleTypeVo();
                 pastorRoleTypeVo.setDescription("Pastor");
                 pastorRoleTypeVo.setName("Pastor");
                 pastorRoleTypeVo.setRoleTypeEnum(E_RoleType.PASTOR);
 
                 //We create the USER role type
-                RoleTypeVo userRoleTypeVo = new RoleTypeVo();
+                RoleType userRoleType = new RoleTypeVo();
                 userRoleTypeVo.setDescription("Usuario");
                 userRoleTypeVo.setName("Usuario");
                 userRoleTypeVo.setRoleTypeEnum(E_RoleType.USER);
 
-                this.getRoleTypeDao().persist(pm,pastorRoleTypeVo);
-                this.getRoleTypeDao().persist(pm,userRoleTypeVo);
+                pastorRoleType = this.getRoleTypeDao().persist(pm,pastorRoleTypeVo);
+                userRoleType = this.getRoleTypeDao().persist(pm,userRoleTypeVo);
 
                 //We create the ADMIN role type
-                RoleTypeVo adminRoleTypeVo = new RoleTypeVo();
+                RoleType adminRoleType = new RoleTypeVo();
                 adminRoleTypeVo.setDescription("Administrador");
                 adminRoleTypeVo.setName("Administrador");
                 adminRoleTypeVo.setRoleTypeEnum(E_RoleType.ADMIN);
 
-                this.getRoleTypeDao().persist(pm,adminRoleTypeVo);
+                adminRoleType = this.getRoleTypeDao().persist(pm,adminRoleTypeVo);
 
                 //We create the necessary functions for the admin role type
-//                List<FunctionVo> functions = new ArrayList<FunctionVo>();
+                List<FunctionVo> functions = new ArrayList<FunctionVo>();
 
-//                FunctionVo functionVo = new FunctionVo();
-//                functionVo.setActionName("user");
-//                functionVo.setDescription("CreateUser");
-//                functionVo.setMenuName("configuration");
-//                functionVo.setName("createUser");
-//                functionVo.setSubmenuName(null);
-//                functionVo.setUri("/user/create");
-//                functions.add(functionVo);
-//
-//                functionVo = new FunctionVo();
-//                functionVo.setActionName("user");
-//                functionVo.setDescription("DeleteUser");
-//                functionVo.setMenuName("configuration");
-//                functionVo.setName("deleteUser");
-//                functionVo.setSubmenuName(null);
-//                functionVo.setUri("/user/delete");
-//                functions.add(functionVo);
-//
-//                functionVo = new FunctionVo();
-//                functionVo.setActionName("user");
-//                functionVo.setDescription("ModifyUser");
-//                functionVo.setMenuName("configuration");
-//                functionVo.setName("modifyUser");
-//                functionVo.setSubmenuName(null);
-//                functionVo.setUri("/user/modify");
-//                functions.add(functionVo);
+                Function function = new FunctionVo();
+                functionVo.setActionName("user");
+                functionVo.setDescription("CreateUser");
+                functionVo.setMenuName("configuration");
+                functionVo.setName("createUser");
+                functionVo.setSubmenuName(null);
+                functionVo.setUri("/user/create");
+                functions.add(functionVo);
 
-//                functionVo = new FunctionVo();
-//                functionVo.setActionName("user");
-//                functionVo.setDescription("ListUser");
-//                functionVo.setMenuName("configuration");
-//                functionVo.setName("listUser");
-//                functionVo.setSubmenuName(null);
-//                functionVo.setUri("/user/list");
-//                functions.add(functionVo);
+                function = new FunctionVo();
+                functionVo.setActionName("user");
+                functionVo.setDescription("DeleteUser");
+                functionVo.setMenuName("configuration");
+                functionVo.setName("deleteUser");
+                functionVo.setSubmenuName(null);
+                functionVo.setUri("/user/delete");
+                functions.add(functionVo);
 
-//                functionVo = new FunctionVo();
-//                functionVo.setActionName("user");
-//                functionVo.setDescription("SearchUser");
-//                functionVo.setMenuName("configuration");
-//                functionVo.setName("searchUser");
-//                functionVo.setSubmenuName(null);
-//                functionVo.setUri("/user/search");
-//                functions.add(functionVo);
+                function = new FunctionVo();
+                functionVo.setActionName("user");
+                functionVo.setDescription("ModifyUser");
+                functionVo.setMenuName("configuration");
+                functionVo.setName("modifyUser");
+                functionVo.setSubmenuName(null);
+                functionVo.setUri("/user/modify");
+                functions.add(functionVo);
 
-//                for (FunctionVo function : functions) {
-//                    RoleTypeFunctionVo roleTypeFunctionVo = new RoleTypeFunctionVo();
-//                    roleTypeFunctionVo.setEnabled(Boolean.TRUE);
-//                    roleTypeFunctionVo.setFunction(function);
-//                    roleTypeFunctionVo.setRoleType(adminRoleTypeVo);
-//
-//                    adminRoleTypeVo.getRoleTypeFunctions().add(roleTypeFunctionVo);
-//                }
+                function = new FunctionVo();
+                functionVo.setActionName("user");
+                functionVo.setDescription("ListUser");
+                functionVo.setMenuName("configuration");
+                functionVo.setName("listUser");
+                functionVo.setSubmenuName(null);
+                functionVo.setUri("/user/list");
+                functions.add(functionVo);
+
+                function = new FunctionVo();
+                functionVo.setActionName("user");
+                functionVo.setDescription("SearchUser");
+                functionVo.setMenuName("configuration");
+                functionVo.setName("searchUser");
+                functionVo.setSubmenuName(null);
+                functionVo.setUri("/user/search");
+                functions.add(functionVo);
+
+                for (Function function : functions) {
+                    function = this.getFunctionDao().persist(pm,function);
+                    RoleTypeFunction roleTypeFunction = new RoleTypeFunctionVo();
+                    roleTypeFunctionVo.setEnabled(Boolean.TRUE);
+                    roleTypeFunctionVo.setFunction(function);
+                    roleTypeFunctionVo.setRoleType(adminRoleTypeVo);
+
+                    adminRoleTypeVo.getRoleTypeFunctions().add(roleTypeFunctionVo);
+                }
 
                 adminRoleTypeVo=this.getRoleTypeDao().getByRoleTypeEnum(pm,E_RoleType.ADMIN);
 
                 //We create the Admin role
-                RoleVo adminRoleVo = new RoleVo();
+                Role adminRole = new RoleVo();
                 adminRoleVo.setRoleType(adminRoleTypeVo);
-//                adminRoleVo.copyOrUpdateFromRoleType(adminRoleTypeVo);
+                adminRoleVo.copyOrUpdateFromRoleType(adminRoleTypeVo);
 
                 //We create the Admin user
-                UserVo adminVo = new UserVo();
+                User admin = new UserVo();
                 adminVo.setEnabled(Boolean.TRUE);
                 adminVo.setFirstLogin(false);
                 adminVo.setLoginAttempts(Integer.valueOf(0));
@@ -237,7 +238,7 @@ public class UserCtrl implements I_URIValidator {
                 adminVo.setPassword(HashUtils.hashPassword("krwlng", adminVo.getHashCost()));
                 adminVo.setRole(adminRoleVo);
 
-                adminVo = this.getUserDao().persist(pm,adminVo);
+                admin = this.getUserDao().persist(pm,adminVo);
 
                 jsonResponse = JsonResponse.ok(this.getGson().toJson(adminVo));
             }
@@ -264,12 +265,12 @@ public class UserCtrl implements I_URIValidator {
     @RequestMapping(value = "/list.json", method = RequestMethod.POST)
     public String list(@RequestBody String paginationData) {
         this.logger.debug("calling UserCtrl.list()");
-        JDOPersistenceManager pm = this.getPersistenceManagerHolder().getPersistenceManager();
+        Objectify ofy = this.getPersistenceManagerHolder().getPersistenceManager();
         JsonResponse jsonResponse = null;
 
         try {
-            PaginatedRequestVo paginatedRequestVo = this.getGson().fromJson(paginationData, PaginatedRequestVo.class);
-            PaginatedListVo<UserVo> paginatedListVo = this.getUserDao()
+            PaginatedRequest paginatedRequest = this.getGson().fromJson(paginationData, PaginatedRequestVo.class);
+            PaginatedListVo<UserVo> paginatedList = this.getUserDao()
                     .listPage(
                             pm,
                             paginatedRequestVo,
@@ -309,13 +310,13 @@ public class UserCtrl implements I_URIValidator {
     @RequestMapping(value = "/search.json", method = RequestMethod.POST)
     public String search(@RequestBody String data) {
         this.logger.debug("calling UserCtrl.search()");
-        JDOPersistenceManager pm = this.getPersistenceManagerHolder().getPersistenceManager();
+        Objectify ofy = this.getPersistenceManagerHolder().getPersistenceManager();
         JsonResponse jsonResponse = null;
 
         try {
             Type type = new TypeToken<PaginatedSearchRequestVo<UserVo>>() {}.getType();
-            PaginatedSearchRequestVo<UserVo> paginatedSearchRequestVo = this.getGson().fromJson(data, type);
-            PaginatedListVo<UserVo> paginatedListVo = this.getUserDao()
+            PaginatedSearchRequestVo<UserVo> paginatedSearchRequest = this.getGson().fromJson(data, type);
+            PaginatedListVo<UserVo> paginatedList = this.getUserDao()
                     .searchPage(
                             pm,
                             paginatedSearchRequestVo,
@@ -354,18 +355,18 @@ public class UserCtrl implements I_URIValidator {
 //    @RequestMapping(value = "/addFunctions.json", method = RequestMethod.GET)
 //    public String addFunctions() {
 //        this.logger.debug("calling UserCtrl.addFunctions()");
-//        JDOPersistenceManager pm = this.getPersistenceManagerHolder().getPersistenceManager();
+//        Objectify ofy = this.getPersistenceManagerHolder().getPersistenceManager();
 //        JsonResponse jsonResponse = null;
 //
 //        try {
-//            UserVo userVo = this.getUserDao().getByUsername(pm, "admin");
+//            User user = this.getUserDao().getByUsername(pm, "admin");
 //            String responseData = this.getGson().toJson(Boolean.FALSE);
 //            if(userVo.getRole().getRoleFunctions().size()<=1){
 //                pm.currentTransaction().begin();
 //
 //                List<FunctionVo> functions = new ArrayList<FunctionVo>();
 //
-//                FunctionVo functionVo = new FunctionVo();
+//                Function function = new FunctionVo();
 //                functionVo.setActionName("user");
 //                functionVo.setDescription("CreateUser");
 //                functionVo.setMenuName("configuration");
@@ -374,7 +375,7 @@ public class UserCtrl implements I_URIValidator {
 //                functionVo.setUri("/user/create");
 //                functions.add(functionVo);
 //
-//                functionVo = new FunctionVo();
+//                function = new FunctionVo();
 //                functionVo.setActionName("user");
 //                functionVo.setDescription("DeleteUser");
 //                functionVo.setMenuName("configuration");
@@ -383,7 +384,7 @@ public class UserCtrl implements I_URIValidator {
 //                functionVo.setUri("/user/delete");
 //                functions.add(functionVo);
 //
-//                functionVo = new FunctionVo();
+//                function = new FunctionVo();
 //                functionVo.setActionName("user");
 //                functionVo.setDescription("ModifyUser");
 //                functionVo.setMenuName("configuration");
@@ -392,7 +393,7 @@ public class UserCtrl implements I_URIValidator {
 //                functionVo.setUri("/user/modify");
 //                functions.add(functionVo);
 //
-//                functionVo = new FunctionVo();
+//                function = new FunctionVo();
 //                functionVo.setActionName("user");
 //                functionVo.setDescription("SearchUser");
 //                functionVo.setMenuName("configuration");
@@ -401,17 +402,17 @@ public class UserCtrl implements I_URIValidator {
 //                functionVo.setUri("/user/search");
 //                functions.add(functionVo);
 //
-//                for (FunctionVo function : functions){
+//                for (Function function : functions){
 //                    function = this.getFunctionDao().persist(pm,function);
 //                    pm.flush();
 //
-//                    RoleFunctionVo roleFunctionVo = new RoleFunctionVo();
+//                    RoleFunction roleFunction = new RoleFunctionVo();
 //                    roleFunctionVo.setFunction(function);
 //                    roleFunctionVo.setRole(userVo.getRole());
 //                    userVo.getRole().getRoleFunctions().add(roleFunctionVo);
 ////                    this.getUserDao().persist(pm,userVo);
 //                    this.getRoleDao().persist(pm,userVo.getRole());
-//                    userVo = this.getUserDao().getByUsername(pm, "admin");
+//                    user = this.getUserDao().getByUsername(pm, "admin");
 //
 //                    pm.flush();
 //                }
@@ -450,26 +451,26 @@ public class UserCtrl implements I_URIValidator {
     @RequestMapping(value = "/create.json", method = RequestMethod.POST)
     public String create(@RequestBody String data) {
         this.logger.debug("calling UserCtrl.create()");
-        JDOPersistenceManager pm = this.getPersistenceManagerHolder().getPersistenceManager();
+        Objectify ofy = this.getPersistenceManagerHolder().getPersistenceManager();
         JsonResponse jsonResponse = null;
 
         try {
             JsonObject jsonObject = this.getGson().fromJson(data, JsonObject.class);
             E_RoleType roleTypeEnum = this.getGson().fromJson(jsonObject.get("roleType"), E_RoleType.class);
-            RoleTypeVo roleTypeVo = this.getRoleTypeDao().getByRoleTypeEnum(pm,roleTypeEnum);
+            RoleType roleType = this.getRoleTypeDao().getByRoleTypeEnum(pm,roleTypeEnum);
 
-            RoleVo roleVo = new RoleVo();
+            Role role = new RoleVo();
             roleVo.setRoleType(roleTypeVo);
 //            roleVo.copyOrUpdateFromRoleType(roleTypeVo);
 
-            UserVo userVo = this.getGson().fromJson(jsonObject.get("user"), UserVo.class);
+            User user = this.getGson().fromJson(jsonObject.get("user"), UserVo.class);
             userVo.setRole(roleVo);
 
             Fx_CreateUser fx = this.getFxFactory().getNewFxInstance(
                     Fx_CreateUser.class);
 
-            fx.setVo(userVo);
-            fx.setPm(pm);
+            fx.setEntity(userVo);
+            fx.setOfy(pm);
             this.logger.debug("executing Fx_CreateUser");
             jsonResponse = fx.execute();
         } catch (Exception e) {
@@ -492,17 +493,17 @@ public class UserCtrl implements I_URIValidator {
     @RequestMapping(value = "/delete.json", method = RequestMethod.POST)
     public String delete(@RequestBody String data) {
         this.logger.debug("calling UserCtrl.delete()");
-        JDOPersistenceManager pm = this.getPersistenceManagerHolder().getPersistenceManager();
+        Objectify ofy = this.getPersistenceManagerHolder().getPersistenceManager();
         JsonResponse jsonResponse = null;
 
         try {
-            UserVo userVo = this.getGson().fromJson(data, UserVo.class);
+            User user = this.getGson().fromJson(data, UserVo.class);
 
             Fx_DeleteUser fx = this.getFxFactory().getNewFxInstance(
                     Fx_DeleteUser.class);
 
-            fx.setVo(userVo);
-            fx.setPm(pm);
+            fx.setEntity(userVo);
+            fx.setOfy(pm);
             this.logger.debug("executing Fx_DeleteUser");
             jsonResponse = fx.execute();
         } catch (Exception e) {
@@ -525,17 +526,17 @@ public class UserCtrl implements I_URIValidator {
     @RequestMapping(value = "/modify.json", method = RequestMethod.POST)
     public String modifiy(@RequestBody String data) {
         this.logger.debug("calling UserCtrl.modifiy()");
-        JDOPersistenceManager pm = this.getPersistenceManagerHolder().getPersistenceManager();
+        Objectify ofy = this.getPersistenceManagerHolder().getPersistenceManager();
         JsonResponse jsonResponse = null;
 
         try {
-            UserVo userVo = this.getGson().fromJson(data, UserVo.class);
+            User user = this.getGson().fromJson(data, UserVo.class);
 
             Fx_ModifyUser fx = this.getFxFactory().getNewFxInstance(
                     Fx_ModifyUser.class);
 
-            fx.setVo(userVo);
-            fx.setPm(pm);
+            fx.setEntity(userVo);
+            fx.setOfy(pm);
             this.logger.debug("executing Fx_ModifyUser");
             jsonResponse = fx.execute();
         } catch (Exception e) {
@@ -646,11 +647,11 @@ public class UserCtrl implements I_URIValidator {
         this.fxFactory = fxFactory;
     }
 
-//    public I_FunctionDao getFunctionDao() {
-//        return functionDao;
-//    }
-//
-//    public void setFunctionDao(I_FunctionDao functionDao) {
-//        this.functionDao = functionDao;
-//    }
+    public I_FunctionDao getFunctionDao() {
+        return functionDao;
+    }
+
+    public void setFunctionDao(I_FunctionDao functionDao) {
+        this.functionDao = functionDao;
+    }
 }

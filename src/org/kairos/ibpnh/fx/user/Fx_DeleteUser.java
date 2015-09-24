@@ -5,8 +5,8 @@ import org.kairos.ibpnh.fx.AbstractFxImpl;
 import org.kairos.ibpnh.fx.FxValidationResponse;
 import org.kairos.ibpnh.fx.I_Fx;
 import org.kairos.ibpnh.json.JsonResponse;
+import org.kairos.ibpnh.model.user.User;
 import org.kairos.ibpnh.utils.ErrorCodes;
-import org.kairos.ibpnh.vo.user.UserVo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,7 +43,7 @@ public class Fx_DeleteUser extends AbstractFxImpl implements I_Fx {
 			this.beginTransaction();
 
 			// we persist the entity
-			this.getDao().delete(this.getPm(), this.getVo());
+			this.getDao().delete(this.getOfy(), this.getEntity());
 
 			this.commitTransaction();
 
@@ -75,16 +75,16 @@ public class Fx_DeleteUser extends AbstractFxImpl implements I_Fx {
 	protected FxValidationResponse validate() {
 		this.logger.debug("executing Fx_DeleteFunction.validate()");
 
-		if (this.getVo().getId() == null) {
+		if (this.getEntity().getId() == null) {
 
 			String errorCodeMessage = this.getRealMessageSolver().getMessage("default.error.code", new Object[] { ErrorCodes.ERROR_ENTITY_ID_UNDEFINED });
 			String jsonResponseMessage = this.getRealMessageSolver().getMessage("default.entity.deleted.error", new String[] { this.getRealMessageSolver().getMessage("entity.user.name", null), errorCodeMessage });
 
 			return FxValidationResponse.error(jsonResponseMessage);
 		} else {
-			UserVo userVo = this.getDao().getById(this.getPm(),this.getVo().getId());
+			User user = this.getDao().getById(this.getOfy(),this.getEntity().getId());
 
-			if (userVo == null) {
+			if (user == null) {
 				String jsonResponseMessage = this.getRealMessageSolver().getMessage("fx.user.validation.entityNotExists", new String[] { this.getRealMessageSolver().getMessage("default.delete", null) });
 
 				return FxValidationResponse.error(jsonResponseMessage);
@@ -102,20 +102,20 @@ public class Fx_DeleteUser extends AbstractFxImpl implements I_Fx {
 	 * vo.alert.AlertVo)
 	 */
 //	@Override
-//	protected void _completeAlert(AlertVo alertVo) {
+//	protected void _completeAlert(Alert alertVo) {
 //		alertVo.setPriority(E_Priority.HIGH);
 //
 //		alertVo.setDescription(this.getRealMessageSolver().getMessage(
 //				"fx.user.alert.description.deleted",
-//				new String[] { this.getVo().getAcronym() }));
+//				new String[] { this.getEntity().getAcronym() }));
 //	}
 
 	/**
 	 * Casted VO.
 	 */
 	@Override
-	public UserVo getVo() {
-		return (UserVo) super.getVo();
+	public User getEntity() {
+		return (User) super.getEntity();
 	}
 
 	/**

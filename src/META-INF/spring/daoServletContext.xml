@@ -15,16 +15,20 @@ Repository and Service layers
     <beans>    
     	<!-- DAOs -->
     	<!-- Configuration -->
-    		<!--<bean id="functionDao" class="org.kairos.ibpnh.dao.user.FunctionDaoJDOImpl" scope="prototype"/>-->
-			<!--<bean id="menuOrderDao" class="org.universe.core.dao.configuration.menuOrder.MenuOrderDaoImpl" scope="prototype"/>-->
+    		<bean id="functionDao" class="org.kairos.ibpnh.dao.user.FunctionDaoObjectifyImpl" scope="prototype"/>
+			<!--<bean id="functionDao" class="org.kairos.ibpnh.dao.user.FunctionDaoJDOImpl" scope="prototype"/>-->
 		<!-- User -->
-    	    <bean id="userDao" class="org.kairos.ibpnh.dao.user.UserDaoJDOImpl" scope="prototype"/>
-			<bean id="roleDao" class="org.kairos.ibpnh.dao.user.RoleDaoJDOImpl" scope="prototype"/>
-    	    <bean id="roleTypeDao" class="org.kairos.ibpnh.dao.user.RoleTypeDaoJDOImpl" scope="prototype"/>
+    	    <bean id="userDao" class="org.kairos.ibpnh.dao.user.UserDaoObjectifyImpl" scope="prototype"/>
+    	    <!--<bean id="userDao" class="org.kairos.ibpnh.dao.user.UserDaoJDOImpl" scope="prototype"/>-->
+			<bean id="roleDao" class="org.kairos.ibpnh.dao.user.RoleDaoObjectifyImpl" scope="prototype"/>
+			<!--<bean id="roleDao" class="org.kairos.ibpnh.dao.user.RoleDaoJDOImpl" scope="prototype"/>-->
+    	    <bean id="roleTypeDao" class="org.kairos.ibpnh.dao.user.RoleTypeDaoObjectifyImpl" scope="prototype"/>
+    	    <!--<bean id="roleTypeDao" class="org.kairos.ibpnh.dao.user.RoleTypeDaoJDOImpl" scope="prototype"/>-->
     	    <!--<bean id="passwordRecoverDao" class="org.universe.core.dao.user.PasswordRecoverDaoImpl" scope="prototype"/>-->
 
 		<!-- Devotional -->
-		<bean id="dailyDevotionalDao" class="org.kairos.ibpnh.dao.devotional.DailyDevotionalDaoJDOImpl" scope="prototype"/>
+		<bean id="dailyDevotionalDao" class="org.kairos.ibpnh.dao.devotional.DailyDevotionalDaoObjectifyImpl" scope="prototype"/>
+		<!--<bean id="dailyDevotionalDao" class="org.kairos.ibpnh.dao.devotional.DailyDevotionalDaoJDOImpl" scope="prototype"/>-->
 	    <!-- Log DAO -->
 	    <!--<bean id="logDaoImpl" class="org.universe.core.dao.log.LogDaoImpl" scope="prototype"/>-->
 	    

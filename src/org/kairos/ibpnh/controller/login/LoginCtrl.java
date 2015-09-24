@@ -1,4 +1,4 @@
-package org.kairos.ibpnh.controller.login;
+package ibpnh.controller.login;
 
 import com.google.gson.Gson;
 import org.datanucleus.api.jdo.JDOPersistenceManager;
@@ -86,16 +86,16 @@ public class LoginCtrl implements I_URIValidator {
     @RequestMapping(value = "/login.json")
     public String login(@RequestBody String data) {
         this.logger.debug("calling LoginCtrl.login()");
-        JDOPersistenceManager pm = this.getPersistenceManagerHolder().getPersistenceManager();
+        Objectify ofy = this.getPersistenceManagerHolder().getPersistenceManager();
         JsonResponse jsonResponse = null;
 
         try {
-            UserCredentialsVo userCredentialsVo = this.getGson().fromJson(data,
+            UserCredentials userCredentials = this.getGson().fromJson(data,
                     UserCredentialsVo.class);
 
             Fx_Login fx = this.getFxFactory().getNewFxInstance(Fx_Login.class);
-            fx.setVo(userCredentialsVo);
-            fx.setPm(pm);
+            fx.setEntity(userCredentialsVo);
+            fx.setOfy(pm);
             this.logger.debug("executing Fx_Login");
             jsonResponse = fx.execute();
         } catch (Exception e) {
@@ -136,10 +136,10 @@ public class LoginCtrl implements I_URIValidator {
     @RequestMapping(value = "/registrationEnabled.json")
     public String registrationEnabled() {
         this.logger.debug("calling LoginCtrl.registrationEnabled()");
-        JDOPersistenceManager pm =this.getPersistenceManagerHolder().getPersistenceManager();
+        Objectify ofy =this.getPersistenceManagerHolder().getPersistenceManager();
         JsonResponse response = null;
         try {
-            //ParameterVo parameterVo = this.getParameterDao().getByName(pm, ParameterVo.USER_REGISTRATION);
+            //Parameter parameter = this.getParameterDao().getByName(pm, ParameterVo.USER_REGISTRATION);
 
 //          response = JsonResponse.ok(this.getGson().toJson(
 //                    parameterVo.getValue(Boolean.class)));

@@ -1,10 +1,5 @@
-package org.kairos.ibpnh.controller.devotional;
+package ibpnh.controller.devotional;
 
-import com.google.appengine.api.blobstore.BlobKey;
-import com.google.appengine.api.blobstore.BlobstoreService;
-import com.google.appengine.api.blobstore.BlobstoreServiceFactory;
-import com.google.appengine.api.images.ImagesService;
-import com.google.appengine.api.images.ServingUrlOptions;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
@@ -30,9 +25,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
-import javax.servlet.http.HttpServletRequest;
 import java.lang.reflect.Type;
 import java.text.ParseException;
 import java.util.*;
@@ -99,12 +96,6 @@ public class DailyDevotionalCtrl implements I_URIValidator {
     @Autowired
     private WebContextHolder webContextHolder;
 
-    /**
-     * Images service
-     */
-    @Autowired
-    private ImagesService imagesService;
-
     /*
  * (non-Javadoc)
  *
@@ -124,15 +115,15 @@ public class DailyDevotionalCtrl implements I_URIValidator {
      * @return
      */
     @ResponseBody
-    @RequestMapping(value = "/public/list.json", method = RequestMethod.POST)
+    @RequestMapping(value = "/list.json", method = RequestMethod.POST)
     public String list(@RequestBody String paginationData) {
         this.logger.debug("calling DailyDevotionalCtrl.list()");
-        JDOPersistenceManager pm = this.getPersistenceManagerHolder().getPersistenceManager();
+        Objectify ofy = this.getPersistenceManagerHolder().getPersistenceManager();
         JsonResponse jsonResponse = null;
 
         try {
-            PaginatedRequestVo paginatedRequestVo = this.getGson().fromJson(paginationData, PaginatedRequestVo.class);
-            PaginatedListVo<DailyDevotionalVo> paginatedListVo = this.getDailyDevotionalDao()
+            PaginatedRequest paginatedRequest = this.getGson().fromJson(paginationData, PaginatedRequestVo.class);
+            PaginatedListVo<DailyDevotionalVo> paginatedList = this.getDailyDevotionalDao()
                     .listPage(
                             pm,
                             paginatedRequestVo,
@@ -140,10 +131,7 @@ public class DailyDevotionalCtrl implements I_URIValidator {
 //            this.getParameterDao()
 //                    .getByName(pm, ParameterVo.ITEMS_PER_PAGE)
 //                    .getValue(Long.class);
-            for (DailyDevotionalVo dailyDevotionalVo : paginatedListVo.getItems()){
-                BlobKey blobKey = new BlobKey(dailyDevotionalVo.getImageBlobKey());
-                dailyDevotionalVo.setImageUrl(imagesService.getServingUrl(ServingUrlOptions.Builder.withBlobKey(blobKey)));
-            }
+
             String data = this.getGson().toJson(paginatedListVo);
 
             jsonResponse = JsonResponse.ok(data);
@@ -172,16 +160,16 @@ public class DailyDevotionalCtrl implements I_URIValidator {
      * @return
      */
     @ResponseBody
-    @RequestMapping(value = "/public/search.json", method = RequestMethod.POST)
+    @RequestMapping(value = "/search.json", method = RequestMethod.POST)
     public String search(@RequestBody String data) {
         this.logger.debug("calling DailyDevotionalCtrl.search()");
-        JDOPersistenceManager pm = this.getPersistenceManagerHolder().getPersistenceManager();
+        Objectify ofy = this.getPersistenceManagerHolder().getPersistenceManager();
         JsonResponse jsonResponse = null;
 
         try {
             Type type = new TypeToken<PaginatedSearchRequestVo<DailyDevotionalVo>>() {}.getType();
-            PaginatedSearchRequestVo<DailyDevotionalVo> paginatedSearchRequestVo = this.getGson().fromJson(data, type);
-            PaginatedListVo<DailyDevotionalVo> paginatedListVo = this.getDailyDevotionalDao()
+            PaginatedSearchRequestVo<DailyDevotionalVo> paginatedSearchRequest = this.getGson().fromJson(data, type);
+            PaginatedListVo<DailyDevotionalVo> paginatedList = this.getDailyDevotionalDao()
                     .searchPage(
                             pm,
                             paginatedSearchRequestVo,
@@ -212,71 +200,29 @@ public class DailyDevotionalCtrl implements I_URIValidator {
     }
 
     /**
-     * Searches dailyDevotionals.
-     *
-     * @return
-     */
-    @ResponseBody
-    @RequestMapping(value = "/public/find.json", method = RequestMethod.POST)
-    public String find(@RequestBody String data) {
-        this.logger.debug("calling DailyDevotionalCtrl.search()");
-        JDOPersistenceManager pm = this.getPersistenceManagerHolder().getPersistenceManager();
-        JsonResponse jsonResponse = null;
-
-       try {
-           DailyDevotionalVo dailyDevotionalVo = this.getGson().fromJson(data,DailyDevotionalVo.class);
-
-           dailyDevotionalVo = this.getDailyDevotionalDao().getById(pm,dailyDevotionalVo.getId());
-           BlobKey blobKey = new BlobKey(dailyDevotionalVo.getImageBlobKey());
-           dailyDevotionalVo.setImageUrl(imagesService.getServingUrl(ServingUrlOptions.Builder.withBlobKey(blobKey)));
-
-           String responseData = this.getGson().toJson(dailyDevotionalVo);
-
-           jsonResponse = JsonResponse.ok(responseData);
-       } catch (Exception e) {
-            this.logger.error("error trying to read items.per.page parameter",
-                    e);
-
-            jsonResponse = this.getWebContextHolder().unexpectedErrorResponse(
-                    ErrorCodes.ERROR_PARAMETER_MISSING);
-        } finally {
-            this.getPersistenceManagerHolder().closePersistenceManager(pm);
-        }
-
-        return this.getGson().toJson(jsonResponse);
-    }
-
-    /**
      * Creates a new dailyDevotional
      *
      * @return
      */
     @ResponseBody
     @RequestMapping(value = "/create.json", method = RequestMethod.POST)
-    public String create(@RequestBody String formData,HttpServletRequest req,@RequestParam("data") String data) {
+    public String create(@RequestBody String data) {
         this.logger.debug("calling DailyDevotionalCtrl.create()");
-        JDOPersistenceManager pm = this.getPersistenceManagerHolder().getPersistenceManager();
+        Objectify ofy = this.getPersistenceManagerHolder().getPersistenceManager();
         JsonResponse jsonResponse = null;
 
         try {
-            BlobstoreService blobstoreService = BlobstoreServiceFactory.getBlobstoreService();
-            Map<String, List<BlobKey>> blobs = blobstoreService.getUploads(req);
-//            String data = formData.substring(formData.indexOf("{\"title\""),
-//                    formData.indexOf("\"imageUrl\":\"sinImagen\"}"+"\"imageUrl\":\"sinImagen\"}".length()));
-//            String data = formData.substring(formData.indexOf("name=\"data\"\r\n\r\n")+"name=\"data\"\r\n\r\n".length(),formData.indexOf("\r\n",
-//                    formData.indexOf("name=\"data\"\r\n\r\n")+"name=\"data\"\r\n\r\n".length()));
-            DailyDevotionalVo dailyDevotionalVo = this.getGson().fromJson(data,DailyDevotionalVo.class);
-            dailyDevotionalVo.setImageBlobKey(blobs.get("file").get(0).getKeyString());
+            DailyDevotional dailyDevotional = this.getGson().fromJson(data,DailyDevotionalVo.class);
 
             Fx_CreateDailyDevotional fx = this.getFxFactory().getNewFxInstance(
                     Fx_CreateDailyDevotional.class);
 
-            fx.setVo(dailyDevotionalVo);
-            fx.setPm(pm);
+            fx.setEntity(dailyDevotionalVo);
+            fx.setOfy(pm);
             this.logger.debug("executing Fx_CreateDailyDevotional");
             jsonResponse = fx.execute();
         } catch (Exception e) {
-            this.logger.error("unexpected error", e);
+            this.logger.debug("unexpected error", e);
 
             jsonResponse = this.getWebContextHolder().unexpectedErrorResponse(ErrorCodes.ERROR_UNEXPECTED);
         } finally {
@@ -295,21 +241,21 @@ public class DailyDevotionalCtrl implements I_URIValidator {
     @RequestMapping(value = "/delete.json", method = RequestMethod.POST)
     public String delete(@RequestBody String data) {
         this.logger.debug("calling DailyDevotionalCtrl.delete()");
-        JDOPersistenceManager pm = this.getPersistenceManagerHolder().getPersistenceManager();
+        Objectify ofy = this.getPersistenceManagerHolder().getPersistenceManager();
         JsonResponse jsonResponse = null;
 
         try {
-            DailyDevotionalVo dailyDevotionalVo = this.getGson().fromJson(data, DailyDevotionalVo.class);
+            DailyDevotional dailyDevotional = this.getGson().fromJson(data, DailyDevotionalVo.class);
 
             Fx_DeleteDailyDevotional fx = this.getFxFactory().getNewFxInstance(
                     Fx_DeleteDailyDevotional.class);
 
-            fx.setVo(dailyDevotionalVo);
-            fx.setPm(pm);
+            fx.setEntity(dailyDevotionalVo);
+            fx.setOfy(pm);
             this.logger.debug("executing Fx_DeleteDailyDevotional");
             jsonResponse = fx.execute();
         } catch (Exception e) {
-            this.logger.error("unexpected error", e);
+            this.logger.debug("unexpected error", e);
 
             jsonResponse = this.getWebContextHolder().unexpectedErrorResponse(ErrorCodes.ERROR_UNEXPECTED);
         } finally {
@@ -328,21 +274,21 @@ public class DailyDevotionalCtrl implements I_URIValidator {
     @RequestMapping(value = "/modify.json", method = RequestMethod.POST)
     public String modifiy(@RequestBody String data) {
         this.logger.debug("calling DailyDevotionalCtrl.modifiy()");
-        JDOPersistenceManager pm = this.getPersistenceManagerHolder().getPersistenceManager();
+        Objectify ofy = this.getPersistenceManagerHolder().getPersistenceManager();
         JsonResponse jsonResponse = null;
 
         try {
-            DailyDevotionalVo dailyDevotionalVo = this.getGson().fromJson(data, DailyDevotionalVo.class);
+            DailyDevotional dailyDevotional = this.getGson().fromJson(data, DailyDevotionalVo.class);
 
             Fx_ModifyDailyDevotional fx = this.getFxFactory().getNewFxInstance(
                     Fx_ModifyDailyDevotional.class);
 
-            fx.setVo(dailyDevotionalVo);
-            fx.setPm(pm);
+            fx.setEntity(dailyDevotionalVo);
+            fx.setOfy(pm);
             this.logger.debug("executing Fx_ModifyDailyDevotional");
             jsonResponse = fx.execute();
         } catch (Exception e) {
-            this.logger.error("unexpected error", e);
+            this.logger.debug("unexpected error", e);
 
             jsonResponse = this.getWebContextHolder().unexpectedErrorResponse(ErrorCodes.ERROR_UNEXPECTED);
         } finally {
@@ -358,28 +304,22 @@ public class DailyDevotionalCtrl implements I_URIValidator {
      * @return
      */
     @ResponseBody
-    @RequestMapping(value = "/public/lastDevotionals.json", method = RequestMethod.POST)
+    @RequestMapping(value = "/lastDevotionals.json", method = RequestMethod.POST)
     public String lastDevotionals(@RequestBody String data) {
         this.logger.debug("calling DailyDevotionalCtrl.lastDevotionals()");
-        JDOPersistenceManager pm = this.getPersistenceManagerHolder().getPersistenceManager();
+        Objectify ofy = this.getPersistenceManagerHolder().getPersistenceManager();
         JsonResponse jsonResponse = null;
 
         try {
-
             JsonObject jsonObject = this.getGson().fromJson(data,JsonObject.class);
             Long lastDevotionalsAmount = jsonObject.get("amount").getAsLong();
             Date date = this.getDateUtils().parseDate(jsonObject.get("today").getAsString());
             List<DailyDevotionalVo> dailyDevotionalVos =
                     this.getDailyDevotionalDao().listLastDevotionals(pm,lastDevotionalsAmount,date);
-            for (DailyDevotionalVo dailyDevotionalVo : dailyDevotionalVos){
-                BlobKey blobKey = new BlobKey(dailyDevotionalVo.getImageBlobKey());
-                dailyDevotionalVo.setImageUrl(imagesService.getServingUrl(ServingUrlOptions.Builder.withBlobKey(blobKey)));
-            }
 
-            String dataResponse = this.getGson().toJson(dailyDevotionalVos);
-            jsonResponse = JsonResponse.ok(dataResponse);
+            jsonResponse = JsonResponse.ok(this.getGson().toJson(dailyDevotionalVos));
         } catch (Exception e) {
-            this.logger.error("unexpected error", e);
+            this.logger.debug("unexpected error", e);
 
             jsonResponse = this.getWebContextHolder().unexpectedErrorResponse(ErrorCodes.ERROR_UNEXPECTED);
         } finally {

@@ -5,7 +5,7 @@ import org.kairos.ibpnh.fx.AbstractFxImpl;
 import org.kairos.ibpnh.fx.FxValidationResponse;
 import org.kairos.ibpnh.fx.I_Fx;
 import org.kairos.ibpnh.json.JsonResponse;
-import org.kairos.ibpnh.vo.configuration.parameter.ParameterVo;
+import org.kairos.ibpnh.model.configuration.parameter.Parameter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,13 +43,13 @@ public class Fx_CreateParameter extends AbstractFxImpl implements I_Fx {
 			this.beginTransaction();
 
 			// we persist the entity
-			ParameterVo parameterVo = this.getDao().persist(this.getPm(), this.getVo());
-			this.setVo(parameterVo);
+			Parameter parameter = this.getDao().persist(this.getOfy(), this.getEntity());
+			this.setEntity(parameter);
 
 			this.commitTransaction();
 
 			return JsonResponse.ok(
-					this.getGson().toJson(parameterVo),
+					this.getGson().toJson(parameter),
 					this.getRealMessageSolver().getMessage(
 							"default.entity.created.ok",
 							new String[] { this.getRealMessageSolver()
@@ -76,16 +76,16 @@ public class Fx_CreateParameter extends AbstractFxImpl implements I_Fx {
 	protected FxValidationResponse validate() {
 		this.logger.debug("executing Fx_CreateFunction._validate()");
 
-//		String result = this.getVo().validate(this.getWebContextHolder());
+//		String result = this.getEntity().validate(this.getWebContextHolder());
 //		if (result != null) {
 //			return FxValidationResponse.error(result);
 //		}
 
-		if (!this.getDao().checkNameUniqueness(this.getPm(),
-				this.getVo().getName(), null)) {
+		if (!this.getDao().checkNameUniqueness(this.getOfy(),
+				this.getEntity().getName(), null)) {
 			String jsonResponseMessage = this.getRealMessageSolver()
 					.getMessage("fx.parameter.validation.nonUniqueName",
-							new String[] { this.getVo().getName() });
+							new String[] { this.getEntity().getName() });
 
 			return FxValidationResponse.error(jsonResponseMessage);
 		} else {
@@ -101,20 +101,20 @@ public class Fx_CreateParameter extends AbstractFxImpl implements I_Fx {
 	 * vo.alert.AlertVo)
 	 */
 //	@Override
-//	protected void _completeAlert(AlertVo alertVo) {
+//	protected void _completeAlert(Alert alertVo) {
 //		alertVo.setPriority(E_Priority.HIGH);
 //
 //		alertVo.setDescription(this.getRealMessageSolver().getMessage(
 //				"fx.parameter.alert.description.created",
-//				new String[] { this.getVo().getDescription() }));
+//				new String[] { this.getEntity().getDescription() }));
 //	}
 
 	/**
 	 * Casted VO.
 	 */
 	@Override
-	public ParameterVo getVo() {
-		return (ParameterVo) super.getVo();
+	public Parameter getEntity() {
+		return (Parameter) super.getEntity();
 	}
 
 	/**

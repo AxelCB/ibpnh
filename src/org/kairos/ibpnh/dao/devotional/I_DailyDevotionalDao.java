@@ -1,16 +1,15 @@
 package org.kairos.ibpnh.dao.devotional;
 
-import org.datanucleus.api.jdo.JDOPersistenceManager;
+import com.googlecode.objectify.Objectify;
 import org.kairos.ibpnh.dao.I_Dao;
-import org.kairos.ibpnh.vo.devotional.DailyDevotionalVo;
-
+import org.kairos.ibpnh.model.devotional.DailyDevotional;
 import java.util.Date;
 import java.util.List;
 
 /**
  * @author AxelCollardBovy ,created on 03/03/2015.
  */
-public interface I_DailyDevotionalDao extends I_Dao<DailyDevotionalVo> {
+public interface I_DailyDevotionalDao extends I_Dao<DailyDevotional> {
 
     /**
      * Attempts to search a dailyDevotional with dailyDevotionalname.
@@ -20,9 +19,9 @@ public interface I_DailyDevotionalDao extends I_Dao<DailyDevotionalVo> {
      * @param date
      *            the dailyDevotionalname to search for
      *
-     * @return dailyDevotionalVo or null
+     * @return dailyDevotional or null
      */
-    public DailyDevotionalVo getByDate(JDOPersistenceManager pm, Date date);
+    public DailyDevotional getByDate(Objectify ofy, Date date);
 
     /**
      * Checks that a dailyDevotional dailyDevotionalname is only used once.
@@ -36,7 +35,7 @@ public interface I_DailyDevotionalDao extends I_Dao<DailyDevotionalVo> {
      *
      * @return true if the code is unique
      */
-    public Boolean checkDateUniqueness(JDOPersistenceManager pm, Date date,
+    public Boolean checkDateUniqueness(Objectify ofy, Date date,
                                        String excludeId);
 
     /**
@@ -47,6 +46,5 @@ public interface I_DailyDevotionalDao extends I_Dao<DailyDevotionalVo> {
      * @param date
      * @return
      */
-    public List<DailyDevotionalVo> listLastDevotionals(JDOPersistenceManager pm,
-                                       Long amount, Date date);
+    public List<DailyDevotional> listLastDevotionals(Objectify ofy,Long amount, Date date);
 }

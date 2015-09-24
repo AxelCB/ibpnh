@@ -1,9 +1,6 @@
 .portada{background-image: url("../images/portada.jpg"); background-color: blue; width: 100%; height: 300px; background-size: 100% 300px; background-repeat: no-repeat; }
-/*
-@author Axel : achiqué la altura para q no quede un cuadrado blanco
-.primero{width: 100%;height: 500px; box-shadow: 20px 20px 50px 50px black;}*/
-.primero{width: 100%;height: 500px; box-shadow: 20px 20px 50px 50px black; border-bottom:2px; margin-bottom: 20px;}
-.imagennoti{height: 100px;width: 150px}
+.primero{width: 100%;height: 500px; box-shadow: 20px 20px 50px 50px black;}
+
 .colorback3{background: rgba(183,222,237,1);
     background: -moz-linear-gradient(45deg, rgba(183,222,237,1) 0%, rgba(33,180,226,1) 51%, rgba(21,132,173,1) 100%);
     background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(183,222,237,1)), color-stop(51%, rgba(33,180,226,1)), color-stop(100%, rgba(21,132,173,1)));

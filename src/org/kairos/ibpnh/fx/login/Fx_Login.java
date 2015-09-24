@@ -2,15 +2,12 @@ package org.kairos.ibpnh.fx.login;
 
 import org.kairos.ibpnh.dao.configuration.parameter.I_ParameterDao;
 import org.kairos.ibpnh.dao.user.I_UserDao;
-import org.kairos.ibpnh.fx.AbstractFxImpl;
-import org.kairos.ibpnh.fx.FxValidationResponse;
-import org.kairos.ibpnh.fx.I_Fx;
+import org.kairos.ibpnh.fx.*;
 import org.kairos.ibpnh.json.JsonResponse;
+import org.kairos.ibpnh.model.user.User;
 import org.kairos.ibpnh.services.caching.client.api.I_UserCacheManager;
 import org.kairos.ibpnh.utils.HashUtils;
 import org.kairos.ibpnh.utils.I_PasswordUtils;
-import org.kairos.ibpnh.vo.user.UserCredentialsVo;
-import org.kairos.ibpnh.vo.user.UserVo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -59,7 +56,7 @@ public class Fx_Login extends AbstractFxImpl implements I_Fx {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.universe.core.fx.AbstractFxImpl#validate()
 	 */
 	@Override
@@ -74,30 +71,30 @@ public class Fx_Login extends AbstractFxImpl implements I_Fx {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.universe.core.fx.AbstractFxImpl#_completeAlert(org.universe.core.
 	 * vo.alert.AlertVo)
 	 */
 //	@Override
-//	protected void _completeAlert(AlertVo alertVo) {
+//	protected void _completeAlert(Alert alertVo) {
 //		alertVo.setPriority(E_Priority.LOW);
 //
 //		alertVo.setDescription(this.getRealMessageSolver().getMessage(
-//				"fx.login.alert", new String[] { this.getVo().getUsername() }));
+//				"fx.login.alert", new String[] { this.getEntity().getUsername() }));
 //	}
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.universe.core.fx.AbstractFxImpl#_execute()
 	 */
 	@Override
 	protected JsonResponse _execute() {
 		this.logger.debug("executing Fx_Login._execute() (username: {})", this
-				.getVo().getUsername());
+				.getEntity().getUsername());
 
-		UserVo userVo = null;
+		User user = null;
 
 		String token = null;
 
@@ -105,52 +102,52 @@ public class Fx_Login extends AbstractFxImpl implements I_Fx {
 			// response to send
 			JsonResponse response = null;
 
-			this.getPm().currentTransaction().begin();
+			this.getOfy().currentTransaction().begin();
 
 			Long maxAttempts = 5l;
 //					this.getParameterDao()
-//					.getByName(this.getPm(), ParameterVo.LOGIN_MAX_ATTEMPTS)
+//					.getByName(this.getOfy(), ParameterVo.LOGIN_MAX_ATTEMPTS)
 //					.getValue(Long.class);
 			Long hashCost = 5l;
 //					this.getParameterDao()
-//					.getByName(this.getPm(), ParameterVo.HASH_COST)
+//					.getByName(this.getOfy(), ParameterVo.HASH_COST)
 //					.getValue(Long.class);
-			if (userVo == null) {
-				userVo = this.getUserDao().getByUsername(this.getPm(),
-						this.getVo().getUsername());
+			if (user == null) {
+				user = this.getUserDao().getByUsername(this.getOfy(),
+						this.getEntity().getUsername());
 			}
 
-			if (userVo == null) {
+			if (user == null) {
 				this.logger.debug("failed to find user with username {}", this
-						.getVo().getUsername());
+						.getEntity().getUsername());
 
 				response = this.getLoginResponseStrategy().userNotFound();
-			} else if (!userVo.getEnabled()) {
+			} else if (!user.getEnabled()) {
 				this.logger.debug("the user is disabled");
 
 				response = this.getLoginResponseStrategy().disabledUser(
-						userVo.getDisabledCause());
-			} else if (userVo.getLoginAttempts() >= maxAttempts) {
+						user.getDisabledCause());
+			} else if (user.getLoginAttempts() >= maxAttempts) {
 				// block the user
 				this.logger
 						.debug("not allowing the user to log in, max failed attempts reached");
 
 				response = this.getLoginResponseStrategy().maxAttempts();
-			} else if (!passwordUtils.checkPassword(this.getVo().getPassword(),
-					userVo, hashCost)) {
+			} else if (!passwordUtils.checkPassword(this.getEntity().getPassword(),
+					user, hashCost)) {
 				// adds the failed attempt
-				userVo.setLoginAttempts(userVo.getLoginAttempts() + 1);
+				user.setLoginAttempts(user.getLoginAttempts() + 1);
 
 				this.logger.debug(
 						"failed to login user {}, total failed attempts: {}",
-						this.getVo().getUsername(), userVo.getLoginAttempts());
+						this.getEntity().getUsername(), user.getLoginAttempts());
 
-				if (userVo.getLoginAttempts() < maxAttempts) {
+				if (user.getLoginAttempts() < maxAttempts) {
 					// we return the remaining attempts messages
 					response = this.getLoginResponseStrategy().badPassword(
-							maxAttempts - userVo.getLoginAttempts());
+							maxAttempts - user.getLoginAttempts());
 
-					this.getUserDao().persist(this.getPm(), userVo);
+					this.getUserDao().persist(this.getOfy(), user);
 				} else {
 					// block the user
 					this.logger
@@ -158,42 +155,42 @@ public class Fx_Login extends AbstractFxImpl implements I_Fx {
 
 					response = this.getLoginResponseStrategy().maxAttempts();
 
-					this.getUserDao().persist(this.getPm(), userVo);
+					this.getUserDao().persist(this.getOfy(), user);
 				}
 			} else {
 				this.logger.debug("user properly logged");
 				// properly logged, reset the attempts
-				userVo.setLoginAttempts(0);
+				user.setLoginAttempts(0);
 
-				UserVo newUserVo = this.getUserDao().persist(this.getPm(),
-						userVo);
+				User newUser = this.getUserDao().persist(this.getOfy(),
+						user);
 
 				// order the menu
-				this.getUserDao().orderMenu(newUserVo);
+				this.getUserDao().orderMenu(newUser);
 
 				// try to get the existing user from the cache
-				UserVo cacheUserVo = this.getUserCacheManager().getUser(
-						this.getVo().getUsername());
-				if (cacheUserVo == null) {
+				User cacheUser = this.getUserCacheManager().getUser(
+						this.getEntity().getUsername());
+				if (cacheUser == null) {
 					// there was none, we generate a new token and put it on the
 					// cache
-					token = HashUtils.generateUserToken(newUserVo);
-					newUserVo.setToken(token);
+					token = HashUtils.generateUserToken(newUser);
+					newUser.setToken(token);
 
 					this.logger.debug("storing the user to the cache");
-					this.getUserCacheManager().putUser(token, newUserVo);
-					this.getUserCacheManager().putUser(newUserVo.getUsername(),
-							newUserVo);
+					this.getUserCacheManager().putUser(token, newUser);
+					this.getUserCacheManager().putUser(newUser.getUsername(),
+							newUser);
 				} else {
 					// we return the same user
-					newUserVo = cacheUserVo;
+					newUser = cacheUser;
 				}
 
 				response = this.getLoginResponseStrategy()
-						.userLogged(newUserVo);
+						.userLogged(newUser);
 			}
 
-			this.getPm().currentTransaction().commit();
+			this.getOfy().currentTransaction().commit();
 
 			return response;
 //		} catch (ParseException pe) {
@@ -205,7 +202,7 @@ public class Fx_Login extends AbstractFxImpl implements I_Fx {
 		} catch (Exception e) {
 			this.logger.error("error executing Fx_Login._execute()", e);
 			try {
-				this.getPm().currentTransaction().rollback();
+				this.getOfy().currentTransaction().rollback();
 			} catch (Exception e1) {
 				this.logger.error("error rollbacking transaction", e);
 			}
@@ -213,8 +210,8 @@ public class Fx_Login extends AbstractFxImpl implements I_Fx {
 			if (token != null) {
 				this.getUserCacheManager().putUser(token, null);
 			}
-			if (userVo != null) {
-				this.getUserCacheManager().putUser(userVo.getUsername(), null);
+			if (user != null) {
+				this.getUserCacheManager().putUser(user.getUsername(), null);
 			}
 
 			return this.getLoginResponseStrategy().unexpectedError(null);
@@ -223,12 +220,12 @@ public class Fx_Login extends AbstractFxImpl implements I_Fx {
 
 	/*
 	 * (non-Javadoc)
-	 * 
-	 * @see org.universe.core.fx.AbstractFxImpl#getVo()
+	 *
+	 * @see org.universe.core.fx.AbstractFxImpl#getEntity()
 	 */
 	@Override
-	public UserCredentialsVo getVo() {
-		return (UserCredentialsVo) super.getVo();
+	public User getEntity() {
+		return (User) super.getEntity();
 	}
 
 	/**

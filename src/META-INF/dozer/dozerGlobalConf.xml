@@ -10,7 +10,7 @@
 	</configuration>
 
 	<mapping type="one-way">
-		<class-a>org.kairos.ibpnh.vo.AbstractVo</class-a>
+		<class-a>org.kairos.ibpnh.entity.AbstractVo</class-a>
 		<class-b>org.kairos.ibpnh.model.I_Model</class-b>
 
 		<field-exclude type="one-way">
@@ -20,21 +20,10 @@
 
 	</mapping>
 
-	<mapping type="one-way" map-id="non-blob-DailyDevotionalVo">
-		<class-a>org.kairos.ibpnh.vo.devotional.DailyDevotionalVo</class-a>
-		<class-b>org.kairos.ibpnh.model.devotional.DailyDevotional</class-b>
-
-		<field-exclude>
-			<a>imageBlobKey</a>
-			<b>imageBlobKey</b>
-		</field-exclude>
-
-	</mapping>
-
 	<!--<mapping>-->
 		<!--<class-a map-null="false">org.kairos.ibpnh.model.user.RoleType-->
 		<!--</class-a>-->
-		<!--<class-b>org.kairos.ibpnh.vo.user.RoleTypeVo</class-b>-->
+		<!--<class-b>org.kairos.ibpnh.entity.user.RoleTypeVo</class-b>-->
 
 		<!--<field remove-orphans="true">-->
 			<!--<a>roleTypeFunctions</a>-->
@@ -54,7 +43,7 @@
 
 	<!--<mapping map-id="non-deep-RoleTypeVo">-->
 		<!--<class-a>org.kairos.ibpnh.model.user.RoleType</class-a>-->
-		<!--<class-b>org.kairos.ibpnh.vo.user.RoleTypeVo</class-b>-->
+		<!--<class-b>org.kairos.ibpnh.entity.user.RoleTypeVo</class-b>-->
 
 		<!--<field-exclude>-->
 			<!--<a>roleTypeFunctions</a>-->
@@ -74,7 +63,7 @@
 
 	<!--<mapping>-->
 		<!--<class-a>org.kairos.ibpnh.model.user.Role</class-a>-->
-		<!--<class-b>org.kairos.ibpnh.vo.user.RoleVo</class-b>-->
+		<!--<class-b>org.kairos.ibpnh.entity.user.RoleVo</class-b>-->
 
 		<!--<field remove-orphans="true">-->
 			<!--<a>roleFunctions</a>-->
@@ -84,7 +73,7 @@
 
 	<!--<mapping wildcard="false">-->
 		<!--<class-a>org.kairos.ibpnh.model.user.RoleTypeFunction</class-a>-->
-		<!--<class-b>org.kairos.ibpnh.vo.user.RoleTypeFunctionVo</class-b>-->
+		<!--<class-b>org.kairos.ibpnh.entity.user.RoleTypeFunctionVo</class-b>-->
 
 		<!--<field>-->
 			<!--<a>id</a>-->
@@ -124,7 +113,7 @@
 
 	<!--<mapping wildcard="false">-->
 		<!--<class-a>org.kairos.ibpnh.model.user.RoleFunction</class-a>-->
-		<!--<class-b>org.kairos.ibpnh.vo.user.RoleFunctionVo</class-b>-->
+		<!--<class-b>org.kairos.ibpnh.entity.user.RoleFunctionVo</class-b>-->
 
 		<!--<field>-->
 			<!--<a>id</a>-->
@@ -179,7 +168,7 @@
 
 	<!--<mapping>-->
 		<!--<class-a>org.kairos.ibpnh.model.user.User</class-a>-->
-		<!--<class-b>org.kairos.ibpnh.vo.user.UserVo</class-b>-->
+		<!--<class-b>org.kairos.ibpnh.entity.user.UserVo</class-b>-->
 
 		<!--<field type="one-way">-->
 			<!--<a>role.roleType.menuOrder</a>-->
@@ -189,7 +178,7 @@
 
 	<!--<mapping map-id="non-deep-UserVo">-->
 		<!--<class-a>org.kairos.ibpnh.model.user.User</class-a>-->
-		<!--<class-b>org.kairos.ibpnh.vo.user.UserVo</class-b>-->
+		<!--<class-b>org.kairos.ibpnh.entity.user.UserVo</class-b>-->
 
 		<!--<field-exclude>-->
 			<!--<a>role</a>-->
@@ -228,7 +217,7 @@
 	<!--<mapping>-->
 		<!--<class-a>org.kairos.ibpnh.model.configuration.menuOrder.MenuOrder-->
 		<!--</class-a>-->
-		<!--<class-b>org.kairos.ibpnh.vo.configuration.menuOrder.MenuOrderVo-->
+		<!--<class-b>org.kairos.ibpnh.entity.configuration.menuOrder.MenuOrderVo-->
 		<!--</class-b>-->
 
 		<!--<field remove-orphans="true">-->
@@ -241,7 +230,7 @@
 	<!--<mapping map-id="non-deep-MenuOrderVo">-->
 		<!--<class-a>org.kairos.ibpnh.model.configuration.menuOrder.MenuOrder-->
 		<!--</class-a>-->
-		<!--<class-b>org.kairos.ibpnh.vo.configuration.menuOrder.MenuOrderVo-->
+		<!--<class-b>org.kairos.ibpnh.entity.configuration.menuOrder.MenuOrderVo-->
 		<!--</class-b>-->
 
 		<!--<field-exclude>-->
@@ -253,7 +242,7 @@
 	<!--<mapping>-->
 		<!--<class-a>org.kairos.ibpnh.model.configuration.menuOrder.MenuOrderFunction-->
 		<!--</class-a>-->
-		<!--<class-b>org.kairos.ibpnh.vo.configuration.menuOrder.MenuOrderFunctionVo-->
+		<!--<class-b>org.kairos.ibpnh.entity.configuration.menuOrder.MenuOrderFunctionVo-->
 		<!--</class-b>-->
 
 		<!--<field>-->

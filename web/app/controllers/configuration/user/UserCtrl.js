@@ -10,6 +10,7 @@ ibpnhControllers.controller('UserCtrl',['$scope', '$rootScope', 'UserService', '
 		$scope.roleType = {};
 		$scope.users = [];
 		$scope.editing = false;
+		$scope.stringConAcento="Mí Nombré es áxél sin eñe, ni ó ni ú¡";
 	
 		var paginationHelper;
 		

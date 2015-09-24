@@ -2,6 +2,9 @@ package org.kairos.ibpnh.utils;
 
 import org.kairos.ibpnh.dao.PersistenceManagerHolder;
 import org.kairos.ibpnh.dao.configuration.parameter.I_ParameterDao;
+import org.kairos.ibpnh.json.CustomObjectifyFactory;
+import org.kairos.ibpnh.model.configuration.parameter.Parameter;
+import org.kairos.ibpnh.model.user.User;
 import org.kairos.ibpnh.vo.configuration.parameter.ParameterVo;
 import org.kairos.ibpnh.vo.user.UserVo;
 import org.slf4j.Logger;
@@ -40,7 +43,7 @@ public class PasswordUtils implements I_PasswordUtils {
 	 * Entity Manager Holder
 	 */
 	@Autowired
-	private PersistenceManagerHolder pmh;
+	private CustomObjectifyFactory objectifyFactory;
 
 	/**
 	 * Format check of a potential password. Retrieves the regExp from the
@@ -53,7 +56,7 @@ public class PasswordUtils implements I_PasswordUtils {
 //		JDOPersistenceManager pm = this.getPmh().getPersistenceManager();
 
 		try {
-			ParameterVo passwordRegexpParameter = null;
+			Parameter passwordRegexpParameter = null;
 //                    this.getParameterDao()
 //					.getByName(pm, ParameterVo.PASSWORD_REGEXP);
 			String[] regExpList = passwordRegexpParameter.getValue().split(",");
@@ -66,7 +69,7 @@ public class PasswordUtils implements I_PasswordUtils {
 			return Boolean.FALSE;
 		} catch (Exception e) {
 			this.logger.debug("error getting {} parameter", e,
-					ParameterVo.PASSWORD_REGEXP);
+					Parameter.PASSWORD_REGEXP);
 
 			return Boolean.FALSE;
 		} finally {
@@ -79,34 +82,34 @@ public class PasswordUtils implements I_PasswordUtils {
 	 * 
 	 * @param password
 	 *            password to check
-	 * @param userVo
-	 *            userVo
+	 * @param user
+	 *            user
 	 * 
 	 * @return true iif
 	 */
 	@Override
-	public Boolean checkPassword(String password, UserVo userVo,
+	public Boolean checkPassword(String password, User user,
 			Long currentCost) {
 		Boolean result = Boolean.FALSE;
 		Boolean update = Boolean.FALSE;
 
-		if (userVo.getHashCost() == null) {
+		if (user.getHashCost() == null) {
 			// old password (hashed with SHA-512), marks it to update
 			result = HashUtils.hashPasswordSHA512(password).equals(
-					userVo.getPassword());
+					user.getPassword());
 			update = Boolean.TRUE;
 		} else {
 			// the password check doesn't need the cost (is stored in the hash
 			// itself)
-			result = HashUtils.checkPassword(password, userVo.getPassword());
+			result = HashUtils.checkPassword(password, user.getPassword());
 			// if the costs are different the password needs to be updated
-			update = !userVo.getHashCost().equals(currentCost);
+			update = !user.getHashCost().equals(currentCost);
 		}
 
 		if (result && update) {
 			// only updates if is needed AND the check was successful
-			userVo.setHashCost(currentCost);
-			userVo.setPassword(HashUtils.hashPassword(password, currentCost));
+			user.setHashCost(currentCost);
+			user.setPassword(HashUtils.hashPassword(password, currentCost));
 			// note: this updates occurs only in the VO (i.e., in memory)
 			// the actual update on the database depends on the use given
 			// to the VO after this update is made (e.g., in Fx_Login, the VO
@@ -117,19 +120,12 @@ public class PasswordUtils implements I_PasswordUtils {
 		return result;
 	}
 
-	/**
-	 * @return the pmh
-	 */
-	public PersistenceManagerHolder getPmh() {
-		return this.pmh;
+	public CustomObjectifyFactory getObjectifyFactory() {
+		return objectifyFactory;
 	}
 
-	/**
-	 * @param pmh
-	 *            the pmh to set
-	 */
-	public void setPmh(PersistenceManagerHolder pmh) {
-		this.pmh = pmh;
+	public void setObjectifyFactory(CustomObjectifyFactory objectifyFactory) {
+		this.objectifyFactory = objectifyFactory;
 	}
 
 	/**

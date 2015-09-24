@@ -1,10 +1,10 @@
 package org.kairos.ibpnh.services.caching.client.jcache;
 
+import org.kairos.ibpnh.model.configuration.parameter.Parameter;
+import org.kairos.ibpnh.model.user.User;
 import org.kairos.ibpnh.services.caching.client.CacheHolder;
 import org.kairos.ibpnh.services.caching.client.api.I_ParameterCacheManager;
 import org.kairos.ibpnh.services.caching.client.api.I_UserCacheManager;
-import org.kairos.ibpnh.vo.configuration.parameter.ParameterVo;
-import org.kairos.ibpnh.vo.user.UserVo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -212,10 +212,10 @@ public class JCacheUserCacheImpl extends AbstractCacheProfiler implements
 	 * .String)
 	 */
 	@Override
-	public UserVo getUser(String key) {
-		UserVo user = null;
+	public User getUser(String key) {
+		User user = null;
 		try {
-			user = (UserVo) this.getUserCache().get(key);
+			user = (User) this.getUserCache().get(key);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -224,7 +224,7 @@ public class JCacheUserCacheImpl extends AbstractCacheProfiler implements
 	}
 
 	@Override
-	public void putUser(String key, UserVo userInCache) {
+	public void putUser(String key, User userInCache) {
 		try {
 			//TODO: configurar valor y unidad
 //			this.logger.error("HEEEELP Key:"+key+"  User:"+userInCache);
@@ -245,10 +245,10 @@ public class JCacheUserCacheImpl extends AbstractCacheProfiler implements
 	 * (java.lang.String)
 	 */
 	@Override
-	public UserVo removeUser(String key) {
-		UserVo user = null;
+	public User removeUser(String key) {
+		User user = null;
 		try {
-			user = (UserVo) this.getUserCache().remove(key);
+			user = (User) this.getUserCache().remove(key);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -264,10 +264,10 @@ public class JCacheUserCacheImpl extends AbstractCacheProfiler implements
 	 * #getParameter(java.lang.String)
 	 */
 	@Override
-	public ParameterVo getParameter(String name) {
-		ParameterVo parameter = null;
+	public Parameter getParameter(String name) {
+		Parameter parameter = null;
 		try {
-			parameter = (ParameterVo) this.getParameterCache().get(name);
+			parameter = (Parameter) this.getParameterCache().get(name);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -284,7 +284,7 @@ public class JCacheUserCacheImpl extends AbstractCacheProfiler implements
 	 * org.universe.core.vo.configuration.parameter.ParameterVo)
 	 */
 	@Override
-	public void putParameter(String name, ParameterVo parameterVo) {
+	public void putParameter(String name, Parameter parameterVo) {
 		try {
             this.getParameterCache().put(name, parameterVo);
 			this.logger.info("Insertado Sync {}", name);
@@ -302,10 +302,10 @@ public class JCacheUserCacheImpl extends AbstractCacheProfiler implements
 	 * #removeParameter(java.lang.String)
 	 */
 	@Override
-	public ParameterVo removeParameter(String name) {
-		ParameterVo parameter = null;
+	public Parameter removeParameter(String name) {
+		Parameter parameter = null;
 		try {
-			parameter = (ParameterVo) this.getParameterCache().remove(name);
+			parameter = (Parameter) this.getParameterCache().remove(name);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

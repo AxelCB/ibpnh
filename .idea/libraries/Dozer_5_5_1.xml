@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="Dozer 5.5.1">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/dozer-5.5.1.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

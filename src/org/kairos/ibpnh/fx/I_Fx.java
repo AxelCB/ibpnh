@@ -1,8 +1,8 @@
 package org.kairos.ibpnh.fx;
 
-import org.datanucleus.api.jdo.JDOPersistenceManager;
+import com.googlecode.objectify.Objectify;
 import org.kairos.ibpnh.json.JsonResponse;
-import org.kairos.ibpnh.vo.AbstractVo;
+import org.kairos.ibpnh.model.I_Model;
 
 /**
  * General Interface for Fx's.
@@ -22,24 +22,24 @@ public interface I_Fx {
 	/**
 	 * Sets the Persistence Manager.
 	 * 
-	 * @param pm
+	 * @param ofy
 	 */
-	public void setPm(JDOPersistenceManager pm);
+	public void setOfy(Objectify ofy);
 	
 	/**
 	 * Returns the persistence manager being hold by the FX.
 	 * 
 	 * @return persistence manager
 	 */
-	public JDOPersistenceManager getPm();
+	public Objectify getOfy();
 	
 	/**
 	 * Sets the Value Object.
 	 * 
-	 * @param vo
+	 * @param object
 	 */
-	public void setVo(AbstractVo vo);
-	
+	public void setEntity(I_Model object);
+
 	/**
 	 * Disables the firing of alerts for this FX.
 	 */

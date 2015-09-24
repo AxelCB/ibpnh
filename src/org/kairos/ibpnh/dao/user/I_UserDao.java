@@ -1,47 +1,46 @@
 package org.kairos.ibpnh.dao.user;
 
-import org.datanucleus.api.jdo.JDOPersistenceManager;
+import com.googlecode.objectify.Objectify;
 import org.kairos.ibpnh.dao.I_Dao;
 import org.kairos.ibpnh.model.user.E_RoleType;
-import org.kairos.ibpnh.vo.user.RoleTypeVo;
-import org.kairos.ibpnh.vo.user.UserVo;
+import org.kairos.ibpnh.model.user.User;
 
 import java.util.List;
 
 /**
  * @author AxelCollardBovy ,created on 03/03/2015.
  */
-public interface I_UserDao extends I_Dao<UserVo> {
+public interface I_UserDao extends I_Dao<User> {
 
     /**
      * Attempts to search a user with username.
      *
-     * @param pm
-     *            the persistence manager
+     * @param ofy
+     *            the objectify manager
      * @param username
      *            the username to search for
      *
-     * @return userVo or null
+     * @return user or null
      */
-    public UserVo getByUsername(JDOPersistenceManager pm, String username);
+    public User getByUsername(Objectify ofy, String username);
 
     /**
      * Gets all users that have the specified role type.
      *
-     * @param pm
-     *            the persistence manager
-     * @param roleTypeVo
+     * @param ofy
+     *            the objectify manager
+     * @param roleType
      *            the role type to search
      * @return list of users
      */
-    public List<UserVo> findUsersByRoleTypeName(JDOPersistenceManager pm,
-                                                RoleTypeVo roleTypeVo);
+    public List<User> findUsersByRoleTypeName(Objectify ofy,
+                                                RoleType roleType);
 
     /**
      * Checks that a user username is only used once.
      *
-     * @param pm
-     *            the persistence manager
+     * @param ofy
+     *            the objectify manager
      * @param username
      *            the username to check
      * @param excludeId
@@ -49,7 +48,7 @@ public interface I_UserDao extends I_Dao<UserVo> {
      *
      * @return true if the code is unique
      */
-    public Boolean checkUsernameUniqueness(JDOPersistenceManager pm, String username,
+    public Boolean checkUsernameUniqueness(Objectify ofy, String username,
                                            String excludeId);
 
     /**
@@ -57,13 +56,13 @@ public interface I_UserDao extends I_Dao<UserVo> {
      *
      * @param userVo
      */
-    public void orderMenu(UserVo userVo);
+    public void orderMenu(User userVo);
 
     /**
      * Counts the users registered with certain role types.
      *
-     * @param pm
-     *            the persistence manager
+     * @param ofy
+     *            the objectify manager
      * @param countDisabled
      *            if it should include disabled users
      * @param roleTypes
@@ -71,19 +70,19 @@ public interface I_UserDao extends I_Dao<UserVo> {
      *
      * @return integer
      */
-    public Integer countByRoleType(JDOPersistenceManager pm, Boolean countDisabled,
+    public Integer countByRoleType(Objectify ofy, Boolean countDisabled,
                                    E_RoleType... roleTypes);
 
     /**
      * Get the user with the specified enabling hash.
      *
-     * @param pm
-     *            the persistence manager
+     * @param ofy
+     *            the objectify manager
      * @param enablingHash
      *            the enabling hash to search for
      *
-     * @return UserVo or null
+     * @return User or null
      */
-    public UserVo getUserByEnablingHash(JDOPersistenceManager pm, String enablingHash);
+    public User getUserByEnablingHash(Objectify ofy, String enablingHash);
 
 }

@@ -1,8 +1,8 @@
 package org.kairos.ibpnh.controller.configuration.parameter;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
+import com.googlecode.objectify.Objectify;
 import org.datanucleus.api.jdo.JDOPersistenceManager;
 import org.kairos.ibpnh.controller.I_URIValidator;
 import org.kairos.ibpnh.dao.PersistenceManagerHolder;
@@ -13,8 +13,8 @@ import org.kairos.ibpnh.fx.configuration.parameter.Fx_DeleteParameter;
 import org.kairos.ibpnh.fx.configuration.parameter.Fx_ModifyParameter;
 import org.kairos.ibpnh.json.JsonResponse;
 import org.kairos.ibpnh.model.configuration.parameter.E_ParameterType;
+import org.kairos.ibpnh.model.configuration.parameter.Parameter;
 import org.kairos.ibpnh.utils.ErrorCodes;
-import org.kairos.ibpnh.utils.HashUtils;
 import org.kairos.ibpnh.vo.PaginatedListVo;
 import org.kairos.ibpnh.vo.PaginatedRequestVo;
 import org.kairos.ibpnh.vo.PaginatedSearchRequestVo;
@@ -72,12 +72,6 @@ public class ParameterCtrl implements I_URIValidator {
     private I_FxFactory fxFactory;
 
     /**
-     * Entity Manager Holder
-     */
-    @Autowired
-    private PersistenceManagerHolder persistenceManagerHolder;
-
-    /**
      * Web Context Holder.
      */
     @Autowired
@@ -104,21 +98,21 @@ public class ParameterCtrl implements I_URIValidator {
     @RequestMapping(value = "/list.json", method = RequestMethod.POST)
     public String list(@RequestBody String paginationData) {
         this.logger.debug("calling ParameterCtrl.list()");
-        JDOPersistenceManager pm = this.getPersistenceManagerHolder().getPersistenceManager();
+        Objectify ofy = this.getPersistenceManagerHolder().getPersistenceManager();
         JsonResponse jsonResponse = null;
 
         try {
-            PaginatedRequestVo paginatedRequestVo = this.getGson().fromJson(paginationData, PaginatedRequestVo.class);
-            PaginatedListVo<ParameterVo> paginatedListVo = this.getParameterDao()
+            PaginatedRequest paginatedRequest= this.getGson().fromJson(paginationData, PaginatedRequest.class);
+            PaginatedListVo<Parameter> paginatedList = this.getParameterDao()
                     .listPage(
-                            pm,
-                            paginatedRequestVo,
+                            ofy,
+                            paginatedRequest,
                             10l);
 //            this.getParameterDao()
 //                    .getByName(pm, ParameterVo.ITEMS_PER_PAGE)
 //                    .getValue(Long.class);
 
-            String data = this.getGson().toJson(paginatedListVo);
+            String data = this.getGson().toJson(paginatedList);
 
             jsonResponse = JsonResponse.ok(data);
 //        } catch (ParseException e) {
@@ -149,13 +143,13 @@ public class ParameterCtrl implements I_URIValidator {
     @RequestMapping(value = "/search.json", method = RequestMethod.POST)
     public String search(@RequestBody String data) {
         this.logger.debug("calling ParameterCtrl.search()");
-        JDOPersistenceManager pm = this.getPersistenceManagerHolder().getPersistenceManager();
+        Objectify ofy = this.getPersistenceManagerHolder().getPersistenceManager();
         JsonResponse jsonResponse = null;
 
         try {
             Type type = new TypeToken<PaginatedSearchRequestVo<ParameterVo>>() {}.getType();
-            PaginatedSearchRequestVo<ParameterVo> paginatedSearchRequestVo = this.getGson().fromJson(data, type);
-            PaginatedListVo<ParameterVo> paginatedListVo = this.getParameterDao()
+            PaginatedSearchRequestVo<ParameterVo> paginatedSearchRequest = this.getGson().fromJson(data, type);
+            PaginatedListVo<ParameterVo> paginatedList = this.getParameterDao()
                     .searchPage(
                             pm,
                             paginatedSearchRequestVo,
@@ -195,22 +189,22 @@ public class ParameterCtrl implements I_URIValidator {
     @RequestMapping(value = "/create.json", method = RequestMethod.POST)
     public String create(@RequestBody String data) {
         this.logger.debug("calling ParameterCtrl.create()");
-        JDOPersistenceManager pm = this.getPersistenceManagerHolder().getPersistenceManager();
+        Objectify ofy = this.getPersistenceManagerHolder().getPersistenceManager();
         JsonResponse jsonResponse = null;
 
         try {
 //            JsonObject jsonObject = this.getGson().fromJson(data, JsonObject.class);
 //            E_ParameterType parameterTypeEnum = this.getGson().fromJson(jsonObject.get("parameterType"), E_ParameterType.class);
 
-            ParameterVo parameterVo = this.getGson().fromJson(data, ParameterVo.class);
+            Parameter parameter = this.getGson().fromJson(data, ParameterVo.class);
 //                    jsonObject.get("parameter"), ParameterVo.class);
 //            parameterVo.setType(parameterTypeEnum);
 
             Fx_CreateParameter fx = this.getFxFactory().getNewFxInstance(
                     Fx_CreateParameter.class);
 
-            fx.setVo(parameterVo);
-            fx.setPm(pm);
+            fx.setEntity(parameterVo);
+            fx.setOfy(pm);
             this.logger.debug("executing Fx_CreateParameter");
             jsonResponse = fx.execute();
         } catch (Exception e) {
@@ -233,17 +227,17 @@ public class ParameterCtrl implements I_URIValidator {
     @RequestMapping(value = "/delete.json", method = RequestMethod.POST)
     public String delete(@RequestBody String data) {
         this.logger.debug("calling ParameterCtrl.delete()");
-        JDOPersistenceManager pm = this.getPersistenceManagerHolder().getPersistenceManager();
+        Objectify ofy = this.getPersistenceManagerHolder().getPersistenceManager();
         JsonResponse jsonResponse = null;
 
         try {
-            ParameterVo parameterVo = this.getGson().fromJson(data, ParameterVo.class);
+            Parameter parameter = this.getGson().fromJson(data, ParameterVo.class);
 
             Fx_DeleteParameter fx = this.getFxFactory().getNewFxInstance(
                     Fx_DeleteParameter.class);
 
-            fx.setVo(parameterVo);
-            fx.setPm(pm);
+            fx.setEntity(parameterVo);
+            fx.setOfy(pm);
             this.logger.debug("executing Fx_DeleteParameter");
             jsonResponse = fx.execute();
         } catch (Exception e) {
@@ -266,17 +260,17 @@ public class ParameterCtrl implements I_URIValidator {
     @RequestMapping(value = "/modify.json", method = RequestMethod.POST)
     public String modifiy(@RequestBody String data) {
         this.logger.debug("calling ParameterCtrl.modifiy()");
-        JDOPersistenceManager pm = this.getPersistenceManagerHolder().getPersistenceManager();
+        Objectify ofy = this.getPersistenceManagerHolder().getPersistenceManager();
         JsonResponse jsonResponse = null;
 
         try {
-            ParameterVo parameterVo = this.getGson().fromJson(data, ParameterVo.class);
+            Parameter parameter = this.getGson().fromJson(data, ParameterVo.class);
 
             Fx_ModifyParameter fx = this.getFxFactory().getNewFxInstance(
                     Fx_ModifyParameter.class);
 
-            fx.setVo(parameterVo);
-            fx.setPm(pm);
+            fx.setEntity(parameterVo);
+            fx.setOfy(pm);
             this.logger.debug("executing Fx_ModifyParameter");
             jsonResponse = fx.execute();
         } catch (Exception e) {
@@ -320,31 +314,6 @@ public class ParameterCtrl implements I_URIValidator {
 
         return this.getGson().toJson(jsonResponse);
     }
-
-    /**
-     * Gets the list of role types available for creation.
-     *
-     * @return
-     */
-    @ResponseBody
-    @RequestMapping(value = "/public/init.json")
-    public String init() {
-        this.logger.debug("calling ParameterCtrl.init()");
-        JsonResponse jsonResponse = null;
-        JDOPersistenceManager pm = this.getPersistenceManagerHolder().getPersistenceManager();
-        try {
-            this.getParameterDao().loadGlobalParameters(pm);
-            jsonResponse = JsonResponse.ok("true");
-        } catch (Exception e) {
-            this.logger.debug("unexpected error", e);
-
-            jsonResponse = this.getWebContextHolder().unexpectedErrorResponse();
-        }
-
-        return this.getGson().toJson(jsonResponse);
-    }
-
-
 
     public Gson getGson() {
         return gson;
