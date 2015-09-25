@@ -15,7 +15,7 @@ public class DailyDevotional implements I_Model {
      * Entity id
      */
     @Id
-    private String id;
+    private Long id;
 
     /**
      * Deteled flag
@@ -48,10 +48,10 @@ public class DailyDevotional implements I_Model {
     private Date date;
 
     @Override
-    public String getId() { return id; }
+    public Long getId() { return id; }
 
     @Override
-    public void setId(String id) { this.id = id; }
+    public void setId(Long id) { this.id = id; }
 
     @Override
     public Boolean getDeleted() { return deleted; }

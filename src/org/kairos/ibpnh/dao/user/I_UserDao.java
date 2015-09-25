@@ -40,26 +40,17 @@ public interface I_UserDao extends I_Dao<User> {
      *
      * @return true if the code is unique
      */
-    public Boolean checkUsernameUniqueness(String username,String excludeId);
-
-    /**
-     * Orders the functions in the User Object.
-     *
-     * @param userVo
-     */
-    public void orderMenu(User userVo);
+    public Boolean checkUsernameUniqueness(String username,Long excludeId);
 
     /**
      * Counts the users registered with certain role types.
      *
-     * @param countDisabled
-     *            if it should include disabled users
      * @param roleTypes
      *            the role types to count
      *
      * @return integer
      */
-    public Integer countByE_RoleType(Boolean countDisabled,E_RoleType... roleTypes);
+    public Integer countByE_RoleType(E_RoleType... roleTypes);
 
     /**
      * Get the user with the specified enabling hash.

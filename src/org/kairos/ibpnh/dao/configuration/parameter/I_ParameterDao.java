@@ -64,5 +64,5 @@ public interface I_ParameterDao extends I_Dao<Parameter> {
 	 * @param excludeId
 	 * @return
 	 */
-	public boolean checkNameUniqueness(String name, String excludeId);
+	public boolean checkNameUniqueness(String name, Long excludeId);
 }

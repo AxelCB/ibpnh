@@ -39,21 +39,11 @@ Repository and Service layers
 		<bean id='createDailyDevotional' class='org.kairos.ibpnh.fx.devotional.Fx_CreateDailyDevotional' scope="prototype"/>
 		<bean id='deleteDailyDevotional' class='org.kairos.ibpnh.fx.devotional.Fx_DeleteDailyDevotional' scope="prototype"/>
 		<bean id='modifyDailyDevotional' class='org.kairos.ibpnh.fx.devotional.Fx_ModifyDailyDevotional' scope="prototype"/>
-    	
-    	<!-- RoleType -->
-    		<!--<bean id="createRoleType" class="org.universe.core.fx.user.roleType.Fx_CreateRoleType" scope="prototype"/>-->
-    		<!--<bean id="modifyRoleType" class="org.universe.core.fx.user.roleType.Fx_ModifyRoleType" scope="prototype"/>-->
-    		<!--<bean id="deleteRoleType" class="org.universe.core.fx.user.roleType.Fx_DeleteRoleType" scope="prototype"/>-->
-    	
+
     	<!-- Login -->
 		<bean id="fxLogin" class="org.kairos.ibpnh.fx.login.Fx_Login" scope="prototype"/>
 		<bean id="fxLogout" class="org.kairos.ibpnh.fx.login.Fx_Logout" scope="prototype"/>
     		<!--<bean id="fxChangePassword" class="org.universe.core.fx.login.Fx_ChangePassword" scope="prototype"/>-->
-    	
-		<!-- MenuOrder -->
-		<!--<bean id='createMenuOrder' class='org.universe.core.fx.configuration.menuOrder.Fx_CreateMenuOrder' scope="prototype"/>-->
-		<!--<bean id='deleteMenuOrder' class='org.universe.core.fx.configuration.menuOrder.Fx_DeleteMenuOrder' scope="prototype"/>-->
-		<!--<bean id='modifyMenuOrder' class='org.universe.core.fx.configuration.menuOrder.Fx_ModifyMenuOrder' scope="prototype"/>-->
 		
     </beans>
 </beans>

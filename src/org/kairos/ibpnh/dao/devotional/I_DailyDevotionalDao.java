@@ -32,7 +32,7 @@ public interface I_DailyDevotionalDao extends I_Dao<DailyDevotional> {
      * @return true if the code is unique
      */
     public Boolean checkDateUniqueness(Date date,
-                                       String excludeId);
+                                       Long excludeId);
 
     /**
      * List am amount of devotionals starting on a specified date.

@@ -22,7 +22,7 @@ public class PaginatedListVo<E extends I_Model>{
 	/**
 	 * The current page.
 	 */
-	private Long page;
+	private String page;
 	
 	/**
 	 * The total items.
@@ -56,14 +56,14 @@ public class PaginatedListVo<E extends I_Model>{
 	/**
 	 * @return the page
 	 */
-	public Long getPage() {
+	public String getPage() {
 		return this.page;
 	}
 
 	/**
 	 * @param page the page to set
 	 */
-	public void setPage(Long page) {
+	public void setPage(String page) {
 		this.page = page;
 	}
 

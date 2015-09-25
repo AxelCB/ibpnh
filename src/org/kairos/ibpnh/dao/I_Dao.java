@@ -17,9 +17,11 @@ import java.util.List;
  */
 public interface I_Dao<E extends I_Model> {
 
+	public Class<E> getClazz();
+
 	public E persist(E entity);
 
-	public E getById(String id);
+	public E getById(Long id);
 
 	public List<E> listAll();
 

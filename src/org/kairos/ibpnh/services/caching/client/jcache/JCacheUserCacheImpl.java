@@ -249,10 +249,7 @@ public class JCacheUserCacheImpl implements I_CacheProfiler,//extends AbstractCa
 	public User removeUser(String key) {
 		User user = null;
 		try {
-			user = (User) this.getUserCache().get(key);
-			if(!this.getUserCache().remove(key)){
-				throw new Exception("Couldn't remove user from cache");
-			}
+			user = (User) this.getUserCache().remove(key);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -309,10 +306,7 @@ public class JCacheUserCacheImpl implements I_CacheProfiler,//extends AbstractCa
 	public Parameter removeParameter(String name) {
 		Parameter parameter = null;
 		try {
-			parameter = (Parameter) this.getParameterCache().get(name);
-			if(!this.getUserCache().remove(name)){
-				throw new Exception("Couldn't remove parameter from cache");
-			}
+			parameter = (Parameter) this.getParameterCache().remove(name);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

@@ -1,5 +1,7 @@
 package org.kairos.ibpnh.model.configuration.parameter;
 
+import com.googlecode.objectify.annotation.Entity;
+import com.googlecode.objectify.annotation.Id;
 import org.kairos.ibpnh.model.I_Model;
 import org.pojomatic.Pojomatic;
 
@@ -9,25 +11,27 @@ import org.pojomatic.Pojomatic;
  * @author AxelCollardBovy ,created on 08/03/2015.
  *
  */
+@Entity
 public class Parameter implements I_Model{
 
-	private String id;
-	
+	@Id
+	private Long id;
+
 	/**
 	 * Parameter's name.
 	 */
 	private String name;
-	
+
 	/**
 	 * Parameter's value.
 	 */
 	private String value;
-	
+
 	/**
 	 * Description.
 	 */
 	private String description;
-	
+
 	/**
 	 * Parameter's type.
 	 */
@@ -94,7 +98,7 @@ public class Parameter implements I_Model{
 	 * @see org.universe.core.model.I_Model#getId()
 	 */
 	@Override
-	public String getId() {
+	public Long getId() {
 		return this.id;
 	}
 
@@ -103,7 +107,7 @@ public class Parameter implements I_Model{
 	 * @see org.universe.core.model.I_Model#setId(java.lang.Long)
 	 */
 	@Override
-	public void setId(String id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -176,7 +180,7 @@ public class Parameter implements I_Model{
 	public String toString() {
 		return Pojomatic.toString(this);
 	}
-	
+
 	/*
 	 * (non-Javadoc)
 	 * @see java.lang.Object#equals(java.lang.Object)
@@ -227,5 +231,5 @@ public class Parameter implements I_Model{
 	public void setFixed(Boolean fixed) {
 		this.fixed = fixed;
 	}
-	
+
 }

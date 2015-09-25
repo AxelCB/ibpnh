@@ -163,9 +163,6 @@ public class Fx_Login extends AbstractFxImpl implements I_Fx {
 
 				User newUser = this.getUserDao().persist(user);
 
-				// order the menu
-				this.getUserDao().orderMenu(newUser);
-
 				// try to get the existing user from the cache
 				User cacheUser = this.getUserCacheManager().getUser(
 						this.getEntity().getUsername());

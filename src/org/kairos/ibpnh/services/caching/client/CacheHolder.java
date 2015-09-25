@@ -67,7 +67,10 @@ public class CacheHolder {
 
             // creates empty parameter cache instance
             this.parameterCache = Caching.getCache(parameterCacheName, String.class, Parameter.class);
-        }catch(CacheException e){
+//        }catch(CacheException e){
+//            this.logger.debug("could not create cacheholder");
+//            e.printStackTrace();
+        }catch(Exception e){
             this.logger.debug("could not create cacheholder");
             e.printStackTrace();
         }

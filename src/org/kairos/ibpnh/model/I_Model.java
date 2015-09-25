@@ -13,14 +13,14 @@ public interface I_Model {
      *
      * @return id
      */
-    public String getId();
+    public Long getId();
 
     /**
      * Entity ID setter.
      *
      * @param id to set
      */
-    public void setId(String id);
+    public void setId(Long id);
 
     /**
      * Entity Deletion Flag getter.
