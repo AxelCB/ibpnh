@@ -25,10 +25,10 @@
 
                 <!--Menu for logged users-->
                 <ul class="nav navbar-nav" ng-show="loggedUser">
-                    <li ng-if="loggedUser.role.roleType.roleTypeEnum =='ADMIN'"> <a href="#/configuration/user">Usuarios</a></li>
-                    <li ng-if="loggedUser.role.roleType.roleTypeEnum =='ADMIN'"> <a href="#/configuration/parameter">Par&aacute;metros</a></li>
-                    <li ng-if="loggedUser.role.roleType.roleTypeEnum =='ADMIN'
-                        || loggedUser.role.roleType.roleTypeEnum =='PASTOR'">
+                    <li ng-if="loggedUser.roleType =='ADMIN'"> <a href="#/configuration/user">Usuarios</a></li>
+                    <li ng-if="loggedUser.roleType =='ADMIN'"> <a href="#/configuration/parameter">Par&aacute;metros</a></li>
+                    <li ng-if="loggedUser.roleType =='ADMIN'
+                        || loggedUser.roleType =='PASTOR'">
                         <a href="#/devotional">Devocionales</a>
                     </li>
                     <li> <a href="#/contacto"><span class="glyphicon glyphicon-edit"></span>Contacto</a></li>

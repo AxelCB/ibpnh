@@ -2,8 +2,11 @@ package org.kairos.ibpnh.model.configuration.parameter;
 
 import com.googlecode.objectify.annotation.Entity;
 import com.googlecode.objectify.annotation.Id;
+import com.googlecode.objectify.annotation.Index;
 import org.kairos.ibpnh.model.I_Model;
 import org.pojomatic.Pojomatic;
+
+import java.io.Serializable;
 
 /**
  * System Global Parameter
@@ -12,7 +15,9 @@ import org.pojomatic.Pojomatic;
  *
  */
 @Entity
-public class Parameter implements I_Model{
+public class Parameter implements I_Model,Serializable{
+
+	private static final long serialVersionUID = -4980729949255825921L;
 
 	@Id
 	private Long id;
@@ -20,6 +25,7 @@ public class Parameter implements I_Model{
 	/**
 	 * Parameter's name.
 	 */
+	@Index
 	private String name;
 
 	/**

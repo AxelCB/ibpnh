@@ -3,7 +3,6 @@ package org.kairos.ibpnh.dao;
 import com.google.appengine.api.datastore.Cursor;
 import com.google.appengine.api.datastore.QueryResultIterator;
 import com.googlecode.objectify.cmd.Query;
-import org.apache.commons.lang3.StringUtils;
 import org.kairos.ibpnh.model.I_Model;
 import org.kairos.ibpnh.vo.PaginatedListVo;
 import org.kairos.ibpnh.vo.PaginatedRequestVo;
@@ -47,16 +46,21 @@ public abstract class AbstractDao<E extends I_Model> implements I_Dao<E> {
 
     @Override
     public PaginatedListVo<E> listPage(PaginatedRequestVo paginatedRequest, Long itemsPerPage) {
-        Query<E> query = ofy().load().type(this.getClazz()).limit(itemsPerPage.intValue());
-        if(StringUtils.isNotBlank(paginatedRequest.getPage())){
-            query = query.startAt(Cursor.fromWebSafeString(paginatedRequest.getPage()));
-        }
         PaginatedListVo paginatedList = new PaginatedListVo<>();
+        Query<E> query = ofy().load().type(this.getClazz()).limit(itemsPerPage.intValue());
+        if(paginatedRequest.getPreviousPage()!=null){
+            if(paginatedRequest.getPreviousPage()<paginatedRequest.getPage()){
+                query = query.startAt(Cursor.fromWebSafeString(paginatedRequest.getCursor()));
+            }else if(paginatedRequest.getPreviousPage()>paginatedRequest.getPage()){
+                query = query.endAt(Cursor.fromWebSafeString(paginatedRequest.getCursor()));
+            }
+        }
         QueryResultIterator<E> iterator = query.iterator();
         while (iterator.hasNext()) {
             paginatedList.getItems().add(iterator.next());
         }
-        paginatedList.setPage(iterator.getCursor().toWebSafeString());
+        paginatedList.setPreviousPage(paginatedRequest.getPage());
+        paginatedList.setCursor(iterator.getCursor().toWebSafeString());
         return paginatedList;
     }
 

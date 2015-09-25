@@ -2,14 +2,19 @@ package org.kairos.ibpnh.model.devotional;
 
 import com.googlecode.objectify.annotation.Entity;
 import com.googlecode.objectify.annotation.Id;
+import com.googlecode.objectify.annotation.Index;
 import org.kairos.ibpnh.model.I_Model;
+
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  * @author AxelCollardBovy ,created on 24/02/2015.
  */
 @Entity
-public class DailyDevotional implements I_Model {
+public class DailyDevotional implements I_Model,Serializable {
+
+    private static final long serialVersionUID = 7725130853686061184L;
 
     /**
      * Entity id
@@ -45,6 +50,7 @@ public class DailyDevotional implements I_Model {
     /**
      * Devotional's date
      */
+    @Index
     private Date date;
 
     @Override

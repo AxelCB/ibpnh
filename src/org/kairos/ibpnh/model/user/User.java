@@ -2,13 +2,18 @@ package org.kairos.ibpnh.model.user;
 
 import com.googlecode.objectify.annotation.Entity;
 import com.googlecode.objectify.annotation.Id;
+import com.googlecode.objectify.annotation.Index;
 import org.kairos.ibpnh.model.I_Model;
+
+import java.io.Serializable;
 
 /**
  * @author AxelCollardBovy ,created on 24/02/2015.
  */
 @Entity
-public class User implements I_Model {
+public class User implements I_Model,Serializable {
+
+    private static final long serialVersionUID = -3245162189792344327L;
 
     @Id
     private Long id;
@@ -21,6 +26,7 @@ public class User implements I_Model {
     /**
      * User's username.
      */
+    @Index
     private String username;
 
     /**
@@ -66,6 +72,7 @@ public class User implements I_Model {
     /**
      * User's Role
      */
+    @Index
     private E_RoleType roleType;
 
     @Override

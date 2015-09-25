@@ -11,6 +11,8 @@ var PaginationHelper = function(scope, nameSpace, fetchTotal, listFn, searchFn, 
 	//assumes there are 'list' and 'search' functions in the scope
 	scope[nameSpace].name = nameSpace;
 	scope[nameSpace].page = 1;
+	scope[nameSpace].previousPage = null;
+	scope[nameSpace].cursor = "";
 	scope[nameSpace].total = 0;
 	scope[nameSpace].pageTotal = 0;
 	scope[nameSpace].itemsPerPage = 0;

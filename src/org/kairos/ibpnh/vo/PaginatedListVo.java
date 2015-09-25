@@ -22,7 +22,17 @@ public class PaginatedListVo<E extends I_Model>{
 	/**
 	 * The current page.
 	 */
-	private String page;
+	private Long page;
+
+	/**
+	 * The previous page.
+	 */
+	private Long previousPage;
+
+	/**
+	 * The queries cursor.
+	 */
+	private String cursor;
 	
 	/**
 	 * The total items.
@@ -54,20 +64,6 @@ public class PaginatedListVo<E extends I_Model>{
 	}
 
 	/**
-	 * @return the page
-	 */
-	public String getPage() {
-		return this.page;
-	}
-
-	/**
-	 * @param page the page to set
-	 */
-	public void setPage(String page) {
-		this.page = page;
-	}
-
-	/**
 	 * @return the totalItems
 	 */
 	public Long getTotalItems() {
@@ -94,5 +90,24 @@ public class PaginatedListVo<E extends I_Model>{
 	public void setItemsPerPage(Long itemsPerPage) {
 		this.itemsPerPage = itemsPerPage;
 	}
-	
+
+	public void setPage(Long page) {
+		this.page = page;
+	}
+
+	public Long getPreviousPage() {
+		return previousPage;
+	}
+
+	public void setPreviousPage(Long previousPage) {
+		this.previousPage = previousPage;
+	}
+
+	public String getCursor() {
+		return cursor;
+	}
+
+	public void setCursor(String cursor) {
+		this.cursor = cursor;
+	}
 }

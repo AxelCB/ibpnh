@@ -38,8 +38,9 @@
 			<!--<property name="servers" value="${cache.servers}" />-->
 			<property name="cacheHolder">
 				<bean id="cacheHolder" class="org.kairos.ibpnh.services.caching.client.CacheHolder" scope="singleton">
-					<constructor-arg name="userCacheName" value="${cache.userCacheName}" />
-					<constructor-arg name="parameterCacheName" value="${cache.parameterCacheName}" />
+					<constructor-arg value=""></constructor-arg>
+					<!--<constructor-arg name="userCacheName" value="${cache.userCacheName}" />-->
+					<!--<constructor-arg name="parameterCacheName" value="${cache.parameterCacheName}" />-->
 				</bean>
 			</property>
 			<property name="userDuration" value="${cache.userCache.duration}" />
