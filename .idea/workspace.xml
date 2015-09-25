@@ -1,54 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="389e607c-67ec-45cf-afaf-c6b97a41ea16" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/org/kairos/ibpnh/controller/function/FunctionCtrl.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/org/kairos/ibpnh/dao/user/I_RoleTypeDao.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/kairos/ibpnh/services/caching/client/jcache/AbstractCacheProfiler.java" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/services/caching/client/jcache/AbstractCacheProfiler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/kairos/ibpnh/fx/AbstractFxImpl.java" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/fx/AbstractFxImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/AppEngine_API.xml" afterPath="$PROJECT_DIR$/.idea/libraries/AppEngine_API.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/kairos/ibpnh/services/caching/client/CacheHolder.java" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/services/caching/client/CacheHolder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/kairos/ibpnh/controller/devotional/DailyDevotionalCtrl.java" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/controller/devotional/DailyDevotionalCtrl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/kairos/ibpnh/utils/DateUtilsImpl.java" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/utils/DateUtilsImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/kairos/ibpnh/fx/devotional/Fx_CreateDailyDevotional.java" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/fx/devotional/Fx_CreateDailyDevotional.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/kairos/ibpnh/fx/configuration/parameter/Fx_CreateParameter.java" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/fx/configuration/parameter/Fx_CreateParameter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/kairos/ibpnh/fx/user/Fx_CreateUser.java" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/fx/user/Fx_CreateUser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/kairos/ibpnh/fx/devotional/Fx_DeleteDailyDevotional.java" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/fx/devotional/Fx_DeleteDailyDevotional.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/kairos/ibpnh/fx/configuration/parameter/Fx_DeleteParameter.java" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/fx/configuration/parameter/Fx_DeleteParameter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/kairos/ibpnh/fx/user/Fx_DeleteUser.java" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/fx/user/Fx_DeleteUser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/kairos/ibpnh/fx/login/Fx_Login.java" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/fx/login/Fx_Login.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/kairos/ibpnh/fx/devotional/Fx_ModifyDailyDevotional.java" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/fx/devotional/Fx_ModifyDailyDevotional.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/kairos/ibpnh/fx/configuration/parameter/Fx_ModifyParameter.java" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/fx/configuration/parameter/Fx_ModifyParameter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/kairos/ibpnh/fx/user/Fx_ModifyUser.java" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/fx/user/Fx_ModifyUser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/kairos/ibpnh/json/GsonSpringFactoryBean.java" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/json/GsonSpringFactoryBean.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/kairos/ibpnh/utils/HashUtils.java" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/utils/HashUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/kairos/ibpnh/services/caching/client/api/I_CacheProfiler.java" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/services/caching/client/api/I_CacheProfiler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/kairos/ibpnh/dao/devotional/I_DailyDevotionalDao.java" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/dao/devotional/I_DailyDevotionalDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/kairos/ibpnh/dao/I_Dao.java" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/dao/I_Dao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/kairos/ibpnh/fx/I_Fx.java" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/fx/I_Fx.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/kairos/ibpnh/fx/I_LoginResponseStrategy.java" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/fx/I_LoginResponseStrategy.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/kairos/ibpnh/services/caching/client/api/I_ParameterCacheManager.java" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/services/caching/client/api/I_ParameterCacheManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/kairos/ibpnh/dao/configuration/parameter/I_ParameterDao.java" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/dao/configuration/parameter/I_ParameterDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/kairos/ibpnh/dao/user/I_UserDao.java" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/dao/user/I_UserDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ibpnh.iml" afterPath="$PROJECT_DIR$/Ibpnh.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/kairos/ibpnh/services/caching/client/jcache/JCacheUserCacheImpl.java" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/services/caching/client/jcache/JCacheUserCacheImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/kairos/ibpnh/controller/LangCtrl.java" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/controller/LangCtrl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/kairos/ibpnh/controller/login/LoginCtrl.java" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/controller/login/LoginCtrl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/kairos/ibpnh/model/configuration/parameter/Parameter.java" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/model/configuration/parameter/Parameter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/kairos/ibpnh/controller/configuration/parameter/ParameterCtrl.java" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/controller/configuration/parameter/ParameterCtrl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/kairos/ibpnh/utils/PasswordUtils.java" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/utils/PasswordUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Universe_copied_libs.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Universe_copied_libs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/kairos/ibpnh/controller/user/UserCtrl.java" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/controller/user/UserCtrl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/kairos/ibpnh/web/WebContextHolder.java" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/web/WebContextHolder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/kairos/ibpnh/fx/WebLoginResponseStrategy.java" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/fx/WebLoginResponseStrategy.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/resources/angular/angular-1.3.8/angular-animate.js" afterPath="$PROJECT_DIR$/web/resources/angular/angular-1.3.8/angular-animate.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/resources/angular/angular-1.3.8/angular-scenario.js" afterPath="$PROJECT_DIR$/web/resources/angular/angular-1.3.8/angular-scenario.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/resources/angular/angular-1.3.8/angular.js" afterPath="$PROJECT_DIR$/web/resources/angular/angular-1.3.8/angular.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/resources/jquery/jquery-1.11.2.min.js" afterPath="$PROJECT_DIR$/web/resources/jquery/jquery-1.11.2.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/META-INF/spring/mainContext.xml" afterPath="$PROJECT_DIR$/src/META-INF/spring/mainContext.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/routes/routes.js" afterPath="$PROJECT_DIR$/web/app/routes/routes.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+    <list default="true" id="389e607c-67ec-45cf-afaf-c6b97a41ea16" name="Default" comment="Fixes en compilación">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Ibpnh.iws" />
@@ -76,7 +29,7 @@
         <entry file="file://$PROJECT_DIR$/web/app/routes/routes.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.73044926">
-              <caret line="33" column="49" selection-start-line="33" selection-start-column="47" selection-end-line="33" selection-end-column="49" />
+              <caret line="33" column="49" selection-start-line="33" selection-start-column="47" selection-end-line="33" selection-end-column="51" />
               <folding />
             </state>
           </provider>
@@ -102,7 +55,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/model/user/User.java" />
         <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/model/devotional/DailyDevotional.java" />
         <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/json/CustomObjectifyFactory.java" />
         <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/fx/FxValidationResponse.java" />
@@ -153,6 +105,7 @@
         <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/fx/user/Fx_DeleteUser.java" />
         <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/fx/configuration/parameter/Fx_CreateParameter.java" />
         <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/fx/user/Fx_CreateUser.java" />
+        <option value="$PROJECT_DIR$/web/app/routes/routes.js" />
       </list>
     </option>
   </component>
@@ -550,16 +503,23 @@
       <workItem from="1443055352719" duration="3337000" />
       <workItem from="1443100321519" duration="47000" />
       <workItem from="1443130128300" duration="6187000" />
-      <workItem from="1443137180544" duration="2267000" />
+      <workItem from="1443137180544" duration="2391000" />
     </task>
+    <task id="LOCAL-00001" summary="Fixes en compilación">
+      <created>1443139606261</created>
+      <option name="number" value="00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1443139606261</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20536000" />
+    <option name="totallyTimeSpent" value="20660000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="0" width="1922" height="1055" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -599,6 +559,11 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Fixes en compilación" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixes en compilación" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -685,6 +650,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.59302324">
           <caret line="20" column="7" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -692,6 +660,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.2972477">
           <caret line="9" column="3" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -709,6 +680,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.50830567">
           <caret line="18" column="34" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -758,18 +730,18 @@
         <state vertical-scroll-proportion="0.625">
           <caret line="20" column="31" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
           <folding>
-            <element signature="e#11031#11032#0" expanded="true" />
-            <element signature="e#11058#11059#0" expanded="true" />
-            <element signature="e#11096#11097#0" expanded="true" />
-            <element signature="e#11128#11129#0" expanded="true" />
-            <element signature="e#11181#11182#0" expanded="true" />
-            <element signature="e#11220#11221#0" expanded="true" />
-            <element signature="e#11294#11295#0" expanded="true" />
-            <element signature="e#11350#11351#0" expanded="true" />
-            <element signature="e#11739#11740#0" expanded="true" />
-            <element signature="e#11771#11772#0" expanded="true" />
-            <element signature="e#11826#11827#0" expanded="true" />
-            <element signature="e#11868#11869#0" expanded="true" />
+            <element signature="e#10998#10999#0" expanded="false" />
+            <element signature="e#11025#11026#0" expanded="false" />
+            <element signature="e#11063#11064#0" expanded="false" />
+            <element signature="e#11095#11096#0" expanded="false" />
+            <element signature="e#11148#11149#0" expanded="false" />
+            <element signature="e#11187#11188#0" expanded="false" />
+            <element signature="e#11261#11262#0" expanded="false" />
+            <element signature="e#11317#11318#0" expanded="false" />
+            <element signature="e#11706#11707#0" expanded="false" />
+            <element signature="e#11738#11739#0" expanded="false" />
+            <element signature="e#11793#11794#0" expanded="false" />
+            <element signature="e#11835#11836#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -779,8 +751,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="34" column="53" selection-start-line="34" selection-start-column="53" selection-end-line="34" selection-end-column="53" />
           <folding>
-            <element signature="e#4889#4890#0" expanded="true" />
-            <element signature="e#4921#4922#0" expanded="true" />
+            <element signature="e#4889#4890#0" expanded="false" />
+            <element signature="e#4921#4922#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -790,11 +762,10 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="169" column="58" selection-start-line="155" selection-start-column="89" selection-end-line="169" selection-end-column="58" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2765#2766#0" expanded="true" />
-            <element signature="e#2816#2817#0" expanded="true" />
-            <element signature="e#10157#10158#0" expanded="true" />
-            <element signature="e#10189#10190#0" expanded="true" />
+            <element signature="e#2667#2668#0" expanded="false" />
+            <element signature="e#2718#2719#0" expanded="false" />
+            <element signature="e#10059#10060#0" expanded="false" />
+            <element signature="e#10091#10092#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -812,22 +783,22 @@
         <state vertical-scroll-proportion="-4.469218">
           <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
           <folding>
-            <element signature="e#3103#3104#0" expanded="true" />
-            <element signature="e#3150#3151#0" expanded="true" />
-            <element signature="e#3223#3224#0" expanded="true" />
-            <element signature="e#3271#3272#0" expanded="true" />
-            <element signature="e#15047#15048#0" expanded="true" />
-            <element signature="e#15084#15085#0" expanded="true" />
-            <element signature="e#20421#20422#0" expanded="true" />
-            <element signature="e#20481#20482#0" expanded="true" />
-            <element signature="e#23439#23440#0" expanded="true" />
-            <element signature="e#23482#23483#0" expanded="true" />
-            <element signature="e#25431#25432#0" expanded="true" />
-            <element signature="e#25484#25485#0" expanded="true" />
-            <element signature="e#26127#26128#0" expanded="true" />
-            <element signature="e#26172#26173#0" expanded="true" />
-            <element signature="e#26280#26281#0" expanded="true" />
-            <element signature="e#26325#26326#0" expanded="true" />
+            <element signature="e#2950#2951#0" expanded="false" />
+            <element signature="e#2997#2998#0" expanded="false" />
+            <element signature="e#3070#3071#0" expanded="false" />
+            <element signature="e#3118#3119#0" expanded="false" />
+            <element signature="e#14894#14895#0" expanded="false" />
+            <element signature="e#14931#14932#0" expanded="false" />
+            <element signature="e#20268#20269#0" expanded="false" />
+            <element signature="e#20328#20329#0" expanded="false" />
+            <element signature="e#23286#23287#0" expanded="false" />
+            <element signature="e#23329#23330#0" expanded="false" />
+            <element signature="e#25278#25279#0" expanded="false" />
+            <element signature="e#25331#25332#0" expanded="false" />
+            <element signature="e#25974#25975#0" expanded="false" />
+            <element signature="e#26019#26020#0" expanded="false" />
+            <element signature="e#26127#26128#0" expanded="false" />
+            <element signature="e#26172#26173#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -861,7 +832,7 @@
         <state vertical-scroll-proportion="0.5846154">
           <caret line="230" column="53" selection-start-line="230" selection-start-column="53" selection-end-line="230" selection-end-column="53" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -897,7 +868,7 @@
         <state vertical-scroll-proportion="-0.6123128">
           <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -914,9 +885,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="103" column="67" selection-start-line="103" selection-start-column="67" selection-end-line="103" selection-end-column="67" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -925,7 +894,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="28" column="19" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -935,9 +904,9 @@
         <state vertical-scroll-proportion="-1.7254575">
           <caret line="25" column="26" selection-start-line="25" selection-start-column="26" selection-end-line="25" selection-end-column="26" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#600#601#0" expanded="true" />
-            <element signature="e#654#655#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#600#601#0" expanded="false" />
+            <element signature="e#654#655#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -947,10 +916,10 @@
         <state vertical-scroll-proportion="-11.307693">
           <caret line="49" column="93" selection-start-line="49" selection-start-column="93" selection-end-line="49" selection-end-column="93" />
           <folding>
-            <element signature="e#1977#2001#0" expanded="true" />
-            <element signature="e#2059#2088#0" expanded="true" />
-            <element signature="e#2158#2187#0" expanded="true" />
-            <element signature="e#2226#2255#0" expanded="true" />
+            <element signature="e#1977#2001#0" expanded="false" />
+            <element signature="e#2059#2088#0" expanded="false" />
+            <element signature="e#2158#2187#0" expanded="false" />
+            <element signature="e#2226#2255#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -960,7 +929,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="123" column="7" selection-start-line="123" selection-start-column="7" selection-end-line="123" selection-end-column="7" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -970,7 +939,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -980,9 +949,9 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="102" column="57" selection-start-line="102" selection-start-column="57" selection-end-line="102" selection-end-column="57" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2241#2242#0" expanded="true" />
-            <element signature="e#2299#2300#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#2241#2242#0" expanded="false" />
+            <element signature="e#2299#2300#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1070,7 +1039,7 @@
     <entry file="file://$PROJECT_DIR$/web/app/routes/routes.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.73044926">
-          <caret line="33" column="49" selection-start-line="33" selection-start-column="47" selection-end-line="33" selection-end-column="49" />
+          <caret line="33" column="49" selection-start-line="33" selection-start-column="47" selection-end-line="33" selection-end-column="51" />
           <folding />
         </state>
       </provider>
