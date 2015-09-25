@@ -16,7 +16,7 @@ public interface I_CacheProfiler {
 	 * 
 	 * @return
 	 */
-	public List<String> cachesObserved();
+//	public List<String> cachesObserved();
 
 	/**
 	 * Gets the current key list, ordered alphanumerically, mapped by cache
@@ -24,7 +24,7 @@ public interface I_CacheProfiler {
 	 * 
 	 * @return
 	 */
-	public Map<String, List<String>> getKeyListMap();
+//	public Map<String, List<String>> getKeyListMap();
 
 	/**
 	 * Checks if this profiler observes the specified cache.
@@ -34,7 +34,7 @@ public interface I_CacheProfiler {
 	 * 
 	 * @return true iif this profiler observes the specified cache
 	 */
-	public Boolean observes(String cacheName);
+//	public Boolean observes(String cacheName);
 
 	/**
 	 * Clears all the entries in the specified cache.

@@ -8,7 +8,6 @@ import org.kairos.ibpnh.json.JsonResponse;
 import org.kairos.ibpnh.model.user.User;
 import org.kairos.ibpnh.utils.ErrorCodes;
 import org.kairos.ibpnh.utils.HashUtils;
-import org.kairos.ibpnh.vo.user.UserVo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,13 +41,13 @@ public class Fx_ModifyUser extends AbstractFxImpl implements I_Fx {
 		this.logger.debug("executing Fx_ModifyUser._execute()");
 
 		try {
-			this.beginTransaction();
+//			this.beginTransaction();
 
 			// we persist the entity
 			this.getEntity().setPassword(HashUtils.hashPassword(this.getEntity().getPassword(), this.getEntity().getHashCost()));
-			User user = this.getDao().persist(this.getOfy(), this.getEntity());
+			User user = this.getDao().persist(this.getEntity());
 
-			this.commitTransaction();
+//			this.commitTransaction();
 
 			return JsonResponse.ok(
 					this.getGson().toJson(user),
@@ -59,7 +58,7 @@ public class Fx_ModifyUser extends AbstractFxImpl implements I_Fx {
 		} catch (Exception e) {
 			this.logger.error("error executing Fx_ModifyUser._execute()", e);
 			try {
-				this.rollbackTransaction();
+//				this.rollbackTransaction();
 			} catch (Exception e1) {
 				this.logger.error("error rollbacking transaction", e);
 			}
@@ -82,8 +81,7 @@ public class Fx_ModifyUser extends AbstractFxImpl implements I_Fx {
 //			return FxValidationResponse.error(result);
 //		}
 
-		if (!this.getDao().checkUsernameUniqueness(this.getOfy(),
-				this.getEntity().getUsername(), this.getEntity().getId())) {
+		if (!this.getDao().checkUsernameUniqueness(this.getEntity().getUsername(), this.getEntity().getId())) {
 			String jsonResponseMessage = this.getRealMessageSolver()
 					.getMessage("fx.user.validation.nonUniqueCode",
 							new String[] { this.getEntity().getUsername() });
@@ -104,8 +102,7 @@ public class Fx_ModifyUser extends AbstractFxImpl implements I_Fx {
 
 			return FxValidationResponse.error(jsonResponseMessage);
 		} else {
-			User user = this.getDao().getById(this.getOfy(),
-					this.getEntity().getId());
+			User user = this.getDao().getById(this.getEntity().getId());
 
 			if (user == null) {
 

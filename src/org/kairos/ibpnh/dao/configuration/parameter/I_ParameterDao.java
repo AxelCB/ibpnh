@@ -18,36 +18,32 @@ public interface I_ParameterDao extends I_Dao<Parameter> {
 	 * Finds a parameter by name
 	 * 
 	 * @param name name to find
-	 * @param pm persistence manager
-	 * 
+	 *
 	 * @return parameter or null
 	 */
-	public Parameter getByName(Objectify ofy, String name);
+	public Parameter getByName( String name);
 	
 	/**
 	 * Finds the parameters that match with the name
 	 * 
 	 * @param name name to match
-	 * @param pm persistence manager
 	 * 
 	 * @return list of parameterVo
 	 */
-	public List<Parameter> getsByName(Objectify ofy, String name);
+	public List<Parameter> getsByName(String name);
 	
 	/**
 	 * Finds the parameters that match the names in the collection
 	 * 
 	 * @param names names to match
-	 * @param pm persistence manager
 	 * 
 	 * @return list of parameterVo
 	 */
-	public List<Parameter> getByName(Objectify ofy, Collection<String> names);
+	public List<Parameter> getByName(Collection<String> names);
 	
 	/**
 	 * Saves a history.
-	 * 
-	 * @param pm persistence manager
+	 *
 	 * @param parameter the  that contains the data
 	 * @param username username of the user that made the operation
 	 * @param operationType type of the operation
@@ -58,18 +54,15 @@ public interface I_ParameterDao extends I_Dao<Parameter> {
 	/**
 	 * Loads the global parameters.
 	 * Overrides existing ones.
-	 * 
-	 * @param pm persistence manager
 	 */
-	public void loadGlobalParameters(Objectify ofy);
+	public void loadGlobalParameters();
 
 	/**
 	 * Returns wether a parameter name is unique (there's no parameter with that name) or not.
 	 *
-	 * @param pm
 	 * @param name
-	 * @param id
+	 * @param excludeId
 	 * @return
 	 */
-	public boolean checkNameUniqueness(Objectify ofy, String name, String excludeId);
+	public boolean checkNameUniqueness(String name, String excludeId);
 }

@@ -27,6 +27,7 @@
 				<!--</list>-->
 			<!--</property>-->
 		<!--</bean>-->
+		<bean id="objectifyBoostrap" class="org.kairos.ibpnh.json.ObjectifyBootstrap" init-method="init" scope="singleton"/>
 
 		<!-- JSON -->
 		<bean id="gson" class="org.kairos.ibpnh.json.GsonSpringFactoryBean" scope="singleton" />
@@ -37,12 +38,10 @@
 			<!--<property name="servers" value="${cache.servers}" />-->
 			<property name="cacheHolder">
 				<bean id="cacheHolder" class="org.kairos.ibpnh.services.caching.client.CacheHolder" scope="singleton">
-					<!--<constructor-arg value="${cache.configFile}"></constructor-arg>-->
-					<constructor-arg value=""></constructor-arg>
+					<constructor-arg name="userCacheName" value="${cache.userCacheName}" />
+					<constructor-arg name="parameterCacheName" value="${cache.parameterCacheName}" />
 				</bean>
 			</property>
-			<property name="userCacheName" value="${cache.userCacheName}" />
-			<property name="parameterCacheName" value="${cache.parameterCacheName}" />
 			<property name="userDuration" value="${cache.userCache.duration}" />
 			<property name="timeUnit" value="${cache.userCache.timeUnit}" />
 		</bean>

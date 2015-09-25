@@ -1,10 +1,8 @@
 package org.kairos.ibpnh.fx;
 
 import com.google.gson.Gson;
-import ibpnh.fx.login.*;
-import ibpnh.fx.login.I_LoginResponseStrategy;
 import org.kairos.ibpnh.json.JsonResponse;
-import org.kairos.ibpnh.vo.user.UserVo;
+import org.kairos.ibpnh.model.user.User;
 import org.kairos.ibpnh.web.I_MessageSolver;
 
 /**
@@ -101,8 +99,8 @@ public class WebLoginResponseStrategy implements org.kairos.ibpnh.fx.I_LoginResp
 	 * .core.vo.user.UserVo)
 	 */
 	@Override
-	public JsonResponse userLogged(User userVo) {
-		return JsonResponse.ok(this.getGson().toJson(userVo));
+	public JsonResponse userLogged(User user) {
+		return JsonResponse.ok(this.getGson().toJson(user));
 	}
 
 	/*

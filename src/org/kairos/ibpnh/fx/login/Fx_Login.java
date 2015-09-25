@@ -102,7 +102,7 @@ public class Fx_Login extends AbstractFxImpl implements I_Fx {
 			// response to send
 			JsonResponse response = null;
 
-			this.getOfy().currentTransaction().begin();
+//			this.getOfy().currentTransaction().begin();
 
 			Long maxAttempts = 5l;
 //					this.getParameterDao()
@@ -113,8 +113,7 @@ public class Fx_Login extends AbstractFxImpl implements I_Fx {
 //					.getByName(this.getOfy(), ParameterVo.HASH_COST)
 //					.getValue(Long.class);
 			if (user == null) {
-				user = this.getUserDao().getByUsername(this.getOfy(),
-						this.getEntity().getUsername());
+				user = this.getUserDao().getByUsername(this.getEntity().getUsername());
 			}
 
 			if (user == null) {
@@ -147,7 +146,7 @@ public class Fx_Login extends AbstractFxImpl implements I_Fx {
 					response = this.getLoginResponseStrategy().badPassword(
 							maxAttempts - user.getLoginAttempts());
 
-					this.getUserDao().persist(this.getOfy(), user);
+					this.getUserDao().persist(user);
 				} else {
 					// block the user
 					this.logger
@@ -155,15 +154,14 @@ public class Fx_Login extends AbstractFxImpl implements I_Fx {
 
 					response = this.getLoginResponseStrategy().maxAttempts();
 
-					this.getUserDao().persist(this.getOfy(), user);
+					this.getUserDao().persist(user);
 				}
 			} else {
 				this.logger.debug("user properly logged");
 				// properly logged, reset the attempts
 				user.setLoginAttempts(0);
 
-				User newUser = this.getUserDao().persist(this.getOfy(),
-						user);
+				User newUser = this.getUserDao().persist(user);
 
 				// order the menu
 				this.getUserDao().orderMenu(newUser);
@@ -190,7 +188,7 @@ public class Fx_Login extends AbstractFxImpl implements I_Fx {
 						.userLogged(newUser);
 			}
 
-			this.getOfy().currentTransaction().commit();
+//			this.getOfy().currentTransaction().commit();
 
 			return response;
 //		} catch (ParseException pe) {
@@ -202,7 +200,7 @@ public class Fx_Login extends AbstractFxImpl implements I_Fx {
 		} catch (Exception e) {
 			this.logger.error("error executing Fx_Login._execute()", e);
 			try {
-				this.getOfy().currentTransaction().rollback();
+//				this.getOfy().currentTransaction().rollback();
 			} catch (Exception e1) {
 				this.logger.error("error rollbacking transaction", e);
 			}

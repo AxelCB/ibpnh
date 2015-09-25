@@ -2,7 +2,6 @@ package org.kairos.ibpnh.fx;
 
 import org.kairos.ibpnh.json.JsonResponse;
 import org.kairos.ibpnh.model.user.User;
-import org.kairos.ibpnh.vo.user.UserVo;
 
 /**
  * Login Response Strategy.

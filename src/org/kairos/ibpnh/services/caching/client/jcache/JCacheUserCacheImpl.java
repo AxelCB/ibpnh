@@ -3,20 +3,23 @@ package org.kairos.ibpnh.services.caching.client.jcache;
 import org.kairos.ibpnh.model.configuration.parameter.Parameter;
 import org.kairos.ibpnh.model.user.User;
 import org.kairos.ibpnh.services.caching.client.CacheHolder;
+import org.kairos.ibpnh.services.caching.client.api.I_CacheProfiler;
 import org.kairos.ibpnh.services.caching.client.api.I_ParameterCacheManager;
 import org.kairos.ibpnh.services.caching.client.api.I_UserCacheManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.cache.Cache;
-import java.util.*;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  *
  * @author AxelCollardBovy ,created on 08/03/2015.
  * 
  */
-public class JCacheUserCacheImpl extends AbstractCacheProfiler implements
+public class JCacheUserCacheImpl implements I_CacheProfiler,//extends AbstractCacheProfiler
 		I_UserCacheManager, I_ParameterCacheManager {
 
 	/**
@@ -82,11 +85,11 @@ public class JCacheUserCacheImpl extends AbstractCacheProfiler implements
 	 * org.universe.core.services.caching.client.api.I_CacheProfiler#cachesObserved
 	 * ()
 	 */
-	@Override
-	public List<String> cachesObserved() {
-		return Arrays.asList(new String[] { this.getUserCacheName(),
-				this.getParameterCacheName() });
-	}
+//	@Override
+//	public List<String> cachesObserved() {
+//		return Arrays.asList(new String[] { this.getUserCacheName(),
+//				this.getParameterCacheName() });
+//	}
 
 	/*
 	 * (non-Javadoc)
@@ -95,16 +98,16 @@ public class JCacheUserCacheImpl extends AbstractCacheProfiler implements
 	 * org.universe.core.services.caching.client.hotrod.AbstractCacheProfiler
 	 * #_keySet()
 	 */
-	@Override
-	protected Map<String, Set<String>> _keySet() {
-		Map<String, Set<String>> keySetMap = new HashMap<>();
-
-		keySetMap.put(this.getUserCacheName(), this.getUserCache().keySet());
-		keySetMap.put(this.getParameterCacheName(), this.getParameterCache()
-				.keySet());
-
-		return keySetMap;
-	}
+//	@Override
+//	protected Map<String, Set<String>> _keySet() {
+//		Map<String, Set<String>> keySetMap = new HashMap<>();
+//
+//		keySetMap.put(this.getUserCacheName(), this.getUserCache().keySet());
+//		keySetMap.put(this.getParameterCacheName(), this.getParameterCache()
+//				.keySet());
+//
+//		return keySetMap;
+//	}
 
 	/*
 	 * (non-Javadoc)
@@ -113,11 +116,11 @@ public class JCacheUserCacheImpl extends AbstractCacheProfiler implements
 	 * org.universe.core.services.caching.client.api.I_CacheProfiler#observes
 	 * (java.lang.String)
 	 */
-	@Override
-	public Boolean observes(String cacheName) {
-		return cacheName.equals(this.getUserCacheName())
-				|| cacheName.equals(this.getParameterCacheName());
-	}
+//	@Override
+//	public Boolean observes(String cacheName) {
+//		return cacheName.equals(this.getUserCacheName())
+//				|| cacheName.equals(this.getParameterCacheName());
+//	}
 
 	/*
 	 * (non-Javadoc)
@@ -227,9 +230,7 @@ public class JCacheUserCacheImpl extends AbstractCacheProfiler implements
 	public void putUser(String key, User userInCache) {
 		try {
 			//TODO: configurar valor y unidad
-//			this.logger.error("HEEEELP Key:"+key+"  User:"+userInCache);
             this.getUserCache().put(key,userInCache);
-//			cache.put(key,userInCache, this.getUserDuration(), TimeUnit.valueOf(this.getTimeUnit()));
 			this.logger.info("Insertado Sync {}", key);
 
 		} catch (Exception e) {
@@ -248,7 +249,10 @@ public class JCacheUserCacheImpl extends AbstractCacheProfiler implements
 	public User removeUser(String key) {
 		User user = null;
 		try {
-			user = (User) this.getUserCache().remove(key);
+			user = (User) this.getUserCache().get(key);
+			if(!this.getUserCache().remove(key)){
+				throw new Exception("Couldn't remove user from cache");
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -305,7 +309,10 @@ public class JCacheUserCacheImpl extends AbstractCacheProfiler implements
 	public Parameter removeParameter(String name) {
 		Parameter parameter = null;
 		try {
-			parameter = (Parameter) this.getParameterCache().remove(name);
+			parameter = (Parameter) this.getParameterCache().get(name);
+			if(!this.getUserCache().remove(name)){
+				throw new Exception("Couldn't remove parameter from cache");
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -320,16 +327,16 @@ public class JCacheUserCacheImpl extends AbstractCacheProfiler implements
 	 * org.universe.core.services.caching.client.api.I_ParameterCacheManager
 	 * #keySet()
 	 */
-	@Override
-	public Set<String> keySet() {
-		try {
-			return this.getParameterCache().keySet();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
-		return null;
-	}
+//	@Override
+//	public Set<String> keySet() {
+//		try {
+//			return this.getParameterCache().keySet();
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
+//
+//		return null;
+//	}
 
 	/**
 	 * @return the cacheContainer

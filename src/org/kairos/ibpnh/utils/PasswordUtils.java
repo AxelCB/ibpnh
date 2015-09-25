@@ -1,12 +1,8 @@
 package org.kairos.ibpnh.utils;
 
-import org.kairos.ibpnh.dao.PersistenceManagerHolder;
 import org.kairos.ibpnh.dao.configuration.parameter.I_ParameterDao;
-import org.kairos.ibpnh.json.CustomObjectifyFactory;
 import org.kairos.ibpnh.model.configuration.parameter.Parameter;
 import org.kairos.ibpnh.model.user.User;
-import org.kairos.ibpnh.vo.configuration.parameter.ParameterVo;
-import org.kairos.ibpnh.vo.user.UserVo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,12 +36,6 @@ public class PasswordUtils implements I_PasswordUtils {
 	private I_ParameterDao parameterDao;
 
 	/**
-	 * Entity Manager Holder
-	 */
-	@Autowired
-	private CustomObjectifyFactory objectifyFactory;
-
-	/**
 	 * Format check of a potential password. Retrieves the regExp from the
 	 * parameter to check the password received
 	 * 
@@ -53,8 +43,6 @@ public class PasswordUtils implements I_PasswordUtils {
 	 */
 	@Override
 	public Boolean formatCheck(String password) {
-//		JDOPersistenceManager pm = this.getPmh().getPersistenceManager();
-
 		try {
 			Parameter passwordRegexpParameter = null;
 //                    this.getParameterDao()
@@ -118,14 +106,6 @@ public class PasswordUtils implements I_PasswordUtils {
 		}
 
 		return result;
-	}
-
-	public CustomObjectifyFactory getObjectifyFactory() {
-		return objectifyFactory;
-	}
-
-	public void setObjectifyFactory(CustomObjectifyFactory objectifyFactory) {
-		this.objectifyFactory = objectifyFactory;
 	}
 
 	/**

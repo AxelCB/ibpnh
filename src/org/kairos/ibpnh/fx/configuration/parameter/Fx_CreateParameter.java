@@ -40,13 +40,13 @@ public class Fx_CreateParameter extends AbstractFxImpl implements I_Fx {
 		this.logger.debug("executing Fx_CreateFunction._execute()");
 
 		try {
-			this.beginTransaction();
+//			this.beginTransaction();
 
 			// we persist the entity
-			Parameter parameter = this.getDao().persist(this.getOfy(), this.getEntity());
+			Parameter parameter = this.getDao().persist(this.getEntity());
 			this.setEntity(parameter);
 
-			this.commitTransaction();
+//			this.commitTransaction();
 
 			return JsonResponse.ok(
 					this.getGson().toJson(parameter),
@@ -58,7 +58,7 @@ public class Fx_CreateParameter extends AbstractFxImpl implements I_Fx {
 			this.logger.error(
 					"error executing Fx_CreateFunction.execute()", e);
 			try {
-				this.rollbackTransaction();
+//				this.rollbackTransaction();
 			} catch (Exception e1) {
 				this.logger.error("error rollbacking transaction", e);
 			}
@@ -81,8 +81,7 @@ public class Fx_CreateParameter extends AbstractFxImpl implements I_Fx {
 //			return FxValidationResponse.error(result);
 //		}
 
-		if (!this.getDao().checkNameUniqueness(this.getOfy(),
-				this.getEntity().getName(), null)) {
+		if (!this.getDao().checkNameUniqueness(this.getEntity().getName(), null)) {
 			String jsonResponseMessage = this.getRealMessageSolver()
 					.getMessage("fx.parameter.validation.nonUniqueName",
 							new String[] { this.getEntity().getName() });

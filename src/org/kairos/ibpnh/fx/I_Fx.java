@@ -1,6 +1,5 @@
 package org.kairos.ibpnh.fx;
 
-import com.googlecode.objectify.Objectify;
 import org.kairos.ibpnh.json.JsonResponse;
 import org.kairos.ibpnh.model.I_Model;
 
@@ -18,20 +17,6 @@ public interface I_Fx {
 	 * @return a JsonResponse
 	 */
 	public JsonResponse execute();
-	
-	/**
-	 * Sets the Persistence Manager.
-	 * 
-	 * @param ofy
-	 */
-	public void setOfy(Objectify ofy);
-	
-	/**
-	 * Returns the persistence manager being hold by the FX.
-	 * 
-	 * @return persistence manager
-	 */
-	public Objectify getOfy();
 	
 	/**
 	 * Sets the Value Object.

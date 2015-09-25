@@ -41,18 +41,18 @@ public class Fx_CreateUser extends AbstractFxImpl implements I_Fx {
 		this.logger.debug("executing Fx_CreateFunction._execute()");
 
 		try {
-			this.beginTransaction();
+//			this.beginTransaction();
 
 			// we persist the entity
 			this.getEntity().setPassword(HashUtils.hashPassword(this.getEntity().getPassword(), this.getEntity().getHashCost()));
 			this.getEntity().setFirstLogin(Boolean.FALSE);
-			User user = this.getDao().persist(this.getOfy(), this.getEntity());
+			User user = this.getDao().persist(this.getEntity());
 			this.setEntity(user);
 
-			this.commitTransaction();
+//			this.commitTransaction();
 
 			return JsonResponse.ok(
-					this.getGson().toJson(userVo),
+					this.getGson().toJson(user),
 					this.getRealMessageSolver().getMessage(
 							"default.entity.created.ok",
 							new String[] { this.getRealMessageSolver()
@@ -61,7 +61,7 @@ public class Fx_CreateUser extends AbstractFxImpl implements I_Fx {
 			this.logger.error(
 					"error executing Fx_CreateFunction.execute()", e);
 			try {
-				this.rollbackTransaction();
+//				this.rollbackTransaction();
 			} catch (Exception e1) {
 				this.logger.error("error rollbacking transaction", e);
 			}
@@ -84,8 +84,7 @@ public class Fx_CreateUser extends AbstractFxImpl implements I_Fx {
 //			return FxValidationResponse.error(result);
 //		}
 
-		if (!this.getDao().checkUsernameUniqueness(this.getOfy(),
-				this.getEntity().getUsername(), null)) {
+		if (!this.getDao().checkUsernameUniqueness(this.getEntity().getUsername(), null)) {
 			String jsonResponseMessage = this.getRealMessageSolver()
 					.getMessage("fx.user.validation.nonUniqueUsername",
 							new String[] { this.getEntity().getUsername() });

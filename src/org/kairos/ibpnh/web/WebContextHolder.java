@@ -3,7 +3,6 @@ package org.kairos.ibpnh.web;
 import org.kairos.ibpnh.json.JsonResponse;
 import org.kairos.ibpnh.model.user.User;
 import org.kairos.ibpnh.utils.ErrorCodes;
-import org.kairos.ibpnh.vo.user.UserVo;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Locale;

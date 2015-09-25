@@ -1,15 +1,13 @@
-package ibpnh.controller.login;
+package org.kairos.ibpnh.controller.login;
 
 import com.google.gson.Gson;
-import org.datanucleus.api.jdo.JDOPersistenceManager;
 import org.kairos.ibpnh.controller.I_URIValidator;
-import org.kairos.ibpnh.dao.PersistenceManagerHolder;
 import org.kairos.ibpnh.fx.I_FxFactory;
 import org.kairos.ibpnh.fx.login.Fx_Login;
 import org.kairos.ibpnh.fx.login.Fx_Logout;
 import org.kairos.ibpnh.json.JsonResponse;
+import org.kairos.ibpnh.model.user.User;
 import org.kairos.ibpnh.utils.ErrorCodes;
-import org.kairos.ibpnh.vo.user.UserCredentialsVo;
 import org.kairos.ibpnh.web.WebContextHolder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -60,12 +58,6 @@ public class LoginCtrl implements I_URIValidator {
     @Autowired
     private WebContextHolder webContextHolder;
 
-    /**
-     * Entity Manager Holder
-     */
-    @Autowired
-    private PersistenceManagerHolder persistenceManagerHolder;
-
     /*
 	 * (non-Javadoc)
 	 *
@@ -86,16 +78,14 @@ public class LoginCtrl implements I_URIValidator {
     @RequestMapping(value = "/login.json")
     public String login(@RequestBody String data) {
         this.logger.debug("calling LoginCtrl.login()");
-        Objectify ofy = this.getPersistenceManagerHolder().getPersistenceManager();
         JsonResponse jsonResponse = null;
 
         try {
-            UserCredentials userCredentials = this.getGson().fromJson(data,
-                    UserCredentialsVo.class);
+            User user = this.getGson().fromJson(data,
+                    User.class);
 
             Fx_Login fx = this.getFxFactory().getNewFxInstance(Fx_Login.class);
-            fx.setEntity(userCredentialsVo);
-            fx.setOfy(pm);
+            fx.setEntity(user);
             this.logger.debug("executing Fx_Login");
             jsonResponse = fx.execute();
         } catch (Exception e) {
@@ -103,8 +93,6 @@ public class LoginCtrl implements I_URIValidator {
 
             jsonResponse = this.getWebContextHolder().unexpectedErrorResponse(
                     ErrorCodes.ERROR_UNEXPECTED);
-        } finally {
-            this.getPersistenceManagerHolder().closePersistenceManager(pm);
         }
 
         return this.getGson().toJson(jsonResponse);
@@ -136,7 +124,6 @@ public class LoginCtrl implements I_URIValidator {
     @RequestMapping(value = "/registrationEnabled.json")
     public String registrationEnabled() {
         this.logger.debug("calling LoginCtrl.registrationEnabled()");
-        Objectify ofy =this.getPersistenceManagerHolder().getPersistenceManager();
         JsonResponse response = null;
         try {
             //Parameter parameter = this.getParameterDao().getByName(pm, ParameterVo.USER_REGISTRATION);
@@ -153,8 +140,6 @@ public class LoginCtrl implements I_URIValidator {
             this.logger.error("unexpected error", e);
 
             response = this.getWebContextHolder().unexpectedErrorResponse();
-        } finally {
-            this.getPersistenceManagerHolder().closePersistenceManager(pm);
         }
 
         return this.getGson().toJson(response);
@@ -171,7 +156,7 @@ public class LoginCtrl implements I_URIValidator {
         this.logger.debug("calling LoginCtrl.getLoggedUser()");
 
         String data = this.getGson().toJson(
-                this.getWebContextHolder().getUserVo());
+                this.getWebContextHolder().getUser());
 
         JsonResponse jsonResponse = JsonResponse.ok(data);
 
@@ -184,14 +169,6 @@ public class LoginCtrl implements I_URIValidator {
 
     public void setGson(Gson gson) {
         this.gson = gson;
-    }
-
-    public PersistenceManagerHolder getPersistenceManagerHolder() {
-        return persistenceManagerHolder;
-    }
-
-    public void setPersistenceManagerHolder(PersistenceManagerHolder persistenceManagerHolder) {
-        this.persistenceManagerHolder = persistenceManagerHolder;
     }
 
     public I_FxFactory getFxFactory() {

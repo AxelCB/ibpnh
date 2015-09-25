@@ -7,14 +7,12 @@
     <file url="file://$PROJECT_DIR$/src/org/kairos/ibpnh/controller/LangCtrl.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/org/kairos/ibpnh/controller/configuration/parameter/ParameterCtrl.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/org/kairos/ibpnh/controller/devotional/DailyDevotionalCtrl.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/org/kairos/ibpnh/controller/function/FunctionCtrl.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/org/kairos/ibpnh/controller/login/LoginCtrl.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/org/kairos/ibpnh/controller/user/UserCtrl.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/org/kairos/ibpnh/dao/AbstractDao.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/org/kairos/ibpnh/dao/I_Dao.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/org/kairos/ibpnh/dao/configuration/parameter/I_ParameterDao.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/org/kairos/ibpnh/dao/devotional/I_DailyDevotionalDao.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/org/kairos/ibpnh/dao/user/I_RoleTypeDao.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/org/kairos/ibpnh/dao/user/I_UserDao.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/org/kairos/ibpnh/fx/AbstractFxImpl.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/org/kairos/ibpnh/fx/FxFactoryImpl.java" charset="UTF-8" />
@@ -44,7 +42,6 @@
     <file url="file://$PROJECT_DIR$/src/org/kairos/ibpnh/model/configuration/parameter/Parameter.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/org/kairos/ibpnh/model/devotional/DailyDevotional.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/org/kairos/ibpnh/model/user/E_RoleType.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/org/kairos/ibpnh/model/user/RoleType.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/org/kairos/ibpnh/model/user/User.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/org/kairos/ibpnh/services/caching/client/CacheHolder.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/org/kairos/ibpnh/services/caching/client/api/I_CacheProfiler.java" charset="UTF-8" />

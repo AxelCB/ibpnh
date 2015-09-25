@@ -40,12 +40,12 @@ public class Fx_ModifyParameter extends AbstractFxImpl implements I_Fx {
 		this.logger.debug("executing Fx_ModifyParameter._execute()");
 
 		try {
-			this.beginTransaction();
+//			this.beginTransaction();
 
 			// we persist the entity
-			Parameter parameter = this.getDao().persist(this.getOfy(), this.getEntity());
+			Parameter parameter = this.getDao().persist(this.getEntity());
 
-			this.commitTransaction();
+//			this.commitTransaction();
 
 			return JsonResponse.ok(
 					this.getGson().toJson(parameter),
@@ -56,7 +56,7 @@ public class Fx_ModifyParameter extends AbstractFxImpl implements I_Fx {
 		} catch (Exception e) {
 			this.logger.error("error executing Fx_ModifyParameter._execute()", e);
 			try {
-				this.rollbackTransaction();
+//				this.rollbackTransaction();
 			} catch (Exception e1) {
 				this.logger.error("error rollbacking transaction", e);
 			}
@@ -79,8 +79,7 @@ public class Fx_ModifyParameter extends AbstractFxImpl implements I_Fx {
 //			return FxValidationResponse.error(result);
 //		}
 
-		if (!this.getDao().checkNameUniqueness(this.getOfy(),
-				this.getEntity().getName(), this.getEntity().getId())) {
+		if (!this.getDao().checkNameUniqueness(this.getEntity().getName(), this.getEntity().getId())) {
 			String jsonResponseMessage = this.getRealMessageSolver()
 					.getMessage("fx.parameter.validation.nonUniqueCode",
 							new String[] { this.getEntity().getName() });
@@ -101,8 +100,7 @@ public class Fx_ModifyParameter extends AbstractFxImpl implements I_Fx {
 
 			return FxValidationResponse.error(jsonResponseMessage);
 		} else {
-			Parameter parameter = this.getDao().getById(this.getOfy(),
-					this.getEntity().getId());
+			Parameter parameter = this.getDao().getById(this.getEntity().getId());
 
 			if (parameter == null) {
 

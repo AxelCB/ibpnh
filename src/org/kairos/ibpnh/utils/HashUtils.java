@@ -1,6 +1,6 @@
 package org.kairos.ibpnh.utils;
 
-import com.google.appengine.repackaged.org.apache.commons.codec.digest.DigestUtils;
+import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.kairos.ibpnh.model.user.User;
 

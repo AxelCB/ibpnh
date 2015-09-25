@@ -2,11 +2,9 @@ package org.kairos.ibpnh.json;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import org.datanucleus.api.jdo.JDOPersistenceManager;
-import org.kairos.ibpnh.dao.PersistenceManagerHolder;
 import org.kairos.ibpnh.dao.configuration.parameter.I_ParameterDao;
+import org.kairos.ibpnh.model.configuration.parameter.Parameter;
 import org.kairos.ibpnh.utils.I_DateUtils;
-import org.kairos.ibpnh.vo.configuration.parameter.ParameterVo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.FactoryBean;
@@ -42,12 +40,6 @@ public class GsonSpringFactoryBean implements FactoryBean<Gson> {
      */
     @Autowired
     private I_DateUtils dateUtils;
-
-    /**
-     * Entity Manager Holder.
-     */
-    @Autowired
-    private PersistenceManagerHolder persistenceManagerHolder;
 
     /**
      * Parameter DAO.
@@ -105,30 +97,25 @@ public class GsonSpringFactoryBean implements FactoryBean<Gson> {
      *            GSON builder
      */
     private void setDateTimeFormat(GsonBuilder gsb) {
-        Objectify ofy = null;
         try {
             // try to get date time format parameter
-            pm = this.getPersistenceManagerHolder().getPersistenceManager();
-            Parameter parameter = this.getParameterDao().getByName(pm,
-                    ParameterVo.JSON_DATE_TIME_EXCHANGE_FORMAT);
+            Parameter parameter = this.getParameterDao().getByName(Parameter.JSON_DATE_TIME_EXCHANGE_FORMAT);
             if (parameter == null) {
                 this.logger
                         .debug("parameter {} not found, defaulting to dd/MM/yyyy HH:mm:ss.SSS",
-                                ParameterVo.JSON_DATE_TIME_EXCHANGE_FORMAT);
+                                Parameter.JSON_DATE_TIME_EXCHANGE_FORMAT);
                 gsb.setDateFormat("dd/MM/yyyy HH:mm:ss.SSS");
             } else {
                 this.logger.debug("parameter {} found, with value {}",
-                        ParameterVo.JSON_DATE_TIME_EXCHANGE_FORMAT,
-                        parameterVo.getValue());
-                gsb.setDateFormat(parameterVo.getValue());
+                        Parameter.JSON_DATE_TIME_EXCHANGE_FORMAT,
+                        parameter.getValue());
+                gsb.setDateFormat(parameter.getValue());
             }
         } catch (Exception e) {
             this.logger.debug("error getting "
-                    + ParameterVo.JSON_DATE_TIME_EXCHANGE_FORMAT
+                    + Parameter.JSON_DATE_TIME_EXCHANGE_FORMAT
                     + " parameter, defaulting to dd/MM/yyyy HH:mm:ss.SSS", e);
             gsb.setDateFormat("dd/MM/yyyy HH:mm:ss.SSS");
-        } finally {
-            this.getPersistenceManagerHolder().closePersistenceManager(pm);
         }
     }
 
@@ -150,14 +137,6 @@ public class GsonSpringFactoryBean implements FactoryBean<Gson> {
     @Override
     public boolean isSingleton() {
         return true;
-    }
-
-    public PersistenceManagerHolder getPersistenceManagerHolder() {
-        return persistenceManagerHolder;
-    }
-
-    public void setPersistenceManagerHolder(PersistenceManagerHolder persistenceManagerHolder) {
-        this.persistenceManagerHolder = persistenceManagerHolder;
     }
 
     /**

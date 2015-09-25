@@ -1,26 +1,17 @@
 package org.kairos.ibpnh.utils;
 
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
-import java.util.Locale;
-import java.util.Map;
-
-
-import org.datanucleus.api.jdo.JDOPersistenceManager;
-import org.kairos.ibpnh.dao.PersistenceManagerHolder;
 import org.kairos.ibpnh.dao.configuration.parameter.I_ParameterDao;
 import org.kairos.ibpnh.json.E_DateFormat;
-import org.kairos.ibpnh.vo.configuration.parameter.ParameterVo;
+import org.kairos.ibpnh.model.configuration.parameter.Parameter;
+import org.kairos.ibpnh.utils.CollectionUtils.CollectionToMapConverter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.kairos.ibpnh.utils.CollectionUtils.CollectionToMapConverter;
+
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 /**
  * I_DateUtils implementation.
@@ -34,12 +25,6 @@ public class DateUtilsImpl implements I_DateUtils {
 	 * Logger for this class.
 	 */
 	private Logger logger = LoggerFactory.getLogger(DateUtilsImpl.class);
-
-	/**
-	 * Persitence manager holder.
-	 */
-	@Autowired
-	private PersistenceManagerHolder persistenceManagerHolder;
 
 	/**
 	 * Parameter DAO.
@@ -107,40 +92,36 @@ public class DateUtilsImpl implements I_DateUtils {
 	 * Init method.
 	 */
 	public void init() {
-		JDOPersistenceManager pm = null;
-
 		try {
 			// gets all the format parameters
 			List<String> parametersToGet = new ArrayList<>();
 			parametersToGet.addAll(Arrays.asList(new String[] {
-					ParameterVo.LOCALE_LANGUAGE_TAG, ParameterVo.DATE_FORMAT,
-					ParameterVo.DATETIME_FORMAT,
-					ParameterVo.DATETIME_FORMAT_WITHOUT_MILLISECONDS,
-					ParameterVo.DATETIME_FORMAT_WITHOUT_SECONDS,
-					ParameterVo.DATETIME_FORMAT_WITHOUT_SECONDS_AND_YEAR,
-					ParameterVo.HOUR_FORMAT,
-					ParameterVo.NATIVE_SQL_DATE_FORMAT,
-					ParameterVo.NATIVE_SQL_DATE_TIME_FORMAT,
-					ParameterVo.SMS_WS_DATE_FORMAT,
-					ParameterVo.JSON_DATE_TIME_EXCHANGE_FORMAT }));
-			pm = this.getPersistenceManagerHolder().getPersistenceManager();
-			List<ParameterVo> formats = this.getParameterDao().getByName(pm,
-					parametersToGet);
+					Parameter.LOCALE_LANGUAGE_TAG, Parameter.DATE_FORMAT,
+					Parameter.DATETIME_FORMAT,
+					Parameter.DATETIME_FORMAT_WITHOUT_MILLISECONDS,
+					Parameter.DATETIME_FORMAT_WITHOUT_SECONDS,
+					Parameter.DATETIME_FORMAT_WITHOUT_SECONDS_AND_YEAR,
+					Parameter.HOUR_FORMAT,
+					Parameter.NATIVE_SQL_DATE_FORMAT,
+					Parameter.NATIVE_SQL_DATE_TIME_FORMAT,
+					Parameter.SMS_WS_DATE_FORMAT,
+					Parameter.JSON_DATE_TIME_EXCHANGE_FORMAT }));
+			List<Parameter> formats = this.getParameterDao().getByName(parametersToGet);
 
 			// transform the collection into a map (key being parameter's name,
 			// and value being parameter's value)
 			Map<String, String> formatsMap = CollectionUtils
 					.collectionToMap(
 							formats,
-							new CollectionToMapConverter<String, String, ParameterVo>() {
+							new CollectionToMapConverter<String, String, Parameter>() {
 
 								@Override
-								public String getKey(ParameterVo parameter) {
+								public String getKey(Parameter parameter) {
 									return parameter.getName();
 								}
 
 								@Override
-								public String getValue(ParameterVo parameter) {
+								public String getValue(Parameter parameter) {
 									return parameter.getValue();
 								}
 
@@ -148,39 +129,36 @@ public class DateUtilsImpl implements I_DateUtils {
 
 			// we get the locale
 			Locale locale = Locale.forLanguageTag(formatsMap
-					.get(ParameterVo.LOCALE_LANGUAGE_TAG));
+					.get(Parameter.LOCALE_LANGUAGE_TAG));
 
 			// create all simple date formats for every case
 			this.setDateFormat(new SimpleDateFormat(formatsMap
-					.get(ParameterVo.DATE_FORMAT), locale));
+					.get(Parameter.DATE_FORMAT), locale));
 			this.setDateTimeFormat(new SimpleDateFormat(formatsMap
-					.get(ParameterVo.DATETIME_FORMAT), locale));
+					.get(Parameter.DATETIME_FORMAT), locale));
 			this.setDateTimeFormatWithoutMilliseconds(new SimpleDateFormat(
 					formatsMap
-							.get(ParameterVo.DATETIME_FORMAT_WITHOUT_MILLISECONDS),
+							.get(Parameter.DATETIME_FORMAT_WITHOUT_MILLISECONDS),
 					locale));
 			this.setDateTimeFormatWithoutSeconds(new SimpleDateFormat(
-					formatsMap.get(ParameterVo.DATETIME_FORMAT_WITHOUT_SECONDS),
+					formatsMap.get(Parameter.DATETIME_FORMAT_WITHOUT_SECONDS),
 					locale));
 			this.setDateTimeFormatWithoutSecondsAndYear(new SimpleDateFormat(
 					formatsMap
-							.get(ParameterVo.DATETIME_FORMAT_WITHOUT_SECONDS_AND_YEAR),
+							.get(Parameter.DATETIME_FORMAT_WITHOUT_SECONDS_AND_YEAR),
 					locale));
 			this.setHourFormat(new SimpleDateFormat(formatsMap
-					.get(ParameterVo.HOUR_FORMAT), locale));
+					.get(Parameter.HOUR_FORMAT), locale));
 			this.setNativeSqlDateFormat(new SimpleDateFormat(formatsMap
-					.get(ParameterVo.NATIVE_SQL_DATE_FORMAT), locale));
+					.get(Parameter.NATIVE_SQL_DATE_FORMAT), locale));
 			this.setNativeSqlDateTimeFormat(new SimpleDateFormat(formatsMap
-					.get(ParameterVo.NATIVE_SQL_DATE_TIME_FORMAT), locale));
+					.get(Parameter.NATIVE_SQL_DATE_TIME_FORMAT), locale));
 			this.setSmsWsDateFormat(new SimpleDateFormat(formatsMap
-					.get(ParameterVo.SMS_WS_DATE_FORMAT), locale));
+					.get(Parameter.SMS_WS_DATE_FORMAT), locale));
 			this.setJsonDateTimeExchangeFormat(new SimpleDateFormat(formatsMap
-					.get(ParameterVo.JSON_DATE_TIME_EXCHANGE_FORMAT), locale));
+					.get(Parameter.JSON_DATE_TIME_EXCHANGE_FORMAT), locale));
 		} catch (Exception e) {
 			this.logger.error("error getting all format parameters", e);
-		} finally {
-			// gracefully close the entity manager
-			this.getPersistenceManagerHolder().closePersistenceManager(pm);
 		}
 	}
 
@@ -1205,14 +1183,5 @@ public class DateUtilsImpl implements I_DateUtils {
 	public void setJsonDateTimeExchangeFormat(
 			DateFormat jsonDateTimeExchangeFormat) {
 		this.jsonDateTimeExchangeFormat = jsonDateTimeExchangeFormat;
-	}
-
-
-	public PersistenceManagerHolder getPersistenceManagerHolder() {
-		return persistenceManagerHolder;
-	}
-
-	public void setPersistenceManagerHolder(PersistenceManagerHolder persistenceManagerHolder) {
-		this.persistenceManagerHolder = persistenceManagerHolder;
 	}
 }

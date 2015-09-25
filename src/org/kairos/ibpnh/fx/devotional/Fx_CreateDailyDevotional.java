@@ -40,13 +40,13 @@ public class Fx_CreateDailyDevotional extends AbstractFxImpl implements I_Fx {
 		this.logger.debug("executing Fx_CreateFunction._execute()");
 
 		try {
-			this.beginTransaction();
+//			this.beginTransaction();
 
 			// we persist the entity
-			DailyDevotional dailyDevotional = this.getDao().persist(this.getOfy(), this.getEntity());
+			DailyDevotional dailyDevotional = this.getDao().persist(this.getEntity());
 			this.setEntity(dailyDevotional);
 
-			this.commitTransaction();
+//			this.commitTransaction();
 
 			return JsonResponse.ok(
 					this.getGson().toJson(dailyDevotional),
@@ -58,7 +58,7 @@ public class Fx_CreateDailyDevotional extends AbstractFxImpl implements I_Fx {
 			this.logger.error(
 					"error executing Fx_CreateFunction.execute()", e);
 			try {
-				this.rollbackTransaction();
+//				this.rollbackTransaction();
 			} catch (Exception e1) {
 				this.logger.error("error rollbacking transaction", e);
 			}
@@ -81,8 +81,7 @@ public class Fx_CreateDailyDevotional extends AbstractFxImpl implements I_Fx {
 //			return FxValidationResponse.error(result);
 //		}
 
-		if (!this.getDao().checkDateUniqueness(this.getOfy(),
-				this.getEntity().getDate(), null)) {
+		if (!this.getDao().checkDateUniqueness(this.getEntity().getDate(), null)) {
 			String jsonResponseMessage = this.getRealMessageSolver()
 					.getMessage("fx.user.validation.nonUniqueDate",
 							new String[] { this.getEntity().getDate().toString() });

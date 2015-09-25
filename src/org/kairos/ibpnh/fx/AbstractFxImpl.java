@@ -1,7 +1,6 @@
 package org.kairos.ibpnh.fx;
 
 import com.google.gson.Gson;
-import com.googlecode.objectify.Objectify;
 import org.kairos.ibpnh.json.JsonResponse;
 import org.kairos.ibpnh.model.I_Model;
 import org.kairos.ibpnh.web.I_MessageSolver;
@@ -24,11 +23,6 @@ public abstract class AbstractFxImpl implements I_Fx {
 	 * Logger.
 	 */
 	public Logger logger = LoggerFactory.getLogger(AbstractFxImpl.class);
-
-	/**
-	 * Persistence manager.
-	 */
-	private Objectify ofy;
 
 	/**
 	 * Gson formatter
@@ -267,16 +261,6 @@ public abstract class AbstractFxImpl implements I_Fx {
 			}
 		}
 	}
-
-    @Override
-    public Objectify getOfy() {
-        return ofy;
-    }
-
-    @Override
-    public void setOfy(Objectify ofy) {
-        this.ofy = ofy;
-    }
 
     /**
 	 * @return the gson

@@ -40,12 +40,12 @@ public class Fx_DeleteDailyDevotional extends AbstractFxImpl implements I_Fx {
 		this.logger.debug("executing Fx_DeleteFunction._execute()");
 
 		try {
-			this.beginTransaction();
+//			this.beginTransaction();
 
 			// we persist the entity
-			this.getDao().delete(this.getOfy(), this.getEntity());
+			this.getDao().delete(this.getEntity());
 
-			this.commitTransaction();
+//			this.commitTransaction();
 
 			return JsonResponse.ok(
 					"",
@@ -57,7 +57,7 @@ public class Fx_DeleteDailyDevotional extends AbstractFxImpl implements I_Fx {
 		} catch (Exception e) {
 			this.logger.error("error executing Fx_DeleteFunction._execute()", e);
 			try {
-				this.rollbackTransaction();
+//				this.rollbackTransaction();
 			} catch (Exception e1) {
 				this.logger.error("error rollbacking transaction", e);
 			}
@@ -82,7 +82,7 @@ public class Fx_DeleteDailyDevotional extends AbstractFxImpl implements I_Fx {
 
 			return FxValidationResponse.error(jsonResponseMessage);
 		} else {
-			DailyDevotional dailyDevotional = this.getDao().getById(this.getOfy(),this.getEntity().getId());
+			DailyDevotional dailyDevotional = this.getDao().getById(this.getEntity().getId());
 
 			if (dailyDevotional == null) {
 				String jsonResponseMessage = this.getRealMessageSolver().getMessage("fx.dailyDevotional.validation.entityNotExists", new String[] { this.getRealMessageSolver().getMessage("default.delete", null) });

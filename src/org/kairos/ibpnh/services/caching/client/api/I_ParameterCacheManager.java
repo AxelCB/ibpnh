@@ -2,8 +2,6 @@ package org.kairos.ibpnh.services.caching.client.api;
 
 import org.kairos.ibpnh.model.configuration.parameter.Parameter;
 
-import java.util.Set;
-
 /**
  * Manages the cache for the parameters.
  *
@@ -43,5 +41,5 @@ public interface I_ParameterCacheManager {
 	 * 
 	 * @return Set<String>
 	 */
-	public Set<String> keySet();
+//	public Set<String> keySet();
 }

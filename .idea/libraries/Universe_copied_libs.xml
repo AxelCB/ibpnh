@@ -34,6 +34,10 @@
       <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/objectify-5.1.8.jar!/" />
       <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/guava-18.0.jar!/" />
       <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/javax.persistence-2.1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/servlet-api-2.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/javax.inject-1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/cache-api-1.0.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/commons-digester-1.8.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
