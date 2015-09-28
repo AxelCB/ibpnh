@@ -1,5 +1,9 @@
 package org.kairos.ibpnh.controller.devotional;
 
+import com.google.appengine.api.blobstore.BlobKey;
+import com.google.appengine.api.blobstore.BlobstoreService;
+import com.google.appengine.api.blobstore.BlobstoreServiceFactory;
+import com.google.appengine.api.images.ServingUrlOptions;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
@@ -22,11 +26,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.lang.reflect.Type;
 import java.util.*;
 
@@ -105,7 +107,7 @@ public class DailyDevotionalCtrl implements I_URIValidator {
      * @return
      */
     @ResponseBody
-    @RequestMapping(value = "/list.json", method = RequestMethod.POST)
+    @RequestMapping(value = "/public/list.json", method = RequestMethod.POST)
     public String list(@RequestBody String paginationData) {
         this.logger.debug("calling DailyDevotionalCtrl.list()");
         JsonResponse jsonResponse = null;
@@ -184,12 +186,16 @@ public class DailyDevotionalCtrl implements I_URIValidator {
      */
     @ResponseBody
     @RequestMapping(value = "/create.json", method = RequestMethod.POST)
-    public String create(@RequestBody String data) {
+    public String create(@RequestBody String formData,HttpServletRequest req,@RequestParam("data") String data) {
         this.logger.debug("calling DailyDevotionalCtrl.create()");
         JsonResponse jsonResponse = null;
 
         try {
-            DailyDevotional dailyDevotional = this.getGson().fromJson(data,DailyDevotional.class);
+            BlobstoreService blobstoreService = BlobstoreServiceFactory.getBlobstoreService();
+            Map<String, List<BlobKey>> blobs = blobstoreService.getUploads(req);
+
+            DailyDevotional dailyDevotional = this.getGson().fromJson(data, DailyDevotional.class);
+            dailyDevotional.setImageBlobKey(blobs.get("file").get(0).getKeyString());
 
             Fx_CreateDailyDevotional fx = this.getFxFactory().getNewFxInstance(
                     Fx_CreateDailyDevotional.class);
@@ -270,7 +276,7 @@ public class DailyDevotionalCtrl implements I_URIValidator {
      * @return
      */
     @ResponseBody
-    @RequestMapping(value = "/lastDevotionals.json", method = RequestMethod.POST)
+    @RequestMapping(value = "/public/lastDevotionals.json", method = RequestMethod.POST)
     public String lastDevotionals(@RequestBody String data) {
         this.logger.debug("calling DailyDevotionalCtrl.lastDevotionals()");
         JsonResponse jsonResponse = null;
@@ -280,7 +286,6 @@ public class DailyDevotionalCtrl implements I_URIValidator {
             Date date = this.getDateUtils().parseDate(jsonObject.get("today").getAsString());
             List<DailyDevotional> dailyDevotionals =
                     this.getDailyDevotionalDao().listLastDevotionals(lastDevotionalsAmount,date);
-
             jsonResponse = JsonResponse.ok(this.getGson().toJson(dailyDevotionals));
         } catch (Exception e) {
             this.logger.debug("unexpected error", e);
@@ -288,6 +293,28 @@ public class DailyDevotionalCtrl implements I_URIValidator {
             jsonResponse = this.getWebContextHolder().unexpectedErrorResponse(ErrorCodes.ERROR_UNEXPECTED);
         }
 
+        return this.getGson().toJson(jsonResponse);
+    }
+
+    /**
+     * Lists last daily devotionals.
+     *
+     * @return
+     */
+    @ResponseBody
+    @RequestMapping(value = "/public/find.json", method = RequestMethod.POST)
+    public String find(@RequestBody String data) {
+        this.logger.debug("calling DailyDevotionalCtrl.find()");
+        JsonResponse jsonResponse = null;
+        try {
+            DailyDevotional dailyDevotional = this.getGson().fromJson(data,DailyDevotional.class);
+            dailyDevotional = this.getDailyDevotionalDao().getById(dailyDevotional.getId());
+            jsonResponse = JsonResponse.ok(this.getGson().toJson(dailyDevotional));
+        } catch (Exception e) {
+            this.logger.debug("unexpected error", e);
+
+            jsonResponse = this.getWebContextHolder().unexpectedErrorResponse(ErrorCodes.ERROR_UNEXPECTED);
+        }
         return this.getGson().toJson(jsonResponse);
     }
 

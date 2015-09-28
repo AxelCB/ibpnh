@@ -4,6 +4,7 @@ import com.google.appengine.api.datastore.Cursor;
 import com.google.appengine.api.datastore.QueryResultIterator;
 import com.googlecode.objectify.cmd.Query;
 import org.kairos.ibpnh.model.I_Model;
+import org.kairos.ibpnh.model.configuration.parameter.Parameter;
 import org.kairos.ibpnh.vo.PaginatedListVo;
 import org.kairos.ibpnh.vo.PaginatedRequestVo;
 import org.kairos.ibpnh.vo.PaginatedSearchRequestVo;
@@ -48,7 +49,7 @@ public abstract class AbstractDao<E extends I_Model> implements I_Dao<E> {
     public PaginatedListVo<E> listPage(PaginatedRequestVo paginatedRequest, Long itemsPerPage) {
         PaginatedListVo paginatedList = new PaginatedListVo<>();
         Query<E> query = ofy().load().type(this.getClazz()).limit(itemsPerPage.intValue());
-        if(paginatedRequest.getPreviousPage()!=null){
+        if(!(paginatedRequest.getPreviousPage()==null || paginatedRequest.getPreviousPage().equals(paginatedRequest.getPage()))){
             if(paginatedRequest.getPreviousPage()<paginatedRequest.getPage()){
                 query = query.startAt(Cursor.fromWebSafeString(paginatedRequest.getCursor()));
             }else if(paginatedRequest.getPreviousPage()>paginatedRequest.getPage()){
@@ -59,8 +60,12 @@ public abstract class AbstractDao<E extends I_Model> implements I_Dao<E> {
         while (iterator.hasNext()) {
             paginatedList.getItems().add(iterator.next());
         }
-        paginatedList.setPreviousPage(paginatedRequest.getPage());
+        paginatedList.setPreviousPage(paginatedRequest.getPreviousPage());
+        paginatedList.setPage(paginatedRequest.getPage());
         paginatedList.setCursor(iterator.getCursor().toWebSafeString());
+        paginatedList.setTotalItems((long) ofy().load().type(this.getClazz()).count());
+        //Parameter.ITEMS_PER_PAGE
+        paginatedList.setItemsPerPage(10L);
         return paginatedList;
     }
 

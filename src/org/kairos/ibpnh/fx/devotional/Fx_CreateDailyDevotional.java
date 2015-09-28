@@ -6,6 +6,7 @@ import org.kairos.ibpnh.fx.FxValidationResponse;
 import org.kairos.ibpnh.fx.I_Fx;
 import org.kairos.ibpnh.json.JsonResponse;
 import org.kairos.ibpnh.model.devotional.DailyDevotional;
+import org.kairos.ibpnh.utils.I_DateUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +31,12 @@ public class Fx_CreateDailyDevotional extends AbstractFxImpl implements I_Fx {
 	@Autowired
 	private I_DailyDevotionalDao dao;
 
+	/**
+	 * Date utils.
+	 */
+	@Autowired
+	private I_DateUtils dateUtils;
+
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -43,6 +50,7 @@ public class Fx_CreateDailyDevotional extends AbstractFxImpl implements I_Fx {
 //			this.beginTransaction();
 
 			// we persist the entity
+			this.getEntity().setDate(this.getDateUtils().zeroHour(this.getEntity().getDate()));
 			DailyDevotional dailyDevotional = this.getDao().persist(this.getEntity());
 			this.setEntity(dailyDevotional);
 
@@ -131,4 +139,11 @@ public class Fx_CreateDailyDevotional extends AbstractFxImpl implements I_Fx {
 		this.dao = dao;
 	}
 
+	public I_DateUtils getDateUtils() {
+		return dateUtils;
+	}
+
+	public void setDateUtils(I_DateUtils dateUtils) {
+		this.dateUtils = dateUtils;
+	}
 }

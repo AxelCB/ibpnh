@@ -11,8 +11,8 @@ var PaginationHelper = function(scope, nameSpace, fetchTotal, listFn, searchFn, 
 	//assumes there are 'list' and 'search' functions in the scope
 	scope[nameSpace].name = nameSpace;
 	scope[nameSpace].page = 1;
-	scope[nameSpace].previousPage = null;
-	scope[nameSpace].cursor = "";
+	scope[nameSpace].previousPage = 1;
+	scope[nameSpace].cursor = null;
 	scope[nameSpace].total = 0;
 	scope[nameSpace].pageTotal = 0;
 	scope[nameSpace].itemsPerPage = 0;
@@ -59,6 +59,8 @@ var PaginationHelper = function(scope, nameSpace, fetchTotal, listFn, searchFn, 
 	return {
 		extendCallback: function(responseObject) {
 			scope[nameSpace].page = responseObject.page;
+			scope[nameSpace].previousPage = responseObject.previousPage;
+			scope[nameSpace].cursor = responseObject.cursor;
 			scope[nameSpace].total = responseObject.totalItems;
 			scope[nameSpace].pageTotal = responseObject.items.length;
 			scope[nameSpace].itemsPerPage = responseObject.itemsPerPage;

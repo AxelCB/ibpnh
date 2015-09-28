@@ -46,5 +46,8 @@ Repository and Service layers
 
 		<!-- Registrarion -->
 		<!--<bean id='registrationCtrl' class='org.universe.core.controller.login.RegistrationCtrl' scope='request'/>-->
+
+		<!-- Blobstore -->
+		<bean id="blobstoreCtrl" class="org.kairos.ibpnh.controller.BlobstoreCtrl" scope="request"/>
     </beans>
 </beans>

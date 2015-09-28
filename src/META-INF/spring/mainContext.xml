@@ -32,6 +32,12 @@
 		<!-- JSON -->
 		<bean id="gson" class="org.kairos.ibpnh.json.GsonSpringFactoryBean" scope="singleton" />
 
+		<!-- Blobstore Service -->
+		<bean id="blobstoreService" class="org.kairos.ibpnh.utils.singleton.BlobstoreServiceFactoryBean" scope="singleton" />
+
+		<!-- Images Service -->
+		<bean id="imagesService" class="org.kairos.ibpnh.utils.singleton.ImagesServiceFactoryBean" scope="singleton" />
+
 		<!-- Cache -->
 		<bean id="JCacheUserCacheImpl"
 			class="org.kairos.ibpnh.services.caching.client.jcache.JCacheUserCacheImpl" scope="prototype">

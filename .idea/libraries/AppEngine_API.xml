@@ -1,14 +1,14 @@
 <component name="libraryTable">
   <library name="AppEngine API">
     <CLASSES>
-      <root url="jar://E:/Tools/appengine-java-sdk-1.9.20/lib/user/appengine-api-1.0-sdk-1.9.20.jar!/" />
-      <root url="jar://E:/Tools/appengine-java-sdk-1.9.20/lib/user/jsr107cache-1.1.jar!/" />
-      <root url="jar://E:/Tools/appengine-java-sdk-1.9.20/lib/user/appengine-api-labs-1.9.20.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../Tools/appengine-java-sdk-1.9.23/lib/user/appengine-api-1.0-sdk-1.9.23.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../Tools/appengine-java-sdk-1.9.23/lib/user/jsr107cache-1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../Tools/appengine-java-sdk-1.9.23/lib/user/appengine-api-labs-1.9.23.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://E:/Tools/appengine-java-sdk-1.9.20/lib/user/appengine-api-labs-1.9.20.jar!/com/google/appengine/labs/repackaged/com/google/common/base/super" />
-      <root url="jar://E:/Tools/appengine-java-sdk-1.9.20/lib/user/appengine-api-labs-1.9.20.jar!/com/google/appengine/labs/repackaged/com/google/common/util/super" />
+      <root url="jar://$PROJECT_DIR$/../../../Tools/appengine-java-sdk-1.9.23/lib/user/appengine-api-labs-1.9.23.jar!/com/google/appengine/labs/repackaged/com/google/common/base/super" />
+      <root url="jar://$PROJECT_DIR$/../../../Tools/appengine-java-sdk-1.9.23/lib/user/appengine-api-labs-1.9.23.jar!/com/google/appengine/labs/repackaged/com/google/common/util/super" />
     </SOURCES>
   </library>
 </component>

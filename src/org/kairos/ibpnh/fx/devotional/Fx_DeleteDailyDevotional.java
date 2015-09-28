@@ -1,5 +1,7 @@
 package org.kairos.ibpnh.fx.devotional;
 
+import com.google.appengine.api.blobstore.BlobKey;
+import com.google.appengine.api.blobstore.BlobstoreService;
 import org.kairos.ibpnh.dao.devotional.I_DailyDevotionalDao;
 import org.kairos.ibpnh.fx.AbstractFxImpl;
 import org.kairos.ibpnh.fx.FxValidationResponse;
@@ -30,6 +32,9 @@ public class Fx_DeleteDailyDevotional extends AbstractFxImpl implements I_Fx {
 	@Autowired
 	private I_DailyDevotionalDao dao;
 
+	@Autowired
+	private BlobstoreService blobstoreService;
+
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -40,6 +45,7 @@ public class Fx_DeleteDailyDevotional extends AbstractFxImpl implements I_Fx {
 		this.logger.debug("executing Fx_DeleteFunction._execute()");
 
 		try {
+			this.getBlobstoreService().delete(new BlobKey(this.getEntity().getImageBlobKey()));
 //			this.beginTransaction();
 
 			// we persist the entity
@@ -133,4 +139,11 @@ public class Fx_DeleteDailyDevotional extends AbstractFxImpl implements I_Fx {
 		this.dao = dao;
 	}
 
+	public BlobstoreService getBlobstoreService() {
+		return blobstoreService;
+	}
+
+	public void setBlobstoreService(BlobstoreService blobstoreService) {
+		this.blobstoreService = blobstoreService;
+	}
 }

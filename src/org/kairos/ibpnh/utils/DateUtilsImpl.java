@@ -251,6 +251,9 @@ public class DateUtilsImpl implements I_DateUtils {
 	public Date parseDate(String f) {
 		Date d = new Date();
 		try {
+			if(this.getDateFormat()==null){
+				this.setDateFormat(new SimpleDateFormat("dd/MM/yyyy"));
+			}
 			d = this.getDateFormat().parse(f);
 		} catch (ParseException e) {
 		}

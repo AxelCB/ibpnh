@@ -43,6 +43,11 @@ public class DailyDevotional implements I_Model,Serializable {
     private String description;
 
     /**
+     * Image Blob Key
+     */
+    private String imageBlobKey;
+
+    /**
      * Image Url
      */
     private String imageUrl;
@@ -81,12 +86,12 @@ public class DailyDevotional implements I_Model,Serializable {
         this.description = description;
     }
 
-    public String getImageUrl() {
-        return imageUrl;
+    public String getImageBlobKey() {
+        return imageBlobKey;
     }
 
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
+    public void setImageBlobKey(String imageBlobKey) {
+        this.imageBlobKey = imageBlobKey;
     }
 
     public Date getDate() {
@@ -103,5 +108,13 @@ public class DailyDevotional implements I_Model,Serializable {
 
     public void setShortDescription(String shortDescription) {
         this.shortDescription = shortDescription;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 }

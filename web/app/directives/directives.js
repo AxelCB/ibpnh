@@ -48,13 +48,13 @@ angular.module('directives', [])
     				scope.pagNameSpace.pages = pages;
     			});
     			
-    			scope.goToPage = function(pageNumber) {
+    			scope.goToPage = function(pageNumber,previousPage) {
     				if (pageNumber >=1 && pageNumber <= scope.pagNameSpace.pages) {
     					if (scope.pagNameSpace.local) {
     						scope.pagNameSpace.page = pageNumber;
     						scope.pagNameSpace.updateLocalItems();
     					} else {
-    						scope.pagNameSpace.currentFunction({page: pageNumber, fetchTotal: scope.pagNameSpace.fetchTotal});
+    						scope.pagNameSpace.currentFunction({page: pageNumber,previousPage: previousPage,cursor:scope.pagNameSpace.cursor, fetchTotal: scope.pagNameSpace.fetchTotal});
     					}
     				} else {
     					scope.pagNameSpace.inputPage = scope.pagNameSpace.page;
@@ -62,11 +62,11 @@ angular.module('directives', [])
     			};
     			
     			scope.next = function() {
-    				scope.goToPage(scope.pagNameSpace.page + 1);
+    				scope.goToPage(scope.pagNameSpace.page + 1,scope.pagNameSpace.page);
     			};
     			
     			scope.previous = function() {
-    				scope.goToPage(scope.pagNameSpace.page - 1);
+    				scope.goToPage(scope.pagNameSpace.page - 1,scope.pagNameSpace.page);
     			};
     			
     			scope.first = function() {
@@ -74,11 +74,11 @@ angular.module('directives', [])
     			};
     			
     			scope.last = function() {
-    				scope.goToPage(scope.pagNameSpace.pages);
+    				scope.goToPage(scope.pagNameSpace.pages,scope.pagNameSpace.pages-1);
     			};
     			
     			scope.enterPage = function() {
-    				scope.goToPage(scope.pagNameSpace.inputPage);
+    				scope.goToPage(scope.pagNameSpace.inputPage,scope.pagNameSpace.inputPage-1);
     			};
     			
     			scope.blurInput = function() {

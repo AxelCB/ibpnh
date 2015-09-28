@@ -81,6 +81,9 @@ public class TokenAuthenticationInterceptor extends HandlerInterceptorAdapter {
 				return Boolean.TRUE;
 			}
 		}
+		if (uri.replace("/universe-core", "").contains("/public/")){
+			return Boolean.TRUE;
+		}
 		return Boolean.FALSE;
 	}
 
