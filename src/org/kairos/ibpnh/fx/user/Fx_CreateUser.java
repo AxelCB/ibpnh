@@ -44,6 +44,9 @@ public class Fx_CreateUser extends AbstractFxImpl implements I_Fx {
 //			this.beginTransaction();
 
 			// we persist the entity
+			this.getEntity().setHashCost(10L);
+			this.getEntity().setEnabled(Boolean.TRUE);
+			this.getEntity().setLoginAttempts(0);
 			this.getEntity().setPassword(HashUtils.hashPassword(this.getEntity().getPassword(), this.getEntity().getHashCost()));
 			this.getEntity().setFirstLogin(Boolean.FALSE);
 			User user = this.getDao().persist(this.getEntity());

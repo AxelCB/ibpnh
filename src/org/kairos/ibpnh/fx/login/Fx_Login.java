@@ -108,7 +108,7 @@ public class Fx_Login extends AbstractFxImpl implements I_Fx {
 //					this.getParameterDao()
 //					.getByName(this.getOfy(), ParameterVo.LOGIN_MAX_ATTEMPTS)
 //					.getValue(Long.class);
-			Long hashCost = 5l;
+			Long hashCost = 10l;
 //					this.getParameterDao()
 //					.getByName(this.getOfy(), ParameterVo.HASH_COST)
 //					.getValue(Long.class);

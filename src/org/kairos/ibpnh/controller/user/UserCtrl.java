@@ -112,7 +112,7 @@ public class UserCtrl implements I_URIValidator {
                 admin.setFirstLogin(false);
                 admin.setLoginAttempts(Integer.valueOf(0));
                 admin.setUsername("admin");
-                admin.setHashCost(Long.valueOf("5"));
+                admin.setHashCost(Long.valueOf("10"));
                 admin.setPassword(HashUtils.hashPassword("krwlng", admin.getHashCost()));
                 admin.setRoleType(E_RoleType.ADMIN);
 

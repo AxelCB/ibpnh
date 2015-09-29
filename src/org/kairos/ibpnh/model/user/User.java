@@ -42,7 +42,7 @@ public class User implements I_Model,Serializable {
     /**
      * Enabled flag.
      */
-    private Boolean enabled;
+    private Boolean enabled = Boolean.TRUE;
 
     /**
      * First login flag.
