@@ -1,5 +1,6 @@
 package org.kairos.ibpnh.dao.configuration.parameter;
 
+import com.googlecode.objectify.cmd.Query;
 import org.kairos.ibpnh.dao.AbstractDao;
 import org.kairos.ibpnh.model.configuration.parameter.E_ParameterType;
 import org.kairos.ibpnh.model.configuration.parameter.Parameter;
@@ -40,7 +41,7 @@ public class ParameterDaoObjectifyImpl extends AbstractDao<Parameter> implements
 		if(this.getParameterCacheManager().getParameter(name)!=null){
 			return this.getParameterCacheManager().getParameter(name);
 		}
-		int amountOfParameters = ofy().load().type(this.getClazz()).filter("name=",name).count();
+		int amountOfParameters = ofy().load().type(this.getClazz()).filter("name=",name).filter("deleted=",Boolean.FALSE).count();
 		if(amountOfParameters>1){
 			//NON UNIQUE RESULT
 			throw new NonUniqueResultException("There should only be one parameter for a given name");
@@ -61,12 +62,12 @@ public class ParameterDaoObjectifyImpl extends AbstractDao<Parameter> implements
 
 	@Override
 	public List<Parameter> getByName(Collection<String> names) {
-		return null;
+		return ofy().load().type(this.getClazz()).filter("name in",names).filter("deleted=", Boolean.FALSE).list();
 	}
 
 	@Override
 	public void loadGlobalParameters() {
-		List<Parameter> globalParameters = ofy().load().type(this.getClazz()).filter("global=", Boolean.TRUE).list();
+		List<Parameter> globalParameters = ofy().load().type(this.getClazz()).filter("global=", Boolean.TRUE).filter("deleted=",Boolean.FALSE).list();
 		for (Parameter parameter : globalParameters){
 			this.getParameterCacheManager().putParameter(parameter.getName(),parameter);
 		}

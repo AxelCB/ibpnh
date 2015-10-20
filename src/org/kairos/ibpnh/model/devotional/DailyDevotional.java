@@ -1,9 +1,11 @@
 package org.kairos.ibpnh.model.devotional;
 
+import com.googlecode.objectify.Ref;
 import com.googlecode.objectify.annotation.Entity;
 import com.googlecode.objectify.annotation.Id;
 import com.googlecode.objectify.annotation.Index;
 import org.kairos.ibpnh.model.I_Model;
+import org.kairos.ibpnh.model.user.User;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -51,6 +53,11 @@ public class DailyDevotional implements I_Model,Serializable {
      * Image Url
      */
     private String imageUrl;
+
+    /**
+     * User who creates this Daily Devotional
+     */
+    private Ref<User> creator;
 
     /**
      * Devotional's date
@@ -116,5 +123,13 @@ public class DailyDevotional implements I_Model,Serializable {
 
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
+    }
+
+    public User getCreator() {
+        return creator.get();
+    }
+
+    public void setCreator(User creator) {
+        this.creator = Ref.create(creator);
     }
 }
