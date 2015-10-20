@@ -73,4 +73,12 @@ public class DailyDevotionalDaoObjectifyImpl extends AbstractDao<DailyDevotional
 		}
 		return dailyDevotionals;
 	}
+
+    @Override
+    public DailyDevotional getById(Long id) {
+        DailyDevotional dailyDevotional = super.getById(id);
+        BlobKey blobKey = new BlobKey(dailyDevotional.getImageBlobKey());
+        dailyDevotional.setImageUrl(imagesService.getServingUrl(ServingUrlOptions.Builder.withBlobKey(blobKey)));
+        return dailyDevotional;
+    }
 }

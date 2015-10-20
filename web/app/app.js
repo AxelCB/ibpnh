@@ -20,11 +20,20 @@ angular.module('ibpnhApp', ['ngRoute','ngAnimate','ngCookies','routes','ibpnhCon
             IbpnhService.post("/lang/l", "",
                 function(res) {
                     if (supported.indexOf(res) != -1) {
-                        defaultLang = res;
+                        var defaultLang = res;
                     }
                     $rootScope.lang = defaultLang;
                     _run();
                 }, _run);
+
+            $rootScope.stringStartsWithAnyStringInArray = function(string,array){
+               for(var i=0;i<array.length;i++){
+                   if(string.indexOf(array[i])===0){
+                       return true;
+                   }
+               }
+               return false;
+            };
 
             //$rootScope.generatePermissions = function(user) {
             //    var permissions = [];
@@ -68,6 +77,7 @@ angular.module('ibpnhApp', ['ngRoute','ngAnimate','ngCookies','routes','ibpnhCon
                     }
 
                     var pathsWithoutAuthorization=['/home','/contacto','/devocionales','/gbcs','/ministerios','/login'];
+                    var variablePathsWithoutAuthorization =['/devocionales/detalle/'];
                     var path = $location.path();
                     var auxArray = path.substr(1, path.length).split("/");
                     $rootScope.currentArray = [];
@@ -78,7 +88,7 @@ angular.module('ibpnhApp', ['ngRoute','ngAnimate','ngCookies','routes','ibpnhCon
                         }
                     }
 
-                    if ($.inArray(path, pathsWithoutAuthorization) > -1){
+                    if ($.inArray(path, pathsWithoutAuthorization) > -1 || $rootScope.stringStartsWithAnyStringInArray(path,variablePathsWithoutAuthorization)){
 
                     } else {
                         if (($rootScope.loggedUser)){

@@ -33,6 +33,6 @@ angular.module('routes', []).config(['$routeProvider', function($routeProvider) 
         });
     });
     //in any other case, redirects to the main view
-    //$routeProvider.otherwise({redirectTo:'/home'});
+    $routeProvider.otherwise({redirectTo:'/home'});
 
 }]);
