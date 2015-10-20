@@ -3,6 +3,8 @@ package org.kairos.ibpnh.dao.configuration.parameter;
 import org.kairos.ibpnh.dao.I_Dao;
 import org.kairos.ibpnh.model.configuration.parameter.Parameter;
 
+import javax.persistence.NoResultException;
+import javax.persistence.NonUniqueResultException;
 import java.util.Collection;
 import java.util.List;
 
@@ -30,7 +32,7 @@ public interface I_ParameterDao extends I_Dao<Parameter> {
 	 * 
 	 * @return list of parameterVo
 	 */
-	public List<Parameter> getsByName(String name);
+	public List<Parameter> getsByName(String name) throws NonUniqueResultException,NoResultException;
 	
 	/**
 	 * Finds the parameters that match the names in the collection
@@ -64,5 +66,5 @@ public interface I_ParameterDao extends I_Dao<Parameter> {
 	 * @param excludeId
 	 * @return
 	 */
-	public boolean checkNameUniqueness(String name, Long excludeId);
+	public boolean checkNameUniqueness(String name, Long excludeId) throws NonUniqueResultException,NoResultException;
 }

@@ -46,6 +46,7 @@ public class Parameter implements I_Model,Serializable{
 	/**
 	 * Global flag.
 	 */
+	@Index
 	private Boolean global;
 
 	/**
@@ -99,10 +100,37 @@ public class Parameter implements I_Model,Serializable{
 	public final static String SMS_WS_DATE_FORMAT = "sms.ws.date.format";
 	public final static String JSON_DATE_TIME_EXCHANGE_FORMAT = "json.date.time.exchange.format";
 
-	/*
-	 * (non-Javadoc)
-	 * @see org.universe.core.model.I_Model#getId()
+	/**
+	 * Default Constructor
 	 */
+	public Parameter() {
+	}
+
+	/**
+	 * Constructor using fields
+	 *
+	 * @param name
+	 * @param value
+	 * @param description
+	 * @param type
+	 * @param global
+	 * @param deleted
+	 * @param fixed
+	 */
+	public Parameter(String name, String value, String description, E_ParameterType type, Boolean global, Boolean deleted, Boolean fixed) {
+		this.name = name;
+		this.value = value;
+		this.description = description;
+		this.type = type;
+		this.global = global;
+		this.deleted = deleted;
+		this.fixed = fixed;
+	}
+
+	/*
+         * (non-Javadoc)
+         * @see org.universe.core.model.I_Model#getId()
+         */
 	@Override
 	public Long getId() {
 		return this.id;
