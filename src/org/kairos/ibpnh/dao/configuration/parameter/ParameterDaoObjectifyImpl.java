@@ -1,15 +1,14 @@
 package org.kairos.ibpnh.dao.configuration.parameter;
 
-import com.sun.org.apache.xpath.internal.operations.Bool;
 import org.kairos.ibpnh.dao.AbstractDao;
 import org.kairos.ibpnh.model.configuration.parameter.E_ParameterType;
 import org.kairos.ibpnh.model.configuration.parameter.Parameter;
-import org.kairos.ibpnh.model.devotional.DailyDevotional;
-import org.springframework.web.servlet.tags.Param;
 
 import javax.persistence.NoResultException;
 import javax.persistence.NonUniqueResultException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
 import static com.googlecode.objectify.ObjectifyService.ofy;
 
@@ -62,25 +61,25 @@ public class ParameterDaoObjectifyImpl extends AbstractDao<Parameter> implements
 	public void init(){
 		List<Parameter> globalParameters = new ArrayList<Parameter>();
 		List<Parameter> parametersToBePersisted = new ArrayList<Parameter>();
-		Parameter parameter = new Parameter(Parameter.DATE_FORMAT,"value","Formato de Fecha", E_ParameterType.STRING,Boolean.TRUE,Boolean.FALSE,Boolean.TRUE);
+		Parameter parameter = new Parameter(Parameter.DATE_FORMAT,"dd/MM/yyyy","Formato de Fecha", E_ParameterType.STRING,Boolean.TRUE,Boolean.FALSE,Boolean.TRUE);
 		globalParameters.add(parameter);
-		parameter = new Parameter(Parameter.DATETIME_FORMAT,"value","Formato de Fecha hora", E_ParameterType.STRING,Boolean.TRUE,Boolean.FALSE,Boolean.TRUE);
+		parameter = new Parameter(Parameter.DATETIME_FORMAT,"dd/MM/yyyy HH:mm:ss.SSS","Formato de Fecha hora", E_ParameterType.STRING,Boolean.TRUE,Boolean.FALSE,Boolean.TRUE);
 		globalParameters.add(parameter);
-		parameter = new Parameter(Parameter.DATETIME_FORMAT_WITHOUT_MILLISECONDS,"value","Formato de Fecha hora sin milisegundos", E_ParameterType.STRING,Boolean.TRUE,Boolean.FALSE,Boolean.TRUE);
+		parameter = new Parameter(Parameter.DATETIME_FORMAT_WITHOUT_MILLISECONDS,"dd/MM/yyyy HH:mm:ss","Formato de Fecha hora sin milisegundos", E_ParameterType.STRING,Boolean.TRUE,Boolean.FALSE,Boolean.TRUE);
 		globalParameters.add(parameter);
-		parameter = new Parameter(Parameter.DATETIME_FORMAT_WITHOUT_SECONDS,"value","Formato de Fecha hora sin segundos", E_ParameterType.STRING,Boolean.TRUE,Boolean.FALSE,Boolean.TRUE);
+		parameter = new Parameter(Parameter.DATETIME_FORMAT_WITHOUT_SECONDS,"dd/MM/yyyy HH:mm","Formato de Fecha hora sin segundos", E_ParameterType.STRING,Boolean.TRUE,Boolean.FALSE,Boolean.TRUE);
 		globalParameters.add(parameter);
-		parameter = new Parameter(Parameter.DATETIME_FORMAT_WITHOUT_SECONDS_AND_YEAR,"value","Formato de Fecha hora sin segundos ni años", E_ParameterType.STRING,Boolean.TRUE,Boolean.FALSE,Boolean.TRUE);
+		parameter = new Parameter(Parameter.DATETIME_FORMAT_WITHOUT_SECONDS_AND_YEAR,"dd/MM HH:mm","Formato de Fecha hora sin segundos ni años", E_ParameterType.STRING,Boolean.TRUE,Boolean.FALSE,Boolean.TRUE);
 		globalParameters.add(parameter);
-		parameter = new Parameter(Parameter.HOUR_FORMAT,"value","Formato de Hora", E_ParameterType.STRING,Boolean.TRUE,Boolean.FALSE,Boolean.TRUE);
+		parameter = new Parameter(Parameter.HOUR_FORMAT,"HH:mm","Formato de Hora", E_ParameterType.STRING,Boolean.TRUE,Boolean.FALSE,Boolean.TRUE);
 		globalParameters.add(parameter);
 		parameter = new Parameter(Parameter.ITEMS_PER_PAGE,"10","Cantidad de Items por Página", E_ParameterType.LONG,Boolean.TRUE,Boolean.FALSE,Boolean.TRUE);
 		globalParameters.add(parameter);
-		parameter = new Parameter(Parameter.JSON_DATE_TIME_EXCHANGE_FORMAT,"value","Formato de Fecha Hora para Intercambio por JSON", E_ParameterType.LONG,Boolean.TRUE,Boolean.FALSE,Boolean.TRUE);
+		parameter = new Parameter(Parameter.JSON_DATE_TIME_EXCHANGE_FORMAT,"dd/MM/yyyy HH:mm:ss.SSS","Formato de Fecha Hora para Intercambio por JSON", E_ParameterType.LONG,Boolean.TRUE,Boolean.FALSE,Boolean.TRUE);
 		globalParameters.add(parameter);
-		parameter = new Parameter(Parameter.NATIVE_SQL_DATE_FORMAT,"value","Formato de Fecha Nativo de SQL", E_ParameterType.LONG,Boolean.TRUE,Boolean.FALSE,Boolean.TRUE);
+		parameter = new Parameter(Parameter.NATIVE_SQL_DATE_FORMAT,"yyyy-MM-dd","Formato de Fecha Nativo de SQL", E_ParameterType.LONG,Boolean.TRUE,Boolean.FALSE,Boolean.TRUE);
 		globalParameters.add(parameter);
-		parameter = new Parameter(Parameter.NATIVE_SQL_DATE_TIME_FORMAT,"value","Formato de Fecha Hora Nativo de SQL", E_ParameterType.LONG,Boolean.TRUE,Boolean.FALSE,Boolean.TRUE);
+		parameter = new Parameter(Parameter.NATIVE_SQL_DATE_TIME_FORMAT,"yyyy-MM-dd HH:mm:ss.SSS","Formato de Fecha Hora Nativo de SQL", E_ParameterType.LONG,Boolean.TRUE,Boolean.FALSE,Boolean.TRUE);
 		globalParameters.add(parameter);
 
 		for (Parameter auxParameter : globalParameters){
