@@ -3,6 +3,9 @@ package org.kairos.ibpnh.dao.configuration.parameter;
 import org.kairos.ibpnh.dao.AbstractDao;
 import org.kairos.ibpnh.model.configuration.parameter.E_ParameterType;
 import org.kairos.ibpnh.model.configuration.parameter.Parameter;
+import org.kairos.ibpnh.services.caching.client.api.I_ParameterCacheManager;
+import org.kairos.ibpnh.services.caching.client.api.I_UserCacheManager;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.NoResultException;
 import javax.persistence.NonUniqueResultException;
@@ -21,6 +24,12 @@ import static com.googlecode.objectify.ObjectifyService.ofy;
  */
 public class ParameterDaoObjectifyImpl extends AbstractDao<Parameter> implements I_ParameterDao{
 
+	/**
+	 * User Cache Manager.
+	 */
+	@Autowired
+	private I_ParameterCacheManager parameterCacheManager;
+
 	@Override
 	public Class<Parameter> getClazz() {
 		return Parameter.class;
@@ -28,6 +37,9 @@ public class ParameterDaoObjectifyImpl extends AbstractDao<Parameter> implements
 
 	@Override
 	public Parameter getByName(String name) throws NonUniqueResultException,NoResultException {
+		if(this.getParameterCacheManager().getParameter(name)!=null){
+			return this.getParameterCacheManager().getParameter(name);
+		}
 		int amountOfParameters = ofy().load().type(this.getClazz()).filter("name=",name).count();
 		if(amountOfParameters>1){
 			//NON UNIQUE RESULT
@@ -54,8 +66,10 @@ public class ParameterDaoObjectifyImpl extends AbstractDao<Parameter> implements
 
 	@Override
 	public void loadGlobalParameters() {
-		//TODO: LOAD INTO CACHE
-		ofy().load().type(this.getClazz()).filter("global=", Boolean.TRUE).list();
+		List<Parameter> globalParameters = ofy().load().type(this.getClazz()).filter("global=", Boolean.TRUE).list();
+		for (Parameter parameter : globalParameters){
+			this.getParameterCacheManager().putParameter(parameter.getName(),parameter);
+		}
 	}
 
 	public void init(){
@@ -102,5 +116,13 @@ public class ParameterDaoObjectifyImpl extends AbstractDao<Parameter> implements
 	public boolean checkNameUniqueness(String name, Long excludeId) throws NonUniqueResultException,NoResultException {
 		Parameter searchedParameter = this.getByName(name);
 		return (searchedParameter!=null && !searchedParameter.getId().equals(excludeId));
+	}
+
+	public I_ParameterCacheManager getParameterCacheManager() {
+		return parameterCacheManager;
+	}
+
+	public void setParameterCacheManager(I_ParameterCacheManager parameterCacheManager) {
+		this.parameterCacheManager = parameterCacheManager;
 	}
 }

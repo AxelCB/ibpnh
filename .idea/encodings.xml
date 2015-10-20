@@ -48,6 +48,7 @@
     <file url="file://$PROJECT_DIR$/src/org/kairos/ibpnh/services/caching/client/api/I_ParameterCacheManager.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/org/kairos/ibpnh/services/caching/client/api/I_UserCacheManager.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/org/kairos/ibpnh/services/caching/client/jcache/AbstractCacheProfiler.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/org/kairos/ibpnh/services/caching/client/jcache/JCacheParameterCacheImpl.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/org/kairos/ibpnh/services/caching/client/jcache/JCacheUserCacheImpl.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/org/kairos/ibpnh/utils/BCrypt.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/org/kairos/ibpnh/web/I_MessageSolver.java" charset="UTF-8" />
