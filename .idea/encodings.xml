@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
     <file url="file://$PROJECT_DIR$/src/META-INF" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/log4j.properties" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/org/kairos/ibpnh/controller/I_URIValidator.java" charset="UTF-8" />
@@ -62,5 +62,6 @@
     <file url="file://$PROJECT_DIR$/web/indexEnConstruccion.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/web/locales" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/web/resources" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

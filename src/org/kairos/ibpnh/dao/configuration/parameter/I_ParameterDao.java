@@ -17,6 +17,11 @@ import java.util.List;
 public interface I_ParameterDao extends I_Dao<Parameter> {
 
 	/**
+	 * Inits the global parameters on server start up
+	 */
+	public void init();
+
+	/**
 	 * Finds a parameter by name
 	 * 
 	 * @param name name to find

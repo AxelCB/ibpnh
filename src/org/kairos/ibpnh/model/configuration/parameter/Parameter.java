@@ -5,6 +5,10 @@ import com.googlecode.objectify.annotation.Id;
 import com.googlecode.objectify.annotation.Index;
 import org.kairos.ibpnh.model.I_Model;
 import org.pojomatic.Pojomatic;
+import org.pojomatic.annotations.AutoProperty;
+import org.pojomatic.annotations.DefaultPojomaticPolicy;
+import org.pojomatic.annotations.PojomaticPolicy;
+import org.pojomatic.annotations.Property;
 
 import java.io.Serializable;
 
@@ -15,11 +19,13 @@ import java.io.Serializable;
  *
  */
 @Entity
+@AutoProperty(policy = DefaultPojomaticPolicy.TO_STRING)
 public class Parameter implements I_Model,Serializable{
 
 	private static final long serialVersionUID = -4980729949255825921L;
 
 	@Id
+	@Property(policy = PojomaticPolicy.EQUALS)
 	private Long id;
 
 	/**

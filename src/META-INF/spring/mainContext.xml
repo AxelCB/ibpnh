@@ -54,8 +54,11 @@
 		</bean>
 
 		<!-- DAOs that need initializing -->
-		<bean id="parameterDao"	class="org.kairos.ibpnh.dao.configuration.parameter.ParameterDaoObjectifyImpl" scope="prototype" init-method="init" />
+		<bean id="parameterDao"	class="org.kairos.ibpnh.dao.configuration.parameter.ParameterDaoObjectifyImpl" scope="prototype"/>
 		<!--init-method="init"-->
+
+		<!--Date Utils-->
+		<bean id="dateUtils" class="org.kairos.ibpnh.utils.DateUtilsImpl" scope="singleton" init-method="init" depends-on="parameterDao"/>
 		
 		<!-- Default Charset Post Processor -->
 		<bean id="httpStringMessageConverterOverridePostProcessor" class="org.kairos.ibpnh.utils.HttpStringMessageConverterOverridePostProcessor"/>

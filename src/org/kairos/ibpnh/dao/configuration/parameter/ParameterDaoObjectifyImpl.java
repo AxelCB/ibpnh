@@ -1,5 +1,7 @@
 package org.kairos.ibpnh.dao.configuration.parameter;
 
+import com.googlecode.objectify.ObjectifyService;
+import com.googlecode.objectify.Work;
 import com.googlecode.objectify.cmd.Query;
 import org.kairos.ibpnh.dao.AbstractDao;
 import org.kairos.ibpnh.model.configuration.parameter.E_ParameterType;
@@ -75,7 +77,7 @@ public class ParameterDaoObjectifyImpl extends AbstractDao<Parameter> implements
 
 	public void init(){
 		List<Parameter> globalParameters = new ArrayList<Parameter>();
-		List<Parameter> parametersToBePersisted = new ArrayList<Parameter>();
+		final List<Parameter> parametersToBePersisted = new ArrayList<Parameter>();
 		Parameter parameter = new Parameter(Parameter.DATE_FORMAT,"dd/MM/yyyy","Formato de Fecha", E_ParameterType.STRING,Boolean.TRUE,Boolean.FALSE,Boolean.TRUE);
 		globalParameters.add(parameter);
 		parameter = new Parameter(Parameter.DATETIME_FORMAT,"dd/MM/yyyy HH:mm:ss.SSS","Formato de Fecha hora", E_ParameterType.STRING,Boolean.TRUE,Boolean.FALSE,Boolean.TRUE);
@@ -84,21 +86,39 @@ public class ParameterDaoObjectifyImpl extends AbstractDao<Parameter> implements
 		globalParameters.add(parameter);
 		parameter = new Parameter(Parameter.DATETIME_FORMAT_WITHOUT_SECONDS,"dd/MM/yyyy HH:mm","Formato de Fecha hora sin segundos", E_ParameterType.STRING,Boolean.TRUE,Boolean.FALSE,Boolean.TRUE);
 		globalParameters.add(parameter);
-		parameter = new Parameter(Parameter.DATETIME_FORMAT_WITHOUT_SECONDS_AND_YEAR,"dd/MM HH:mm","Formato de Fecha hora sin segundos ni años", E_ParameterType.STRING,Boolean.TRUE,Boolean.FALSE,Boolean.TRUE);
+		parameter = new Parameter(Parameter.DATETIME_FORMAT_WITHOUT_SECONDS_AND_YEAR,"dd/MM HH:mm","Formato de Fecha hora sin segundos ni anios", E_ParameterType.STRING,Boolean.TRUE,Boolean.FALSE,Boolean.TRUE);
 		globalParameters.add(parameter);
 		parameter = new Parameter(Parameter.HOUR_FORMAT,"HH:mm","Formato de Hora", E_ParameterType.STRING,Boolean.TRUE,Boolean.FALSE,Boolean.TRUE);
 		globalParameters.add(parameter);
-		parameter = new Parameter(Parameter.ITEMS_PER_PAGE,"10","Cantidad de Items por Página", E_ParameterType.LONG,Boolean.TRUE,Boolean.FALSE,Boolean.TRUE);
+		parameter = new Parameter(Parameter.ITEMS_PER_PAGE,"10","Cantidad de Items por Pagina", E_ParameterType.LONG,Boolean.TRUE,Boolean.FALSE,Boolean.TRUE);
 		globalParameters.add(parameter);
-		parameter = new Parameter(Parameter.JSON_DATE_TIME_EXCHANGE_FORMAT,"dd/MM/yyyy HH:mm:ss.SSS","Formato de Fecha Hora para Intercambio por JSON", E_ParameterType.LONG,Boolean.TRUE,Boolean.FALSE,Boolean.TRUE);
+		parameter = new Parameter(Parameter.JSON_DATE_TIME_EXCHANGE_FORMAT,"dd/MM/yyyy HH:mm:ss.SSS","Formato de Fecha Hora para Intercambio por JSON", E_ParameterType.STRING,Boolean.TRUE,Boolean.FALSE,Boolean.TRUE);
 		globalParameters.add(parameter);
-		parameter = new Parameter(Parameter.NATIVE_SQL_DATE_FORMAT,"yyyy-MM-dd","Formato de Fecha Nativo de SQL", E_ParameterType.LONG,Boolean.TRUE,Boolean.FALSE,Boolean.TRUE);
+		parameter = new Parameter(Parameter.NATIVE_SQL_DATE_FORMAT,"yyyy-MM-dd","Formato de Fecha Nativo de SQL", E_ParameterType.STRING,Boolean.TRUE,Boolean.FALSE,Boolean.TRUE);
 		globalParameters.add(parameter);
-		parameter = new Parameter(Parameter.NATIVE_SQL_DATE_TIME_FORMAT,"yyyy-MM-dd HH:mm:ss.SSS","Formato de Fecha Hora Nativo de SQL", E_ParameterType.LONG,Boolean.TRUE,Boolean.FALSE,Boolean.TRUE);
+		parameter = new Parameter(Parameter.NATIVE_SQL_DATE_TIME_FORMAT,"yyyy-MM-dd HH:mm:ss.SSS","Formato de Fecha Hora Nativo de SQL", E_ParameterType.STRING,Boolean.TRUE,Boolean.FALSE,Boolean.TRUE);
+		globalParameters.add(parameter);
+		parameter = new Parameter(Parameter.LOCALE_LANGUAGE_TAG,"es","Locale", E_ParameterType.STRING,Boolean.TRUE,Boolean.FALSE,Boolean.TRUE);
 		globalParameters.add(parameter);
 
 		for (Parameter auxParameter : globalParameters){
-			Parameter persistedParameter = this.getByName(auxParameter.getName());
+			final String parameterName = auxParameter.getName();
+			Parameter persistedParameter = ObjectifyService.run(new Work<Parameter>(){
+				public Parameter run(){
+					int amountOfParameters = ofy().load().type(Parameter.class).filter("name=",parameterName).filter("deleted=",Boolean.FALSE).count();
+					if(amountOfParameters>1){
+						//NON UNIQUE RESULT
+						throw new NonUniqueResultException("There should only be one parameter for a given name");
+					}else{
+						if(amountOfParameters<1){
+							//No result
+							return null;
+						}else{
+							return ofy().load().type(Parameter.class).filter("name=",parameterName).first().now();
+						}
+					}
+				}
+			});
 			if(persistedParameter!=null){
 				persistedParameter.setDescription(auxParameter.getDescription());
 				persistedParameter.setValue(auxParameter.getValue());
@@ -108,9 +128,19 @@ public class ParameterDaoObjectifyImpl extends AbstractDao<Parameter> implements
 				parametersToBePersisted.add(auxParameter);
 			}
 		}
-		ofy().save().entities(parametersToBePersisted).now();
-		this.loadGlobalParameters();
-
+		for (Parameter auxParameter : globalParameters){
+			this.getParameterCacheManager().putParameter(auxParameter.getName(),auxParameter);
+		}
+		globalParameters = ObjectifyService.run(new Work<List<Parameter>>(){
+			public List<Parameter> run(){
+				ofy().save().entities(parametersToBePersisted).now();
+				List<Parameter> globalParameters = ofy().load().type(Parameter.class).filter("global=", Boolean.TRUE).filter("deleted=",Boolean.FALSE).list();
+				return globalParameters;
+			}
+		});
+		for (Parameter auxParameter : globalParameters){
+			this.getParameterCacheManager().putParameter(auxParameter.getName(),auxParameter);
+		}
 	}
 
 	@Override
