@@ -3,13 +3,14 @@ package org.kairos.ibpnh.dao.user;
 import org.kairos.ibpnh.dao.I_Dao;
 import org.kairos.ibpnh.model.user.E_RoleType;
 import org.kairos.ibpnh.model.user.User;
+import org.kairos.ibpnh.vo.user.UserVo;
 
 import java.util.List;
 
 /**
  * @author AxelCollardBovy ,created on 03/03/2015.
  */
-public interface I_UserDao extends I_Dao<User> {
+public interface I_UserDao extends I_Dao<UserVo> {
 
     /**
      * Attempts to search a user with username.
@@ -19,7 +20,7 @@ public interface I_UserDao extends I_Dao<User> {
      *
      * @return user or null
      */
-    public User getByUsername(String username);
+    public UserVo getByUsername(String username);
 
     /**
      * Gets all users that have the specified role type.
@@ -28,7 +29,7 @@ public interface I_UserDao extends I_Dao<User> {
      *            the role type to search
      * @return list of users
      */
-    public List<User> findUsersByRoleTypeName(E_RoleType roleType);
+    public List<UserVo> findUsersByRoleTypeName(E_RoleType roleType);
 
     /**
      * Checks that a user username is only used once.
@@ -60,6 +61,6 @@ public interface I_UserDao extends I_Dao<User> {
      *
      * @return User or null
      */
-    public User getUserByEnablingHash(String enablingHash);
+    public UserVo getUserByEnablingHash(String enablingHash);
 
 }

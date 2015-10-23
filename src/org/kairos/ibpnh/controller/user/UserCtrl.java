@@ -18,6 +18,7 @@ import org.kairos.ibpnh.utils.HashUtils;
 import org.kairos.ibpnh.vo.PaginatedListVo;
 import org.kairos.ibpnh.vo.PaginatedRequestVo;
 import org.kairos.ibpnh.vo.PaginatedSearchRequestVo;
+import org.kairos.ibpnh.vo.user.UserVo;
 import org.kairos.ibpnh.web.WebContextHolder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -107,7 +108,7 @@ public class UserCtrl implements I_URIValidator {
 //            if(this.getUserDao().countByRoleType(pm,Boolean.FALSE,E_RoleType.ADMIN)==0){
             if(this.getUserDao().listAll().size()==0){
                 //We create the Admin user
-                User admin = new User();
+                UserVo admin = new UserVo();
                 admin.setEnabled(Boolean.TRUE);
                 admin.setFirstLogin(false);
                 admin.setLoginAttempts(Integer.valueOf(0));
@@ -145,7 +146,7 @@ public class UserCtrl implements I_URIValidator {
 
         try {
             PaginatedRequestVo paginatedRequest = this.getGson().fromJson(paginationData, PaginatedRequestVo.class);
-            PaginatedListVo<User> paginatedList = this.getUserDao().listPage(paginatedRequest, 10l);
+            PaginatedListVo<UserVo> paginatedList = this.getUserDao().listPage(paginatedRequest, 10l);
 //            this.getParameterDao()
 //                    .getByName(pm, ParameterVo.ITEMS_PER_PAGE)
 //                    .getValue(Long.class);
@@ -182,9 +183,9 @@ public class UserCtrl implements I_URIValidator {
         JsonResponse jsonResponse = null;
 
         try {
-            Type type = new TypeToken<PaginatedSearchRequestVo<User>>() {}.getType();
-            PaginatedSearchRequestVo<User> paginatedSearchRequest = this.getGson().fromJson(data, type);
-            PaginatedListVo<User> paginatedList = this.getUserDao()
+            Type type = new TypeToken<PaginatedSearchRequestVo<UserVo>>() {}.getType();
+            PaginatedSearchRequestVo<UserVo> paginatedSearchRequest = this.getGson().fromJson(data, type);
+            PaginatedListVo<UserVo> paginatedList = this.getUserDao()
                     .searchPage(paginatedSearchRequest,10L
 //                            this.getParameterDao()
 //                                    .getByName(Parameter.ITEMS_PER_PAGE)
@@ -282,12 +283,12 @@ public class UserCtrl implements I_URIValidator {
         this.logger.debug("calling UserCtrl.modifiy()");
         JsonResponse jsonResponse = null;
         try {
-            User user = this.getGson().fromJson(data, User.class);
+            UserVo userVo = this.getGson().fromJson(data, UserVo.class);
 
             Fx_ModifyUser fx = this.getFxFactory().getNewFxInstance(
                     Fx_ModifyUser.class);
 
-            fx.setEntity(user);
+            fx.setEntity(userVo);
             this.logger.debug("executing Fx_ModifyUser");
             jsonResponse = fx.execute();
         } catch (Exception e) {

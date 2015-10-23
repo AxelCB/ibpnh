@@ -4,6 +4,7 @@ import com.googlecode.objectify.cmd.Query;
 import org.kairos.ibpnh.dao.AbstractDao;
 import org.kairos.ibpnh.model.user.E_RoleType;
 import org.kairos.ibpnh.model.user.User;
+import org.kairos.ibpnh.vo.user.UserVo;
 
 import javax.persistence.NonUniqueResultException;
 import java.util.List;
@@ -17,9 +18,9 @@ import static com.googlecode.objectify.ObjectifyService.ofy;
  *
  * @author AxelCollardBovy.
  */
-public class UserDaoObjectifyImpl extends AbstractDao<User> implements I_UserDao{
+public class UserDaoObjectifyImpl extends AbstractDao<User,UserVo> implements I_UserDao{
 	@Override
-	public User getByUsername(String username) {
+	public UserVo getByUsername(String username) {
 		List<User> users = ofy().load().type(this.getClazz()).filter("username =",username).list();
 		if(users.size()>1){
 			throw new NonUniqueResultException();
@@ -29,7 +30,7 @@ public class UserDaoObjectifyImpl extends AbstractDao<User> implements I_UserDao
 	}
 
 	@Override
-	public List<User> findUsersByRoleTypeName(E_RoleType roleType) {
+	public List<UserVo> findUsersByRoleTypeName(E_RoleType roleType) {
 		List<User> users = ofy().load().type(this.getClazz()).filter("roletype = ",roleType).list();
 		return users;
 	}
@@ -50,12 +51,17 @@ public class UserDaoObjectifyImpl extends AbstractDao<User> implements I_UserDao
 	}
 
 	@Override
-	public User getUserByEnablingHash(String enablingHash) {
+	public UserVo getUserByEnablingHash(String enablingHash) {
 		return null;
 	}
 
 	@Override
 	public Class<User> getClazz() {
 		return User.class;
+	}
+
+	@Override
+	public Class<UserVo> getVoClazz() {
+		return UserVo.class;
 	}
 }

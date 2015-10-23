@@ -139,4 +139,12 @@ public class DailyDevotional implements I_Model,Serializable {
     public void setCreator(User creator) {
         this.creator = Ref.create(creator);
     }
+
+    public Ref<User> getCreatorKey() {
+        return creator;
+    }
+
+    public void setCreatorKey(Ref<User> creator) {
+        this.creator = creator;
+    }
 }

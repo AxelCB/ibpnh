@@ -8,35 +8,28 @@ package org.kairos.ibpnh.vo;
  *
  * @param <E> the type of objects to be listed
  */
-public class PaginatedSearchRequestVo<E> extends PaginatedRequestVo {
+public class PaginatedSearchRequestVo<E extends AbstractVo> extends PaginatedRequestVo {
 
 	/**
 	 * The data to use to filter the entities (could be null in case of a full list)
 	 */
-	private E entity;
+	private E vo;
 
 	/**
 	 * Constructor with VO. 
 	 * 
-	 * @param entity
+	 * @param vo
 	 */
-	public PaginatedSearchRequestVo(E entity) {
+	public PaginatedSearchRequestVo(E vo) {
 		super();
-		this.setEntity(entity);
+		this.setVo(vo);
 	}
 
-	/**
-	 * @return the entity
-	 */
-	public E getEntity() {
-		return this.entity;
+	public E getVo() {
+		return vo;
 	}
 
-	/**
-	 * @param entity the entity to set
-	 */
-	public void setEntity(E entity) {
-		this.entity = entity;
+	public void setVo(E vo) {
+		this.vo = vo;
 	}
-	
 }

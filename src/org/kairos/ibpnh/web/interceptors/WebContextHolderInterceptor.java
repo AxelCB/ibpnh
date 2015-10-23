@@ -60,7 +60,7 @@ public class WebContextHolderInterceptor extends HandlerInterceptorAdapter {
 	@Override
 	public boolean preHandle(HttpServletRequest request,
 			HttpServletResponse response, Object handler) throws Exception {
-		this.logger.debug("calling TokenAuthenticationInterceptor.preHandle()");
+		this.logger.debug("calling WebContextHolderInterceptor.preHandle()");
 
 		String locale = HttpUtils.extractLanguageTag(request, this
 				.getWebContextHolder().getMessageSolver()
