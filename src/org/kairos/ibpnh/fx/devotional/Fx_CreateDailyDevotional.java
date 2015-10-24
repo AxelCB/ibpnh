@@ -49,6 +49,8 @@ public class Fx_CreateDailyDevotional extends AbstractFxImpl implements I_Fx {
 		try {
 //			this.beginTransaction();
 
+			this.getEntity().setCreator(this.getWebContextHolder().getUser());
+
 			// we persist the entity
 			this.getEntity().setDate(this.getDateUtils().zeroHour(this.getEntity().getDate()));
 			DailyDevotional dailyDevotional = this.getDao().persist(this.getEntity());

@@ -1,7 +1,5 @@
 package org.kairos.ibpnh.vo;
 
-import org.kairos.ibpnh.model.I_Model;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,7 +10,7 @@ import java.util.List;
  *
  * @param <E> the listed entity
  */
-public class PaginatedListVo<E extends I_Model>{
+public class PaginatedListVo<E extends AbstractVo>{
 
 	/**
 	 * The items list.

@@ -20,7 +20,7 @@ import java.util.Map;
  * 
  */
 public class JCacheUserCacheImpl implements I_CacheProfiler,//extends AbstractCacheProfiler
-		I_UserCacheManager, I_ParameterCacheManager {
+		I_UserCacheManager,I_ParameterCacheManager {
 
 	/**
 	 * Logger.

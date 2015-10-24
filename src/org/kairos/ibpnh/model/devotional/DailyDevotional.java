@@ -1,9 +1,15 @@
 package org.kairos.ibpnh.model.devotional;
 
+import com.googlecode.objectify.Ref;
 import com.googlecode.objectify.annotation.Entity;
 import com.googlecode.objectify.annotation.Id;
 import com.googlecode.objectify.annotation.Index;
 import org.kairos.ibpnh.model.I_Model;
+import org.kairos.ibpnh.model.user.User;
+import org.pojomatic.annotations.AutoProperty;
+import org.pojomatic.annotations.DefaultPojomaticPolicy;
+import org.pojomatic.annotations.PojomaticPolicy;
+import org.pojomatic.annotations.Property;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -12,6 +18,7 @@ import java.util.Date;
  * @author AxelCollardBovy ,created on 24/02/2015.
  */
 @Entity
+@AutoProperty(policy = DefaultPojomaticPolicy.TO_STRING)
 public class DailyDevotional implements I_Model,Serializable {
 
     private static final long serialVersionUID = 7725130853686061184L;
@@ -20,6 +27,7 @@ public class DailyDevotional implements I_Model,Serializable {
      * Entity id
      */
     @Id
+    @Property(policy = PojomaticPolicy.EQUALS)
     private Long id;
 
     /**
@@ -51,6 +59,12 @@ public class DailyDevotional implements I_Model,Serializable {
      * Image Url
      */
     private String imageUrl;
+
+    /**
+     * User who creates this Daily Devotional
+     */
+    @Property(policy = PojomaticPolicy.NONE)
+    private Ref<User> creator;
 
     /**
      * Devotional's date
@@ -116,5 +130,21 @@ public class DailyDevotional implements I_Model,Serializable {
 
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
+    }
+
+    public User getCreator() {
+        return creator.get();
+    }
+
+    public void setCreator(User creator) {
+        this.creator = Ref.create(creator);
+    }
+
+    public Ref<User> getCreatorKey() {
+        return creator;
+    }
+
+    public void setCreatorKey(Ref<User> creator) {
+        this.creator = creator;
     }
 }

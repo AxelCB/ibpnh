@@ -1,5 +1,8 @@
 package org.kairos.ibpnh.utils;
 
+import com.googlecode.objectify.ObjectifyService;
+import com.googlecode.objectify.Work;
+import com.googlecode.objectify.util.Closeable;
 import org.kairos.ibpnh.dao.configuration.parameter.I_ParameterDao;
 import org.kairos.ibpnh.json.E_DateFormat;
 import org.kairos.ibpnh.model.configuration.parameter.Parameter;
@@ -12,6 +15,8 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
+
+import static com.googlecode.objectify.ObjectifyService.ofy;
 
 /**
  * I_DateUtils implementation.
@@ -92,9 +97,14 @@ public class DateUtilsImpl implements I_DateUtils {
 	 * Init method.
 	 */
 	public void init() {
+		Closeable session=null;
 		try {
+			session = ObjectifyService.begin();
+
+			this.getParameterDao().init();
+
 			// gets all the format parameters
-			List<String> parametersToGet = new ArrayList<>();
+			final List<String> parametersToGet = new ArrayList<>();
 			parametersToGet.addAll(Arrays.asList(new String[] {
 					Parameter.LOCALE_LANGUAGE_TAG, Parameter.DATE_FORMAT,
 					Parameter.DATETIME_FORMAT,
@@ -106,7 +116,7 @@ public class DateUtilsImpl implements I_DateUtils {
 					Parameter.NATIVE_SQL_DATE_TIME_FORMAT,
 					Parameter.SMS_WS_DATE_FORMAT,
 					Parameter.JSON_DATE_TIME_EXCHANGE_FORMAT }));
-			List<Parameter> formats = this.getParameterDao().getByName(parametersToGet);
+			List<Parameter> formats = ofy().load().type(Parameter.class).filter("name =",Parameter.LOCALE_LANGUAGE_TAG).filter("deleted=", Boolean.FALSE).list();
 
 			// transform the collection into a map (key being parameter's name,
 			// and value being parameter's value)
@@ -159,6 +169,10 @@ public class DateUtilsImpl implements I_DateUtils {
 					.get(Parameter.JSON_DATE_TIME_EXCHANGE_FORMAT), locale));
 		} catch (Exception e) {
 			this.logger.error("error getting all format parameters", e);
+		}finally{
+			if(session !=null){
+				session.close();
+			}
 		}
 	}
 

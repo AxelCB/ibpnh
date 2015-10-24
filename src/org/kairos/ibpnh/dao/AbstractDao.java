@@ -4,7 +4,7 @@ import com.google.appengine.api.datastore.Cursor;
 import com.google.appengine.api.datastore.QueryResultIterator;
 import com.googlecode.objectify.cmd.Query;
 import org.kairos.ibpnh.model.I_Model;
-import org.kairos.ibpnh.model.configuration.parameter.Parameter;
+import org.kairos.ibpnh.vo.AbstractVo;
 import org.kairos.ibpnh.vo.PaginatedListVo;
 import org.kairos.ibpnh.vo.PaginatedRequestVo;
 import org.kairos.ibpnh.vo.PaginatedSearchRequestVo;
@@ -21,34 +21,41 @@ import static com.googlecode.objectify.ObjectifyService.ofy;
  * @author AxelCollardBovy ,created on 22/09/2015.
  *
  */
-public abstract class AbstractDao<E extends I_Model> implements I_Dao<E> {
+public abstract class AbstractDao<E extends I_Model, VO extends AbstractVo>
+        implements I_Dao<VO>{
 
     /**
      * Logger
      */
     private Logger logger = LoggerFactory.getLogger(AbstractDao.class);
 
+    /**
+     * Get's the actual class of the DAO.
+     *
+     * @return class
+     */
+    protected abstract Class<E> getClazz();
 
     @Override
-    public E persist(E entity) {
-        ofy().save().entity(entity).now();
-        return entity;
+    public VO persist(VO entityVo) {
+        ofy().save().entity(entityVo).now();
+        return entityVo;
     }
 
     @Override
-    public E getById(Long id) {
+    public VO getById(Long id) {
         return ofy().load().type(this.getClazz()).id(id).now();
     }
 
     @Override
-    public List<E> listAll() {
+    public List<VO> listAll() {
         return ofy().load().type(this.getClazz()).list();
     }
 
     @Override
-    public PaginatedListVo<E> listPage(PaginatedRequestVo paginatedRequest, Long itemsPerPage) {
+    public PaginatedListVo<VO> listPage(PaginatedRequestVo paginatedRequest, Long itemsPerPage) {
         PaginatedListVo paginatedList = new PaginatedListVo<>();
-        Query<E> query = ofy().load().type(this.getClazz()).limit(itemsPerPage.intValue());
+        Query<VO> query = ofy().load().type(this.getClazz()).limit(itemsPerPage.intValue());
         if(!(paginatedRequest.getPreviousPage()==null || paginatedRequest.getPreviousPage().equals(paginatedRequest.getPage()))){
             if(paginatedRequest.getPreviousPage()<paginatedRequest.getPage()){
                 query = query.startAt(Cursor.fromWebSafeString(paginatedRequest.getCursor()));
@@ -56,7 +63,7 @@ public abstract class AbstractDao<E extends I_Model> implements I_Dao<E> {
                 query = query.endAt(Cursor.fromWebSafeString(paginatedRequest.getCursor()));
             }
         }
-        QueryResultIterator<E> iterator = query.iterator();
+        QueryResultIterator<VO> iterator = query.iterator();
         while (iterator.hasNext()) {
             paginatedList.getItems().add(iterator.next());
         }
@@ -70,13 +77,13 @@ public abstract class AbstractDao<E extends I_Model> implements I_Dao<E> {
     }
 
     @Override
-    public PaginatedListVo<E> searchPage(PaginatedSearchRequestVo paginatedSearchRequest, Long itemsPerPage) {
+    public PaginatedListVo<VO> searchPage(PaginatedSearchRequestVo paginatedSearchRequest, Long itemsPerPage) {
         return null;
     }
 
     @Override
-    public E delete(E entity) {
-        ofy().delete().entity(entity).now();
-        return entity;
+    public VO delete(VO entityVo) {
+        ofy().delete().entity(entityVo).now();
+        return entityVo;
     }
 }

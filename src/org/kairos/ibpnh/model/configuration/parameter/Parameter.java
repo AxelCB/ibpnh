@@ -5,6 +5,10 @@ import com.googlecode.objectify.annotation.Id;
 import com.googlecode.objectify.annotation.Index;
 import org.kairos.ibpnh.model.I_Model;
 import org.pojomatic.Pojomatic;
+import org.pojomatic.annotations.AutoProperty;
+import org.pojomatic.annotations.DefaultPojomaticPolicy;
+import org.pojomatic.annotations.PojomaticPolicy;
+import org.pojomatic.annotations.Property;
 
 import java.io.Serializable;
 
@@ -15,11 +19,13 @@ import java.io.Serializable;
  *
  */
 @Entity
+@AutoProperty(policy = DefaultPojomaticPolicy.TO_STRING)
 public class Parameter implements I_Model,Serializable{
 
 	private static final long serialVersionUID = -4980729949255825921L;
 
 	@Id
+	@Property(policy = PojomaticPolicy.EQUALS)
 	private Long id;
 
 	/**
@@ -46,6 +52,7 @@ public class Parameter implements I_Model,Serializable{
 	/**
 	 * Global flag.
 	 */
+	@Index
 	private Boolean global;
 
 	/**
@@ -58,51 +65,37 @@ public class Parameter implements I_Model,Serializable{
 	 */
 	private Boolean fixed;
 
+	/**
+	 * Default Constructor
+	 */
+	public Parameter() {
+	}
 
 	/**
-	 * Referenceable parameter's preffix.
+	 * Constructor using fields
+	 *
+	 * @param name
+	 * @param value
+	 * @param description
+	 * @param type
+	 * @param global
+	 * @param deleted
+	 * @param fixed
 	 */
-	public final static String TEMPLATE_PREFFIX = "template.";
-	public final static String REFERENCE_PREFFIX = "ref.";
-
-	/**
-	 * Parameter Names Constants
-	 */
-	public final static String SYSTEM_URL = "system.url";
-	public final static String SYSTEM_TITLE = "system.title";
-	public final static String SYSTEM_NAME = "system.name";
-	public final static String HASH_COST = "hash.cost";
-	public final static String LOGIN_MAX_ATTEMPTS = "login.max.attempts";
-	public final static String PASSWORD_MIN_CHARACTERS = "password.min.characters";
-	public final static String ITEMS_PER_PAGE = "items.per.page";
-	public final static String FOOTER_CREDITS = "footer.credits";
-	public final static String FOOTER_VERSION = "footer.version";
-	public final static String FOOTER_KICKOFF_YEAR = "footer.kickoff.year";
-	public final static String PASSWORD_GENERATOR_LENGTH = "password.generator.length";
-	public final static String PASSWORD_REGEXP = "password.regexp";
-	public final static String PASSWORD_GENERATOR_NUMERIC = "password.generator.numeric";
-	public final static String PASSWORD_GENERATOR_LOWERCASE = "password.generator.lowercase";
-	public final static String PUSHER_CODE = "pusher.code";
-	public final static String NUMERIC_LOCALE = "numeric.locale";
-	public final static String NUMERIC_SEPARATOR = "numeric.separator";
-	public final static String DECIMAL_PATTERN = "decimal.pattern";
-	public final static String LOCALE_LANGUAGE_TAG = "locale.language.tag";
-	public final static String USER_REGISTRATION = "user.registration";
-	public final static String DATE_FORMAT = "date.format";
-	public final static String DATETIME_FORMAT = "date.time.format";
-	public final static String DATETIME_FORMAT_WITHOUT_MILLISECONDS = "date.time.format.without.milliseconds";
-	public final static String DATETIME_FORMAT_WITHOUT_SECONDS = "date.time.format.without.seconds";
-	public final static String DATETIME_FORMAT_WITHOUT_SECONDS_AND_YEAR = "date.time.format.without.seconds.and.year";
-	public final static String HOUR_FORMAT = "hour.format";
-	public final static String NATIVE_SQL_DATE_FORMAT = "native.sql.date.format";
-	public final static String NATIVE_SQL_DATE_TIME_FORMAT = "native.sql.date.time.format";
-	public final static String SMS_WS_DATE_FORMAT = "sms.ws.date.format";
-	public final static String JSON_DATE_TIME_EXCHANGE_FORMAT = "json.date.time.exchange.format";
+	public Parameter(String name, String value, String description, E_ParameterType type, Boolean global, Boolean deleted, Boolean fixed) {
+		this.name = name;
+		this.value = value;
+		this.description = description;
+		this.type = type;
+		this.global = global;
+		this.deleted = deleted;
+		this.fixed = fixed;
+	}
 
 	/*
-	 * (non-Javadoc)
-	 * @see org.universe.core.model.I_Model#getId()
-	 */
+         * (non-Javadoc)
+         * @see org.universe.core.model.I_Model#getId()
+         */
 	@Override
 	public Long getId() {
 		return this.id;

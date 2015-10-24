@@ -1,6 +1,6 @@
 package org.kairos.ibpnh.dao;
 
-import org.kairos.ibpnh.model.I_Model;
+import org.kairos.ibpnh.vo.AbstractVo;
 import org.kairos.ibpnh.vo.PaginatedListVo;
 import org.kairos.ibpnh.vo.PaginatedRequestVo;
 import org.kairos.ibpnh.vo.PaginatedSearchRequestVo;
@@ -12,23 +12,23 @@ import java.util.List;
  *
  * @author AxelCollardBovy ,created on 22/09/2015.
  *
- *  * @param <E>
+ *  * @param <VO>
  *            the  class that this DAO returns
  */
-public interface I_Dao<E extends I_Model> {
+public interface I_Dao<VO extends AbstractVo> {
 
-	public Class<E> getClazz();
+	public Class<VO> getVoClazz();
 
-	public E persist(E entity);
+	public VO persist(VO entity);
 
-	public E getById(Long id);
+	public VO getById(Long id);
 
-	public List<E> listAll();
+	public List<VO> listAll();
 
-	public PaginatedListVo<E> listPage(PaginatedRequestVo paginatedRequest,Long itemsPerPage);
+	public PaginatedListVo<VO> listPage(PaginatedRequestVo paginatedRequest,Long itemsPerPage);
 
-	public PaginatedListVo<E> searchPage(PaginatedSearchRequestVo paginatedSearchRequest,Long itemsPerPage);
+	public PaginatedListVo<VO> searchPage(PaginatedSearchRequestVo paginatedSearchRequest,Long itemsPerPage);
 
-	public E delete(E entity);
+	public VO delete(VO entity);
 
 }
