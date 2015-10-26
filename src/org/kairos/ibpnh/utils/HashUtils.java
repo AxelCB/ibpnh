@@ -2,7 +2,7 @@ package org.kairos.ibpnh.utils;
 
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.lang3.RandomStringUtils;
-import org.kairos.ibpnh.model.user.User;
+import org.kairos.ibpnh.vo.user.UserVo;
 
 import java.util.Calendar;
 
@@ -63,7 +63,7 @@ public class HashUtils {
      *
      * @return the token as a hex-string hash
      */
-    public static String generateUserToken(User user) {
+    public static String generateUserToken(UserVo user) {
         return DigestUtils.sha512Hex(((Long) Calendar.getInstance()
                 .getTimeInMillis()).toString());
     }

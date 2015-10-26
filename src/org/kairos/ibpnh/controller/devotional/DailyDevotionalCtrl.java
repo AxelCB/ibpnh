@@ -3,7 +3,6 @@ package org.kairos.ibpnh.controller.devotional;
 import com.google.appengine.api.blobstore.BlobKey;
 import com.google.appengine.api.blobstore.BlobstoreService;
 import com.google.appengine.api.blobstore.BlobstoreServiceFactory;
-import com.google.appengine.api.images.ServingUrlOptions;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
@@ -21,6 +20,7 @@ import org.kairos.ibpnh.utils.I_DateUtils;
 import org.kairos.ibpnh.vo.PaginatedListVo;
 import org.kairos.ibpnh.vo.PaginatedRequestVo;
 import org.kairos.ibpnh.vo.PaginatedSearchRequestVo;
+import org.kairos.ibpnh.vo.devotional.DailyDevotionalVo;
 import org.kairos.ibpnh.web.WebContextHolder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -114,7 +114,7 @@ public class DailyDevotionalCtrl implements I_URIValidator {
 
         try {
             PaginatedRequestVo paginatedRequest = this.getGson().fromJson(paginationData, PaginatedRequestVo.class);
-            PaginatedListVo<DailyDevotional> paginatedList = this.getDailyDevotionalDao().listPage(paginatedRequest, 10l);
+            PaginatedListVo<DailyDevotionalVo> paginatedList = this.getDailyDevotionalDao().listPage(paginatedRequest, 10l);
 //            this.getParameterDao()
 //                    .getByName(pm, ParameterVo.ITEMS_PER_PAGE)
 //                    .getValue(Long.class);
@@ -151,9 +151,9 @@ public class DailyDevotionalCtrl implements I_URIValidator {
         JsonResponse jsonResponse = null;
 
         try {
-            Type type = new TypeToken<PaginatedSearchRequestVo<DailyDevotional>>() {}.getType();
-            PaginatedSearchRequestVo<DailyDevotional> paginatedSearchRequest = this.getGson().fromJson(data, type);
-            PaginatedListVo<DailyDevotional> paginatedList = this.getDailyDevotionalDao().searchPage(paginatedSearchRequest,10L
+            Type type = new TypeToken<PaginatedSearchRequestVo<DailyDevotionalVo>>() {}.getType();
+            PaginatedSearchRequestVo<DailyDevotionalVo> paginatedSearchRequest = this.getGson().fromJson(data, type);
+            PaginatedListVo<DailyDevotionalVo> paginatedList = this.getDailyDevotionalDao().searchPage(paginatedSearchRequest,10L
 //                            this.getParameterDao()
 //                                    .getByName(Parameter.ITEMS_PER_PAGE)
 //                                    .getValue(Long.class)
@@ -194,13 +194,13 @@ public class DailyDevotionalCtrl implements I_URIValidator {
             BlobstoreService blobstoreService = BlobstoreServiceFactory.getBlobstoreService();
             Map<String, List<BlobKey>> blobs = blobstoreService.getUploads(req);
 
-            DailyDevotional dailyDevotional = this.getGson().fromJson(data, DailyDevotional.class);
+            DailyDevotionalVo dailyDevotional = this.getGson().fromJson(data, DailyDevotionalVo.class);
             dailyDevotional.setImageBlobKey(blobs.get("file").get(0).getKeyString());
 
             Fx_CreateDailyDevotional fx = this.getFxFactory().getNewFxInstance(
                     Fx_CreateDailyDevotional.class);
 
-            fx.setEntity(dailyDevotional);
+            fx.setVo(dailyDevotional);
             this.logger.debug("executing Fx_CreateDailyDevotional");
             jsonResponse = fx.execute();
         } catch (Exception e) {
@@ -224,12 +224,12 @@ public class DailyDevotionalCtrl implements I_URIValidator {
         JsonResponse jsonResponse = null;
 
         try {
-            DailyDevotional dailyDevotional = this.getGson().fromJson(data, DailyDevotional.class);
+            DailyDevotionalVo dailyDevotional = this.getGson().fromJson(data, DailyDevotionalVo.class);
 
             Fx_DeleteDailyDevotional fx = this.getFxFactory().getNewFxInstance(
                     Fx_DeleteDailyDevotional.class);
 
-            fx.setEntity(dailyDevotional);
+            fx.setVo(dailyDevotional);
             this.logger.debug("executing Fx_DeleteDailyDevotional");
             jsonResponse = fx.execute();
         } catch (Exception e) {
@@ -253,12 +253,12 @@ public class DailyDevotionalCtrl implements I_URIValidator {
         JsonResponse jsonResponse = null;
 
         try {
-            DailyDevotional dailyDevotional = this.getGson().fromJson(data, DailyDevotional.class);
+            DailyDevotionalVo dailyDevotional = this.getGson().fromJson(data, DailyDevotionalVo.class);
 
             Fx_ModifyDailyDevotional fx = this.getFxFactory().getNewFxInstance(
                     Fx_ModifyDailyDevotional.class);
 
-            fx.setEntity(dailyDevotional);
+            fx.setVo(dailyDevotional);
             this.logger.debug("executing Fx_ModifyDailyDevotional");
             jsonResponse = fx.execute();
         } catch (Exception e) {
@@ -284,7 +284,7 @@ public class DailyDevotionalCtrl implements I_URIValidator {
             JsonObject jsonObject = this.getGson().fromJson(data,JsonObject.class);
             Long lastDevotionalsAmount = jsonObject.get("amount").getAsLong();
             Date date = this.getDateUtils().parseDate(jsonObject.get("today").getAsString());
-            List<DailyDevotional> dailyDevotionals =
+            List<DailyDevotionalVo> dailyDevotionals =
                     this.getDailyDevotionalDao().listLastDevotionals(lastDevotionalsAmount,date);
             jsonResponse = JsonResponse.ok(this.getGson().toJson(dailyDevotionals));
         } catch (Exception e) {
@@ -307,7 +307,7 @@ public class DailyDevotionalCtrl implements I_URIValidator {
         this.logger.debug("calling DailyDevotionalCtrl.find()");
         JsonResponse jsonResponse = null;
         try {
-            DailyDevotional dailyDevotional = this.getGson().fromJson(data,DailyDevotional.class);
+            DailyDevotionalVo dailyDevotional = this.getGson().fromJson(data,DailyDevotionalVo.class);
             dailyDevotional = this.getDailyDevotionalDao().getById(dailyDevotional.getId());
             jsonResponse = JsonResponse.ok(this.getGson().toJson(dailyDevotional));
         } catch (Exception e) {

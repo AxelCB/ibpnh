@@ -5,6 +5,7 @@ import com.google.gson.GsonBuilder;
 import org.kairos.ibpnh.dao.configuration.parameter.I_ParameterDao;
 import org.kairos.ibpnh.model.configuration.parameter.Parameter;
 import org.kairos.ibpnh.utils.I_DateUtils;
+import org.kairos.ibpnh.vo.configuration.parameter.ParameterVo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.FactoryBean;
@@ -99,21 +100,21 @@ public class GsonSpringFactoryBean implements FactoryBean<Gson> {
     private void setDateTimeFormat(GsonBuilder gsb) {
         try {
             // try to get date time format parameter
-            Parameter parameter = this.getParameterDao().getByName(Parameter.JSON_DATE_TIME_EXCHANGE_FORMAT);
+            ParameterVo parameter = this.getParameterDao().getByName(ParameterVo.JSON_DATE_TIME_EXCHANGE_FORMAT);
             if (parameter == null) {
                 this.logger
                         .debug("parameter {} not found, defaulting to dd/MM/yyyy HH:mm:ss.SSS",
-                                Parameter.JSON_DATE_TIME_EXCHANGE_FORMAT);
+                                ParameterVo.JSON_DATE_TIME_EXCHANGE_FORMAT);
                 gsb.setDateFormat("dd/MM/yyyy HH:mm:ss.SSS");
             } else {
                 this.logger.debug("parameter {} found, with value {}",
-                        Parameter.JSON_DATE_TIME_EXCHANGE_FORMAT,
+                        ParameterVo.JSON_DATE_TIME_EXCHANGE_FORMAT,
                         parameter.getValue());
                 gsb.setDateFormat(parameter.getValue());
             }
         } catch (Exception e) {
             this.logger.debug("error getting "
-                    + Parameter.JSON_DATE_TIME_EXCHANGE_FORMAT
+                    + ParameterVo.JSON_DATE_TIME_EXCHANGE_FORMAT
                     + " parameter, defaulting to dd/MM/yyyy HH:mm:ss.SSS", e);
             gsb.setDateFormat("dd/MM/yyyy HH:mm:ss.SSS");
         }

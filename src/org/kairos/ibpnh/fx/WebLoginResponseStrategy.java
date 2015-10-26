@@ -3,6 +3,7 @@ package org.kairos.ibpnh.fx;
 import com.google.gson.Gson;
 import org.kairos.ibpnh.json.JsonResponse;
 import org.kairos.ibpnh.model.user.User;
+import org.kairos.ibpnh.vo.user.UserVo;
 import org.kairos.ibpnh.web.I_MessageSolver;
 
 /**
@@ -11,7 +12,7 @@ import org.kairos.ibpnh.web.I_MessageSolver;
  * @author AxelCollardBovy ,created on 08/03/2015.
  * 
  */
-public class WebLoginResponseStrategy implements org.kairos.ibpnh.fx.I_LoginResponseStrategy {
+public class WebLoginResponseStrategy implements I_LoginResponseStrategy {
 
 	/**
 	 * The message solver.
@@ -99,7 +100,7 @@ public class WebLoginResponseStrategy implements org.kairos.ibpnh.fx.I_LoginResp
 	 * .core.vo.user.UserVo)
 	 */
 	@Override
-	public JsonResponse userLogged(User user) {
+	public JsonResponse userLogged(UserVo user) {
 		return JsonResponse.ok(this.getGson().toJson(user));
 	}
 

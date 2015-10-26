@@ -8,6 +8,7 @@ import org.kairos.ibpnh.fx.login.Fx_Logout;
 import org.kairos.ibpnh.json.JsonResponse;
 import org.kairos.ibpnh.model.user.User;
 import org.kairos.ibpnh.utils.ErrorCodes;
+import org.kairos.ibpnh.vo.user.UserVo;
 import org.kairos.ibpnh.web.WebContextHolder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -81,11 +82,11 @@ public class LoginCtrl implements I_URIValidator {
         JsonResponse jsonResponse = null;
 
         try {
-            User user = this.getGson().fromJson(data,
-                    User.class);
+            UserVo user = this.getGson().fromJson(data,
+                    UserVo.class);
 
             Fx_Login fx = this.getFxFactory().getNewFxInstance(Fx_Login.class);
-            fx.setEntity(user);
+            fx.setVo(user);
             this.logger.debug("executing Fx_Login");
             jsonResponse = fx.execute();
         } catch (Exception e) {

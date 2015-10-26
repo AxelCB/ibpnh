@@ -7,6 +7,7 @@ import org.kairos.ibpnh.dao.AbstractDao;
 import org.kairos.ibpnh.model.devotional.DailyDevotional;
 import org.kairos.ibpnh.vo.PaginatedListVo;
 import org.kairos.ibpnh.vo.PaginatedRequestVo;
+import org.kairos.ibpnh.vo.devotional.DailyDevotionalVo;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Date;
@@ -21,7 +22,7 @@ import static com.googlecode.objectify.ObjectifyService.ofy;
  *
  * @author AxelCollardBovy.
  */
-public class DailyDevotionalDaoObjectifyImpl extends AbstractDao<DailyDevotional> implements I_DailyDevotionalDao{
+public class DailyDevotionalDaoObjectifyImpl extends AbstractDao<DailyDevotional,DailyDevotionalVo> implements I_DailyDevotionalDao{
 
 	/**
 	 * Images Service
@@ -35,7 +36,12 @@ public class DailyDevotionalDaoObjectifyImpl extends AbstractDao<DailyDevotional
 	}
 
 	@Override
-	public DailyDevotional getByDate(Date date) {
+	public Class<DailyDevotionalVo> getVoClazz() {
+		return DailyDevotionalVo.class;
+	}
+
+	@Override
+	public DailyDevotionalVo getByDate(Date date) {
 		return null;
 	}
 
@@ -45,9 +51,9 @@ public class DailyDevotionalDaoObjectifyImpl extends AbstractDao<DailyDevotional
 	}
 
 	@Override
-	public List<DailyDevotional> listLastDevotionals(Long amount, Date date) {
-		List<DailyDevotional> dailyDevotionals = ofy().load().type(this.getClazz()).filter("date <=",date).limit(amount.intValue()).order("-date").list();
-		for (DailyDevotional dailyDevotional : dailyDevotionals){
+	public List<DailyDevotionalVo> listLastDevotionals(Long amount, Date date) {
+		List<DailyDevotionalVo> dailyDevotionals = this.map(ofy().load().type(this.getClazz()).filter("date <=", date).limit(amount.intValue()).order("-date").list());
+		for (DailyDevotionalVo dailyDevotional : dailyDevotionals){
 			BlobKey blobKey = new BlobKey(dailyDevotional.getImageBlobKey());
 			dailyDevotional.setImageUrl(imagesService.getServingUrl(ServingUrlOptions.Builder.withBlobKey(blobKey)));
 		}
@@ -55,9 +61,9 @@ public class DailyDevotionalDaoObjectifyImpl extends AbstractDao<DailyDevotional
 	}
 
 	@Override
-	public PaginatedListVo<DailyDevotional> listPage(PaginatedRequestVo paginatedRequest, Long itemsPerPage) {
-		PaginatedListVo<DailyDevotional> paginatedList = super.listPage(paginatedRequest, itemsPerPage);
-        for (DailyDevotional dailyDevotional : paginatedList.getItems()){
+	public PaginatedListVo<DailyDevotionalVo> listPage(PaginatedRequestVo paginatedRequest, Long itemsPerPage) {
+		PaginatedListVo<DailyDevotionalVo> paginatedList = super.listPage(paginatedRequest, itemsPerPage);
+        for (DailyDevotionalVo dailyDevotional : paginatedList.getItems()){
             BlobKey blobKey = new BlobKey(dailyDevotional.getImageBlobKey());
             dailyDevotional.setImageUrl(imagesService.getServingUrl(ServingUrlOptions.Builder.withBlobKey(blobKey)));
         }
@@ -65,9 +71,9 @@ public class DailyDevotionalDaoObjectifyImpl extends AbstractDao<DailyDevotional
 	}
 
 	@Override
-	public List<DailyDevotional> listAll() {
-		List<DailyDevotional> dailyDevotionals = super.listAll();
-		for (DailyDevotional dailyDevotional : dailyDevotionals){
+	public List<DailyDevotionalVo> listAll() {
+		List<DailyDevotionalVo> dailyDevotionals = this.listAll();
+		for (DailyDevotionalVo dailyDevotional : dailyDevotionals){
 			BlobKey blobKey = new BlobKey(dailyDevotional.getImageBlobKey());
 			dailyDevotional.setImageUrl(imagesService.getServingUrl(ServingUrlOptions.Builder.withBlobKey(blobKey)));
 		}
@@ -75,8 +81,8 @@ public class DailyDevotionalDaoObjectifyImpl extends AbstractDao<DailyDevotional
 	}
 
     @Override
-    public DailyDevotional getById(Long id) {
-        DailyDevotional dailyDevotional = super.getById(id);
+    public DailyDevotionalVo getById(Long id) {
+        DailyDevotionalVo dailyDevotional = this.getById(id);
         BlobKey blobKey = new BlobKey(dailyDevotional.getImageBlobKey());
         dailyDevotional.setImageUrl(imagesService.getServingUrl(ServingUrlOptions.Builder.withBlobKey(blobKey)));
         return dailyDevotional;

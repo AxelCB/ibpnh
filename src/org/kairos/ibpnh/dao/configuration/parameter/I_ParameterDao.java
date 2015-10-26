@@ -2,6 +2,7 @@ package org.kairos.ibpnh.dao.configuration.parameter;
 
 import org.kairos.ibpnh.dao.I_Dao;
 import org.kairos.ibpnh.model.configuration.parameter.Parameter;
+import org.kairos.ibpnh.vo.configuration.parameter.ParameterVo;
 
 import javax.persistence.NoResultException;
 import javax.persistence.NonUniqueResultException;
@@ -14,7 +15,7 @@ import java.util.List;
  * @author AxelCollardBovy ,created on 08/03/2015.
  *
  */
-public interface I_ParameterDao extends I_Dao<Parameter> {
+public interface I_ParameterDao extends I_Dao<ParameterVo> {
 
 	/**
 	 * Inits the global parameters on server start up
@@ -28,7 +29,7 @@ public interface I_ParameterDao extends I_Dao<Parameter> {
 	 *
 	 * @return parameter or null
 	 */
-	public Parameter getByName( String name);
+	public ParameterVo getByName( String name);
 	
 	/**
 	 * Finds the parameters that match with the name
@@ -37,7 +38,7 @@ public interface I_ParameterDao extends I_Dao<Parameter> {
 	 * 
 	 * @return list of parameterVo
 	 */
-	public List<Parameter> getsByName(String name) throws NonUniqueResultException,NoResultException;
+	public List<ParameterVo> getsByName(String name) throws NonUniqueResultException,NoResultException;
 	
 	/**
 	 * Finds the parameters that match the names in the collection
@@ -46,7 +47,7 @@ public interface I_ParameterDao extends I_Dao<Parameter> {
 	 * 
 	 * @return list of parameterVo
 	 */
-	public List<Parameter> getByName(Collection<String> names);
+	public List<ParameterVo> getByName(Collection<String> names);
 	
 	/**
 	 * Saves a history.

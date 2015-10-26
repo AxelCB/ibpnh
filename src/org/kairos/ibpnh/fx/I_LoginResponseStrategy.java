@@ -2,6 +2,7 @@ package org.kairos.ibpnh.fx;
 
 import org.kairos.ibpnh.json.JsonResponse;
 import org.kairos.ibpnh.model.user.User;
+import org.kairos.ibpnh.vo.user.UserVo;
 
 /**
  * Login Response Strategy.
@@ -48,7 +49,7 @@ public interface I_LoginResponseStrategy {
 	 * 
 	 * @return
 	 */
-	public JsonResponse userLogged(User user);
+	public JsonResponse userLogged(UserVo user);
 	
 	/**
 	 * Unexpected error.

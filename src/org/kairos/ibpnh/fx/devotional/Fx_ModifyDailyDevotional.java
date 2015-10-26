@@ -8,6 +8,7 @@ import org.kairos.ibpnh.json.JsonResponse;
 import org.kairos.ibpnh.model.devotional.DailyDevotional;
 import org.kairos.ibpnh.utils.ErrorCodes;
 import org.kairos.ibpnh.utils.I_DateUtils;
+import org.kairos.ibpnh.vo.devotional.DailyDevotionalVo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,8 +51,8 @@ public class Fx_ModifyDailyDevotional extends AbstractFxImpl implements I_Fx {
 //			this.beginTransaction();
 
 			// we persist the entity
-			this.getEntity().setDate(this.getDateUtils().zeroHour(this.getEntity().getDate()));
-			DailyDevotional dailyDevotional = this.getDao().persist(this.getEntity());
+			this.getVo().setDate(this.getDateUtils().zeroHour(this.getVo().getDate()));
+			DailyDevotionalVo dailyDevotional = this.getDao().persist(this.getVo());
 
 //			this.commitTransaction();
 
@@ -82,18 +83,18 @@ public class Fx_ModifyDailyDevotional extends AbstractFxImpl implements I_Fx {
 	protected FxValidationResponse validate() {
 		this.logger.debug("executing Fx_ModifyDailyDevotional.validate()");
 
-//		String result = this.getEntity().validate(this.getWebContextHolder());
+//		String result = this.getVo().validate(this.getWebContextHolder());
 //		if (result != null) {
 //			return FxValidationResponse.error(result);
 //		}
 
-		if (!this.getDao().checkDateUniqueness(this.getEntity().getDate(), this.getEntity().getId())) {
+		if (!this.getDao().checkDateUniqueness(this.getVo().getDate(), this.getVo().getId())) {
 			String jsonResponseMessage = this.getRealMessageSolver()
 					.getMessage("fx.dailyDevotional.validation.nonUniqueDate",
-							new String[] { this.getEntity().getDate().toString() });
+							new String[] { this.getVo().getDate().toString() });
 
 			return FxValidationResponse.error(jsonResponseMessage);
-		} else if (this.getEntity().getId() == null) {
+		} else if (this.getVo().getId() == null) {
 
 			String errorCodeMessage = this.getRealMessageSolver().getMessage(
 					"default.error.code",
@@ -108,7 +109,7 @@ public class Fx_ModifyDailyDevotional extends AbstractFxImpl implements I_Fx {
 
 			return FxValidationResponse.error(jsonResponseMessage);
 		} else {
-			DailyDevotional dailyDevotional = this.getDao().getById(this.getEntity().getId());
+			DailyDevotionalVo dailyDevotional = this.getDao().getById(this.getVo().getId());
 
 			if (dailyDevotional == null) {
 
@@ -138,15 +139,15 @@ public class Fx_ModifyDailyDevotional extends AbstractFxImpl implements I_Fx {
 //
 //		alertVo.setDescription(this.getRealMessageSolver().getMessage(
 //				"fx.user.alert.description.modified",
-//				new String[] { this.getEntity().getDescription() }));
+//				new String[] { this.getVo().getDescription() }));
 //	}
 
 	/**
 	 * Class VO
 	 */
 	@Override
-	public DailyDevotional getEntity() {
-		return (DailyDevotional) super.getEntity();
+	public DailyDevotionalVo getVo() {
+		return (DailyDevotionalVo) super.getVo();
 	}
 
 	/**

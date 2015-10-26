@@ -1,6 +1,6 @@
 package org.kairos.ibpnh.services.caching.client.api;
 
-import org.kairos.ibpnh.model.user.User;
+import org.kairos.ibpnh.vo.user.UserVo;
 
 /**
  * Manages the cache for the users.
@@ -17,7 +17,7 @@ public interface I_UserCacheManager {
 	 * 
 	 * @return user or null
 	 */
-	public User getUser(String key);
+	public UserVo getUser(String key);
 	
 	/**
 	 * Removes and returns the User using the key.
@@ -26,7 +26,7 @@ public interface I_UserCacheManager {
 	 * 
 	 * @return user or null
 	 */
-	public User removeUser(String key);
+	public UserVo removeUser(String key);
 	
 	/**
 	 * Puts the user in the cache using a key.
@@ -34,7 +34,7 @@ public interface I_UserCacheManager {
 	 * @param key key for the user
 	 * @param user the user VO
 	 */
-	public void putUser(String key, User user);
+	public void putUser(String key, UserVo user);
 	
 
 }

@@ -15,6 +15,7 @@ import org.kairos.ibpnh.utils.ErrorCodes;
 import org.kairos.ibpnh.vo.PaginatedListVo;
 import org.kairos.ibpnh.vo.PaginatedRequestVo;
 import org.kairos.ibpnh.vo.PaginatedSearchRequestVo;
+import org.kairos.ibpnh.vo.configuration.parameter.ParameterVo;
 import org.kairos.ibpnh.web.WebContextHolder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -97,7 +98,7 @@ public class ParameterCtrl implements I_URIValidator {
 
         try {
             PaginatedRequestVo paginatedRequest= this.getGson().fromJson(paginationData, PaginatedRequestVo.class);
-            PaginatedListVo<Parameter> paginatedList = this.getParameterDao()
+            PaginatedListVo<ParameterVo> paginatedList = this.getParameterDao()
                     .listPage(paginatedRequest,
                             10l);
 //            this.getParameterDao()
@@ -135,9 +136,9 @@ public class ParameterCtrl implements I_URIValidator {
         JsonResponse jsonResponse = null;
 
         try {
-            Type type = new TypeToken<PaginatedSearchRequestVo<Parameter>>() {}.getType();
-            PaginatedSearchRequestVo<Parameter> paginatedSearchRequest = this.getGson().fromJson(data, type);
-            PaginatedListVo<Parameter> paginatedList = this.getParameterDao().searchPage(paginatedSearchRequest, 10L
+            Type type = new TypeToken<PaginatedSearchRequestVo<ParameterVo>>() {}.getType();
+            PaginatedSearchRequestVo<ParameterVo> paginatedSearchRequest = this.getGson().fromJson(data, type);
+            PaginatedListVo<ParameterVo> paginatedList = this.getParameterDao().searchPage(paginatedSearchRequest, 10L
 //                            this.getParameterDao()
 //                                    .getByName(Parameter.ITEMS_PER_PAGE)
 //                                    .getValue(Long.class)
@@ -178,14 +179,14 @@ public class ParameterCtrl implements I_URIValidator {
 //            JsonObject jsonObject = this.getGson().fromJson(data, JsonObject.class);
 //            E_ParameterType parameterTypeEnum = this.getGson().fromJson(jsonObject.get("parameterType"), E_ParameterType.class);
 
-            Parameter parameter = this.getGson().fromJson(data, Parameter.class);
+            ParameterVo parameter = this.getGson().fromJson(data, ParameterVo.class);
 //                    jsonObject.get("parameter"), ParameterVo.class);
 //            parameterVo.setType(parameterTypeEnum);
 
             Fx_CreateParameter fx = this.getFxFactory().getNewFxInstance(
                     Fx_CreateParameter.class);
 
-            fx.setEntity(parameter);
+            fx.setVo(parameter);
             this.logger.debug("executing Fx_CreateParameter");
             jsonResponse = fx.execute();
         } catch (Exception e) {
@@ -208,12 +209,12 @@ public class ParameterCtrl implements I_URIValidator {
         this.logger.debug("calling ParameterCtrl.delete()");
         JsonResponse jsonResponse = null;
         try {
-            Parameter parameter = this.getGson().fromJson(data, Parameter.class);
+            ParameterVo parameter = this.getGson().fromJson(data, ParameterVo.class);
 
             Fx_DeleteParameter fx = this.getFxFactory().getNewFxInstance(
                     Fx_DeleteParameter.class);
 
-            fx.setEntity(parameter);
+            fx.setVo(parameter);
             this.logger.debug("executing Fx_DeleteParameter");
             jsonResponse = fx.execute();
         } catch (Exception e) {
@@ -232,16 +233,16 @@ public class ParameterCtrl implements I_URIValidator {
      */
     @ResponseBody
     @RequestMapping(value = "/modify.json", method = RequestMethod.POST)
-    public String modifiy(@RequestBody String data) {
+    public String modify(@RequestBody String data) {
         this.logger.debug("calling ParameterCtrl.modifiy()");
         JsonResponse jsonResponse = null;
         try {
-            Parameter parameter = this.getGson().fromJson(data, Parameter.class);
+            ParameterVo parameter = this.getGson().fromJson(data, ParameterVo.class);
 
             Fx_ModifyParameter fx = this.getFxFactory().getNewFxInstance(
                     Fx_ModifyParameter.class);
 
-            fx.setEntity(parameter);
+            fx.setVo(parameter);
             this.logger.debug("executing Fx_ModifyParameter");
             jsonResponse = fx.execute();
         } catch (Exception e) {
@@ -259,8 +260,8 @@ public class ParameterCtrl implements I_URIValidator {
      */
     @ResponseBody
     @RequestMapping(value = "/listParameterTypeForCreation.json")
-    public String listRoleTypeForCreation() {
-        this.logger.debug("calling ParameterCtrl.listRoleTypeForCreation()");
+    public String listParameterTypeForCreation() {
+        this.logger.debug("calling ParameterCtrl.listParameterTypeForCreation()");
         JsonResponse jsonResponse = null;
 
         try {

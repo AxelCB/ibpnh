@@ -2,6 +2,7 @@ package org.kairos.ibpnh.dao.devotional;
 
 import org.kairos.ibpnh.dao.I_Dao;
 import org.kairos.ibpnh.model.devotional.DailyDevotional;
+import org.kairos.ibpnh.vo.devotional.DailyDevotionalVo;
 
 import java.util.Date;
 import java.util.List;
@@ -9,7 +10,7 @@ import java.util.List;
 /**
  * @author AxelCollardBovy ,created on 03/03/2015.
  */
-public interface I_DailyDevotionalDao extends I_Dao<DailyDevotional> {
+public interface I_DailyDevotionalDao extends I_Dao<DailyDevotionalVo> {
 
     /**
      * Attempts to search a dailyDevotional with dailyDevotionalname.
@@ -19,7 +20,7 @@ public interface I_DailyDevotionalDao extends I_Dao<DailyDevotional> {
      *
      * @return dailyDevotional or null
      */
-    public DailyDevotional getByDate(Date date);
+    public DailyDevotionalVo getByDate(Date date);
 
     /**
      * Checks that a dailyDevotional dailyDevotionalname is only used once.
@@ -41,5 +42,5 @@ public interface I_DailyDevotionalDao extends I_Dao<DailyDevotional> {
      * @param date
      * @return
      */
-    public List<DailyDevotional> listLastDevotionals(Long amount, Date date);
+    public List<DailyDevotionalVo> listLastDevotionals(Long amount, Date date);
 }

@@ -3,6 +3,7 @@ package org.kairos.ibpnh.web;
 import org.kairos.ibpnh.json.JsonResponse;
 import org.kairos.ibpnh.model.user.User;
 import org.kairos.ibpnh.utils.ErrorCodes;
+import org.kairos.ibpnh.vo.user.UserVo;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Locale;
@@ -28,12 +29,12 @@ public class WebContextHolder implements I_MessageSolver {
 	/**
 	 * User Info
 	 */
-	private User user;
+	private UserVo user;
 
 	/**
 	 * User  that only holds the user's ID;
 	 */
-	private User userIdReference;
+	private UserVo userIdReference;
 
 	/**
 	 * THe message solver.
@@ -166,16 +167,16 @@ public class WebContextHolder implements I_MessageSolver {
 	/**
 	 * @return the userVo
 	 */
-	public User getUser() {
+	public UserVo getUser() {
 		return this.user;
 	}
 
 	/**
 	 * @param user the user to set
 	 */
-	public void setUser(User user) {
+	public void setUser(UserVo user) {
 		this.user = user;
-		User userIdReference =  new User();
+		UserVo userIdReference =  new UserVo();
 		userIdReference.setId(user.getId());
 		this.setUserIdReference(userIdReference);
 	}
@@ -183,14 +184,14 @@ public class WebContextHolder implements I_MessageSolver {
 	/**
 	 * @return the userIdReferenceVo
 	 */
-	public User getUserIdReference() {
+	public UserVo getUserIdReference() {
 		return this.userIdReference;
 	}
 
 	/**
 	 * @param userIdReference the userIdReference to set
 	 */
-	public void setUserIdReference(User userIdReference) {
+	public void setUserIdReference(UserVo userIdReference) {
 		this.userIdReference = userIdReference;
 	}
 

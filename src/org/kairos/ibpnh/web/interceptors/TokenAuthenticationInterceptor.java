@@ -5,6 +5,7 @@ import org.kairos.ibpnh.controller.I_URIValidator;
 import org.kairos.ibpnh.json.JsonResponse;
 import org.kairos.ibpnh.model.user.User;
 import org.kairos.ibpnh.services.caching.client.api.I_UserCacheManager;
+import org.kairos.ibpnh.vo.user.UserVo;
 import org.kairos.ibpnh.web.WebContextHolder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -118,7 +119,7 @@ public class TokenAuthenticationInterceptor extends HandlerInterceptorAdapter {
 			} else {
 				String token = request.getHeader("Authorization");
 
-				User user = this.getUserCacheManager().getUser(token);
+				UserVo user = this.getUserCacheManager().getUser(token);
 
 				if (user != null) {
 					this.getWebContextHolder().setUser(user);

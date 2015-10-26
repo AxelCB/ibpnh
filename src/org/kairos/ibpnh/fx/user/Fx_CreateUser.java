@@ -7,6 +7,7 @@ import org.kairos.ibpnh.fx.I_Fx;
 import org.kairos.ibpnh.json.JsonResponse;
 import org.kairos.ibpnh.model.user.User;
 import org.kairos.ibpnh.utils.HashUtils;
+import org.kairos.ibpnh.vo.user.UserVo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,13 +45,13 @@ public class Fx_CreateUser extends AbstractFxImpl implements I_Fx {
 //			this.beginTransaction();
 
 			// we persist the entity
-			this.getEntity().setHashCost(10L);
-			this.getEntity().setEnabled(Boolean.TRUE);
-			this.getEntity().setLoginAttempts(0);
-			this.getEntity().setPassword(HashUtils.hashPassword(this.getEntity().getPassword(), this.getEntity().getHashCost()));
-			this.getEntity().setFirstLogin(Boolean.FALSE);
-			User user = this.getDao().persist(this.getEntity());
-			this.setEntity(user);
+			this.getVo().setHashCost(10L);
+			this.getVo().setEnabled(Boolean.TRUE);
+			this.getVo().setLoginAttempts(0);
+			this.getVo().setPassword(HashUtils.hashPassword(this.getVo().getPassword(), this.getVo().getHashCost()));
+			this.getVo().setFirstLogin(Boolean.FALSE);
+			UserVo user = this.getDao().persist(this.getVo());
+			this.setVo(user);
 
 //			this.commitTransaction();
 
@@ -82,15 +83,15 @@ public class Fx_CreateUser extends AbstractFxImpl implements I_Fx {
 	protected FxValidationResponse validate() {
 		this.logger.debug("executing Fx_CreateFunction._validate()");
 
-//		String result = this.getEntity().validate(this.getWebContextHolder());
+//		String result = this.getVo().validate(this.getWebContextHolder());
 //		if (result != null) {
 //			return FxValidationResponse.error(result);
 //		}
 
-		if (!this.getDao().checkUsernameUniqueness(this.getEntity().getUsername(), null)) {
+		if (!this.getDao().checkUsernameUniqueness(this.getVo().getUsername(), null)) {
 			String jsonResponseMessage = this.getRealMessageSolver()
 					.getMessage("fx.user.validation.nonUniqueUsername",
-							new String[] { this.getEntity().getUsername() });
+							new String[] { this.getVo().getUsername() });
 
 			return FxValidationResponse.error(jsonResponseMessage);
 		} else {
@@ -111,15 +112,15 @@ public class Fx_CreateUser extends AbstractFxImpl implements I_Fx {
 //
 //		alertVo.setDescription(this.getRealMessageSolver().getMessage(
 //				"fx.user.alert.description.created",
-//				new String[] { this.getEntity().getDescription() }));
+//				new String[] { this.getVo().getDescription() }));
 //	}
 
 	/**
 	 * Casted VO.
 	 */
 	@Override
-	public User getEntity() {
-		return (User) super.getEntity();
+	public UserVo getVo() {
+		return (UserVo) super.getVo();
 	}
 
 	/**

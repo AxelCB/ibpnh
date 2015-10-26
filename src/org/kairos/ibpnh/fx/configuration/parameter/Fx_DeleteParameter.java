@@ -5,8 +5,8 @@ import org.kairos.ibpnh.fx.AbstractFxImpl;
 import org.kairos.ibpnh.fx.FxValidationResponse;
 import org.kairos.ibpnh.fx.I_Fx;
 import org.kairos.ibpnh.json.JsonResponse;
-import org.kairos.ibpnh.model.configuration.parameter.Parameter;
 import org.kairos.ibpnh.utils.ErrorCodes;
+import org.kairos.ibpnh.vo.configuration.parameter.ParameterVo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,7 +43,7 @@ public class Fx_DeleteParameter extends AbstractFxImpl implements I_Fx {
 //			this.beginTransaction();
 
 			// we persist the entity
-			this.getDao().delete(this.getEntity());
+			this.getDao().delete(this.getVo());
 
 //			this.commitTransaction();
 
@@ -75,14 +75,14 @@ public class Fx_DeleteParameter extends AbstractFxImpl implements I_Fx {
 	protected FxValidationResponse validate() {
 		this.logger.debug("executing Fx_DeleteFunction.validate()");
 
-		if (this.getEntity().getId() == null) {
+		if (this.getVo().getId() == null) {
 
 			String errorCodeMessage = this.getRealMessageSolver().getMessage("default.error.code", new Object[] { ErrorCodes.ERROR_ENTITY_ID_UNDEFINED });
 			String jsonResponseMessage = this.getRealMessageSolver().getMessage("default.entity.deleted.error", new String[] { this.getRealMessageSolver().getMessage("entity.parameter.name", null), errorCodeMessage });
 
 			return FxValidationResponse.error(jsonResponseMessage);
 		} else {
-			Parameter parameter = this.getDao().getById(this.getEntity().getId());
+			ParameterVo parameter = this.getDao().getById(this.getVo().getId());
 
 			if (parameter == null) {
 				String jsonResponseMessage = this.getRealMessageSolver().getMessage("fx.parameter.validation.entityNotExists", new String[] { this.getRealMessageSolver().getMessage("default.delete", null) });
@@ -107,15 +107,15 @@ public class Fx_DeleteParameter extends AbstractFxImpl implements I_Fx {
 //
 //		alertVo.setDescription(this.getRealMessageSolver().getMessage(
 //				"fx.parameter.alert.description.deleted",
-//				new String[] { this.getEntity().getAcronym() }));
+//				new String[] { this.getVo().getAcronym() }));
 //	}
 
 	/**
 	 * Casted VO.
 	 */
 	@Override
-	public Parameter getEntity() {
-		return (Parameter) super.getEntity();
+	public ParameterVo getVo() {
+		return (ParameterVo) super.getVo();
 	}
 
 	/**

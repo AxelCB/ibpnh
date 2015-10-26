@@ -25,14 +25,14 @@ public class UserDaoObjectifyImpl extends AbstractDao<User,UserVo> implements I_
 		if(users.size()>1){
 			throw new NonUniqueResultException();
 		}else{
-			return users.get(0);
+			return this.map(users.get(0));
 		}
 	}
 
 	@Override
 	public List<UserVo> findUsersByRoleTypeName(E_RoleType roleType) {
 		List<User> users = ofy().load().type(this.getClazz()).filter("roletype = ",roleType).list();
-		return users;
+		return this.map(users);
 	}
 
 	@Override

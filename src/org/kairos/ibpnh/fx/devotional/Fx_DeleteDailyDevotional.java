@@ -7,8 +7,8 @@ import org.kairos.ibpnh.fx.AbstractFxImpl;
 import org.kairos.ibpnh.fx.FxValidationResponse;
 import org.kairos.ibpnh.fx.I_Fx;
 import org.kairos.ibpnh.json.JsonResponse;
-import org.kairos.ibpnh.model.devotional.DailyDevotional;
 import org.kairos.ibpnh.utils.ErrorCodes;
+import org.kairos.ibpnh.vo.devotional.DailyDevotionalVo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,11 +45,11 @@ public class Fx_DeleteDailyDevotional extends AbstractFxImpl implements I_Fx {
 		this.logger.debug("executing Fx_DeleteFunction._execute()");
 
 		try {
-			this.getBlobstoreService().delete(new BlobKey(this.getEntity().getImageBlobKey()));
+			this.getBlobstoreService().delete(new BlobKey(this.getVo().getImageBlobKey()));
 //			this.beginTransaction();
 
 			// we persist the entity
-			this.getDao().delete(this.getEntity());
+			this.getDao().delete(this.getVo());
 
 //			this.commitTransaction();
 
@@ -81,14 +81,14 @@ public class Fx_DeleteDailyDevotional extends AbstractFxImpl implements I_Fx {
 	protected FxValidationResponse validate() {
 		this.logger.debug("executing Fx_DeleteFunction.validate()");
 
-		if (this.getEntity().getId() == null) {
+		if (this.getVo().getId() == null) {
 
 			String errorCodeMessage = this.getRealMessageSolver().getMessage("default.error.code", new Object[] { ErrorCodes.ERROR_ENTITY_ID_UNDEFINED });
 			String jsonResponseMessage = this.getRealMessageSolver().getMessage("default.entity.deleted.error", new String[] { this.getRealMessageSolver().getMessage("entity.dailyDevotional.name", null), errorCodeMessage });
 
 			return FxValidationResponse.error(jsonResponseMessage);
 		} else {
-			DailyDevotional dailyDevotional = this.getDao().getById(this.getEntity().getId());
+			DailyDevotionalVo dailyDevotional = this.getDao().getById(this.getVo().getId());
 
 			if (dailyDevotional == null) {
 				String jsonResponseMessage = this.getRealMessageSolver().getMessage("fx.dailyDevotional.validation.entityNotExists", new String[] { this.getRealMessageSolver().getMessage("default.delete", null) });
@@ -113,15 +113,15 @@ public class Fx_DeleteDailyDevotional extends AbstractFxImpl implements I_Fx {
 //
 //		alertVo.setDescription(this.getRealMessageSolver().getMessage(
 //				"fx.user.alert.description.deleted",
-//				new String[] { this.getEntity().getAcronym() }));
+//				new String[] { this.getVo().getAcronym() }));
 //	}
 
 	/**
 	 * Casted VO.
 	 */
 	@Override
-	public DailyDevotional getEntity() {
-		return (DailyDevotional) super.getEntity();
+	public DailyDevotionalVo getVo() {
+		return (DailyDevotionalVo) super.getVo();
 	}
 
 	/**

@@ -9,16 +9,16 @@
 		<relationship-type>non-cumulative</relationship-type>
 	</configuration>
 
-	<mapping type="one-way">
-		<class-a>org.kairos.ibpnh.entity.AbstractVo</class-a>
-		<class-b>org.kairos.ibpnh.model.I_Model</class-b>
+	<!--<mapping type="one-way">-->
+		<!--<class-a>org.kairos.ibpnh.entity.AbstractVo</class-a>-->
+		<!--<class-b>org.kairos.ibpnh.model.I_Model</class-b>-->
 
-		<field-exclude type="one-way">
-			<a>id</a>
-			<b>id</b>
-		</field-exclude>
+		<!--<field-exclude type="one-way">-->
+			<!--<a>id</a>-->
+			<!--<b>id</b>-->
+		<!--</field-exclude>-->
 
-	</mapping>
+	<!--</mapping>-->
 
 	<!--<mapping>-->
 		<!--<class-a map-null="false">org.kairos.ibpnh.model.user.RoleType-->

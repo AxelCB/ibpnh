@@ -8,6 +8,7 @@ import org.kairos.ibpnh.model.configuration.parameter.E_ParameterType;
 import org.kairos.ibpnh.model.configuration.parameter.Parameter;
 import org.kairos.ibpnh.services.caching.client.api.I_ParameterCacheManager;
 import org.kairos.ibpnh.services.caching.client.api.I_UserCacheManager;
+import org.kairos.ibpnh.vo.configuration.parameter.ParameterVo;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.NoResultException;
@@ -25,7 +26,7 @@ import static com.googlecode.objectify.ObjectifyService.ofy;
  *
  * @author AxelCollardBovy.
  */
-public class ParameterDaoObjectifyImpl extends AbstractDao<Parameter> implements I_ParameterDao{
+public class ParameterDaoObjectifyImpl extends AbstractDao<Parameter,ParameterVo> implements I_ParameterDao{
 
 	/**
 	 * User Cache Manager.
@@ -39,7 +40,12 @@ public class ParameterDaoObjectifyImpl extends AbstractDao<Parameter> implements
 	}
 
 	@Override
-	public Parameter getByName(String name) throws NonUniqueResultException,NoResultException {
+	public Class<ParameterVo> getVoClazz() {
+		return ParameterVo.class;
+	}
+
+	@Override
+	public ParameterVo getByName(String name) throws NonUniqueResultException,NoResultException {
 		if(this.getParameterCacheManager().getParameter(name)!=null){
 			return this.getParameterCacheManager().getParameter(name);
 		}
@@ -52,53 +58,53 @@ public class ParameterDaoObjectifyImpl extends AbstractDao<Parameter> implements
 				//No result
 				throw new NoResultException("No result found for the given parameter name");
 			}else{
-				return ofy().load().type(this.getClazz()).filter("name=",name).first().now();
+				return this.map(ofy().load().type(this.getClazz()).filter("name=", name).first().now());
 			}
 		}
 	}
 
 	@Override
-	public List<Parameter> getsByName(String name) {
+	public List<ParameterVo> getsByName(String name) {
 		return null;
 	}
 
 	@Override
-	public List<Parameter> getByName(Collection<String> names) {
-		return ofy().load().type(this.getClazz()).filter("name in",names).filter("deleted=", Boolean.FALSE).list();
+	public List<ParameterVo> getByName(Collection<String> names) {
+		return this.map(ofy().load().type(this.getClazz()).filter("name in", names).filter("deleted=", Boolean.FALSE).list());
 	}
 
 	@Override
 	public void loadGlobalParameters() {
 		List<Parameter> globalParameters = ofy().load().type(this.getClazz()).filter("global=", Boolean.TRUE).filter("deleted=",Boolean.FALSE).list();
-		for (Parameter parameter : globalParameters){
-			this.getParameterCacheManager().putParameter(parameter.getName(),parameter);
+		for (ParameterVo parameterVo : this.map(globalParameters)){
+			this.getParameterCacheManager().putParameter(parameterVo.getName(),parameterVo);
 		}
 	}
 
 	public void init(){
 		List<Parameter> globalParameters = new ArrayList<Parameter>();
 		final List<Parameter> parametersToBePersisted = new ArrayList<Parameter>();
-		Parameter parameter = new Parameter(Parameter.DATE_FORMAT,"dd/MM/yyyy","Formato de Fecha", E_ParameterType.STRING,Boolean.TRUE,Boolean.FALSE,Boolean.TRUE);
+		Parameter parameter = new Parameter(ParameterVo.DATE_FORMAT,"dd/MM/yyyy","Formato de Fecha", E_ParameterType.STRING,Boolean.TRUE,Boolean.FALSE,Boolean.TRUE);
 		globalParameters.add(parameter);
-		parameter = new Parameter(Parameter.DATETIME_FORMAT,"dd/MM/yyyy HH:mm:ss.SSS","Formato de Fecha hora", E_ParameterType.STRING,Boolean.TRUE,Boolean.FALSE,Boolean.TRUE);
+		parameter = new Parameter(ParameterVo.DATETIME_FORMAT,"dd/MM/yyyy HH:mm:ss.SSS","Formato de Fecha hora", E_ParameterType.STRING,Boolean.TRUE,Boolean.FALSE,Boolean.TRUE);
 		globalParameters.add(parameter);
-		parameter = new Parameter(Parameter.DATETIME_FORMAT_WITHOUT_MILLISECONDS,"dd/MM/yyyy HH:mm:ss","Formato de Fecha hora sin milisegundos", E_ParameterType.STRING,Boolean.TRUE,Boolean.FALSE,Boolean.TRUE);
+		parameter = new Parameter(ParameterVo.DATETIME_FORMAT_WITHOUT_MILLISECONDS,"dd/MM/yyyy HH:mm:ss","Formato de Fecha hora sin milisegundos", E_ParameterType.STRING,Boolean.TRUE,Boolean.FALSE,Boolean.TRUE);
 		globalParameters.add(parameter);
-		parameter = new Parameter(Parameter.DATETIME_FORMAT_WITHOUT_SECONDS,"dd/MM/yyyy HH:mm","Formato de Fecha hora sin segundos", E_ParameterType.STRING,Boolean.TRUE,Boolean.FALSE,Boolean.TRUE);
+		parameter = new Parameter(ParameterVo.DATETIME_FORMAT_WITHOUT_SECONDS,"dd/MM/yyyy HH:mm","Formato de Fecha hora sin segundos", E_ParameterType.STRING,Boolean.TRUE,Boolean.FALSE,Boolean.TRUE);
 		globalParameters.add(parameter);
-		parameter = new Parameter(Parameter.DATETIME_FORMAT_WITHOUT_SECONDS_AND_YEAR,"dd/MM HH:mm","Formato de Fecha hora sin segundos ni anios", E_ParameterType.STRING,Boolean.TRUE,Boolean.FALSE,Boolean.TRUE);
+		parameter = new Parameter(ParameterVo.DATETIME_FORMAT_WITHOUT_SECONDS_AND_YEAR,"dd/MM HH:mm","Formato de Fecha hora sin segundos ni anios", E_ParameterType.STRING,Boolean.TRUE,Boolean.FALSE,Boolean.TRUE);
 		globalParameters.add(parameter);
-		parameter = new Parameter(Parameter.HOUR_FORMAT,"HH:mm","Formato de Hora", E_ParameterType.STRING,Boolean.TRUE,Boolean.FALSE,Boolean.TRUE);
+		parameter = new Parameter(ParameterVo.HOUR_FORMAT,"HH:mm","Formato de Hora", E_ParameterType.STRING,Boolean.TRUE,Boolean.FALSE,Boolean.TRUE);
 		globalParameters.add(parameter);
-		parameter = new Parameter(Parameter.ITEMS_PER_PAGE,"10","Cantidad de Items por Pagina", E_ParameterType.LONG,Boolean.TRUE,Boolean.FALSE,Boolean.TRUE);
+		parameter = new Parameter(ParameterVo.ITEMS_PER_PAGE,"10","Cantidad de Items por Pagina", E_ParameterType.LONG,Boolean.TRUE,Boolean.FALSE,Boolean.TRUE);
 		globalParameters.add(parameter);
-		parameter = new Parameter(Parameter.JSON_DATE_TIME_EXCHANGE_FORMAT,"dd/MM/yyyy HH:mm:ss.SSS","Formato de Fecha Hora para Intercambio por JSON", E_ParameterType.STRING,Boolean.TRUE,Boolean.FALSE,Boolean.TRUE);
+		parameter = new Parameter(ParameterVo.JSON_DATE_TIME_EXCHANGE_FORMAT,"dd/MM/yyyy HH:mm:ss.SSS","Formato de Fecha Hora para Intercambio por JSON", E_ParameterType.STRING,Boolean.TRUE,Boolean.FALSE,Boolean.TRUE);
 		globalParameters.add(parameter);
-		parameter = new Parameter(Parameter.NATIVE_SQL_DATE_FORMAT,"yyyy-MM-dd","Formato de Fecha Nativo de SQL", E_ParameterType.STRING,Boolean.TRUE,Boolean.FALSE,Boolean.TRUE);
+		parameter = new Parameter(ParameterVo.NATIVE_SQL_DATE_FORMAT,"yyyy-MM-dd","Formato de Fecha Nativo de SQL", E_ParameterType.STRING,Boolean.TRUE,Boolean.FALSE,Boolean.TRUE);
 		globalParameters.add(parameter);
-		parameter = new Parameter(Parameter.NATIVE_SQL_DATE_TIME_FORMAT,"yyyy-MM-dd HH:mm:ss.SSS","Formato de Fecha Hora Nativo de SQL", E_ParameterType.STRING,Boolean.TRUE,Boolean.FALSE,Boolean.TRUE);
+		parameter = new Parameter(ParameterVo.NATIVE_SQL_DATE_TIME_FORMAT,"yyyy-MM-dd HH:mm:ss.SSS","Formato de Fecha Hora Nativo de SQL", E_ParameterType.STRING,Boolean.TRUE,Boolean.FALSE,Boolean.TRUE);
 		globalParameters.add(parameter);
-		parameter = new Parameter(Parameter.LOCALE_LANGUAGE_TAG,"es","Locale", E_ParameterType.STRING,Boolean.TRUE,Boolean.FALSE,Boolean.TRUE);
+		parameter = new Parameter(ParameterVo.LOCALE_LANGUAGE_TAG,"es","Locale", E_ParameterType.STRING,Boolean.TRUE,Boolean.FALSE,Boolean.TRUE);
 		globalParameters.add(parameter);
 
 		for (Parameter auxParameter : globalParameters){
@@ -128,8 +134,8 @@ public class ParameterDaoObjectifyImpl extends AbstractDao<Parameter> implements
 				parametersToBePersisted.add(auxParameter);
 			}
 		}
-		for (Parameter auxParameter : globalParameters){
-			this.getParameterCacheManager().putParameter(auxParameter.getName(),auxParameter);
+		for (ParameterVo parameterVo : this.map(globalParameters)){
+			this.getParameterCacheManager().putParameter(parameterVo.getName(),parameterVo);
 		}
 		globalParameters = ObjectifyService.run(new Work<List<Parameter>>(){
 			public List<Parameter> run(){
@@ -138,14 +144,14 @@ public class ParameterDaoObjectifyImpl extends AbstractDao<Parameter> implements
 				return globalParameters;
 			}
 		});
-		for (Parameter auxParameter : globalParameters){
-			this.getParameterCacheManager().putParameter(auxParameter.getName(),auxParameter);
+		for (ParameterVo parameterVo : this.map(globalParameters)){
+			this.getParameterCacheManager().putParameter(parameterVo.getName(),parameterVo);
 		}
 	}
 
 	@Override
 	public boolean checkNameUniqueness(String name, Long excludeId) throws NonUniqueResultException,NoResultException {
-		Parameter searchedParameter = this.getByName(name);
+		ParameterVo searchedParameter = this.getByName(name);
 		return (searchedParameter!=null && !searchedParameter.getId().equals(excludeId));
 	}
 

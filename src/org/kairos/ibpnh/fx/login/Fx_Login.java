@@ -8,6 +8,7 @@ import org.kairos.ibpnh.model.user.User;
 import org.kairos.ibpnh.services.caching.client.api.I_UserCacheManager;
 import org.kairos.ibpnh.utils.HashUtils;
 import org.kairos.ibpnh.utils.I_PasswordUtils;
+import org.kairos.ibpnh.vo.user.UserVo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -81,7 +82,7 @@ public class Fx_Login extends AbstractFxImpl implements I_Fx {
 //		alertVo.setPriority(E_Priority.LOW);
 //
 //		alertVo.setDescription(this.getRealMessageSolver().getMessage(
-//				"fx.login.alert", new String[] { this.getEntity().getUsername() }));
+//				"fx.login.alert", new String[] { this.getVo().getUsername() }));
 //	}
 
 	/*
@@ -92,9 +93,9 @@ public class Fx_Login extends AbstractFxImpl implements I_Fx {
 	@Override
 	protected JsonResponse _execute() {
 		this.logger.debug("executing Fx_Login._execute() (username: {})", this
-				.getEntity().getUsername());
+				.getVo().getUsername());
 
-		User user = null;
+		UserVo user = null;
 
 		String token = null;
 
@@ -113,12 +114,12 @@ public class Fx_Login extends AbstractFxImpl implements I_Fx {
 //					.getByName(this.getOfy(), ParameterVo.HASH_COST)
 //					.getValue(Long.class);
 			if (user == null) {
-				user = this.getUserDao().getByUsername(this.getEntity().getUsername());
+				user = this.getUserDao().getByUsername(this.getVo().getUsername());
 			}
 
 			if (user == null) {
 				this.logger.debug("failed to find user with username {}", this
-						.getEntity().getUsername());
+						.getVo().getUsername());
 
 				response = this.getLoginResponseStrategy().userNotFound();
 			} else if (!user.getEnabled()) {
@@ -132,14 +133,14 @@ public class Fx_Login extends AbstractFxImpl implements I_Fx {
 						.debug("not allowing the user to log in, max failed attempts reached");
 
 				response = this.getLoginResponseStrategy().maxAttempts();
-			} else if (!passwordUtils.checkPassword(this.getEntity().getPassword(),
+			} else if (!passwordUtils.checkPassword(this.getVo().getPassword(),
 					user, hashCost)) {
 				// adds the failed attempt
 				user.setLoginAttempts(user.getLoginAttempts() + 1);
 
 				this.logger.debug(
 						"failed to login user {}, total failed attempts: {}",
-						this.getEntity().getUsername(), user.getLoginAttempts());
+						this.getVo().getUsername(), user.getLoginAttempts());
 
 				if (user.getLoginAttempts() < maxAttempts) {
 					// we return the remaining attempts messages
@@ -161,11 +162,11 @@ public class Fx_Login extends AbstractFxImpl implements I_Fx {
 				// properly logged, reset the attempts
 				user.setLoginAttempts(0);
 
-				User newUser = this.getUserDao().persist(user);
+				UserVo newUser = this.getUserDao().persist(user);
 
 				// try to get the existing user from the cache
-				User cacheUser = this.getUserCacheManager().getUser(
-						this.getEntity().getUsername());
+				UserVo cacheUser = this.getUserCacheManager().getUser(
+						this.getVo().getUsername());
 				if (cacheUser == null) {
 					// there was none, we generate a new token and put it on the
 					// cache
@@ -216,11 +217,11 @@ public class Fx_Login extends AbstractFxImpl implements I_Fx {
 	/*
 	 * (non-Javadoc)
 	 *
-	 * @see org.universe.core.fx.AbstractFxImpl#getEntity()
+	 * @see org.universe.core.fx.AbstractFxImpl#getVo()
 	 */
 	@Override
-	public User getEntity() {
-		return (User) super.getEntity();
+	public UserVo getVo() {
+		return (UserVo) super.getVo();
 	}
 
 	/**

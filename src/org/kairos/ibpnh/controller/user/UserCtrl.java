@@ -227,12 +227,12 @@ public class UserCtrl implements I_URIValidator {
             JsonObject jsonObject = this.getGson().fromJson(data, JsonObject.class);
             E_RoleType roleTypeEnum = this.getGson().fromJson(jsonObject.get("roleType"), E_RoleType.class);
 
-            User user = this.getGson().fromJson(jsonObject.get("user"), User.class);
+            UserVo user = this.getGson().fromJson(jsonObject.get("user"), UserVo.class);
             user.setRoleType(roleTypeEnum);
 
             Fx_CreateUser fx = this.getFxFactory().getNewFxInstance(
                     Fx_CreateUser.class);
-            fx.setEntity(user);
+            fx.setVo(user);
             this.logger.debug("executing Fx_CreateUser");
             jsonResponse = fx.execute();
         } catch (Exception e) {
@@ -256,11 +256,11 @@ public class UserCtrl implements I_URIValidator {
         JsonResponse jsonResponse = null;
 
         try {
-            User user = this.getGson().fromJson(data, User.class);
+            UserVo user = this.getGson().fromJson(data, UserVo.class);
 
             Fx_DeleteUser fx = this.getFxFactory().getNewFxInstance(
                     Fx_DeleteUser.class);
-            fx.setEntity(user);
+            fx.setVo(user);
             this.logger.debug("executing Fx_DeleteUser");
             jsonResponse = fx.execute();
         } catch (Exception e) {
@@ -288,7 +288,7 @@ public class UserCtrl implements I_URIValidator {
             Fx_ModifyUser fx = this.getFxFactory().getNewFxInstance(
                     Fx_ModifyUser.class);
 
-            fx.setEntity(userVo);
+            fx.setVo(userVo);
             this.logger.debug("executing Fx_ModifyUser");
             jsonResponse = fx.execute();
         } catch (Exception e) {

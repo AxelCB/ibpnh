@@ -2,6 +2,7 @@ package org.kairos.ibpnh.fx;
 
 import org.kairos.ibpnh.json.JsonResponse;
 import org.kairos.ibpnh.model.I_Model;
+import org.kairos.ibpnh.vo.AbstractVo;
 
 /**
  * General Interface for Fx's.
@@ -20,10 +21,10 @@ public interface I_Fx {
 	
 	/**
 	 * Sets the Value Object.
-	 * 
-	 * @param object
+	 *
+	 * @param vo
 	 */
-	public void setEntity(I_Model object);
+	public void setVo(AbstractVo vo);
 
 	/**
 	 * Disables the firing of alerts for this FX.

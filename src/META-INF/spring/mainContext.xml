@@ -19,14 +19,16 @@
 			<!--&lt;!&ndash;<constructor-arg value="${jpa.persistenceUnitName}"></constructor-arg>&ndash;&gt;-->
 		<!--</bean>-->
 
-		<!-- Dozer Mapper Config -->
-		<!--<bean id="mapper" class="org.dozer.DozerBeanMapper" scope="singleton">-->
-			<!--<property name="mappingFiles">-->
-				<!--<list>-->
-					<!--<value>${dozer.mappingFile.main}</value>-->
-				<!--</list>-->
-			<!--</property>-->
-		<!--</bean>-->
+		 <!--Dozer Mapper Config -->
+		<bean id="mapper" class="org.dozer.DozerBeanMapper" scope="singleton">
+			<property name="mappingFiles">
+				<list>
+					<value>${dozer.mappingFile.main}</value>
+				</list>
+			</property>
+		</bean>
+
+		<!-- Objectify Bootstrap -->
 		<bean id="objectifyBoostrap" class="org.kairos.ibpnh.json.ObjectifyBootstrap" init-method="init" scope="singleton"/>
 
 		<!-- JSON -->

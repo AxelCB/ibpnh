@@ -7,6 +7,7 @@ import org.kairos.ibpnh.fx.I_Fx;
 import org.kairos.ibpnh.json.JsonResponse;
 import org.kairos.ibpnh.model.devotional.DailyDevotional;
 import org.kairos.ibpnh.utils.I_DateUtils;
+import org.kairos.ibpnh.vo.devotional.DailyDevotionalVo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,12 +50,12 @@ public class Fx_CreateDailyDevotional extends AbstractFxImpl implements I_Fx {
 		try {
 //			this.beginTransaction();
 
-			this.getEntity().setCreator(this.getWebContextHolder().getUser());
+			this.getVo().setCreator(this.getWebContextHolder().getUser());
 
 			// we persist the entity
-			this.getEntity().setDate(this.getDateUtils().zeroHour(this.getEntity().getDate()));
-			DailyDevotional dailyDevotional = this.getDao().persist(this.getEntity());
-			this.setEntity(dailyDevotional);
+			this.getVo().setDate(this.getDateUtils().zeroHour(this.getVo().getDate()));
+			DailyDevotionalVo dailyDevotional = this.getDao().persist(this.getVo());
+			this.setVo(dailyDevotional);
 
 //			this.commitTransaction();
 
@@ -86,15 +87,15 @@ public class Fx_CreateDailyDevotional extends AbstractFxImpl implements I_Fx {
 	protected FxValidationResponse validate() {
 		this.logger.debug("executing Fx_CreateFunction._validate()");
 
-//		String result = this.getEntity().validate(this.getWebContextHolder());
+//		String result = this.getVo().validate(this.getWebContextHolder());
 //		if (result != null) {
 //			return FxValidationResponse.error(result);
 //		}
 
-		if (!this.getDao().checkDateUniqueness(this.getEntity().getDate(), null)) {
+		if (!this.getDao().checkDateUniqueness(this.getVo().getDate(), null)) {
 			String jsonResponseMessage = this.getRealMessageSolver()
 					.getMessage("fx.user.validation.nonUniqueDate",
-							new String[] { this.getEntity().getDate().toString() });
+							new String[] { this.getVo().getDate().toString() });
 
 			return FxValidationResponse.error(jsonResponseMessage);
 		} else {
@@ -115,15 +116,15 @@ public class Fx_CreateDailyDevotional extends AbstractFxImpl implements I_Fx {
 //
 //		alertVo.setDescription(this.getRealMessageSolver().getMessage(
 //				"fx.user.alert.description.created",
-//				new String[] { this.getEntity().getDescription() }));
+//				new String[] { this.getVo().getDescription() }));
 //	}
 
 	/**
 	 * Casted VO.
 	 */
 	@Override
-	public DailyDevotional getEntity() {
-		return (DailyDevotional) super.getEntity();
+	public DailyDevotionalVo getVo() {
+		return (DailyDevotionalVo) super.getVo();
 	}
 
 	/**

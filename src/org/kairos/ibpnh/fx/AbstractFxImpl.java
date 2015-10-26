@@ -3,6 +3,7 @@ package org.kairos.ibpnh.fx;
 import com.google.gson.Gson;
 import org.kairos.ibpnh.json.JsonResponse;
 import org.kairos.ibpnh.model.I_Model;
+import org.kairos.ibpnh.vo.AbstractVo;
 import org.kairos.ibpnh.web.I_MessageSolver;
 import org.kairos.ibpnh.web.MessageSolver;
 import org.kairos.ibpnh.web.WebContextHolder;
@@ -33,7 +34,7 @@ public abstract class AbstractFxImpl implements I_Fx {
 	/**
 	 * Generic VO.
 	 */
-	private I_Model entity;
+	private AbstractVo vo;
 
 	/**
 	 * Alert Server.
@@ -89,8 +90,8 @@ public abstract class AbstractFxImpl implements I_Fx {
 		Alert alert = new AlertVo();
 		Calendar calendar = Calendar.getInstance();
 
-		alertVo.setObjectId(this.getEntity() == null ? null : this.getEntity().getId());
-		alertVo.setObjectClassName(this.getEntity() == null ? null : this.getEntity()
+		alertVo.setObjectId(this.getVo() == null ? null : this.getVo().getId());
+		alertVo.setObjectClassName(this.getVo() == null ? null : this.getVo()
 				.getClass().getCanonicalName());
 		alertVo.setTimestamp(calendar.getTime());
 
@@ -293,19 +294,20 @@ public abstract class AbstractFxImpl implements I_Fx {
 //	}
 
 	/**
-	 * @return the entity
+	 * @return the value object
 	 */
-	public I_Model getEntity() {
-		return this.entity;
+	public AbstractVo getVo() {
+		return this.vo;
 	}
 
 	/**
-	 * @param entity
-	 *            the  to set
+	 * @param vo
+	 *            the value object to set
 	 */
+
 	@Override
-	public void setEntity(I_Model entity) {
-		this.entity = entity;
+	public void setVo(AbstractVo vo) {
+		this.vo = vo;
 	}
 
 	/**

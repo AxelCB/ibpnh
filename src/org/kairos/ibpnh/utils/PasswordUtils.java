@@ -2,7 +2,8 @@ package org.kairos.ibpnh.utils;
 
 import org.kairos.ibpnh.dao.configuration.parameter.I_ParameterDao;
 import org.kairos.ibpnh.model.configuration.parameter.Parameter;
-import org.kairos.ibpnh.model.user.User;
+import org.kairos.ibpnh.vo.configuration.parameter.ParameterVo;
+import org.kairos.ibpnh.vo.user.UserVo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -57,7 +58,7 @@ public class PasswordUtils implements I_PasswordUtils {
 			return Boolean.FALSE;
 		} catch (Exception e) {
 			this.logger.debug("error getting {} parameter", e,
-					Parameter.PASSWORD_REGEXP);
+					ParameterVo.PASSWORD_REGEXP);
 
 			return Boolean.FALSE;
 		} finally {
@@ -76,7 +77,7 @@ public class PasswordUtils implements I_PasswordUtils {
 	 * @return true iif
 	 */
 	@Override
-	public Boolean checkPassword(String password, User user,
+	public Boolean checkPassword(String password, UserVo user,
 			Long currentCost) {
 		Boolean result = Boolean.FALSE;
 		Boolean update = Boolean.FALSE;

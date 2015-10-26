@@ -6,6 +6,7 @@ import org.kairos.ibpnh.fx.FxValidationResponse;
 import org.kairos.ibpnh.fx.I_Fx;
 import org.kairos.ibpnh.json.JsonResponse;
 import org.kairos.ibpnh.model.configuration.parameter.Parameter;
+import org.kairos.ibpnh.vo.configuration.parameter.ParameterVo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,8 +44,8 @@ public class Fx_CreateParameter extends AbstractFxImpl implements I_Fx {
 //			this.beginTransaction();
 
 			// we persist the entity
-			Parameter parameter = this.getDao().persist(this.getEntity());
-			this.setEntity(parameter);
+			ParameterVo parameter = this.getDao().persist(this.getVo());
+			this.setVo(parameter);
 
 //			this.commitTransaction();
 
@@ -76,15 +77,15 @@ public class Fx_CreateParameter extends AbstractFxImpl implements I_Fx {
 	protected FxValidationResponse validate() {
 		this.logger.debug("executing Fx_CreateFunction._validate()");
 
-//		String result = this.getEntity().validate(this.getWebContextHolder());
+//		String result = this.getVo().validate(this.getWebContextHolder());
 //		if (result != null) {
 //			return FxValidationResponse.error(result);
 //		}
 
-		if (!this.getDao().checkNameUniqueness(this.getEntity().getName(), null)) {
+		if (!this.getDao().checkNameUniqueness(this.getVo().getName(), null)) {
 			String jsonResponseMessage = this.getRealMessageSolver()
 					.getMessage("fx.parameter.validation.nonUniqueName",
-							new String[] { this.getEntity().getName() });
+							new String[] { this.getVo().getName() });
 
 			return FxValidationResponse.error(jsonResponseMessage);
 		} else {
@@ -105,15 +106,15 @@ public class Fx_CreateParameter extends AbstractFxImpl implements I_Fx {
 //
 //		alertVo.setDescription(this.getRealMessageSolver().getMessage(
 //				"fx.parameter.alert.description.created",
-//				new String[] { this.getEntity().getDescription() }));
+//				new String[] { this.getVo().getDescription() }));
 //	}
 
 	/**
 	 * Casted VO.
 	 */
 	@Override
-	public Parameter getEntity() {
-		return (Parameter) super.getEntity();
+	public ParameterVo getVo() {
+		return (ParameterVo) super.getVo();
 	}
 
 	/**
