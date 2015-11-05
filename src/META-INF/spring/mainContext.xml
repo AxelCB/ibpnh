@@ -40,19 +40,30 @@
 		<!-- Images Service -->
 		<bean id="imagesService" class="org.kairos.ibpnh.utils.singleton.ImagesServiceFactoryBean" scope="singleton" />
 
-		<!-- Cache -->
+		<!-- User Cache -->
 		<bean id="JCacheUserCacheImpl"
 			class="org.kairos.ibpnh.services.caching.client.jcache.JCacheUserCacheImpl" scope="prototype">
 			<!--<property name="servers" value="${cache.servers}" />-->
 			<property name="cacheHolder">
 				<bean id="cacheHolder" class="org.kairos.ibpnh.services.caching.client.CacheHolder" scope="singleton">
 					<constructor-arg value=""></constructor-arg>
-					<!--<constructor-arg name="userCacheName" value="${cache.userCacheName}" />-->
+					<!--<constructor-arg name="dailyDevotionalCacheName" value="${cache.dailyDevotionalCacheName}" />-->
 					<!--<constructor-arg name="parameterCacheName" value="${cache.parameterCacheName}" />-->
 				</bean>
 			</property>
 			<property name="userDuration" value="${cache.userCache.duration}" />
 			<property name="timeUnit" value="${cache.userCache.timeUnit}" />
+		</bean>
+
+		<!-- Cache -->
+		<bean id="JCacheDevotionalCacheImpl"
+			  class="org.kairos.ibpnh.services.caching.client.jcache.JCacheDailyDevotionalCacheImpl" scope="prototype">
+			<!--<property name="servers" value="${cache.servers}" />-->
+			<property name="cacheHolder">
+				<bean id="cacheHolder" class="org.kairos.ibpnh.services.caching.client.CacheHolder" scope="singleton">
+					<constructor-arg value=""></constructor-arg>
+				</bean>
+			</property>
 		</bean>
 
 		<!-- DAOs that need initializing -->

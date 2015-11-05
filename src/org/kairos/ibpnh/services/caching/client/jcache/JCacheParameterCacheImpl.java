@@ -87,7 +87,7 @@ public class JCacheParameterCacheImpl implements I_CacheProfiler,//extends Abstr
 	 */
 //	@Override
 //	public List<String> cachesObserved() {
-//		return Arrays.asList(new String[] { this.getUserCacheName(),
+//		return Arrays.asList(new String[] { this.getDailyDevotionalCacheName(),
 //				this.getParameterCacheName() });
 //	}
 
@@ -102,7 +102,7 @@ public class JCacheParameterCacheImpl implements I_CacheProfiler,//extends Abstr
 //	protected Map<String, Set<String>> _keySet() {
 //		Map<String, Set<String>> keySetMap = new HashMap<>();
 //
-//		keySetMap.put(this.getUserCacheName(), this.getUserCache().keySet());
+//		keySetMap.put(this.getDailyDevotionalCacheName(), this.getUserCache().keySet());
 //		keySetMap.put(this.getParameterCacheName(), this.getParameterCache()
 //				.keySet());
 //
@@ -118,7 +118,7 @@ public class JCacheParameterCacheImpl implements I_CacheProfiler,//extends Abstr
 	 */
 //	@Override
 //	public Boolean observes(String cacheName) {
-//		return cacheName.equals(this.getUserCacheName())
+//		return cacheName.equals(this.getDailyDevotionalCacheName())
 //				|| cacheName.equals(this.getParameterCacheName());
 //	}
 

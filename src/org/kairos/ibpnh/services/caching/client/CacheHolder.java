@@ -43,6 +43,11 @@ public class CacheHolder {
     private Cache parameterCache;
 
     /**
+     * Devotional Cache instance singleton.
+     */
+    private Cache devotionalCache;
+
+    /**
      * Logger for this class.
      */
     private Logger logger = LoggerFactory.getLogger(CacheHolder.class);
@@ -99,6 +104,16 @@ public class CacheHolder {
         }
         this.logger
                 .error("parameter cache was null");
+        return null;
+    }
+
+    public Cache getDevotionalCache() {
+        this.logger.debug("obtaining devotional cache");
+        if (this.parameterCache != null) {
+            return parameterCache;
+        }
+        this.logger
+                .error("devotional cache was null");
         return null;
     }
 }

@@ -44,11 +44,6 @@ public class ParameterVo extends AbstractVo implements Serializable{
 	private Boolean global;
 
 	/**
-	 * Logic deletion flag.
-	 */
-	private Boolean deleted;
-
-	/**
 	 * If this parameter is fixed. (name, type, and description cannot be changed).
 	 */
 	private Boolean fixed;
@@ -117,7 +112,7 @@ public class ParameterVo extends AbstractVo implements Serializable{
 		this.description = description;
 		this.type = type;
 		this.global = global;
-		this.deleted = deleted;
+		this.setDeleted(deleted);
 		this.fixed = fixed;
 	}
 
@@ -161,25 +156,6 @@ public class ParameterVo extends AbstractVo implements Serializable{
 	 */
 	public void setType(E_ParameterType type) {
 		this.type = type;
-	}
-
-
-	/*
-	 * (non-Javadoc)
-	 * @see org.universe.core.model.I_Model#getDeleted()
-	 */
-	@Override
-	public Boolean getDeleted() {
-		return this.deleted;
-	}
-
-	/*
-	 * (non-Javadoc)
-	 * @see org.universe.core.model.I_Model#setDeleted(java.lang.Boolean)
-	 */
-	@Override
-	public void setDeleted(Boolean deleted) {
-		this.deleted = deleted;
 	}
 
 	/*
