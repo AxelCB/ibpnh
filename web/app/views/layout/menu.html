@@ -1,77 +1,30 @@
-<nav class="navbar navbar-inverse colorback2" role="navigation" ng-controller="MenuCtrl">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#acolapsar">
-                <span class= "sr-only"></span>
-                <span class= "icon-bar"></span>
-                <span class= "icon-bar"></span>
-                <span class= "icon-bar"></span>
-            </button>
-            <div class="collapse navbar-collapse">
-                <a href="#/home"  class="navbar-brand">IBHER Pueblo Nuevo</a>
+<div ng-controller="MenuCtrl">
+    <!--Default menu (not logged in)-->
+    <div class="ui menu" ng-hide="loggedUser">
+        <a class="item" href="#/home"><i class="home icon"></i>Inicio</a>
+        <a class="item" href="#/ministerios"><i class="world icon"></i>Ministerios</a>
+        <a class="item" href="#/devocionales"><i class="book icon"></i>Devocionales</a>
+        <a class="item" href="#/gbcs"><i class="student icon"></i>GBCs</a>
+        <a class="item" href="#/contacto"><i class="mail outline icon"></i>Contacto</a>
 
-                <!--Default menu (not logged in)-->
-                <ul class="nav navbar-nav" ng-hide="loggedUser">
-                    <li> <a href="#/home"><span class="glyphicon glyphicon-home"></span>Inicio</a></li>
-                    <li> <a href="#/ministerios"><span class="glyphicon glyphicon-globe"></span>Ministerios</a></li>
-                    <li> <a href="#/devocionales"><span class="glyphicon glyphicon-road"></span>Devocionales</a></li>
-                    <li> <a href="#/gbcs"><span class="glyphicon glyphicon-education"></span>GBCs</a></li>
-                    <li> <a href="#/contacto"><span class="glyphicon glyphicon-edit"></span>Contacto</a></li>
-                </ul>
-
-                <p class="navbar-text pull-right" ng-hide="loggedUser">
-                    <a href="#/login" class="navbar-link">Login</a>
-                </p>
-
-                <!--Menu for logged users-->
-                <ul class="nav navbar-nav" ng-show="loggedUser">
-                    <li ng-if="loggedUser.roleType =='ADMIN'"> <a href="#/configuration/user">Usuarios</a></li>
-                    <li ng-if="loggedUser.roleType =='ADMIN'"> <a href="#/configuration/parameter">Par&aacute;metros</a></li>
-                    <li ng-if="loggedUser.roleType =='ADMIN'
-                        || loggedUser.roleType =='PASTOR'">
-                        <a href="#/devotional">Devocionales</a>
-                    </li>
-                    <li> <a href="#/contacto"><span class="glyphicon glyphicon-edit"></span>Contacto</a></li>
-                </ul>
-
-                <!--<div ng-repeat="m1 in menuItems" ng-show="loggedUser">-->
-                    <!--<ul class="nav navbar-nav">-->
-                        <!--<li class="dropdown" ng-show="m1.options.length != 0">-->
-                            <!--<a href="" class="dropdown-toggle" data-toggle="dropdown">{{m1.title}} <b class="caret"></b></a>-->
-                            <!--<ul class="dropdown-menu">-->
-                                <!--<div class="removeLater" ng-repeat="m2 in m1.options" remove-later>-->
-                                    <!--&lt;!&ndash; Single Option Case &ndash;&gt;-->
-                                    <!--<li ng-show="m2.enabled && m2.options.length == 0">-->
-                                        <!--<a href="" ng-click="goTo(m2.uri)">{{m2.title}}</a>-->
-                                    <!--</li>-->
-
-                                    <!--&lt;!&ndash; Multiple SubOptions Case &ndash;&gt;-->
-                                    <!--<li class="divider" ng-show="m2.options.length != 0"></li>-->
-                                    <!--<li class="dropdown-header" ng-show="m2.options.length != 0">{{m2.title}}</li>-->
-                                    <!--<li ng-repeat="m3 in m2.options" ng-show="m3.enabled && m2.options.length != 0">-->
-                                        <!--<a class="embed-right" href="" ng-click="goTo(m3.uri)">{{m3.title}}</a>-->
-                                    <!--</li>-->
-                                    <!--<li class="divider" ng-show="m2.options.length != 0"></li>-->
-                                <!--</div>-->
-                            <!--</ul>-->
-                        <!--</li>-->
-                        <!--<li class="dropdown" ng-show="m1.options.length == 0">-->
-                            <!--<a class="embed-right" href="" ng-click="goTo(m1.uri)">{{m1.title}}</a>-->
-                        <!--</li>-->
-                    <!--</ul>-->
-                <!--</div>-->
-                <!--<p class="navbar-text pull-right" ng-show="loggedUser">-->
-                    <!--{{ globalInspectorFlag | iif:'blank':'default.welcome' | translate }}-->
-                    <!--{{ globalInspectorFlag | iif:'':', '}}-->
-                    <!--{{ globalInspectorFlag | iif:'':loggedUser.username }}-->
-                    <!--{{ globalInspectorFlag | iif:'':' - '}}-->
-                    <!--<a href="" class="navbar-link" ng-click="logout()">{{ 'default.logout' | translate }}</a>-->
-                <!--</p>-->
-                <p class="navbar-text pull-right" ng-show="loggedUser">
-                    {{ loggedUser.username }} -
-                    <a href="" class="navbar-link" ng-click="logout()">{{ 'default.logout' | translate }}</a>
-                </p>
-            </div>
+        <div class="right menu">
+            <a class="item" href="#/login">Login</a>
         </div>
     </div>
-</nav>
+
+    <!--Menu for logged users-->
+    <div class="ui menu" ng-show="loggedUser">
+        <a class="item" ng-if="loggedUser.roleType =='ADMIN'" href="#/configuration/user">Usuarios</a>
+        <a class="item" ng-if="loggedUser.roleType =='ADMIN'" href="#/configuration/parameter">Par&aacute;metros</a>
+        <a class="item" ng-if="loggedUser.roleType =='ADMIN' || loggedUser.roleType =='PASTOR'" href="#/devotional">Devocionales</a>
+
+        <a class="item" href="#/contacto"><i class="mail outline icon"></i>Contacto</a>
+
+        <div class="right menu">
+            <p class="item">
+                {{ loggedUser.username }} -
+                <a href="" ng-click="logout()">{{ 'default.logout' | translate }}</a>
+            </p>
+        </div>
+    </div>
+</div>

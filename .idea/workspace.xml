@@ -2,15 +2,168 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="389e607c-67ec-45cf-afaf-c6b97a41ea16" name="Default" comment="Fixes en compilación">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/services/caching/client/api/I_DevotionalCacheManager.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/services/caching/client/jcache/JCacheDailyDevotionalCacheImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/kairos/ibpnh/services/caching/client/CacheHolder.java" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/services/caching/client/CacheHolder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/kairos/ibpnh/dao/devotional/DailyDevotionalDaoObjectifyImpl.java" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/dao/devotional/DailyDevotionalDaoObjectifyImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/kairos/ibpnh/services/caching/client/jcache/JCacheParameterCacheImpl.java" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/services/caching/client/jcache/JCacheParameterCacheImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/kairos/ibpnh/services/caching/client/jcache/JCacheUserCacheImpl.java" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/services/caching/client/jcache/JCacheUserCacheImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/kairos/ibpnh/vo/configuration/parameter/ParameterVo.java" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/vo/configuration/parameter/ParameterVo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/META-INF/config.properties" afterPath="$PROJECT_DIR$/src/META-INF/config.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/META-INF/spring/mainContext.xml" afterPath="$PROJECT_DIR$/src/META-INF/spring/mainContext.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/themes/default/assets/images/flags.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/themes/basic/assets/fonts/icons.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/themes/default/assets/fonts/icons.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/themes/default/assets/fonts/icons.otf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/themes/basic/assets/fonts/icons.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/themes/default/assets/fonts/icons.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/themes/default/assets/fonts/icons.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/themes/basic/assets/fonts/icons.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/themes/default/assets/fonts/icons.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/themes/github/assets/fonts/octicons-local.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/themes/github/assets/fonts/octicons.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/themes/github/assets/fonts/octicons.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/model/devotional/BibleStudy.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/accordion.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/accordion.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/accordion.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/accordion.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/ad.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/ad.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/api.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/api.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/breadcrumb.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/breadcrumb.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/button.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/button.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/card.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/card.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/checkbox.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/checkbox.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/checkbox.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/checkbox.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/colorize.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/colorize.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/comment.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/comment.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/container.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/container.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/dimmer.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/dimmer.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/dimmer.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/dimmer.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/divider.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/divider.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/dropdown.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/dropdown.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/dropdown.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/dropdown.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/embed.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/embed.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/embed.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/embed.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/feed.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/feed.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/flag.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/flag.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/form.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/form.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/form.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/form.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/grid.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/grid.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/header.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/header.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/icon.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/icon.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/themes/basic/assets/fonts/icons.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/themes/default/assets/fonts/icons.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/image.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/image.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/input.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/input.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/item.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/item.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/label.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/label.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/list.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/list.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/loader.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/loader.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/menu.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/menu.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/message.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/message.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/modal.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/modal.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/modal.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/modal.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/nag.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/nag.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/nag.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/nag.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/themes/github/assets/fonts/octicons.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/popup.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/popup.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/popup.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/popup.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/progress.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/progress.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/progress.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/progress.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/rail.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/rail.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/rating.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/rating.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/rating.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/rating.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/reset.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/reset.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/reveal.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/reveal.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/search.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/search.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/search.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/search.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/segment.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/segment.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/semantic.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/semantic.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/semantic.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/semantic.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/shape.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/shape.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/shape.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/shape.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/sidebar.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/sidebar.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/sidebar.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/sidebar.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/site.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/site.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/site.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/site.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/state.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/state.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/statistic.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/statistic.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/step.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/step.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/sticky.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/sticky.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/sticky.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/sticky.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/tab.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/tab.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/tab.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/tab.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/table.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/table.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/transition.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/transition.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/transition.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/transition.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/video.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/video.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/video.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/video.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/visibility.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/visibility.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/visit.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/visit.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/index.html" afterPath="$PROJECT_DIR$/web/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/views/layout/menu.html" afterPath="$PROJECT_DIR$/web/app/views/layout/menu.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Ibpnh.iws" />
@@ -34,59 +187,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="DailyDevotionalDaoObjectifyImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/dao/devotional/DailyDevotionalDaoObjectifyImpl.java">
+      <file leaf-file-name="BibleStudy.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/model/devotional/BibleStudy.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.296296">
-              <caret line="100" column="31" selection-start-line="100" selection-start-column="31" selection-end-line="100" selection-end-column="31" />
-              <folding>
-                <element signature="e#3608#3609#0" expanded="true" />
-                <element signature="e#3644#3645#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CacheHolder.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/services/caching/client/CacheHolder.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.81654674">
-              <caret line="115" column="40" selection-start-line="115" selection-start-column="35" selection-end-line="115" selection-end-column="40" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ParameterVo.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/vo/configuration/parameter/ParameterVo.java">
+      <file leaf-file-name="menu.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/app/views/layout/menu.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="174" column="37" selection-start-line="174" selection-start-column="37" selection-end-line="174" selection-end-column="37" />
-              <folding>
-                <element signature="e#4749#4750#0" expanded="true" />
-                <element signature="e#4790#4791#0" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="-9.807693">
+              <caret line="15" column="38" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="I_DevotionalCacheManager.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/services/caching/client/api/I_DevotionalCacheManager.java">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="18" column="40" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="40" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mainContext.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/META-INF/spring/mainContext.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-18.74074">
-              <caret line="66" column="15" selection-start-line="66" selection-start-column="15" selection-end-line="66" selection-end-column="15" />
+            <state vertical-scroll-proportion="0.25211507">
+              <caret line="19" column="33" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -112,9 +237,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/vo/devotional/DailyDevotionalVo.java" />
-        <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/model/configuration/parameter/Parameter.java" />
-        <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/model/devotional/DailyDevotional.java" />
         <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/vo/PaginatedListVo.java" />
         <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/vo/PaginatedSearchRequestVo.java" />
         <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/dao/user/I_UserDao.java" />
@@ -163,6 +285,9 @@
         <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/services/caching/client/jcache/JCacheDailyDevotionalCacheImpl.java" />
         <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/vo/configuration/parameter/ParameterVo.java" />
         <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/dao/devotional/DailyDevotionalDaoObjectifyImpl.java" />
+        <option value="$PROJECT_DIR$/src/org/kairos/ibpnh/model/devotional/BibleStudy.java" />
+        <option value="$PROJECT_DIR$/web/app/views/layout/menu.html" />
+        <option value="$PROJECT_DIR$/web/index.html" />
       </list>
     </option>
   </component>
@@ -236,7 +361,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -265,7 +389,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
+              <option name="myItemId" value="web" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -279,33 +403,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
+              <option name="myItemId" value="web" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ibpnh" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Ibpnh" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ibpnh" />
+              <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ibpnh" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
+              <option name="myItemId" value="semanticUI-2.1.8" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -319,19 +425,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
+              <option name="myItemId" value="web" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ibpnh" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jcache" />
+              <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -345,24 +443,17 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
+              <option name="myItemId" value="web" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ibpnh" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="api" />
+              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -399,11 +490,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Workspaces\IntelliJ\ibpnh\web\resources\semanticUI-2.1.8" />
       <recent name="$PROJECT_DIR$/src/org/kairos/ibpnh/utils" />
       <recent name="E:\Workspaces\IntelliJ\ibpnh\web\WEB-INF\lib" />
       <recent name="E:\Workspaces\IntelliJ\ibpnh\src\org\kairos\ibpnh\vo" />
       <recent name="$PROJECT_DIR$/web/app/views/devotional" />
-      <recent name="$PROJECT_DIR$/web/resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/web/WEB-INF/lib" />
@@ -417,6 +508,17 @@
     </key>
   </component>
   <component name="RunManager" selected="Google AppEngine Dev Server.AppEngine Dev 1.9.27">
+    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
+      <deployment />
+      <server-settings />
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="Tomcat Catalina" enabled="true" />
+      <predefined_log_file id="Tomcat Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Host Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <method />
+    </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
@@ -780,6 +882,9 @@
       <workItem from="1445886422703" duration="969000" />
       <workItem from="1446648657592" duration="807000" />
       <workItem from="1446744429192" duration="2545000" />
+      <workItem from="1446829067105" duration="797000" />
+      <workItem from="1446831869658" duration="1188000" />
+      <workItem from="1452521142205" duration="8188000" />
     </task>
     <task id="LOCAL-00001" summary="Fixes en compilación">
       <created>1443139606261</created>
@@ -791,11 +896,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81025000" />
+    <option name="totallyTimeSpent" value="91198000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -806,7 +911,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32881" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32949308" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32718894" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25691244" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13834952" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -852,34 +957,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/utils/DozerUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.81798">
-          <caret line="91" column="51" selection-start-line="91" selection-start-column="50" selection-end-line="91" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/fx/I_Fx.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36813778">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="26" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/fx/AbstractFxImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-32.17857">
-          <caret line="293" column="5" selection-start-line="293" selection-start-column="5" selection-end-line="293" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/controller/user/UserCtrl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="258" column="18" selection-start-line="258" selection-start-column="18" selection-end-line="258" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/dao/configuration/parameter/I_ParameterDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.56189454">
@@ -1136,7 +1213,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.2614108">
           <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1161,29 +1237,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/META-INF/spring/mainContext.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.74074">
-          <caret line="66" column="15" selection-start-line="66" selection-start-column="15" selection-end-line="66" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/services/caching/client/jcache/JCacheDailyDevotionalCacheImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.8745387">
           <caret line="191" column="0" selection-start-line="191" selection-start-column="0" selection-end-line="191" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/services/caching/client/api/I_DevotionalCacheManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="40" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1191,36 +1248,73 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.24460432">
           <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/vo/configuration/parameter/ParameterVo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="174" column="37" selection-start-line="174" selection-start-column="37" selection-end-line="174" selection-end-column="37" />
-          <folding>
-            <element signature="e#4749#4750#0" expanded="true" />
-            <element signature="e#4790#4791#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/dao/devotional/DailyDevotionalDaoObjectifyImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.296296">
+        <state vertical-scroll-proportion="0.0">
           <caret line="100" column="31" selection-start-line="100" selection-start-column="31" selection-end-line="100" selection-end-column="31" />
-          <folding>
-            <element signature="e#3608#3609#0" expanded="true" />
-            <element signature="e#3644#3645#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/services/caching/client/CacheHolder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.81654674">
+        <state vertical-scroll-proportion="0.8452381">
           <caret line="115" column="40" selection-start-line="115" selection-start-column="35" selection-end-line="115" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/vo/configuration/parameter/ParameterVo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.17023809">
+          <caret line="174" column="37" selection-start-line="174" selection-start-column="37" selection-end-line="174" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/services/caching/client/api/I_DevotionalCacheManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3642857">
+          <caret line="18" column="40" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/META-INF/spring/mainContext.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.575">
+          <caret line="66" column="15" selection-start-line="66" selection-start-column="15" selection-end-line="66" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/kairos/ibpnh/model/devotional/BibleStudy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/ad.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.67266184">
+          <caret line="22" column="14" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/app/views/layout/menu.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.807693">
+          <caret line="15" column="38" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.25211507">
+          <caret line="19" column="33" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
           <folding />
         </state>
       </provider>
