@@ -17,7 +17,7 @@
     <meta name="google-site-verification" content="qswPnN8I7C1mDFFL3VZqERECdZexkgC1ep4xgEYP6Nw" />
   </head>
   <body>
-    <div class="container-fluid">
+    <div class="container">
         <div class="main">
             <div class="row">
                 <!-- Menu -->
@@ -26,11 +26,10 @@
 
             <div class="row">
                 <div class="col-xs-12">
-                    <div ng-cloak ng-repeat="message in messages"
-                         class="ng-cloak alert alert-dismissable"
-                         ng-class="{'alert-success': !areErrorMessages, 'alert-danger': areErrorMessages}">
-                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                        {{ message }}
+                    <div ng-cloak ng-repeat="message in messages" class="ng-cloak ui message"
+                         ng-class="{'success': !areErrorMessages, 'error': areErrorMessages}">
+                        <i class="close icon"></i>
+                        <p>{{ message }}</p>
                     </div>
                 </div>
             </div>

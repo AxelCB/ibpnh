@@ -2,168 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="389e607c-67ec-45cf-afaf-c6b97a41ea16" name="Default" comment="Fixes en compilación">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/themes/default/assets/images/flags.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/themes/basic/assets/fonts/icons.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/themes/default/assets/fonts/icons.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/themes/default/assets/fonts/icons.otf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/themes/basic/assets/fonts/icons.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/themes/default/assets/fonts/icons.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/themes/default/assets/fonts/icons.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/themes/basic/assets/fonts/icons.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/themes/default/assets/fonts/icons.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/themes/github/assets/fonts/octicons-local.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/themes/github/assets/fonts/octicons.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/themes/github/assets/fonts/octicons.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/org/kairos/ibpnh/model/devotional/BibleStudy.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/accordion.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/accordion.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/accordion.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/accordion.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/ad.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/ad.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/api.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/api.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/breadcrumb.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/breadcrumb.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/button.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/button.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/card.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/card.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/checkbox.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/checkbox.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/checkbox.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/checkbox.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/colorize.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/colorize.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/comment.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/comment.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/container.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/container.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/dimmer.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/dimmer.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/dimmer.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/dimmer.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/divider.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/divider.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/dropdown.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/dropdown.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/dropdown.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/dropdown.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/embed.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/embed.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/embed.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/embed.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/feed.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/feed.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/flag.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/flag.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/form.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/form.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/form.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/form.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/grid.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/grid.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/header.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/header.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/icon.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/icon.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/themes/basic/assets/fonts/icons.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/themes/default/assets/fonts/icons.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/image.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/image.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/input.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/input.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/item.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/item.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/label.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/label.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/list.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/list.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/loader.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/loader.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/menu.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/menu.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/message.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/message.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/modal.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/modal.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/modal.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/modal.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/nag.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/nag.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/nag.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/nag.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/themes/github/assets/fonts/octicons.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/popup.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/popup.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/popup.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/popup.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/progress.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/progress.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/progress.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/progress.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/rail.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/rail.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/rating.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/rating.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/rating.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/rating.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/reset.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/reset.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/reveal.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/reveal.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/search.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/search.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/search.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/search.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/segment.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/segment.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/semantic.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/semantic.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/semantic.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/semantic.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/shape.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/shape.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/shape.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/shape.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/sidebar.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/sidebar.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/sidebar.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/sidebar.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/site.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/site.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/site.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/site.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/state.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/state.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/statistic.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/statistic.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/step.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/step.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/sticky.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/sticky.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/sticky.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/sticky.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/tab.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/tab.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/tab.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/tab.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/table.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/table.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/transition.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/transition.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/transition.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/transition.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/video.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/video.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/video.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/video.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/visibility.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/visibility.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/visit.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/semanticUI-2.1.8/components/visit.min.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/index.html" afterPath="$PROJECT_DIR$/web/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/views/layout/menu.html" afterPath="$PROJECT_DIR$/web/app/views/layout/menu.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Ibpnh.iws" />
@@ -210,8 +49,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.25211507">
-              <caret line="19" column="33" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
+            <state vertical-scroll-proportion="0.028764805">
+              <caret line="19" column="25" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -884,7 +723,7 @@
       <workItem from="1446744429192" duration="2545000" />
       <workItem from="1446829067105" duration="797000" />
       <workItem from="1446831869658" duration="1188000" />
-      <workItem from="1452521142205" duration="8188000" />
+      <workItem from="1452521142205" duration="9106000" />
     </task>
     <task id="LOCAL-00001" summary="Fixes en compilación">
       <created>1443139606261</created>
@@ -896,7 +735,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="91198000" />
+    <option name="totallyTimeSpent" value="92116000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
@@ -1313,8 +1152,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.25211507">
-          <caret line="19" column="33" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.028764805">
+          <caret line="19" column="25" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
           <folding />
         </state>
       </provider>
