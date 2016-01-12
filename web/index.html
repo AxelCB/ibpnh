@@ -19,30 +19,21 @@
   <body>
     <div class="container">
         <div class="main">
-            <div class="row">
-                <!-- Menu -->
-                <div ng-include="'app/views/layout/menu.html'"></div>
+            <!-- Menu -->
+            <div ng-include="'app/views/layout/menu.html'"></div>
+
+            <!-- Messages -->
+            <div ng-cloak ng-repeat="message in messages" class="ng-cloak ui message"
+                 ng-class="{'success': !areErrorMessages, 'error': areErrorMessages}">
+                <i class="close icon"></i>
+                <p>{{ message }}</p>
             </div>
 
-            <div class="row">
-                <div class="col-xs-12">
-                    <div ng-cloak ng-repeat="message in messages" class="ng-cloak ui message"
-                         ng-class="{'success': !areErrorMessages, 'error': areErrorMessages}">
-                        <i class="close icon"></i>
-                        <p>{{ message }}</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <!-- View -->
-                <div ng-view></div>
-            </div>
+            <!-- View -->
+            <div ng-view class="ui grid"></div>
         </div>
-        <div class="row">
-            <!-- Footer -->
-            <div ng-include="'app/views/layout/footer.html'"></div>
-        </div>
+        <!-- Footer -->
+        <div ng-include="'app/views/layout/footer.html'"></div>
     </div>
 
     <!-- Jquery & Bootstrap -->

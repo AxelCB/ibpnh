@@ -1,143 +1,98 @@
-    <!--<div style="background:black">-->
-    <div class="primero">
-        <div class="portada">
-            
-        </div>
-    </div>
-            
-  <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-sm-6 col-md-4" ng-repeat="devotional in dailyDevotionals">
-                <div class="thumbnail">
-                    <img ng-src="{{devotional.imageUrl}}" alt="">
-                    <div class="caption">
-                        <h3 class="text-center">{{devotional.title}}</h3>
-                        <p>{{devotional.description}}</p>
-                        <a ng-href="#/devocionales/detalle/{{devotional.id}}" class="btn btn-primary btn-lg">Leer más</a>
-                        <p class="text-center">
-                            <i class="fa fa-thumbs-o-up votes"></i><i class="fa fa-thumbs-o-down votes"></i>
-                        </p>
+<div class="one column row">
+    <img class="ui image fluid" src="resources/images/portada.jpg">
+</div>
+<div class="row">
+    <div class="eleven wide column">
+        <div class="ui stackable two column grid">
+            <div class="column" ng-repeat="devotional in dailyDevotionals">
+                <div class="ui card" >
+                    <div class="image">
+                        <img ng-src="{{devotional.imageUrl}}" alt="">
                     </div>
-                </div>
-            </div>
-            <!--<div class="col-xs-12 col-sm-6 col-md-4">-->
-                <!--<div class="thumbnail">-->
-                    <!--<img src="/resources/images/esfuerzo.jpg" alt="">-->
-                    <!--<div class="caption">-->
-                        <!--<h3 class="text-center">¡No vas a rendirte!</h3>-->
-                        <!--<p>-->
-
-                            <!--Sí, es cierto, sientes que ya no puedes,-->
-                            <!--así como muchas otras veces has tenido ese mismo sentir.-->
-                            <!--Sí, tal vez to no esté pasando por lo que tú sí, pero eso no significa que no te entienda-->
-                            <!--, es más, Dios sabe la capacidad de resistencia que tienes...-->
-                        <!--</p>-->
-
-                            <!--<a href="#/devocionales" class="btn btn-primary btn-lg">Leer más</a>-->
-
-
-                        <!--<p class="text-center">-->
-                            <!--<i class="fa fa-thumbs-o-up votes"></i><i class="fa fa-thumbs-o-down votes"></i>-->
-                        <!--</p>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
-            <!--devocional-->
-            <!--<div class="col-xs-12 col-sm-6 col-md-4">-->
-                <!--<div class="thumbnail">-->
-                    <!--<img src="/resources/images/conflicto.jpg" alt="">-->
-                    <!--<div class="caption">-->
-                        <!--<h3 class="text-center">Resolviendo Conflictos</h3>-->
-                        <!--<p>-->
-
-
-                            <!--El rey Josafat tuvo que tomar decisiones correctas para salir victorioso en medio de-->
-                            <!--una guerra la cual le era desigual e imposible de ganar con medios puramente humanos.-->
-                            <!--El se sentía impotente y veía la destrucción de su persona y de todo Judá.-->
-                            <!--Entonces él resolvió el conflicto de una manera correcta...-->
-
-
-                        <!--</p>-->
-                        <!--<a href="#/devocionales" class="btn btn-primary btn-lg">Leer más</a>-->
-
-                        <!--<p class="text-center">-->
-                            <!--<i class="fa fa-thumbs-o-up votes"></i><i class="fa fa-thumbs-o-down votes"></i>-->
-                        <!--</p>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
-            <div class="col-md-4">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">Directorio</div>
-                    <div class="panel-body">
-                        <ul>
-                            <li><a href="#/alumnosCFM">Alumnos CFM</a></li>
-                            <li><a href="#/alabanza">Alabanza</a></li>
-                            <li><a href="#/lideres">Lideres gbc</a></li>
-                            <li><a href="#/jovenes">Jovenes</a></li>
-                            <li><a href="#/estudios">Estudios</a></li>
-                        </ul>
-
-                    </div>
-                </div>
-                <div class="panel panel-primary">
-                    <div class="panel-heading">Información</div>
-                    <div class="panel-body">
-                        <!--<img src="/resources/images/bautismo.jpg" class="img-thumbnail">-->
-                        <!--<img src="/resources/images/santacena.jpg" class="img-thumbnail">-->
-                        <!--<img src="/resources/images/oracion.jpg" class="img-thumbnail">-->
-                    </div>
-             </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-8">
-                <h3 class="titulo1">ABRIL</h3>
-                <h5 class="titulo1"> Plan de lectura biblica en 52 semanas</h5>
-               <table class="table table-bordered colorback1"> <!--tabala de versiculos-->
-                   <thead>
-                    <tr>
-                     <th> Semanas</th> <th>Lunes</th> <th>Martes</th><th>Miercoles</th><th>Jueves</th><th>Viernes</th> <th>Sabado</th><th>Domingo</th>
-                    </tr>
-                   </thead>
-                   <!--Dias de la semana-->
-                   <tbody>
-                    <tr>
-                        <td> 16 </td><td>2Reyes  4-5</td><td>2Reyes  6-8</td> <td>2Reyes  9-11</td> <td>2Reyes 12-14</td> <td>2Reyes 15-17</td> <td>2Reyes 18-20</td> <td>2Reyes21-23</td>
-                    </tr>
-                    <tr>
-                        <td> 17 </td><td>2Reyes 24-25</td><td>1Cronicas  1-2</td> <td>1Cronicas  3-5</td> <td>1Cronicas  6-7</td> <td>1Cronicas  8-10</td> <td>1Cronicas 11-13</td> <td>1Cronicas 14-16</td>
-                     </tr>
-                    <tr>
-                        <td> 18 </td><td>1Cronicas 17-20</td><td>1Cronicas 21-23</td> <td>1Cronicas 24-26</td> <td>1Cronicas 27-29</td> <td>2Cronicas 1-4</td> <td>2Cronicas 5-7</td> <td>2Cronicas 8-11</td>
-                    </tr>
-                    <tr>
-                        <td> 19 </td><td>2Cronicas 12-16</td><td>2Cronicas 17-19</td> <td>2Cronicas 20-22</td> <td>2Cronicas 23-25</td> <td>2Cronicas 26-29</td> <td>2Cronicas 30-32</td> <td>2Cronicas 33-34</td>
-                    </tr>
-                    <tr>
-                          <td> 20 </td><td>2Cronicas 35-36</td><td>Esdras  1-4</td> <td>Esdras  5-7</td> <td>Esdras  8-10</td> <td>Nehemias  1-4</td> <td>Nehemias  5-7</td> <td>Nehemias  8-10</td>
-                    </tr>
-                   </tbody> <!--versiculos-->
-               </table>
-
-            </div>
-            <div class="col-md-4">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">Actividades</div>
-                    <div class="panel-body">
-                        <h2>Mayo- Perfeccionarnos en la oración</h2>
-                        <p>
-                         <br>
-                            Cuarto Esfuerzo- Fuera del templo<br>
-                            Santa Cena - Domingo 3 a las 10:30 y 19:30 hs.<br>
-                            Reunión de Secretaria y Finanzas - Lunes 11 a las 20:00hs.<br>
-                            Vigilia de Oración - Miércoles 15 de 19:30 a 23:00 hs.<br>
-                            Centro de Formacion Ministerial - Jueves 7-14-21-28 a las 19:00.hs<br>
-                        </p>
+                    <div class="content">
+                        <h3 class="header">{{devotional.title}}</h3>
+                        <p class="description">{{devotional.description}}</p>
+                        <a ng-href="#/devocionales/detalle/{{devotional.id}}" class="ui blue button">Leer más</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <div class="five wide column">
+    </div>
+</div>
 
+            <!--<div class="col-md-4">-->
+                <!--<div class="panel panel-primary">-->
+                    <!--<div class="panel-heading">Directorio</div>-->
+                    <!--<div class="panel-body">-->
+                        <!--<ul>-->
+                            <!--<li><a href="#/alumnosCFM">Alumnos CFM</a></li>-->
+                            <!--<li><a href="#/alabanza">Alabanza</a></li>-->
+                            <!--<li><a href="#/lideres">Lideres gbc</a></li>-->
+                            <!--<li><a href="#/jovenes">Jovenes</a></li>-->
+                            <!--<li><a href="#/estudios">Estudios</a></li>-->
+                        <!--</ul>-->
+
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="panel panel-primary">-->
+                    <!--<div class="panel-heading">Información</div>-->
+                    <!--<div class="panel-body">-->
+                        <!--&lt;!&ndash;<img src="/resources/images/bautismo.jpg" class="img-thumbnail">&ndash;&gt;-->
+                        <!--&lt;!&ndash;<img src="/resources/images/santacena.jpg" class="img-thumbnail">&ndash;&gt;-->
+                        <!--&lt;!&ndash;<img src="/resources/images/oracion.jpg" class="img-thumbnail">&ndash;&gt;-->
+                    <!--</div>-->
+             <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="row">-->
+            <!--<div class="col-md-8">-->
+                <!--<h3 class="titulo1">ABRIL</h3>-->
+                <!--<h5 class="titulo1"> Plan de lectura biblica en 52 semanas</h5>-->
+               <!--<table class="table table-bordered colorback1"> &lt;!&ndash;tabala de versiculos&ndash;&gt;-->
+                   <!--<thead>-->
+                    <!--<tr>-->
+                     <!--<th> Semanas</th> <th>Lunes</th> <th>Martes</th><th>Miercoles</th><th>Jueves</th><th>Viernes</th> <th>Sabado</th><th>Domingo</th>-->
+                    <!--</tr>-->
+                   <!--</thead>-->
+                   <!--&lt;!&ndash;Dias de la semana&ndash;&gt;-->
+                   <!--<tbody>-->
+                    <!--<tr>-->
+                        <!--<td> 16 </td><td>2Reyes  4-5</td><td>2Reyes  6-8</td> <td>2Reyes  9-11</td> <td>2Reyes 12-14</td> <td>2Reyes 15-17</td> <td>2Reyes 18-20</td> <td>2Reyes21-23</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td> 17 </td><td>2Reyes 24-25</td><td>1Cronicas  1-2</td> <td>1Cronicas  3-5</td> <td>1Cronicas  6-7</td> <td>1Cronicas  8-10</td> <td>1Cronicas 11-13</td> <td>1Cronicas 14-16</td>-->
+                     <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td> 18 </td><td>1Cronicas 17-20</td><td>1Cronicas 21-23</td> <td>1Cronicas 24-26</td> <td>1Cronicas 27-29</td> <td>2Cronicas 1-4</td> <td>2Cronicas 5-7</td> <td>2Cronicas 8-11</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td> 19 </td><td>2Cronicas 12-16</td><td>2Cronicas 17-19</td> <td>2Cronicas 20-22</td> <td>2Cronicas 23-25</td> <td>2Cronicas 26-29</td> <td>2Cronicas 30-32</td> <td>2Cronicas 33-34</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                          <!--<td> 20 </td><td>2Cronicas 35-36</td><td>Esdras  1-4</td> <td>Esdras  5-7</td> <td>Esdras  8-10</td> <td>Nehemias  1-4</td> <td>Nehemias  5-7</td> <td>Nehemias  8-10</td>-->
+                    <!--</tr>-->
+                   <!--</tbody> &lt;!&ndash;versiculos&ndash;&gt;-->
+               <!--</table>-->
+
+            <!--</div>-->
+            <!--<div class="col-md-4">-->
+                <!--<div class="panel panel-primary">-->
+                    <!--<div class="panel-heading">Actividades</div>-->
+                    <!--<div class="panel-body">-->
+                        <!--<h2>Mayo- Perfeccionarnos en la oración</h2>-->
+                        <!--<p>-->
+                         <!--<br>-->
+                            <!--Cuarto Esfuerzo- Fuera del templo<br>-->
+                            <!--Santa Cena - Domingo 3 a las 10:30 y 19:30 hs.<br>-->
+                            <!--Reunión de Secretaria y Finanzas - Lunes 11 a las 20:00hs.<br>-->
+                            <!--Vigilia de Oración - Miércoles 15 de 19:30 a 23:00 hs.<br>-->
+                            <!--Centro de Formacion Ministerial - Jueves 7-14-21-28 a las 19:00.hs<br>-->
+                        <!--</p>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
 <!-- End container -->
