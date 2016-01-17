@@ -1,20 +1,25 @@
-<div class="container">
-    <div class="row">
-        <div class="col-xs-8 col-sm-offset-2">
-            <div class="thumbnail">
-                <img ng-src="{{dailyDevotional.imageUrl}}" alt="">
-                <div class="caption">
-                    <h3 class="text-center">{{dailyDevotional.title}}</h3>
-                    <p>{{dailyDevotional.description}}</p>
-                    <p class="text-center">
-                        <i class="fa fa-thumbs-o-up votes"></i><i class="fa fa-thumbs-o-down votes"></i>
-                    </p>
-                </div>
-            </div>
+<div class="twelve wide column centered">
+    <!--<div class="thumbnail">-->
+        <!--<img ng-src="{{dailyDevotional.imageUrl}}" alt="">-->
+        <!--<div class="caption">-->
+            <!--<h3 class="text-center">{{dailyDevotional.title}}</h3>-->
+            <!--<p>{{dailyDevotional.description}}</p>-->
+            <!--<p class="text-center">-->
+                <!--<i class="fa fa-thumbs-o-up votes"></i><i class="fa fa-thumbs-o-down votes"></i>-->
+            <!--</p>-->
+        <!--</div>-->
+    <!--</div>-->
+    <div class="ui card" >
+        <div class="image">
+            <img ng-src="{{dailyDevotional.imageUrl}}" alt="">
         </div>
-        <div class="col-xs-1 pull-right">
-            <a href="#/devocionales" class="btn btn-primary">Volver</a>
+        <div class="content">
+            <h3 class="header">{{dailyDevotional.title}}</h3>
+            <p class="description">{{dailyDevotional.description}}</p>
         </div>
     </div>
-    <br>
 </div>
+<div class="column floated right">
+    <a href="#/devocionales" class="ui blue button">Volver</a>
+</div>
+<br>

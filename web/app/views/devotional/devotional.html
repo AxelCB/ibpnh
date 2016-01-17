@@ -1,101 +1,87 @@
-<div class="row">
-    <div class="col-xs-6">
-        <form class="form-horizontal" role="form" name="myForm" enctype="multipart/form-data">
-            <div class="form-group">
-                <label for="title" class="col-xs-4 control-label">{{ 'dailyDevotional.label.title' | translate }}</label>
-                <div class="col-xs-8">
-                    <input type="text" id="title" placeholder="{{ 'dailyDevotional.placeholder.title' | translate }}" class="form-control" ng-model="dailyDevotional.title"/>
-                </div>
+<div class="sixteen wide column">
+    <form class="ui form" role="form" name="devotionalForm" enctype="multipart/form-data">
+        <div class="inline field">
+            <label for="title">{{ 'dailyDevotional.label.title' | translate }}</label>
+            <input type="text" ng-model="dailyDevotional.title" id="title" required
+               placeholder="{{ 'dailyDevotional.placeholder.title' | translate }}" name="title"/>
+        </div>
+        <div class="inline field" >
+            <label for="imageFile">{{ 'dailyDevotional.label.imageUrl' | translate }} </label>
+            <input type="file" ngf-select name="imageFile" id="imageFile" ng-hide="editing" ng-model="imageFile"
+                   placeholder="{{ 'dailyDevotional.placeholder.imageUrl' | translate }}"/>
+            <div class="ui info message" ng-show="editing">
+                {{ 'dailyDevotional.modifyImageFileNotallowed' | translate}}
             </div>
-            <div class="form-group" >
-                <label for="imageFile" class="col-xs-4 control-label">{{ 'dailyDevotional.label.imageUrl' | translate }} </label>
-                <div class="col-xs-8">
-                    <input type="file" ngf-select name="imageFile" id="imageFile" ng-hide="editing" ng-model="imageFile"
-                           placeholder="{{ 'dailyDevotional.placeholder.imageUrl' | translate }}" class="form-control" />
-                    <div class=" alert alert-info" ng-show="editing">
-                        {{ 'dailyDevotional.modifyImageFileNotallowed' | translate}}
-                    </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="shortDescription" class="col-xs-4 control-label">{{ 'dailyDevotional.label.shortDescription' | translate }}</label>
-                <div class="col-xs-8">
-                    <textarea type="text" id="shortDescription" placeholder="{{ 'dailyDevotional.placeholder.shortDescription' | translate }}" class="form-control" ng-model="dailyDevotional.shortDescription"></textarea>
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="description" class="col-xs-4 control-label">{{ 'dailyDevotional.label.description' | translate }}</label>
-                <div class="col-xs-8">
-                    <textarea type="text" id="description" placeholder="{{ 'dailyDevotional.placeholder.description' | translate }}" class="form-control" ng-model="dailyDevotional.description"></textarea>
-                </div>
-            </div>
+        </div>
+        <div class="inline field">
+            <label for="shortDescription">{{ 'dailyDevotional.label.shortDescription' | translate }}</label>
+            <textarea type="text" id="shortDescription" ng-model="dailyDevotional.shortDescription" required
+              placeholder="{{ 'dailyDevotional.placeholder.shortDescription' | translate }}" name="shortDescription"></textarea>
+        </div>
+        <div class="inline field">
+            <label for="description">{{ 'dailyDevotional.label.description' | translate }}</label>
+            <textarea type="text" ng-model="dailyDevotional.description" id="description" required
+              placeholder="{{ 'dailyDevotional.placeholder.description' | translate }}" name="description"></textarea>
+        </div>
 
-            <div class="form-group">
-                <label for="date" class="col-xs-4 control-label">{{ 'dailyDevotional.label.date' | translate }}</label>
-                <div class="col-xs-8">
-                    <div id="dateDiv" class="input-group date" ng-model="dailyDevotionalDate" ng-datepicker>
-                        <input id="date" data-format="DD/MM/YYYY" class="form-control" type="text"
-                               placeholder="{{ 'dailyDevotional.placeholder.date' | translate }}">
-                        <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
-                    </div>
-                </div>
+        <div class="inline field">
+            <label for="date">{{ 'dailyDevotional.label.date' | translate }}</label>
+            <div id="dateDiv" class="input-group date" ng-model="dailyDevotionalDate" ng-datepicker>
+                <input id="date" data-format="DD/MM/YYYY" type="text"
+                       placeholder="{{ 'dailyDevotional.placeholder.date' | translate }}">
+                <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
             </div>
-        </form>
-    </div>
+        </div>
+    </form>
 </div>
 
-<div class="row">
-    <div class="col-xs-6">
-        <button class="btn btn-success" id="btn_create" ng-click="create();" ng-disabled="editing" ng-show="!dailyDevotional.id">
-            <!--canAccess('/configuration/dailyDevotional:createUser') &&-->
-            {{ 'default.create.new' | translate }}
-        </button>
-        <button class="btn btn-success" id="btn_modify" ng-click="modify();" ng-disabled="!editing" ng-show="dailyDevotional.id">
-            <!--canAccess('/configuration/dailyDevotional:modifyUser') &&-->
-            {{ 'default.edit' | translate }}
-        </button>
-        <button class="btn btn-danger" id="btn_cancel" ng-click="cancel();" ng-disabled="!editing" ng-show="dailyDevotional.id">
-            {{ 'default.cancel' | translate }}
-        </button>
-        <button class="btn btn-default" id="btn_search" ng-click="search();" ng-disabled="editing">
-            <!--ng-show="canAccess('/configuration/dailyDevotional:searchUser')"-->
-            {{ 'default.search' | translate }}
-        </button>
-        <button class="btn btn-default" id="btn_list" ng-click="list();" ng-disabled="editing">
-            <!--ng-show="canAccess('/configuration/dailyDevotional:listUser')"-->
-            {{ 'default.list.all' | translate }}
-        </button>
-        <button class="btn btn-default" id="btn_clean" ng-click="clean();" ng-disabled="editing">
-            {{ 'default.clean' | translate }}
-        </button>
-    </div>
-</div>
 
-<div class="row">
-    <div class="col-xs-12">
-        <table class="table">
-            <thead>
-            <tr>
-                <th class="col-xs-3">{{ 'dailyDevotional.column.title' | translate }}</th>
-                <th class="col-xs-3">{{ 'dailyDevotional.column.date' | translate }}</th>
-                <th class="col-xs-3">{{ 'default.operations' | translate }}</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr ng-repeat="dailyDevotional in dailyDevotionals" >
-                <td class="col-xs-3">{{ dailyDevotional.title }}</td>
-                <td class="col-xs-3">{{ dailyDevotional.date | dateFormat:'date' }}</td>
-                <td class="col-xs-3">
-                    <span class="glyphicon glyphicon-edit operation" ng-click="edit(dailyDevotional);" ng-show="!editing"></span>
-                    <!--canAccess('/configuration/dailyDevotional:modifyUser') &&-->
-                    <span class="glyphicon glyphicon-remove operation" ng-click="remove(dailyDevotional);" ng-show="!editing"></span>
-                    <!--canAccess('/configuration/dailyDevotional:deleteUser') &&-->
-                </td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
-</div>
+<button class="ui green button" id="btn_create" ng-click="create();" ng-disabled="editing" ng-show="!dailyDevotional.id">
+    <!--canAccess('/configuration/dailyDevotional:createUser') &&-->
+    {{ 'default.create.new' | translate }}
+</button>
+<button class="ui green button" id="btn_modify" ng-click="modify();" ng-disabled="!editing" ng-show="dailyDevotional.id">
+    <!--canAccess('/configuration/dailyDevotional:modifyUser') &&-->
+    {{ 'default.edit' | translate }}
+</button>
+<button class="ui red button" id="btn_cancel" ng-click="cancel();" ng-disabled="!editing" ng-show="dailyDevotional.id">
+    {{ 'default.cancel' | translate }}
+</button>
+<button class="ui button" id="btn_search" ng-click="search();" ng-disabled="editing">
+    <!--ng-show="canAccess('/configuration/dailyDevotional:searchUser')"-->
+    {{ 'default.search' | translate }}
+</button>
+<button class="ui button" id="btn_list" ng-click="list();" ng-disabled="editing">
+    <!--ng-show="canAccess('/configuration/dailyDevotional:listUser')"-->
+    {{ 'default.list.all' | translate }}
+</button>
+<button class="ui button" id="btn_clean" ng-click="clean();" ng-disabled="editing">
+    {{ 'default.clean' | translate }}
+</button>
+
+<table class="ui centered table">
+    <thead>
+        <tr>
+            <th class="three wide column center aligned">{{ 'dailyDevotional.column.title' | translate }}</th>
+            <th class="two wide column center aligned">{{ 'dailyDevotional.column.date' | translate }}</th>
+            <th class="ten wide column center aligned">{{ 'dailyDevotional.column.shortDescription' | translate }}</th>
+            <th class="column center aligned">{{ 'default.operations' | translate }}</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="dailyDevotional in dailyDevotionals" >
+            <td class="three wide column">{{ dailyDevotional.title }}</td>
+            <td class="two wide column center aligned">{{ dailyDevotional.date | dateFormat:'date' }}</td>
+            <td class="ten wide column">{{ dailyDevotional.shortDescription }}</td>
+            <td class="column center aligned">
+                <i class="edit icon" ng-click="edit(dailyDevotional);" ng-show="!editing"></i>
+                <!--canAccess('/configuration/dailyDevotional:modifyUser') &&-->
+                <i class="trash icon" ng-click="remove(dailyDevotional);" ng-show="!editing"></i>
+                <!--canAccess('/configuration/dailyDevotional:deleteUser') &&-->
+            </td>
+        </tr>
+    </tbody>
+</table>
 <div class="row">
     <div class="col-xs-12">
         <div ng-paginator="" name-space="dailyDevotionalNameSpace"></div>

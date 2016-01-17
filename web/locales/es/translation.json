@@ -264,13 +264,13 @@
 			"description": "Ingrese la descripción..."
 		},
 		"type": {
-			"string": "Texto",
-			"date": "Fecha",
-			"time": "Hora",
-			"datetime": "Fecha y Hora",
-			"long": "Número Entero",
-			"bigdecimal": "Número con Decimal",
-			"boolean": "Booleano"
+			"STRING": "Texto",
+			"DATE": "Fecha",
+			"TIME": "Hora",
+			"DATETIME": "Fecha y Hora",
+			"LONG": "Número Entero",
+			"BIGDECIMAL": "Número con Decimal",
+			"BOOLEAN": "Booleano"
 		},
 		"button": {
 			"reloadGlobalParameters": "Refrescar Parámetros Globales"
@@ -316,6 +316,10 @@
 			"resetter": "Reset por",
 			"internalType": "Tipo (interno)",
 			"menuOrder": "Orden de Menú"
+		},
+	  	"name": {
+			"PASTOR":"Pastor",
+		  	"USER":"Usuario"
 		}
 	},
 	"user": {
@@ -539,7 +543,8 @@
 	  	"column":{
 		  "title":"Título",
 		  "imageUrl":"Imagen",
-		  "date":"Fecha"
+		  "date":"Fecha",
+		  "shortDescription":"Descripción Corta o Resumen"
 		}
 	},
   	"ant mark":{"desc":"Ant append text after this, allways remain it at bottom"}

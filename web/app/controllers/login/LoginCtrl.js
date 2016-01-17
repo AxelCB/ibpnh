@@ -8,15 +8,15 @@ ibpnhControllers.controller('LoginCtrl',['$scope', '$rootScope', 'LoginService',
 	function($scope, $rootScope, LoginService, $location, $cookieStore) {
 		// watches the $rootScope.readyToConstructTooltip flag, in order to construct the tooltip
 		// when we are surde that the i18n system is initialized
-		var stopWatching = $rootScope.$watch(function() { return $rootScope.readyToConstructTooltip; }, function() {
-			if ($rootScope.readyToConstructTooltip) {
-				$(document).ready(function() {
-					$(".glyphicon-info-sign").tooltip({html: true, title: '<span style="text-align:justify;">' + i18n.t('login.remember.warning') + '</span>'});
-				});
-				// stops the watch
-				stopWatching();
-			}
-		});
+		//var stopWatching = $rootScope.$watch(function() { return $rootScope.readyToConstructTooltip; }, function() {
+		//	if ($rootScope.readyToConstructTooltip) {
+		//		$(document).ready(function() {
+		//			$(".glyphicon-info-sign").tooltip({html: true, title: '<span style="text-align:justify;">' + i18n.t('login.remember.warning') + '</span>'});
+		//		});
+		//		// stops the watch
+		//		stopWatching();
+		//	}
+		//});
 	
 		$scope.userCredentials = {};
 		$scope.rememberMe = null;

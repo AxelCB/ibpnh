@@ -1,96 +1,99 @@
-<form class="ui form" role="form" name="myForm">
-    <div class="inline field">
-        <label for="name">{{ 'parameter.label.name' | translate }}</label>
-        <input type="text" id="name" placeholder="{{ 'parameter.placeholder.name' | translate }}" ng-model="parameter.name"/>
-    </div>
-    <div class="inline field">
-        <label for="value">{{ 'parameter.label.value' | translate }}</label>
-        <input type="text" id="value" placeholder="{{ 'parameter.placeholder.value' | translate }}" ng-model="parameter.value"/>
-    </div>
-    <div class="inline field">
-        <label for="description">{{ 'parameter.label.description' | translate }}</label>
-        <input type="text" id="description" placeholder="{{ 'parameter.placeholder.description' | translate }}" ng-model="parameter.description"/>
-    </div>
-    <div class="inline field">
-        <label for="parameterTypeEnum">{{ 'roleType.label.internalType' | translate }}</label>
-        <select id="parameterTypeEnum" ng-model="parameter.type" ng-options="pte as ('typeRole.name.' + pte | translate) for pte in parameterTypeEnumsList" class="ui selection"></select>
-    </div>
-    <div class="inline field">
-        <label for="fixed">{{ 'parameter.label.fixed' | translate }}</label>
-        <div class="checkbox">
-            <input id="fixed" type="checkbox" ng-model="parameter.fixed">
+<div class="sixteen wide column">
+    <form class="ui form" role="form" name="parameterForm">
+        <div class="inline field">
+            <label for="name">{{ 'parameter.label.name' | translate }}</label>
+            <input type="text" ng-model="parameter.name" id="name" required
+               placeholder="{{ 'parameter.placeholder.name' | translate }}" name="name"/>
         </div>
-    </div>
-    <div class="inline field">
-        <label for="global">{{ 'parameter.label.global' | translate }}</label>
-        <div class="checkbox">
-            <input id="global" type="checkbox" ng-model="parameter.global">
+        <div class="inline field">
+            <label for="value">{{ 'parameter.label.value' | translate }}</label>
+            <input type="text" ng-model="parameter.value" id="value" required
+               placeholder="{{ 'parameter.placeholder.value' | translate }}" name="value"/>
         </div>
-    </div>
-</form>
-
-<div class="row">
-    <div class="col-xs-6">
-        <button class="btn btn-success" id="btn_create" ng-click="create();" ng-disabled="editing" ng-show="!parameter.id">
-            <!--canAccess('/configuration/parameter:createUser') &&-->
-            {{ 'default.create.new' | translate }}
-        </button>
-        <button class="btn btn-success" id="btn_modify" ng-click="modify();" ng-disabled="!editing" ng-show="parameter.id">
-            <!--canAccess('/configuration/parameter:modifyUser') &&-->
-            {{ 'default.edit' | translate }}
-        </button>
-        <button class="btn btn-danger" id="btn_cancel" ng-click="cancel();" ng-disabled="!editing" ng-show="parameter.id">
-            {{ 'default.cancel' | translate }}
-        </button>
-        <button class="btn btn-default" id="btn_search" ng-click="search();" ng-disabled="editing">
-            <!--ng-show="canAccess('/configuration/parameter:searchUser')"-->
-            {{ 'default.search' | translate }}
-        </button>
-        <button class="btn btn-default" id="btn_list" ng-click="list();" ng-disabled="editing">
-            <!--ng-show="canAccess('/configuration/parameter:listUser')"-->
-            {{ 'default.list.all' | translate }}
-        </button>
-        <button class="btn btn-default" id="btn_clean" ng-click="clean();" ng-disabled="editing">
-            {{ 'default.clean' | translate }}
-        </button>
-    </div>
+        <div class="inline field">
+            <label for="description">{{ 'parameter.label.description' | translate }}</label>
+            <input type="text" id="description" ng-model="parameter.description" required
+               placeholder="{{ 'parameter.placeholder.description' | translate }}" name="description"/>
+        </div>
+        <div class="inline field">
+            <label for="parameterTypeEnum">{{ 'roleType.label.internalType' | translate }}</label>
+            <select id="parameterTypeEnum" ng-model="parameter.type" class="ui selection" required name="parameterType"
+                ng-options="pte as ('parameter.type.' + pte | translate) for pte in parameterTypeEnumsList"/>
+        </div>
+        <div class="inline field">
+            <label>{{ 'parameter.label.fixed' | translate }}</label>
+            <div class="ui toggle checkbox">
+                <label>{{ parameter.fixed | iif:'default.yes':'default.no' | translate }}</label>
+                <input name="fixed" type="checkbox" ng-model="parameter.fixed" required>
+            </div>
+        </div>
+        <div class="inline field">
+            <label>{{ 'parameter.label.global' | translate }}</label>
+            <div class="ui toggle checkbox">
+                <label>{{ parameter.global | iif:'default.yes':'default.no' | translate }}</label>
+                <input name="global" type="checkbox" ng-model="parameter.global" required>
+            </div>
+        </div>
+    </form>
 </div>
 
+
 <div class="row">
-    <div class="col-xs-12">
-        <table class="table">
-            <thead>
-            <tr>
-                <th class="col-xs-3">{{ 'parameter.column.name' | translate }}</th>
-                <th class="col-xs-3">{{ 'parameter.column.value' | translate }}</th>
-                <!--<th class="col-xs-3">{{ 'parameter.column.description' | translate }}</th>-->
-                <!--<th class="col-xs-3">{{ 'parameter.column.type' | translate }}</th>-->
-                <th class="col-xs-3">{{ 'parameter.column.fixed' | translate }}</th>
-                <th class="col-xs-3">{{ 'parameter.column.global' | translate }}</th>
-                <th class="col-xs-3">{{ 'default.operations' | translate }}</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr ng-repeat="parameter in parameters" >
-                <td class="col-xs-3">{{ parameter.name }}</td>
-                <td class="col-xs-4">{{ parameter.value }}</td>
-                <!--<td class="col-xs-3">{{ parameter.description }}</td>-->
-                <!--<td class="col-xs-3">{{ parameter.type }}</td>-->
-                <td class="col-xs-1">{{ parameter.fixed }}</td>
-                <td class="col-xs-1">{{ parameter.global }}</td>
-                <td class="col-xs-3">
-                    <span class="glyphicon glyphicon-edit operation" ng-click="edit(parameter);" ng-show="!editing"></span>
-                    <!--canAccess('/configuration/parameter:modifyUser') &&-->
-                    <span class="glyphicon glyphicon-remove operation" ng-click="remove(parameter);" ng-show="!editing"></span>
-                    <!--canAccess('/configuration/parameter:deleteUser') &&-->
-                </td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
+    <button class="ui green button" id="btn_create" ng-click="create();" ng-disabled="editing" ng-show="!parameter.id">
+        <!--canAccess('/configuration/parameter:createUser') &&-->
+        {{ 'default.create.new' | translate }}
+    </button>
+    <button class="ui green button" id="btn_modify" ng-click="modify();" ng-disabled="!editing" ng-show="parameter.id">
+        <!--canAccess('/configuration/parameter:modifyUser') &&-->
+        {{ 'default.edit' | translate }}
+    </button>
+    <button class="ui red button" id="btn_cancel" ng-click="cancel();" ng-disabled="!editing" ng-show="parameter.id">
+        {{ 'default.cancel' | translate }}
+    </button>
+    <button class="ui button" id="btn_search" ng-click="search();" ng-disabled="editing">
+        <!--ng-show="canAccess('/configuration/parameter:searchUser')"-->
+        {{ 'default.search' | translate }}
+    </button>
+    <button class="ui button" id="btn_list" ng-click="list();" ng-disabled="editing">
+        <!--ng-show="canAccess('/configuration/parameter:listUser')"-->
+        {{ 'default.list.all' | translate }}
+    </button>
+    <button class="ui button" id="btn_clean" ng-click="clean();" ng-disabled="editing">
+        {{ 'default.clean' | translate }}
+    </button>
 </div>
-<div class="row">
-    <div class="col-xs-12">
-        <div ng-paginator="" name-space="parameterNameSpace"></div>
-    </div>
-</div>
+
+<table class="ui table">
+    <thead>
+        <tr>
+            <th class="three wide column center aligned">{{ 'parameter.column.name' | translate }}</th>
+            <th class="four wide column center aligned">{{ 'parameter.column.value' | translate }}</th>
+            <th class="four wide column center aligned">{{ 'parameter.column.description' | translate }}</th>
+            <!--<th class="col-xs-3">{{ 'parameter.column.type' | translate }}</th>-->
+            <th class="column center aligned">{{ 'parameter.column.fixed' | translate }}</th>
+            <th class="column center aligned">{{ 'parameter.column.global' | translate }}</th>
+            <th class="three wide column center aligned">{{ 'default.operations' | translate }}</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="parameter in parameters" >
+            <td class="three wide column">{{ parameter.name }}</td>
+            <td class="four wide column">{{ parameter.value }}</td>
+            <td class="four wide column">{{ parameter.description }}</td>
+            <!--<td class="col-xs-3">{{ parameter.type }}</td>-->
+            <td class="column">{{ parameter.fixed }}</td>
+            <td class="column">{{ parameter.global }}</td>
+            <td class="three wide column">
+                <span class="glyphicon glyphicon-edit operation" ng-click="edit(parameter);" ng-show="!editing"></span>
+                <!--canAccess('/configuration/parameter:modifyUser') &&-->
+                <span class="glyphicon glyphicon-remove operation" ng-click="remove(parameter);" ng-show="!editing"></span>
+                <!--canAccess('/configuration/parameter:deleteUser') &&-->
+            </td>
+        </tr>
+    </tbody>
+</table>
+<!--<div class="row">-->
+    <!--<div class="col-xs-12">-->
+        <!--<div ng-paginator="" name-space="parameterNameSpace"></div>-->
+    <!--</div>-->
+<!--</div>-->
