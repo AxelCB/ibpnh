@@ -136,6 +136,9 @@ ibpnhControllers.controller('ParameterCtrl',['$scope', '$rootScope', 'ParameterS
 		ParameterService.listParameterTypeForCreation(function(response) {
 			if (response.ok) {
 				$scope.parameterTypeEnumsList = JSON.parse(response.data);
+				if($scope.parameterTypeEnumsList.length>0){
+					$scope.parameter.type=$scope.parameterTypeEnumsList[0];
+				}
 			}
 		}, $rootScope.errorManager);
 	}

@@ -28,9 +28,9 @@ angular.module('directives', [])
     			scope.pagNameSpace.inputPage = scope.pagNameSpace.page;
     			
     			scope.$watch(function(){return scope.pagNameSpace.inputPage;}, function() {
-    				var min = 20;
+    				var min = 40;
     				var valString = "" + scope.pagNameSpace.inputPage;
-    				var newWidth = (valString.length + 1) * 8;
+    				var newWidth = (valString.length + 1) * 16;
     				newWidth = newWidth < min ? min : newWidth;
     				$("#" + scope.pagNameSpace.name + 'InputId').css("width", newWidth + "px");
     			});

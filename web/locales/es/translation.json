@@ -328,8 +328,12 @@
 		    "password":"Contraseña"
 		},
 		"column": {
-			"username": "Nombre de Usuario",
-			"roleType": "Tipo de Rol"
+		  "username": "Nombre de Usuario",
+		  "roleType": "Tipo de Rol"
+		},
+	  	"placeholder":{
+		  "username":"Ingrese el nombre de usuario",
+		  "password":"Ingrese la contraseña"
 		}
 	},
 	"template": {
