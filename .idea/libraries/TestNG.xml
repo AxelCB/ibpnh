@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="TestNG">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/core/WebContent/WEB-INF/lib/testng-6.9.10.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

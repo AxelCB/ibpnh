@@ -1,0 +1,23 @@
+<component name="libraryTable">
+  <library name="springLibs">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/core/WebContent/WEB-INF/lib/spring-aop-4.2.5.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/core/WebContent/WEB-INF/lib/spring-beans-4.2.5.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/core/WebContent/WEB-INF/lib/spring-context-4.2.5.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/core/WebContent/WEB-INF/lib/spring-context-support-4.2.5.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/core/WebContent/WEB-INF/lib/spring-core-4.2.5.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/core/WebContent/WEB-INF/lib/spring-expression-4.2.5.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/core/WebContent/WEB-INF/lib/spring-jms-4.2.5.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/core/WebContent/WEB-INF/lib/spring-messaging-4.2.5.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/core/WebContent/WEB-INF/lib/spring-oxm-4.0.9.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/core/WebContent/WEB-INF/lib/spring-test-4.2.5.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/core/WebContent/WEB-INF/lib/spring-tx-4.2.5.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/core/WebContent/WEB-INF/lib/spring-web-4.2.5.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/core/WebContent/WEB-INF/lib/spring-webmvc-4.2.5.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/core/WebContent/WEB-INF/lib/spring-ws-core-2.2.4.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/core/WebContent/WEB-INF/lib/spring-xml-2.2.4.RELEASE.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

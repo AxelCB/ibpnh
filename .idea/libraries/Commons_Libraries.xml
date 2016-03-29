@@ -1,0 +1,25 @@
+<component name="libraryTable">
+  <library name="Commons Libraries">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/core/WebContent/WEB-INF/lib/aopalliance-1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/core/WebContent/WEB-INF/lib/commons-io-2.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/core/WebContent/WEB-INF/lib/commons-beanutils-1.9.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/core/WebContent/WEB-INF/lib/commons-digester-1.8.jar!/" />
+      <root url="jar://$PROJECT_DIR$/core/WebContent/WEB-INF/lib/commons-httpclient-3.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/core/WebContent/WEB-INF/lib/commons-discovery-0.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/core/WebContent/WEB-INF/lib/commons-codec-1.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/core/WebContent/WEB-INF/lib/commons-configuration-1.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/core/WebContent/WEB-INF/lib/commonj.sdo-2.1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/core/WebContent/WEB-INF/lib/commons-collections-3.2.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/core/WebContent/WEB-INF/lib/commons-logging-1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/core/WebContent/WEB-INF/lib/commons-lang-2.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/core/WebContent/WEB-INF/lib/commons-lang3-3.2.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/core/WebContent/WEB-INF/lib/commons-validator-1.4.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/core/WebContent/WEB-INF/lib/commons-collections4-4.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/core/WebContent/WEB-INF/lib/c3p0-0.9.1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/core/WebContent/WEB-INF/lib/bsh-2.0b4.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

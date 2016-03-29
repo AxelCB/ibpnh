@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
+    <option name="DEFAULT_COMPILER" value="Javac" />
     <resourceExtensions />
     <wildcardResourcePatterns>
       <entry name="!?*.java" />
@@ -15,7 +16,15 @@
     </wildcardResourcePatterns>
     <annotationProcessing>
       <profile default="true" name="Default" enabled="false">
+        <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
+      </profile>
+      <profile default="false" name="Core" enabled="true">
+        <outputRelativeToContentRoot value="true" />
+        <option name="eclipselink.persistencexml" value="jpa/persistence.xml" />
+        <processor name="org.eclipse.persistence.internal.jpa.modelgen.CanonicalModelProcessor" />
+        <processorPath useClasspath="true" />
+        <module name="core" />
       </profile>
     </annotationProcessing>
   </component>

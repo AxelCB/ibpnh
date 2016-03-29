@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="JMS - activemq-client">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/core/WebContent/WEB-INF/lib/activemq-client-5.8.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/core/WebContent/WEB-INF/lib/geronimo-j2ee-management_1.1_spec-1.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/core/WebContent/WEB-INF/lib/geronimo-jms_1.1_spec-1.1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/core/WebContent/WEB-INF/lib/hawtbuf-1.9.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

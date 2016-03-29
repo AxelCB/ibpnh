@@ -1,0 +1,28 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="Ibpnh-Core">
+    <output-path>$PROJECT_DIR$/out/artifacts/Ibpnh_Core</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="core" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="springLibs" />
+          <element id="library" level="project" name="TestNG" />
+          <element id="library" level="project" name="EclipseLink-Persistence" />
+          <element id="library" level="project" name="Dozer" />
+          <element id="library" level="project" name="Log4J" />
+          <element id="library" level="project" name="Commons Libraries" />
+          <element id="library" level="project" name="Mail" />
+          <element id="library" level="project" name="Web Libraries" />
+          <element id="library" level="project" name="Gson" />
+          <element id="library" level="project" name="Pojomatic" />
+          <element id="library" level="project" name="Quartz" />
+          <element id="library" level="project" name="JMS - activemq-client" />
+          <element id="library" level="project" name="javamelody" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="core/web/Web" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,357 @@
+buildscript {
+  repositories {
+    	jcenter()
+  }
+  dependencies {
+    	classpath 'org.hidetake:gradle-ssh-plugin:1.1.2'
+  }
+}
+
+repositories {
+	maven { url "https://github.com/mercadopago/sdk-java/raw/master/releases" }
+}
+
+apply plugin: 'org.hidetake.ssh'
+
+// java and war plugins
+apply plugin: 'java'
+apply plugin: 'war'
+
+apply from: 'artifacts.gradle'
+
+// set the source code to compile to Java 7
+project.sourceCompatibility = 1.7
+project.targetCompatibility = 1.7
+
+// directory properties
+project.webAppDirName = 'WebContent'
+project.buildDir = 'gradleBuild'
+project.ext.set("artifactsDir", "artifacts")
+project.ext.set("webProject","../web")//subprojects.find { proj -> proj.name.startsWith('../web') }.name)
+project.ext.set("backupSuffix", ".bkp")
+
+/**
+ * Method Definitions
+ */
+ 
+/**
+ * Backups a list of files.
+ *
+ * directory - root directory for the files
+ * filesToBackup - the collection of file names to backup
+ * backupSuffix - the suffix to add to the backuped file
+ */
+def backupFiles(directory, filesToBackup, backupSuffix) {	
+	def backuped = []
+	fileTree(dir: directory, include: filesToBackup).each { oldFile ->
+		backuped.add(oldFile.absolutePath)
+		copy {
+			from oldFile
+			into oldFile.absoluteFile.parent
+		    rename { String fileName ->
+		        fileName + ".bkp"
+		    } 
+		}
+	}
+}
+
+/**
+ * Restores backuped files.
+ *
+ * directory - root directory for the files
+ * backupSuffix - the suffix added the backuped file
+ */
+def restoreBackupedFiles(directory, backupSuffix) {	
+	fileTree(dir: directory, include: ['**/*' + backupSuffix]).each { backupedFile ->
+		File original = new File(backupedFile.absolutePath.replaceAll(backupSuffix, ""))
+		
+		original.delete()
+		backupedFile.renameTo(original)		
+	}
+}
+ 
+/**
+ * Performs a list of replacements on a file that has to be located in the source directory
+ *
+ * fileName - The file name to search or the file reference to use
+ * replacements - The replacements to make (a list of objects with two properties, 'regexp' and 'text')
+ */
+def replaceValues(fileName, replacements) {
+	File file = null
+
+	// if it's a file, we set the file and it's done (it cames from the ibpnh-web project)	
+	if (fileName.getClass() == File.class) {
+		file = fileName
+	} else {
+		// it's a string, get the file from the resources Dir
+		file = fileTree(dir: sourceSets.main.output.resourcesDir, include: [fileName]).getSingleFile()
+	}
+	// get the file contents
+	String fileContents = file.getText('UTF-8')
+	
+	// performs all the replacements
+	replacements.each { replacement ->
+		fileContents = fileContents.replaceAll(replacement.regexp, replacement.text)
+	}
+	// writes the file
+	file.write(fileContents, 'UTF-8')
+}
+
+// use maven as the main repositoryn for dependencies
+repositories {
+    mavenCentral()
+}
+
+// configures the sourcesets
+sourceSets {
+    main {
+    	output.classesDir = project.buildDir.name + '/gradleClasses'
+        java {
+            srcDirs 'main/web', 'main/services',
+		 		   'main/vo', 'main/model', 'main/json',
+		 		   'main/fx', 'main/dao', 'main/controller',
+		 		   'main/utils'
+        }
+        resources {
+            srcDir 'resources'
+        }
+    }
+}
+
+//Libs Version
+def springVersion="4.2.5.RELEASE"
+def dozerVersion="5.5.1"
+def gsonVersion="2.6.2"
+
+// configures the dependencies
+dependencies {
+	compile (
+		'org.apache.activemq:activemq-client:5.8.0',
+		'org.slf4j:slf4j-api:1.7.5',
+		'org.slf4j:slf4j-log4j12:1.7.5',
+		"com.google.code.gson:gson:${gsonVersion}",
+		'org.eclipse.persistence:eclipselink:2.5.1',
+		'org.eclipse.persistence:org.eclipse.persistence.jpa.modelgen.processor:2.5.1',
+		"org.springframework:spring-core:${springVersion}",
+		"org.springframework:spring-aop:${springVersion}",
+		"org.springframework:spring-web:${springVersion}",
+		"org.springframework:spring-webmvc:${springVersion}",
+		'org.springframework.ws:spring-ws-core:2.2.4.RELEASE',
+		"org.springframework:spring-test:${springVersion}",
+		"org.springframework:spring-context-support:${springVersion}",
+		"org.springframework:spring-jms:${springVersion}",
+		'org.pojomatic:pojomatic:1.0',
+		"net.sf.dozer:dozer:${dozerVersion}",
+		'org.postgresql:postgresql:9.3-1101-jdbc4',
+		'org.quartz-scheduler:quartz:2.2.1',
+		'org.quartz-scheduler:quartz-jobs:2.2.1',
+		'org.eclipse.jetty:jetty-continuation:9.2.3.v20140905',
+		'org.eclipse.jetty:jetty-servlets:9.2.3.v20140905',
+		'org.testng:testng:6.9.10',		
+		//'org.jdom:jdom:1.1',//2.0.2
+		//'cglib:cglib-nodep:2.1_3',
+		'commons-configuration:commons-configuration:1.9',
+		'commons-validator:commons-validator:1.4.0',
+		'org.apache.httpcomponents:httpclient:4.3.2',
+		'javax.mail:mail:1.4.7',
+		'commons-io:commons-io:2.0.1',
+		'commons-httpclient:commons-httpclient:3.1',
+		'org.apache.commons:commons-collections4:4.0',
+		'commons-discovery:commons-discovery:0.4',
+		'net.bull.javamelody:javamelody-core:1.52.0',
+		//'org.apache.ws.commons.axiom:axiom-impl:1.2.14',
+		//'org.apache.axis:axis:1.4',
+	)
+	//compile('dom4j:dom4j:1.5') {
+		// we exclude this parser beacuse it messes up with SOAP
+		//exclude module: 'pull-parser'
+	//}
+	
+    providedCompile 'org.apache.tomcat:tomcat-catalina:8.0.24'
+}
+
+// configures the compile java task
+compileJava {
+	// configures the annotation processor with the persitence.xml processor
+	options.compilerArgs = ["-Aeclipselink.persistencexml=resources/jpa/persistence.xml"]
+}
+
+// this task delets and refresh the artifact directory
+task refreshArtifactDir << {
+	// we delete and create the artifacts dir
+	File file = new File(project.artifactsDir)
+	file.deleteDir()
+	file.mkdir()
+}
+
+// creates the dinamic war tasks
+project.projectArtifactsMap.keySet().each { municipality ->
+	task "customWar$municipality"(type: War) {
+		exclude 'WEB-INF/lib/*', '**/*.bkp'
+		archiveName "ibpnh-core-${municipality}.war"
+		
+		doFirst {
+			// deletes the generated metamodel .java files (only .class needs to be copied) */
+			project.delete(fileTree(dir: sourceSets.main.output.classesDir, include: ['**/*.java']))
+			
+			// inform current municipality
+			print "Generating Core Artifact for: $municipality ... "
+	
+			// we need to replace the values of the resource files
+			projectArtifactsMap[municipality].resourceFileReplacements.each { resourceFileReplacement ->
+		 		replaceValues(resourceFileReplacement.fileName, resourceFileReplacement.replacements)
+			}
+			
+			// backup other files
+			rootProject.backupFiles(
+				projectDir,
+				projectArtifactsMap[municipality].otherCoreReplacements.collect { file -> file.fileName } as Set,
+				backupSuffix
+			)
+			
+			// we need to replace the values of the other files
+			projectArtifactsMap[municipality].otherCoreReplacements.each { otherCoreReplacement ->
+				replaceValues(fileTree(dir: projectDir, include: otherCoreReplacement.fileName).getSingleFile(), otherCoreReplacement.replacements)
+			}
+		}
+		
+		doLast {
+			rootProject.restoreBackupedFiles(projectDir, backupSuffix)
+			
+			println "moving ibpnh-core.war"
+			
+			File newArtifactDir = new File(artifactsDir, "$municipality")
+			newArtifactDir.mkdir()
+			File artifactFile = new File(libsDir, "ibpnh-core-${municipality}.war")
+			File newArtifactFile = new File(newArtifactDir, "ibpnh-core.war")
+			
+			artifactFile.renameTo(newArtifactFile)
+		}
+		
+		// force the generation of the war ALWAYS
+		outputs.upToDateWhen { false }
+		
+		// must run after the dependency
+		mustRunAfter 'refreshArtifactDir'
+	}
+}
+
+// Core Wars Only Generation Task
+task coreWars {
+	doFirst {
+		println "Core Wars Generated"
+	}
+}
+coreWars.dependsOn = tasks.findAll { task -> task.name.startsWith('customWar') }
+
+// Task for downloading dependencies. 
+task downloadDep(type: Sync) {
+	// we copy all the JARs to the WEB-INF/lib directory, to keep
+	// eclipse updated with the required libs.
+	// we exclude the providedCompile JARs
+	from configurations.runtime
+	into 'WebContent/WEB-INF/lib'
+	
+	configurations.providedCompile.each { File file ->
+		exclude file.getName()
+	}
+}
+
+// Schema Update Download Task
+task schemaUpdate(dependsOn:'refreshArtifactDir') {
+	doLast {
+		println "About to donwload -> https://raw.githubusercontent.com/wiki/fgonzalez-cespi/ibpnh/Schema-Update-${ibpnhVersion}.md"
+//		ant.setproxy(proxyhost: '163.10.0.153', proxyport: '3128', proxyuser: 'fgonzalez', proxypassword:'fetofeto')
+		ant.get(src: "https://raw.githubusercontent.com/wiki/fgonzalez-cespi/ibpnh/Schema-Update-${ibpnhVersion}.md", dest: './schema_aux')
+		
+		File downloadedFile = new File('./schema_aux')
+		// get the file contents
+		String downloadedFileContents = downloadedFile.getText('UTF-8')
+		
+		File generatedFile = new File("./update.${ibpnhVersion}.sql")
+		
+		downloadedFileContents = downloadedFileContents.replaceAll('(?m)^Schema\\sUpdate.*', '')
+		downloadedFileContents = downloadedFileContents.replaceAll('(?m)^\\*\\*.*', '')
+		downloadedFileContents = downloadedFileContents.replaceAll('(?m)^#.*', '')
+		downloadedFileContents = downloadedFileContents.replaceAll('(?m)^\\s\\s\\s\\s', '')
+		
+		downloadedFileContents = "set search_path='ibpnh';\n\n" + downloadedFileContents;
+		generatedFile.write(downloadedFileContents, 'UTF-8')
+		
+		downloadedFile.delete()
+		
+		project.projectArtifactsMap.keySet().each { municipality ->
+			File newArtifactDir = new File(artifactsDir, "$municipality")
+			copy {
+				from generatedFile.absolutePath
+				into newArtifactDir.absolutePath
+			}
+		}
+		
+		generatedFile.delete()
+	}
+	
+	// must run after the dependency
+	mustRunAfter 'refreshArtifactDir'
+}
+
+// Super Task
+task wars(dependsOn:['refreshArtifactDir', 'coreWars']) << { //, ':' + project.webProject + ':webWars'
+	println 'All wars generated'
+}
+if (hasProperty('ibpnhVersion')) {
+	wars.dependsOn schemaUpdate
+}
+
+// Avoid warnings
+tasks.withType (JavaCompile) {
+    options.warnings = false
+}
+
+// SSH Deploys configuration
+remotes {
+	project.projectArtifactsMap.keySet().each { municipality ->
+		if (project.projectArtifactsMap[municipality].deploy) {
+			"$municipality" {
+				host = project.projectArtifactsMap[municipality].hostIp
+				user = project.projectArtifactsMap[municipality].user
+				password = project.projectArtifactsMap[municipality].password
+				knownHosts = allowAnyHosts
+			}
+		}
+	}
+}
+
+// SSH Deploy
+task deploy << {
+	def willDeploy = true;
+	def onlyDeployArtifactsSet = [] as Set
+	if (project.hasProperty('onlyDeployArtifacts')) {
+		onlyDeployArtifactsSet = project.onlyDeployArtifacts.split(",") as Set
+		
+		if (!project.projectArtifactsMap.keySet().containsAll(onlyDeployArtifactsSet)) {
+			willDeploy = false
+			onlyDeployArtifactsSet.removeAll(project.projectArtifactsMap.keySet())
+			println "Couldn't find artifacts with name $onlyDeployArtifactsSet"
+		}
+	}
+	
+	if (willDeploy) {
+		project.projectArtifactsMap.keySet().each { municipality ->
+			if (project.projectArtifactsMap[municipality].deploy && (onlyDeployArtifactsSet.isEmpty() || onlyDeployArtifactsSet.contains(municipality))) {
+				println "Deploying to $municipality"
+				ssh.run {
+					session(remotes["$municipality"]) {
+						put from: fileTree(new File(artifactsDir, "$municipality")), into: project.projectArtifactsMap[municipality].preDeployDir
+						project.projectArtifactsMap[municipality].execute.each { command ->
+							println execute(command)
+						}
+					}
+				}
+			}
+		}
+	}
+}
+if (!hasProperty('onlyDeploy') || !onlyDeploy) {
+	deploy.dependsOn wars
+}

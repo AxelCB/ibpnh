@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Log4J">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/core/WebContent/WEB-INF/lib/jcl-over-slf4j-1.7.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/core/WebContent/WEB-INF/lib/log4j-1.2.17.jar!/" />
+      <root url="jar://$PROJECT_DIR$/core/WebContent/WEB-INF/lib/slf4j-api-1.7.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/core/WebContent/WEB-INF/lib/slf4j-log4j12-1.7.5.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

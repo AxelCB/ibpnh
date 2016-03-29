@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Repository and Service layers
+-->
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd
+	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+	<context:annotation-config /> <!-- This Enables Autowiring -->
+    <context:property-placeholder location='classpath:config.properties' />
+    
+    <!-- Profile Unaware Beans -->
+    <beans>	    	    		
+    	<!-- Controllers -->
+    	<!-- Configuration -->
+    		<bean id="parameterCtrl" class="org.ibpnh.core.controller.configuration.parameter.ParameterCtrl" scope="request"/>
+
+   		<!-- Login -->
+    		<bean id="loginCtrl" class="org.ibpnh.core.controller.login.LoginCtrl" scope="request"/>
+    		
+    	<!-- User -->
+    		<bean id="userCtrl" class="org.ibpnh.core.controller.user.UserCtrl" scope="request"/>
+			<bean id="roleTypeCtrl" class="org.ibpnh.core.controller.user.roleType.RoleTypeCtrl" scope="request"/>
+    		<bean id="passwordRecoverCtrl" class="org.ibpnh.core.controller.user.PasswordRecoverCtrl" scope="request"/>
+    	
+		<!-- Contact -->
+			<bean id="ContactCtrl" class="org.ibpnh.core.controller.contact.ContactCtrl" scope="request"/>
+			
+		<!-- About -->
+			<bean id="AboutCtrl" class="org.ibpnh.core.controller.contact.AboutCtrl" scope="request"/>
+			
+		<!-- Log -->
+		<bean id='logCtrl' class='org.ibpnh.core.controller.log.LogCtrl' scope='request'/>
+		
+		<!-- Alert -->
+		<bean id='alertCtrl' class='org.ibpnh.core.controller.adminPanel.AlertCtrl' scope='request'/>
+		
+		<!-- Registrarion -->
+		<bean id='registrationCtrl' class='org.ibpnh.core.controller.login.RegistrationCtrl' scope='request'/>
+		
+		<!-- Images Ctrl -->
+		<bean id='imagesCtrl' class='org.ibpnh.core.controller.ImagesCtrl' scope='request'/>
+		
+		<!-- Document Type Ctrl -->
+		<bean id='documentTypeCtrl' class='org.ibpnh.core.controller.configuration.documentType.DocumentTypeCtrl' scope='request'/>
+
+		<!-- Personal Data Ctrl.  -->
+		<bean id='personalDataCtrl' class='org.ibpnh.core.controller.user.PersonalDataCtrl' scope='request'/>
+		
+		<!-- Language Ctrl. -->
+		<bean id='langCtrl' class='org.ibpnh.core.controller.LangCtrl' scope='request'/>
+		
+		<!-- Ant Mark -->
+    </beans>
+</beans>

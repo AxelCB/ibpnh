@@ -1,0 +1,14 @@
+project.ext.set("projectArtifacts", [])
+
+// list of artifact configurations per municipality
+fileTree(dir: '.').matching { include 'artifact.*.gradle' }.each { confFile ->
+	println "Applying configurations from " + confFile.name
+	apply from: confFile
+}
+
+// export the projects configuration as a HashMap
+def projectArtifactsMap = [] as HashMap
+project.projectArtifacts.each { projectArtifactsItem ->
+	projectArtifactsMap.put(projectArtifactsItem.municipality, projectArtifactsItem)
+}
+project.ext.set("projectArtifactsMap", projectArtifactsMap)

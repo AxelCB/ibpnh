@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Repository and Service layers
+-->
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd
+	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+	<context:annotation-config /> <!-- This Enables Autowiring -->
+    
+    <!-- Profile Unaware Beans -->
+    <beans>			
+    	<!-- FX -->
+    	<bean id="fxFactory" class="org.ibpnh.core.fx.FxFactoryImpl" scope="prototype"/>
+    	
+    	<!-- Configuration -->
+    	<!-- Parameters -->
+    		<bean id="createParameter" class="org.ibpnh.core.fx.configuration.parameter.Fx_CreateParameter" scope="prototype"/>
+    		<bean id="deleteParameter" class="org.ibpnh.core.fx.configuration.parameter.Fx_DeleteParameter" scope="prototype"/>
+    		<bean id="modifyParameter" class="org.ibpnh.core.fx.configuration.parameter.Fx_ModifyParameter" scope="prototype"/>
+		<!-- User -->
+    		<bean id="enableUser" class="org.ibpnh.core.fx.user.Fx_EnableUser" scope="prototype"/>
+    		<bean id="disableUser" class="org.ibpnh.core.fx.user.Fx_DisableUser" scope="prototype"/>
+    		<bean id="resetPassword" class="org.ibpnh.core.fx.user.Fx_ResetPassword" scope="prototype"/>
+    		<bean id="resetAnyUserPassword" class="org.ibpnh.core.fx.user.Fx_ResetAnyUserPassword" scope="prototype"/>
+    		<bean id="sendRecoverMail" class="org.ibpnh.core.fx.user.Fx_SendRecoverMail" scope="prototype"/>
+    		<bean id="passwordRecover" class="org.ibpnh.core.fx.user.Fx_PasswordRecover" scope="prototype"/>
+    		<bean id="createUser" class="org.ibpnh.core.fx.user.Fx_CreateUser" scope="prototype"/>
+    		<bean id="deleteUser" class="org.ibpnh.core.fx.user.Fx_DeleteUser" scope="prototype"/>
+    		<bean id="modifyUserFunctions" class="org.ibpnh.core.fx.user.Fx_ModifyUserFunctions" scope="prototype"/>
+    		
+    	<!-- RoleType -->
+    		<bean id="createRoleType" class="org.ibpnh.core.fx.user.roleType.Fx_CreateRoleType" scope="prototype"/>
+    		<bean id="modifyRoleType" class="org.ibpnh.core.fx.user.roleType.Fx_ModifyRoleType" scope="prototype"/>
+    		<bean id="deleteRoleType" class="org.ibpnh.core.fx.user.roleType.Fx_DeleteRoleType" scope="prototype"/>
+    	
+    	<!-- Login -->
+    		<bean id="fxLogin" class="org.ibpnh.core.fx.login.Fx_Login" scope="prototype"/>
+    		<bean id="fxLogout" class="org.ibpnh.core.fx.login.Fx_Logout" scope="prototype"/>
+    		<bean id="fxChangePassword" class="org.ibpnh.core.fx.login.Fx_ChangePassword" scope="prototype"/>
+    	
+
+		<!-- Mail -->
+		<bean id='createMail' class='org.ibpnh.core.fx.configuration.mail.Fx_CreateMail' scope="prototype"/>
+		<bean id='deleteMail' class='org.ibpnh.core.fx.configuration.mail.Fx_DeleteMail' scope="prototype"/>
+		<bean id='modifyMail' class='org.ibpnh.core.fx.configuration.mail.Fx_ModifyMail' scope="prototype"/>
+		<bean id='triggerMail' class='org.ibpnh.core.fx.configuration.mail.Fx_TriggerMail' scope="prototype"/>
+		
+		<!-- Mail Parameters FX -->
+		<!--<bean id='mailTest' class='org.ibpnh.core.fx.configuration.mail.parameters.Fx_Mail_Test' scope="prototype"/>-->
+
+		<bean id='updatePersonalData' class='org.ibpnh.core.fx.user.Fx_UpdatePersonalData' scope='prototype'/>
+		
+		<bean id='register' class='org.ibpnh.core.fx.login.Fx_Register' scope='prototype'/>
+		<bean id='enableUserByHash' class='org.ibpnh.core.fx.login.Fx_EnableUserByHash' scope='prototype'/>
+
+		<!-- Document Type -->
+		<bean id='deleteDocumentType' class='org.ibpnh.core.fx.configuration.documentType.Fx_DeleteDocumentType' scope='prototype'/>
+		<bean id='createDocumentType' class='org.ibpnh.core.fx.configuration.documentType.Fx_CreateDocumentType' scope='prototype'/>
+		<bean id='modifyDocumentType' class='org.ibpnh.core.fx.configuration.documentType.Fx_ModifyDocumentType' scope='prototype'/>
+
+		<!-- Get Personal Data FXs -->
+		<bean id='getPersonalDataDriverUser' class='org.ibpnh.core.fx.user.personalData.Fx_GetPersonalDataDriverUser' scope='prototype'/>
+		<bean id='getPersonalDataUsingUserDetail' class='org.ibpnh.core.fx.user.personalData.Fx_GetPersonalDataUsingUserDetail' scope='prototype'/>
+		
+		<!-- Ant Mark -->
+    </beans>
+</beans>

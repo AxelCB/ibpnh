@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id="ibpnhLocal" external.linked.project.path="$MODULE_DIR$" external.root.project.path="$MODULE_DIR$" external.system.id="GRADLE" external.system.module.group="" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="web" name="Web Gradle : ibpnh-core-test.war">
+      <configuration>
+        <webroots>
+          <root url="file://$MODULE_DIR$/WebContent" relative="/" />
+        </webroots>
+        <sourceRoots>
+          <root url="file://$MODULE_DIR$/core/main/fx" />
+          <root url="file://$MODULE_DIR$/core/main/dao" />
+          <root url="file://$MODULE_DIR$/core/main/json" />
+          <root url="file://$MODULE_DIR$/src/main/resources" />
+          <root url="file://$MODULE_DIR$/core/resources" />
+          <root url="file://$MODULE_DIR$/core/main/services" />
+          <root url="file://$MODULE_DIR$/core/main/utils" />
+          <root url="file://$MODULE_DIR$/core/main/web" />
+          <root url="file://$MODULE_DIR$/core/main/vo" />
+          <root url="file://$MODULE_DIR$/core/main/controller" />
+          <root url="file://$MODULE_DIR$/src/main/java" />
+          <root url="file://$MODULE_DIR$/core/main/model" />
+        </sourceRoots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web Gradle : ibpnhLocal.war">
+      <configuration>
+        <webroots>
+          <root url="file://$MODULE_DIR$/WebContent" relative="/" />
+        </webroots>
+        <sourceRoots>
+          <root url="file://$MODULE_DIR$/core/main/fx" />
+          <root url="file://$MODULE_DIR$/core/main/dao" />
+          <root url="file://$MODULE_DIR$/core/main/json" />
+          <root url="file://$MODULE_DIR$/src/main/resources" />
+          <root url="file://$MODULE_DIR$/core/resources" />
+          <root url="file://$MODULE_DIR$/core/main/services" />
+          <root url="file://$MODULE_DIR$/core/main/utils" />
+          <root url="file://$MODULE_DIR$/core/main/web" />
+          <root url="file://$MODULE_DIR$/core/main/vo" />
+          <root url="file://$MODULE_DIR$/core/main/controller" />
+          <root url="file://$MODULE_DIR$/src/main/java" />
+          <root url="file://$MODULE_DIR$/core/main/model" />
+        </sourceRoots>
+      </configuration>
+    </facet>
+  </component>
+  <component name="NewModuleRootManager" inherit-compiler-output="false">
+    <output url="file://$MODULE_DIR$/gradleBuild/gradleClasses" />
+    <output-test url="file://$MODULE_DIR$/gradleBuild/classes/test" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/core/main/controller" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/core/main/dao" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/core/main/fx" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/core/main/json" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/core/main/model" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/core/main/services" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/core/main/utils" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/core/main/vo" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/core/main/web" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/core/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/test/resources" type="java-test-resource" />
+      <excludeFolder url="file://$MODULE_DIR$/.gradle" />
+      <excludeFolder url="file://$MODULE_DIR$/gradleBuild" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: org.apache.tomcat:tomcat-catalina:8.0.24" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: org.apache.tomcat:tomcat-servlet-api:8.0.24" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: org.apache.tomcat:tomcat-jsp-api:8.0.24" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: org.apache.tomcat:tomcat-juli:8.0.24" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: org.apache.tomcat:tomcat-annotations-api:8.0.24" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: org.apache.tomcat:tomcat-api:8.0.24" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: org.apache.tomcat:tomcat-jni:8.0.24" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: org.apache.tomcat:tomcat-coyote:8.0.24" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: org.apache.tomcat:tomcat-util:8.0.24" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: org.apache.tomcat:tomcat-util-scan:8.0.24" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: org.apache.tomcat:tomcat-el-api:8.0.24" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.apache.activemq:activemq-client:5.8.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.slf4j:slf4j-api:1.7.5" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.slf4j:slf4j-log4j12:1.7.5" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.google.code.gson:gson:2.6.2" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.eclipse.persistence:eclipselink:2.5.1" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.eclipse.persistence:org.eclipse.persistence.jpa.modelgen.processor:2.5.1" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.springframework:spring-core:4.2.5.RELEASE" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.springframework:spring-aop:4.2.5.RELEASE" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.springframework:spring-web:4.2.5.RELEASE" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.springframework:spring-webmvc:4.2.5.RELEASE" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.springframework.ws:spring-ws-core:2.2.4.RELEASE" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.springframework:spring-test:4.2.5.RELEASE" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.springframework:spring-context-support:4.2.5.RELEASE" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.springframework:spring-jms:4.2.5.RELEASE" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.pojomatic:pojomatic:1.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: net.sf.dozer:dozer:5.5.1" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.postgresql:postgresql:9.3-1101-jdbc4" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.quartz-scheduler:quartz:2.2.1" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.quartz-scheduler:quartz-jobs:2.2.1" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.eclipse.jetty:jetty-continuation:9.2.3.v20140905" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.eclipse.jetty:jetty-servlets:9.2.3.v20140905" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.testng:testng:6.9.10" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: commons-configuration:commons-configuration:1.9" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: commons-validator:commons-validator:1.4.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.apache.httpcomponents:httpclient:4.3.2" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: javax.mail:mail:1.4.7" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: commons-io:commons-io:2.0.1" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: commons-httpclient:commons-httpclient:3.1" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.apache.commons:commons-collections4:4.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: commons-discovery:commons-discovery:0.4" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: net.bull.javamelody:javamelody-core:1.52.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.apache.geronimo.specs:geronimo-jms_1.1_spec:1.1.1" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.fusesource.hawtbuf:hawtbuf:1.9" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.apache.geronimo.specs:geronimo-j2ee-management_1.1_spec:1.0.1" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: log4j:log4j:1.2.17" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.eclipse.persistence:javax.persistence:2.1.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.eclipse.persistence:commonj.sdo:2.1.1" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.eclipse.persistence:org.eclipse.persistence.core:2.5.1" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.eclipse.persistence:org.eclipse.persistence.jpa:2.5.1" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: commons-logging:commons-logging:1.2" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: aopalliance:aopalliance:1.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.springframework:spring-beans:4.2.5.RELEASE" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.springframework:spring-context:4.2.5.RELEASE" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.springframework:spring-expression:4.2.5.RELEASE" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.springframework.ws:spring-xml:2.2.4.RELEASE" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.springframework:spring-oxm:4.0.9.RELEASE" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.springframework:spring-messaging:4.2.5.RELEASE" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.springframework:spring-tx:4.2.5.RELEASE" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: commons-beanutils:commons-beanutils:1.9.1" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.apache.commons:commons-lang3:3.2.1" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.slf4j:jcl-over-slf4j:1.7.5" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: c3p0:c3p0:0.9.1.1" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.eclipse.jetty:jetty-http:9.2.3.v20140905" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.eclipse.jetty:jetty-util:9.2.3.v20140905" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.eclipse.jetty:jetty-io:9.2.3.v20140905" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.beust:jcommander:1.48" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.beanshell:bsh:2.0b4" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: commons-lang:commons-lang:2.6" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: commons-digester:commons-digester:1.8" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.apache.httpcomponents:httpcore:4.3.1" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: commons-codec:commons-codec:1.6" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: javax.activation:activation:1.1" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.jrobin:jrobin:1.5.9" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.eclipse.persistence:org.eclipse.persistence.asm:2.5.1" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.eclipse.persistence:org.eclipse.persistence.antlr:2.5.1" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.eclipse.persistence:org.eclipse.persistence.jpa.jpql:2.5.1" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: commons-collections:commons-collections:3.2.1" level="project" />
+  </component>
+</module>

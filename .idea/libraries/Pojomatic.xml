@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Pojomatic">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/core/WebContent/WEB-INF/lib/pojomatic-1.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

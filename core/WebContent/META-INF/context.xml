@@ -1,0 +1,7 @@
+<Context>
+	<WatchedResource>WEB-INF/web.xml</WatchedResource>
+	<Resource name="jdbc/ibpnhDS" auth="Container" type="javax.sql.DataSource"
+		maxActive="90" maxIdle="30" maxWait="10000" logAbandoned="true"
+		username="ibpnh" password="k4ir0s" driverClassName="org.postgresql.Driver"
+		url="jdbc:postgresql://localhost:5432/ibpnh" />
+</Context>

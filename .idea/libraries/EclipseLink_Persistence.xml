@@ -1,0 +1,17 @@
+<component name="libraryTable">
+  <library name="EclipseLink-Persistence">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/core/WebContent/WEB-INF/lib/org.eclipse.persistence.antlr-2.5.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/core/WebContent/WEB-INF/lib/org.eclipse.persistence.asm-2.5.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/core/WebContent/WEB-INF/lib/org.eclipse.persistence.core-2.5.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/core/WebContent/WEB-INF/lib/org.eclipse.persistence.jpa.jpql-2.5.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/core/WebContent/WEB-INF/lib/org.eclipse.persistence.jpa.modelgen.processor-2.5.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/core/WebContent/WEB-INF/lib/org.eclipse.persistence.jpa-2.5.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/core/WebContent/WEB-INF/lib/postgresql-9.3-1101-jdbc4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/core/WebContent/WEB-INF/lib/javax.persistence-2.1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/core/WebContent/WEB-INF/lib/eclipselink-2.5.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
