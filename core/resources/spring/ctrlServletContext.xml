@@ -19,42 +19,48 @@ Repository and Service layers
     <beans>	    	    		
     	<!-- Controllers -->
     	<!-- Configuration -->
-    		<bean id="parameterCtrl" class="org.ibpnh.core.controller.configuration.parameter.ParameterCtrl" scope="request"/>
+		<bean id="parameterCtrl" class="org.kairos.ibpnh.core.controller.configuration.parameter.ParameterCtrl" scope="request"/>
 
    		<!-- Login -->
-    		<bean id="loginCtrl" class="org.ibpnh.core.controller.login.LoginCtrl" scope="request"/>
+		<bean id="loginCtrl" class="org.kairos.ibpnh.core.controller.login.LoginCtrl" scope="request"/>
     		
     	<!-- User -->
-    		<bean id="userCtrl" class="org.ibpnh.core.controller.user.UserCtrl" scope="request"/>
-			<bean id="roleTypeCtrl" class="org.ibpnh.core.controller.user.roleType.RoleTypeCtrl" scope="request"/>
-    		<bean id="passwordRecoverCtrl" class="org.ibpnh.core.controller.user.PasswordRecoverCtrl" scope="request"/>
+		<bean id="userCtrl" class="org.kairos.ibpnh.core.controller.user.UserCtrl" scope="request"/>
+		<bean id="roleTypeCtrl" class="org.kairos.ibpnh.core.controller.user.roleType.RoleTypeCtrl" scope="request"/>
+		<bean id="passwordRecoverCtrl" class="org.kairos.ibpnh.core.controller.user.PasswordRecoverCtrl" scope="request"/>
     	
 		<!-- Contact -->
-			<bean id="ContactCtrl" class="org.ibpnh.core.controller.contact.ContactCtrl" scope="request"/>
+		<bean id="ContactCtrl" class="org.kairos.ibpnh.core.controller.contact.ContactCtrl" scope="request"/>
 			
 		<!-- About -->
-			<bean id="AboutCtrl" class="org.ibpnh.core.controller.contact.AboutCtrl" scope="request"/>
+		<bean id="AboutCtrl" class="org.kairos.ibpnh.core.controller.contact.AboutCtrl" scope="request"/>
 			
 		<!-- Log -->
-		<bean id='logCtrl' class='org.ibpnh.core.controller.log.LogCtrl' scope='request'/>
+		<bean id='logCtrl' class='org.kairos.ibpnh.core.controller.log.LogCtrl' scope='request'/>
 		
 		<!-- Alert -->
-		<bean id='alertCtrl' class='org.ibpnh.core.controller.adminPanel.AlertCtrl' scope='request'/>
+		<bean id='alertCtrl' class='org.kairos.ibpnh.core.controller.adminPanel.AlertCtrl' scope='request'/>
 		
 		<!-- Registrarion -->
-		<bean id='registrationCtrl' class='org.ibpnh.core.controller.login.RegistrationCtrl' scope='request'/>
+		<bean id='registrationCtrl' class='org.kairos.ibpnh.core.controller.login.RegistrationCtrl' scope='request'/>
 		
 		<!-- Images Ctrl -->
-		<bean id='imagesCtrl' class='org.ibpnh.core.controller.ImagesCtrl' scope='request'/>
+		<bean id='imagesCtrl' class='org.kairos.ibpnh.core.controller.ImagesCtrl' scope='request'/>
 		
 		<!-- Document Type Ctrl -->
-		<bean id='documentTypeCtrl' class='org.ibpnh.core.controller.configuration.documentType.DocumentTypeCtrl' scope='request'/>
+		<bean id='documentTypeCtrl' class='org.kairos.ibpnh.core.controller.configuration.documentType.DocumentTypeCtrl' scope='request'/>
 
 		<!-- Personal Data Ctrl.  -->
-		<bean id='personalDataCtrl' class='org.ibpnh.core.controller.user.PersonalDataCtrl' scope='request'/>
+		<bean id='personalDataCtrl' class='org.kairos.ibpnh.core.controller.user.PersonalDataCtrl' scope='request'/>
 		
 		<!-- Language Ctrl. -->
-		<bean id='langCtrl' class='org.ibpnh.core.controller.LangCtrl' scope='request'/>
+		<bean id='langCtrl' class='org.kairos.ibpnh.core.controller.LangCtrl' scope='request'/>
+
+		<!-- Footer Ctrl. -->
+		<bean id='footerCtrl' class='org.kairos.ibpnh.core.controller.FooterCtrl' scope='request'/>
+
+		<!-- Daily Devotional Ctrl. -->
+		<bean id='dailyDevotionalCtrl' class='org.kairos.ibpnh.core.controller.devotional.DailyDevotionalCtrl' scope='request'/>
 		
 		<!-- Ant Mark -->
     </beans>

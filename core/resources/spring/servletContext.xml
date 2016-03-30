@@ -43,7 +43,7 @@ Repository and Service layers
     <!-- Profile Unaware Beans -->
     <beans>
     	<!-- Listeners & Container -->
-		<bean id="alertMessageListener" class="org.ibpnh.core.services.alert.consumer.AlertAsyncConsumerMq" />
+		<bean id="alertMessageListener" class="org.kairos.ibpnh.core.services.alert.consumer.AlertAsyncConsumerMq" />
 				
     	<jms:listener-container container-type="default"
 			connection-factory="mqCachedConnectionFactory" acknowledge="auto" concurrency="2-20">
@@ -56,7 +56,7 @@ Repository and Service layers
     	<task:executor id="executorWithPoolSizeRange" pool-size="10-30" queue-capacity="150"/>
     	
     	<!-- The quartz scheduler configuration -->
-    	<bean id="jobFactoryBean" class="org.ibpnh.core.utils.quartz.AutowiringSpringBeanJobFactory"/>
+    	<bean id="jobFactoryBean" class="org.kairos.ibpnh.core.utils.quartz.AutowiringSpringBeanJobFactory"/>
     	<bean id="quarzScheduler" class="org.springframework.scheduling.quartz.SchedulerFactoryBean" destroy-method="destroy">
     		<property name="waitForJobsToCompleteOnShutdown" value="true" /> 
     		<property name="jobFactory" ref="jobFactoryBean"/>
@@ -66,7 +66,7 @@ Repository and Service layers
     				<!--<bean class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">-->
     					<!--<property name="jobDetail">-->
     						<!--<bean id="permanenceAlertJob" class="org.springframework.scheduling.quartz.JobDetailFactoryBean">-->
-								<!--<property name="jobClass" value="org.ibpnh.core.job.PermanenceAlertJob" />-->
+								<!--<property name="jobClass" value="org.kairos.ibpnh.core.job.PermanenceAlertJob" />-->
 								<!--<property name="durability" value="true" />-->
 							<!--</bean>-->
 						<!--</property>-->
@@ -78,14 +78,14 @@ Repository and Service layers
     	</bean>		
     	
     	<!-- Dynamic Jobs -->
-    	<bean id="mailJobScheduler" class="org.ibpnh.core.services.mail.MailJobSchedulerQuartzImpl"  depends-on="quarzScheduler" init-method="scheduleMails"/>
-    	<bean id="genericMailSenderJob" class="org.ibpnh.core.services.mail.job.GenericMailSenderJob" scope="prototype"/>
-    	<bean id="mailSenderTask" class="org.ibpnh.core.services.mail.job.MailSenderTask" scope="prototype"/>
+    	<bean id="mailJobScheduler" class="org.kairos.ibpnh.core.services.mail.MailJobSchedulerQuartzImpl"  depends-on="quarzScheduler" init-method="scheduleMails"/>
+    	<bean id="genericMailSenderJob" class="org.kairos.ibpnh.core.services.mail.job.GenericMailSenderJob" scope="prototype"/>
+    	<bean id="mailSenderTask" class="org.kairos.ibpnh.core.services.mail.job.MailSenderTask" scope="prototype"/>
     	    	
-    	<bean id="messageSolver" class="org.ibpnh.core.web.MessageSolver" init-method="init">
+    	<bean id="messageSolver" class="org.kairos.ibpnh.core.web.MessageSolver" init-method="init">
     		<property name="defaultMessageLocale" value="${message.defaultMessageLocale}" />
     	</bean>
-    	<bean id="webContextHolder" class="org.ibpnh.core.web.WebContextHolder" scope="request">
+    	<bean id="webContextHolder" class="org.kairos.ibpnh.core.web.WebContextHolder" scope="request">
     		<aop:scoped-proxy/>
     	</bean>
     	
@@ -100,8 +100,8 @@ Repository and Service layers
 		    <property name="defaultLocale" value="es" />
 		</bean>
 		
-    	<bean id="webConxtextHolderInterceptor" class="org.ibpnh.core.web.interceptors.WebContextHolderInterceptor" scope="prototype"/>
-    	<bean id="tokenAuthenticationInterceptor" class="org.ibpnh.core.web.interceptors.TokenAuthenticationInterceptor" scope="prototype"/>
+    	<bean id="webConxtextHolderInterceptor" class="org.kairos.ibpnh.core.web.interceptors.WebContextHolderInterceptor" scope="prototype"/>
+    	<bean id="tokenAuthenticationInterceptor" class="org.kairos.ibpnh.core.web.interceptors.TokenAuthenticationInterceptor" scope="prototype"/>
     
     	<bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping">
     		<property name="interceptors">
@@ -116,12 +116,12 @@ Repository and Service layers
 		<!-- NONE -->
 		<!-- Utils -->
 		<!-- Password Utils -->
-		<bean id="passwordUtils" class="org.ibpnh.core.utils.PasswordUtils" scope="singleton" />
+		<bean id="passwordUtils" class="org.kairos.ibpnh.core.utils.PasswordUtils" scope="singleton" />
 		
 		<!-- BigDecimal Utils -->
-		<bean id="bigDecimalUtils" class="org.ibpnh.core.utils.BigDecimalUtils" scope="singleton" />
+		<bean id="bigDecimalUtils" class="org.kairos.ibpnh.core.utils.BigDecimalUtils" scope="singleton" />
 		
 		<!-- Date Utils -->
-		<bean id="dateUtils" class="org.ibpnh.core.utils.DateUtilsImpl" init-method="init" scope="singleton" />
+		<bean id="dateUtils" class="org.kairos.ibpnh.core.utils.DateUtilsImpl" init-method="init" scope="singleton" />
     </beans>
 </beans>

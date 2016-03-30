@@ -9,17 +9,17 @@
 		<relationship-type>non-cumulative</relationship-type>
 		<custom-converters> 
 		<!-- These are always bi-directional  -->
-      		<converter type="org.ibpnh.core.utils.dozer.converter.BigDecimalCustomConverter" >
-        		<class-a>org.ibpnh.core.utils.BigDecimalWithoutTypeAdapting</class-a>
+      		<converter type="org.kairos.ibpnh.core.utils.dozer.converter.BigDecimalCustomConverter" >
+        		<class-a>org.kairos.ibpnh.core.utils.BigDecimalWithoutTypeAdapting</class-a>
         		<class-b>java.math.BigDecimal</class-b>
 	      	</converter>
 		</custom-converters>
 	</configuration>
 
 	<mapping>
-		<class-a map-null="false">org.ibpnh.core.model.user.RoleType
+		<class-a map-null="false">org.kairos.ibpnh.core.model.user.RoleType
 		</class-a>
-		<class-b>org.ibpnh.core.vo.user.RoleTypeVo</class-b>
+		<class-b>org.kairos.ibpnh.core.vo.user.RoleTypeVo</class-b>
 
 		<field remove-orphans="true">
 			<a>roleTypeFunctions</a>
@@ -33,8 +33,8 @@
 	</mapping>
 
 	<mapping map-id="non-deep-RoleTypeVo">
-		<class-a>org.ibpnh.core.model.user.RoleType</class-a>
-		<class-b>org.ibpnh.core.vo.user.RoleTypeVo</class-b>
+		<class-a>org.kairos.ibpnh.core.model.user.RoleType</class-a>
+		<class-b>org.kairos.ibpnh.core.vo.user.RoleTypeVo</class-b>
 
 		<field-exclude>
 			<a>roleTypeFunctions</a>
@@ -48,8 +48,8 @@
 	</mapping>
 
 	<mapping>
-		<class-a>org.ibpnh.core.model.user.Role</class-a>
-		<class-b>org.ibpnh.core.vo.user.RoleVo</class-b>
+		<class-a>org.kairos.ibpnh.core.model.user.Role</class-a>
+		<class-b>org.kairos.ibpnh.core.vo.user.RoleVo</class-b>
 
 		<field remove-orphans="true">
 			<a>roleFunctions</a>
@@ -58,8 +58,8 @@
 	</mapping>
 
 	<mapping wildcard="false">
-		<class-a>org.ibpnh.core.model.user.RoleTypeFunction</class-a>
-		<class-b>org.ibpnh.core.vo.user.RoleTypeFunctionVo</class-b>
+		<class-a>org.kairos.ibpnh.core.model.user.RoleTypeFunction</class-a>
+		<class-b>org.kairos.ibpnh.core.vo.user.RoleTypeFunctionVo</class-b>
 
 		<field>
 			<a>id</a>
@@ -98,8 +98,8 @@
 	</mapping>
 
 	<mapping wildcard="false">
-		<class-a>org.ibpnh.core.model.user.RoleFunction</class-a>
-		<class-b>org.ibpnh.core.vo.user.RoleFunctionVo</class-b>
+		<class-a>org.kairos.ibpnh.core.model.user.RoleFunction</class-a>
+		<class-b>org.kairos.ibpnh.core.vo.user.RoleFunctionVo</class-b>
 
 		<field>
 			<a>id</a>
@@ -153,8 +153,8 @@
 	</mapping>
 
 	<mapping map-id="non-deep-UserVo">
-		<class-a>org.ibpnh.core.model.user.User</class-a>
-		<class-b>org.ibpnh.core.vo.user.UserVo</class-b>
+		<class-a>org.kairos.ibpnh.core.model.user.User</class-a>
+		<class-b>org.kairos.ibpnh.core.vo.user.UserVo</class-b>
 
 		<field-exclude>
 			<a>role</a>
@@ -183,22 +183,12 @@
 	</mapping>
 	
 	<mapping map-id="only-role-functions-UserVo">
-		<class-a>org.ibpnh.core.model.user.User</class-a>
-		<class-b>org.ibpnh.core.vo.user.UserVo</class-b>
+		<class-a>org.kairos.ibpnh.core.model.user.User</class-a>
+		<class-b>org.kairos.ibpnh.core.vo.user.UserVo</class-b>
 		
 		<field>
 			<a>role.roleFunctions</a>
 			<b>role.roleFunctions</b>
-		</field>
-	</mapping>
-
-	<mapping>
-		<class-a>org.ibpnh.core.model.configuration.ticket.Ticket</class-a>
-		<class-b>org.ibpnh.core.vo.configuration.ticket.TicketVo</class-b>
-
-		<field remove-orphans="true">
-			<a>ticketLines</a>
-			<b>ticketLines</b>
 		</field>
 	</mapping>
 </mappings>

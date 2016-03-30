@@ -104,7 +104,7 @@
 	
 	<filter>
 		<filter-name>corsFilter</filter-name>
-    	<filter-class>org.ibpnh.core.web.filter.CorsRequestFilter</filter-class>
+    	<filter-class>org.kairos.ibpnh.core.web.filter.CorsRequestFilter</filter-class>
     	<async-supported>true</async-supported>
 	</filter>
 	<filter-mapping>

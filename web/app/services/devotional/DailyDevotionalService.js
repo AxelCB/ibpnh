@@ -7,8 +7,8 @@ var ibpnhModules = angular.module('services');
 ibpnhModules.factory('DailyDevotionalService', function(IbpnhService){
 	return {
 		create: function (url,params,file, successFn, errorFn) {
-			//return IbpnhService.authPost('/dailyDevotional/create.json', params, successFn, errorFn);
-			return IbpnhService.fileAuthPost(url, params,file,successFn, errorFn);
+			return IbpnhService.authPost('/dailyDevotional/create.json', params, successFn, errorFn);
+			//return IbpnhService.fileAuthPost(url, params,file,successFn, errorFn);
 		},
 		remove: function (params, successFn, errorFn) {
 			return IbpnhService.authPost('/dailyDevotional/delete.json', params, successFn, errorFn);

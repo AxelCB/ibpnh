@@ -11,32 +11,32 @@
 		<mapping-file>jpa/schema.xml</mapping-file>
 		
 		<!-- Alert -->
-		<class>org.ibpnh.core.model.alert.Alert</class>
+		<class>org.kairos.ibpnh.core.model.alert.Alert</class>
 		
 		<!-- Parameter -->
-		<class>org.ibpnh.core.model.configuration.parameter.Parameter</class>
-		<class>org.ibpnh.core.model.configuration.parameter.ParameterHistory</class>
+		<class>org.kairos.ibpnh.core.model.configuration.parameter.Parameter</class>
+		<class>org.kairos.ibpnh.core.model.configuration.parameter.ParameterHistory</class>
 		<!-- User -->
-		<class>org.ibpnh.core.model.user.User</class>
-		<class>org.ibpnh.core.model.user.Role</class>
-		<class>org.ibpnh.core.model.user.RoleType</class>
-		<class>org.ibpnh.core.model.user.Function</class>
-		<class>org.ibpnh.core.model.user.RoleFunction</class>
-		<class>org.ibpnh.core.model.user.RoleTypeFunction</class>
-		<class>org.ibpnh.core.model.user.UserDetails</class>
+		<class>org.kairos.ibpnh.core.model.user.User</class>
+		<class>org.kairos.ibpnh.core.model.user.Role</class>
+		<class>org.kairos.ibpnh.core.model.user.RoleType</class>
+		<class>org.kairos.ibpnh.core.model.user.Function</class>
+		<class>org.kairos.ibpnh.core.model.user.RoleFunction</class>
+		<class>org.kairos.ibpnh.core.model.user.RoleTypeFunction</class>
+		<class>org.kairos.ibpnh.core.model.user.UserDetails</class>
 		<!-- Person -->
-		<class>org.ibpnh.core.model.person.Person</class>
+		<class>org.kairos.ibpnh.core.model.person.Person</class>
 		<!-- Document Type -->
-		<class>org.ibpnh.core.model.person.DocumentType</class>
+		<class>org.kairos.ibpnh.core.model.person.DocumentType</class>
         
         <!-- Mails -->
-        <class>org.ibpnh.core.model.configuration.mail.Mail</class>
+        <class>org.kairos.ibpnh.core.model.configuration.mail.Mail</class>
         
         <!-- Log -->
-        <class>org.ibpnh.core.model.log.Log</class>
+        <class>org.kairos.ibpnh.core.model.log.Log</class>
         
         <!-- Password Recovery -->
-        <class>org.ibpnh.core.model.user.PasswordRecover</class>
+        <class>org.kairos.ibpnh.core.model.user.PasswordRecover</class>
 
         <!-- Ant Mark - (Ant append text after this, you have to discomment the previous line ) -->
         

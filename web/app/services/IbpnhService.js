@@ -6,9 +6,8 @@ server.factory('IbpnhService', ['$http', '$rootScope', '$location', '$cookieStor
     function($http, $rootScope, $location,  $cookieStore, $injector,Upload) {
 	
     $rootScope.reLoginCount = 0;
-    $rootScope.ibpnhCoreServiceUrl = "/";
-    //$rootScope.universeCoreServiceUrl = universeServiceUrl;
-	
+    $rootScope.ibpnhCoreServiceUrl = ibpnhServiceUrl;
+
 	var wrapperFunction = function(originalFunction) {
 		
 		return function(response) {			

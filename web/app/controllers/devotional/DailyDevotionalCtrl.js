@@ -4,13 +4,11 @@
  */
 var ibpnhControllers = angular.module('ibpnhControllers');
 
-ibpnhControllers.controller('DailyDevotionalCtrl',['$scope', '$rootScope','BlobstoreService',
-	'DailyDevotionalService', '$filter','Upload','$routeParams',
+ibpnhControllers.controller('DailyDevotionalCtrl',['$scope', '$rootScope', 'DailyDevotionalService', '$filter','Upload','$routeParams',
 	function($scope, $rootScope, BlobstoreService, DailyDevotionalService, $filter,Upload,$routeParams) {
 		$scope.dailyDevotional = {};
 		$scope.editing = false;
 		$scope.dailyDevotionalDate = new Date();
-		$scope.uploadUrl="";
 		$scope.imageFile;
 
 		var paginationHelper;
@@ -18,25 +16,19 @@ ibpnhControllers.controller('DailyDevotionalCtrl',['$scope', '$rootScope','Blobs
 		$scope.create = function() {
 			if ($scope.myForm.$valid) {
 				$scope.dailyDevotional.date = DateFormatHelper.fullDateTimeToString($scope.dailyDevotionalDate);
+				$scope.dailyDevotional.image=$scope.imageFile;
 
-				BlobstoreService.uploadUrl("/dailyDevotional/create.json",
-					function(response){
-						$scope.uploadUrl=response;
+				DailyDevotionalService.create(
+					$scope.dailyDevotional,
+					function(response) {
+						if (response.ok) {
+							// dailyDevotional successfully created
+							var par = JSON.parse(response.data);
 
-						DailyDevotionalService.create(
-							$scope.uploadUrl,
-							$scope.dailyDevotional,
-							$scope.imageFile,
-							function(response) {
-								if (response.ok) {
-									// dailyDevotional successfully created
-									var par = JSON.parse(response.data);
+							$rootScope.keepMessages = true;
+							$scope.initialize();
+						}
 
-									$rootScope.keepMessages = true;
-									$scope.initialize();
-								}
-
-							}, $scope.errorManager);
 					}, $scope.errorManager);
 			} else {
 				$rootScope.showErrorMessage(i18n.t('commissionSchema.validation.numberFormat'), true);

@@ -11,8 +11,8 @@ angular.module('ibpnhApp', ['ngRoute','ngAnimate','ngCookies','routes','ibpnhCon
     //, 'services', 'ui.bootstrap'
     config(['$routeProvider', function($routeProvider) {
     }])
-    .run(['$rootScope', '$window', '$location', '$cookieStore', 'LoginService', 'IbpnhService', //'FooterService',
-        function ($rootScope, $window, $location, $cookieStore, LoginService, IbpnhService) { //FooterService,
+    .run(['$rootScope', '$window', '$location', '$cookieStore', 'LoginService', 'IbpnhService', 'FooterService',
+        function ($rootScope, $window, $location, $cookieStore, LoginService, IbpnhService,FooterService) {
             $rootScope.lang = defaultLang;
             $rootScope.canSubscribe = canSubscribe;
             $rootScope.systemTitle = "Iglesia Bautista Pueblo Nuevo Hernandez"
@@ -26,6 +26,42 @@ angular.module('ibpnhApp', ['ngRoute','ngAnimate','ngCookies','routes','ibpnhCon
                     _run();
                 }, _run);
 
+            /**
+             * Returns the constructed name for an array of names.
+             */
+            $rootScope.constructName = function(index, array) {
+                var toReturn = 'menu.';
+                for (var i = 0; i < (index+1); i++) {
+                    toReturn += array[i] + '.';
+                }
+                return toReturn + 'name';
+            };
+
+            /**
+             * Translates Functions.
+             */
+            $rootScope.translateFunctions = function(roleFunctions) {
+                $.each(roleFunctions, function() {
+                    var namesArray = [];
+                    if (this.menuName) {
+                        namesArray.push(this.menuName);
+                    }
+                    if (this.submenuName) {
+                        namesArray.push(this.submenuName);
+                    }
+                    namesArray.push(this.actionName);
+                    namesArray.push(this.name);
+
+                    var constructedNamesArray = [];
+                    var translatedNamesArray = [];
+                    for (var i = 0; i < namesArray.length; i++) {
+                        constructedNamesArray.push($rootScope.constructName(i, namesArray));
+                        translatedNamesArray.push(i18n.t(constructedNamesArray[i]));
+                    }
+                    this.translatedNamesArray = translatedNamesArray;
+                });
+            };
+
             $rootScope.stringStartsWithAnyStringInArray = function(string,array){
                for(var i=0;i<array.length;i++){
                    if(string.indexOf(array[i])===0){
@@ -35,33 +71,33 @@ angular.module('ibpnhApp', ['ngRoute','ngAnimate','ngCookies','routes','ibpnhCon
                return false;
             };
 
-            //$rootScope.generatePermissions = function(user) {
-            //    var permissions = [];
-            //    var functions = user.role.roleFunctions;
-            //    var index;
-            //    for (index = 0; index < user.role.roleFunctions.length; index++) {
-            //        if (functions[index].enabled) {
-            //            var menuPath = "";
-            //            if (functions[index].function.menuName) {
-            //                menuPath += "/" + functions[index].function.menuName;
-            //            }
-            //            if (functions[index].function.submenuName) {
-            //                menuPath += "/" + functions[index].function.submenuName;
-            //            }
-            //            if (functions[index].function.actionName) {
-            //                menuPath += "/" + functions[index].function.actionName;
-            //            }
-            //            if (functions[index].function.name) {
-            //                menuPath += ":" + functions[index].function.name;
-            //            }
-            //            if (permissions.indexOf(menuPath) == -1) {
-            //                permissions.push(menuPath);
-            //            }
-            //        }
-            //    }
-            //
-            //    return permissions;
-            //};
+            $rootScope.generatePermissions = function(user) {
+                var permissions = [];
+                var functions = user.role.roleFunctions;
+                var index;
+                for (index = 0; index < user.role.roleFunctions.length; index++) {
+                    if (functions[index].enabled) {
+                        var menuPath = "";
+                        if (functions[index].function.menuName) {
+                            menuPath += "/" + functions[index].function.menuName;
+                        }
+                        if (functions[index].function.submenuName) {
+                            menuPath += "/" + functions[index].function.submenuName;
+                        }
+                        if (functions[index].function.actionName) {
+                            menuPath += "/" + functions[index].function.actionName;
+                        }
+                        if (functions[index].function.name) {
+                            menuPath += ":" + functions[index].function.name;
+                        }
+                        if (permissions.indexOf(menuPath) == -1) {
+                            permissions.push(menuPath);
+                        }
+                    }
+                }
+
+                return permissions;
+            };
 
             $rootScope.$on('$routeChangeStart', function (event, next, current) {
                 $("body").removeClass("modal-open");
@@ -146,22 +182,22 @@ angular.module('ibpnhApp', ['ngRoute','ngAnimate','ngCookies','routes','ibpnhCon
 
             $rootScope.errorManager = $rootScope.manageError;
 
-            //$rootScope.canAccess = function(uri) {
-            //    return $rootScope.permissions.indexOf(uri) != -1;
-            //};
+            $rootScope.canAccess = function(uri) {
+                return $rootScope.permissions.indexOf(uri) != -1;
+            };
 
             $rootScope.print = function() {
                 window.print();
             };
 
-            //FooterService.getSystemName(function(res) {
-            //    if (res.ok) {
-            //        $rootScope.systemTitle = JSON.parse(res.data).value;
-            //        document.title = $rootScope.systemTitle;
-            //    }
-            //},function() {
-            //    // do nothing
-            //});
+            FooterService.getSystemName(function(res) {
+                if (res.ok) {
+                    $rootScope.systemTitle = JSON.parse(res.data).value;
+                    document.title = $rootScope.systemTitle;
+                }
+            },function() {
+                // do nothing
+            });
 
             $rootScope.$watch(function() { return $rootScope.systemTitle; }, function() {
                 document.title = $rootScope.systemTitle;
@@ -191,14 +227,14 @@ angular.module('ibpnhApp', ['ngRoute','ngAnimate','ngCookies','routes','ibpnhCon
                 $rootScope.loggedUser = loggedUser;
 
                 // generate permissions
-                //$rootScope.permissions = $rootScope.generatePermissions($rootScope.loggedUser);
+                $rootScope.permissions = $rootScope.generatePermissions($rootScope.loggedUser);
 
                 // sets the cookie with the user
                 var userCookie = {};
                 angular.copy($rootScope.loggedUser, userCookie);
                 // before, delete all the big data so the cookie is not overflown
-                //userCookie.role = null;
-                //userCookie.roleType = null;
+                userCookie.role = null;
+                userCookie.roleType = null;
                 userCookie.menuOrder = null;
                 // store the cookie
                 $cookieStore.put("loggedUser", userCookie);
@@ -269,7 +305,7 @@ angular.module('ibpnhApp', ['ngRoute','ngAnimate','ngCookies','routes','ibpnhCon
                         function(response){
                             if (response.ok) {
                                 $rootScope.loggedUser = JSON.parse(response.data);
-                                //$rootScope.permissions = $rootScope.generatePermissions($rootScope.loggedUser);
+                                $rootScope.permissions = $rootScope.generatePermissions($rootScope.loggedUser);
                             }
                         },
                         function(){

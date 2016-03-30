@@ -18,25 +18,27 @@ Repository and Service layers
     <beans>    
     	<!-- DAOs -->
     	<!-- Configuration -->
-		<bean id="functionDao" class="org.ibpnh.core.dao.function.FunctionDaoImpl" scope="prototype"/>
+		<bean id="functionDao" class="org.kairos.ibpnh.core.dao.function.FunctionDaoImpl" scope="prototype"/>
 		<!-- User -->
-    	<bean id="userDao" class="org.ibpnh.core.dao.user.UserDaoImpl" scope="prototype"/>
-		<bean id="roleTypeDao" class="org.ibpnh.core.dao.user.roleType.RoleTypeDaoImpl" scope="prototype"/>
-		<bean id="passwordRecoverDao" class="org.ibpnh.core.dao.user.PasswordRecoverDaoImpl" scope="prototype"/>
+    	<bean id="userDao" class="org.kairos.ibpnh.core.dao.user.UserDaoImpl" scope="prototype"/>
+		<bean id="roleTypeDao" class="org.kairos.ibpnh.core.dao.user.roleType.RoleTypeDaoImpl" scope="prototype"/>
+		<bean id="passwordRecoverDao" class="org.kairos.ibpnh.core.dao.user.PasswordRecoverDaoImpl" scope="prototype"/>
 		<!-- Person -->
-		<bean id='personDao' class='org.ibpnh.core.dao.person.PersonDaoImpl' scope="prototype"/>
+		<bean id='personDao' class='org.kairos.ibpnh.core.dao.person.PersonDaoImpl' scope="prototype"/>
 		<!-- Document Type -->	
-		<bean id='documentTypeDao' class='org.ibpnh.core.dao.person.DocumentTypeDaoImpl' scope="prototype"/>
+		<bean id='documentTypeDao' class='org.kairos.ibpnh.core.dao.person.DocumentTypeDaoImpl' scope="prototype"/>
 
 	    <!-- Registered User -->
-	    <bean id="registeredUserDao" class="org.ibpnh.core.dao.user.RegisteredUserDaoImpl" scope="prototype"/>
+	    <bean id="registeredUserDao" class="org.kairos.ibpnh.core.dao.user.RegisteredUserDaoImpl" scope="prototype"/>
 	    
 	    <!-- Mail -->
-	    <bean id='mailDao' class='org.ibpnh.core.dao.configuration.mail.MailDaoImpl' scope="prototype"/>
-	    
+	    <bean id='mailDao' class='org.kairos.ibpnh.core.dao.configuration.mail.MailDaoImpl' scope="prototype"/>
+
+		<!-- Daily Devotional -->
+		<bean id='dailyDevotionalDao' class='org.kairos.ibpnh.core.dao.devotional.DailyDevotionalDaoImpl' scope="prototype"/>
 
 	  	<!-- User Details DAO -->
-	  	<bean id="userDetailsDao" class="org.ibpnh.core.dao.user.UserDetailsDaoImpl" scope="prototype"/>
+	  	<bean id="userDetailsDao" class="org.kairos.ibpnh.core.dao.user.UserDetailsDaoImpl" scope="prototype"/>
 	  	
 	    <!-- Ant Mark -->
     </beans>
