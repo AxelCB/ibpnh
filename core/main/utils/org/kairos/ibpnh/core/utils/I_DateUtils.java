@@ -103,16 +103,6 @@ public interface I_DateUtils {
 	public Date parseDateTimeWithoutSeconds(String h);
 
 	/**
-	 * Parses a String with format used from the SMS gateway
-	 * 
-	 * @param h
-	 *            string to parse
-	 * 
-	 * @return Date
-	 */
-	public Date parseSmsWsDate(String h);
-
-	/**
 	 * Formats a Date using "dd/MM/yyyy"
 	 * 
 	 * @param f

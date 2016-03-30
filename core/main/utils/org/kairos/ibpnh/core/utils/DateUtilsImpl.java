@@ -87,11 +87,6 @@ public class DateUtilsImpl implements I_DateUtils {
 	private DateFormat nativeSqlDateTimeFormat = null;
 
 	/**
-	 * SMS WS Date Format.
-	 */
-	private DateFormat smsWsDateFormat = null;
-
-	/**
 	 * Json Date time exchange format.
 	 */
 	private DateFormat jsonDateTimeExchangeFormat = null;
@@ -139,11 +134,10 @@ public class DateUtilsImpl implements I_DateUtils {
 					ParameterVo.HOUR_FORMAT,
 					ParameterVo.NATIVE_SQL_DATE_FORMAT,
 					ParameterVo.NATIVE_SQL_DATE_TIME_FORMAT,
-					ParameterVo.SMS_WS_DATE_FORMAT,
 					ParameterVo.JSON_DATE_TIME_EXCHANGE_FORMAT,
 					ParameterVo.DATETIME_FORMAT_ISO8601,
 					ParameterVo.DATE_FORMAT_WITHOUT_DAYS_SHORT,
-					ParameterVo.DATETIME_FORMAT_WITH_HYPHENS_WIHOUT_MILLISECONDS}));
+					ParameterVo.DATETIME_FORMAT_WITH_HYPHENS_WITHOUT_MILLISECONDS}));
 			em = this.getEntityManagerHolder().getEntityManager();
 			List<ParameterVo> formats = this.getParameterDao().getByName(em,
 					parametersToGet);
@@ -177,8 +171,7 @@ public class DateUtilsImpl implements I_DateUtils {
 			this.setDateTimeFormat(new SimpleDateFormat(formatsMap
 					.get(ParameterVo.DATETIME_FORMAT), locale));
 			this.setDateTimeFormatWithoutMilliseconds(new SimpleDateFormat(
-					formatsMap
-							.get(ParameterVo.DATETIME_FORMAT_WITHOUT_MILLISECONDS),
+					formatsMap.get(ParameterVo.DATETIME_FORMAT_WITHOUT_MILLISECONDS),
 					locale));
 			this.setDateTimeFormatWithoutSeconds(new SimpleDateFormat(
 					formatsMap.get(ParameterVo.DATETIME_FORMAT_WITHOUT_SECONDS),
@@ -193,8 +186,6 @@ public class DateUtilsImpl implements I_DateUtils {
 					.get(ParameterVo.NATIVE_SQL_DATE_FORMAT), locale));
 			this.setNativeSqlDateTimeFormat(new SimpleDateFormat(formatsMap
 					.get(ParameterVo.NATIVE_SQL_DATE_TIME_FORMAT), locale));
-			this.setSmsWsDateFormat(new SimpleDateFormat(formatsMap
-					.get(ParameterVo.SMS_WS_DATE_FORMAT), locale));
 			this.setJsonDateTimeExchangeFormat(new SimpleDateFormat(formatsMap
 					.get(ParameterVo.JSON_DATE_TIME_EXCHANGE_FORMAT), locale));
 			this.setDateTimeFormatISO8601(new SimpleDateFormat(formatsMap
@@ -202,7 +193,7 @@ public class DateUtilsImpl implements I_DateUtils {
 			this.setDateFormatWithoutDaysShort(new SimpleDateFormat(formatsMap
 					.get(ParameterVo.DATE_FORMAT_WITHOUT_DAYS_SHORT), locale));
 			this.setDateTimeFormatWithHyphensWithoutMilliseconds(new SimpleDateFormat(formatsMap
-					.get(ParameterVo.DATETIME_FORMAT_WITH_HYPHENS_WIHOUT_MILLISECONDS), locale));
+					.get(ParameterVo.DATETIME_FORMAT_WITH_HYPHENS_WITHOUT_MILLISECONDS), locale));
 		} catch (Exception e) {
 			this.logger.error("error getting all format parameters", e);
 		} finally {
@@ -447,25 +438,6 @@ public class DateUtilsImpl implements I_DateUtils {
 	}
 
 	/**
-	 * Parses a String with format used from the SMS gateway
-	 * 
-	 * @param h
-	 *            string to parse
-	 * 
-	 * @return Date
-	 */
-	@Override
-	public synchronized Date parseSmsWsDate(String h) {
-		Date d = new Date();
-		try {
-			d = this.getSmsWsDateFormat().parse(h);
-		} catch (ParseException e) {
-		}
-
-		return d;
-	}
-
-	/**
 	 * Formats a Date using "dd/MM/yyyy"
 	 * 
 	 * @param f
@@ -565,7 +537,7 @@ public class DateUtilsImpl implements I_DateUtils {
 	/**
 	 * Formats a Date using "HH:mm"
 	 * 
-	 * @param f
+	 * @param h
 	 *            Date to format
 	 * 
 	 * @return String
@@ -1328,21 +1300,6 @@ public class DateUtilsImpl implements I_DateUtils {
 	 */
 	private void setNativeSqlDateTimeFormat(DateFormat nativeSqlDateTimeFormat) {
 		this.nativeSqlDateTimeFormat = nativeSqlDateTimeFormat;
-	}
-
-	/**
-	 * @return the smsWsDateFormat
-	 */
-	private DateFormat getSmsWsDateFormat() {
-		return this.smsWsDateFormat;
-	}
-
-	/**
-	 * @param smsWsDateFormat
-	 *            the smsWsDateFormat to set
-	 */
-	private void setSmsWsDateFormat(DateFormat smsWsDateFormat) {
-		this.smsWsDateFormat = smsWsDateFormat;
 	}
 
 	/**

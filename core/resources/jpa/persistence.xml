@@ -38,6 +38,9 @@
         <!-- Password Recovery -->
         <class>org.kairos.ibpnh.core.model.user.PasswordRecover</class>
 
+		<!-- Daily Devotional -->
+		<class>org.kairos.ibpnh.core.model.devotional.DailyDevotional</class>
+
         <!-- Ant Mark - (Ant append text after this, you have to discomment the previous line ) -->
         
         <properties>

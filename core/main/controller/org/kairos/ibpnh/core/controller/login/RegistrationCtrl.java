@@ -110,18 +110,18 @@ public class RegistrationCtrl {
 
 		JsonResponse response = null;
 		try {
-			response = JsonResponse.ok(this.getGson().toJson(
-					this.getParameterDao()
-							.getByName(
-									this.getEntityManagerHolder()
-											.getEntityManager(),
-									ParameterVo.USER_REGISTRATION_CAPTCHA)
-							.getValue(Boolean.class)));
-		} catch (ParseException pe) {
-			this.logger.error("error parsing parameter", pe);
-
-			response = this.getWebContextHolder().unexpectedErrorResponse(
-					ErrorCodes.ERROR_PARAMETER_PARSING);
+//			response = JsonResponse.ok(this.getGson().toJson(
+//					this.getParameterDao()
+//							.getByName(
+//									this.getEntityManagerHolder()
+//											.getEntityManager(),
+//									ParameterVo.USER_REGISTRATION_CAPTCHA)
+//							.getValue(Boolean.class)));
+//		} catch (ParseException pe) {
+//			this.logger.error("error parsing parameter", pe);
+//
+//			response = this.getWebContextHolder().unexpectedErrorResponse(
+//					ErrorCodes.ERROR_PARAMETER_PARSING);
 		} catch (NullPointerException npe) {
 			this.logger.error("error parameter missing", npe);
 
