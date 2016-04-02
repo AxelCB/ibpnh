@@ -78,17 +78,17 @@ angular.module('ibpnhApp', ['ngRoute','ngAnimate','ngCookies','routes','ibpnhCon
                 for (index = 0; index < user.role.roleFunctions.length; index++) {
                     if (functions[index].enabled) {
                         var menuPath = "";
-                        if (functions[index].function.menuName) {
-                            menuPath += "/" + functions[index].function.menuName;
+                        if (functions[index].menuName) {
+                            menuPath += "/" + functions[index].menuName;
                         }
-                        if (functions[index].function.submenuName) {
-                            menuPath += "/" + functions[index].function.submenuName;
+                        if (functions[index].submenuName) {
+                            menuPath += "/" + functions[index].submenuName;
                         }
-                        if (functions[index].function.actionName) {
-                            menuPath += "/" + functions[index].function.actionName;
+                        if (functions[index].actionName) {
+                            menuPath += "/" + functions[index].actionName;
                         }
-                        if (functions[index].function.name) {
-                            menuPath += ":" + functions[index].function.name;
+                        if (functions[index].name) {
+                            menuPath += ":" + functions[index].name;
                         }
                         if (permissions.indexOf(menuPath) == -1) {
                             permissions.push(menuPath);

@@ -11,14 +11,18 @@
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="/resources/customCSS/main.css">
+    <!--Bootstrap-->
+    <link rel="stylesheet" type="text/css" href="resources/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="resources/bootstrap/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" type="text/css" href="resources/bootstrap/css/bootstrap-datetimepicker.min.css" />
     <!--<link rel="stylesheet" type="text/css" href="/resources/customCSS/estilosnico.css">-->
-    <link rel="stylesheet" type="text/css" href="/resources/semanticUI-2.1.8/semantic.min.css">
+    <!--<link rel="stylesheet" type="text/css" href="/resources/semanticUI-2.1.8/semantic.min.css">-->
   </head>
   <body>
     <div class="container">
         <div class="main">
             <!-- Menu -->
-            <div ng-include="'app/views/layout/menu.html'"></div>
+            <div ng-include="'app/views/layout/menubar.html'"></div>
 
             <!-- Messages -->
             <div ng-cloak ng-repeat="message in messages" class="ng-cloak ui message"
@@ -34,10 +38,9 @@
         <div ng-include="'app/views/layout/footer.html'"></div>
     </div>
 
-    <!-- Jquery & Bootstrap -->
+    <!-- Jquery -->
     <script src="resources/jquery/jquery-1.11.2.min.js"></script>
     <script src="resources/jquery/jquery-migrate-1.2.1.min.js"></script>
-    <script src="/resources/semanticUI-2.1.8/semantic.min.js"></script>
 
     <!-- Angular -->
 
@@ -79,10 +82,18 @@
     <script src="app/IbpnhServiceParameters.js"></script>
     <script src="app/app.js"></script>
 
-    <!-- DateTime Picker -->
-    <!--<script src="resources/bootstrap/js/moment.min.js"></script>-->
-    <!--<script src="resources/bootstrap/js/bootstrap-datetimepicker.js"></script>-->
-    <!--<script src="resources/bootstrap/js/bootstrap-datetimepicker.es.js"></script>-->
+    <!--Bootstrap-->
+    <script src="resources/bootstrap/js/bootstrap.min.js"></script>
+    <script src="resources/bootstrap/js/modal.js"></script>
+    <script src="resources/bootstrap/js/tooltip.js"></script>
+
+    <!--Semantic UI-->
+    <!--<script src="/resources/semanticUI-2.1.8/semantic.min.js"></script>-->
+
+    <!-- Bootstrap DateTime Picker -->
+    <script src="resources/bootstrap/js/moment.min.js"></script>
+    <script src="resources/bootstrap/js/bootstrap-datetimepicker.js"></script>
+    <script src="resources/bootstrap/js/bootstrap-datetimepicker.es.js"></script>
 
     <!-- Ng File Upload - danialfarid -->
     <script src="resources/ng-fileupload-danialfarid/ng-file-upload-shim.min.js"></script>

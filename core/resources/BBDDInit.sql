@@ -51,19 +51,274 @@ INSERT INTO roletype (id, deleted, description, name, passwordreseter_id, rolety
 INSERT INTO role (id,deleted,roletype_id) VALUES (1,FALSE,1);
 
 INSERT INTO "user"(id, deleted, disabledcause, enabled, enablinghash, firstlogin, hashcost, loginattempts, password, username, role_id)
-    VALUES (nextval('user_seq'), FALSE, NULL, TRUE,NULL,FALSE,1,0,'$2a$08$QQwZQMLfpH7IxUZOXlI8iOOrLXu9/GiW/W73a939jkqRiKi.hmV5y', 'admin',1);
+    VALUES (nextval('user_seq'), FALSE, NULL, TRUE,NULL,FALSE,NULL,0,'dca3ab8d1c098cb98c8a9ea6c7f1b645132428a625f4d5a176ee14ef778fb2d4cdc874e6364bb3ef300e301c0f66206b46b2cafdd1c27dec4c139be63f9dc7d8', 'admin',1);
 
---Function
-INSERT INTO function (id, actionname, deleted, description, menuname, name, submenuname, uri) VALUES (nextval('function_seq'), 'createDocumentType', FALSE, 'CreateDocumentType', 'configuration', 'createDocumentType', NULL, '/documentType/create');
+--Daily Devotional Functions
+--Function: Create Daily Devotional
+INSERT INTO function (id, actionname, deleted, description, menuname, name, submenuname, uri)
+  VALUES (nextval('function_seq'), 'dailyDevotional', FALSE, 'CreateDailyDevotional', 'devotional', 'createDailyDevotional', NULL, '/devotional/create');
 -- Role types function
 INSERT INTO roletypefunction (id, deleted, disabledcause, enabled, function_id, roletype_id) VALUES (nextval('roletypefunction_seq'), false, NULL, true, currval('function_seq'), 1);
 -- Role types
 INSERT INTO rolefunction (id, deleted, disabledcause, enabled, function_id, role_id)SELECT nextval('rolefunction_seq'), false, NULL, true, currval('function_seq'), id_role_type.id FROM (SELECT distinct(r.id) FROM role r WHERE r.roletype_id = 1) as id_role_type;
 
---Function
-INSERT INTO function (id, actionname, deleted, description, menuname, name, submenuname, uri) VALUES (nextval('function_seq'), 'createDailyDevotional', FALSE, 'CreateDailyDevotional', 'devotional', 'createDailyDevotional', NULL, '/dailyDevotional/create');
+--Function: Delete Daily Devotional
+INSERT INTO function (id, actionname, deleted, description, menuname, name, submenuname, uri)
+  VALUES (nextval('function_seq'), 'dailyDevotional', FALSE, 'DeleteDailyDevotional', 'devotional', 'deleteDailyDevotional', NULL, '/devotional/delete');
 -- Role types function
 INSERT INTO roletypefunction (id, deleted, disabledcause, enabled, function_id, roletype_id) VALUES (nextval('roletypefunction_seq'), false, NULL, true, currval('function_seq'), 1);
 -- Role types
 INSERT INTO rolefunction (id, deleted, disabledcause, enabled, function_id, role_id)SELECT nextval('rolefunction_seq'), false, NULL, true, currval('function_seq'), id_role_type.id FROM (SELECT distinct(r.id) FROM role r WHERE r.roletype_id = 1) as id_role_type;
 
+--Function: Modify Daily Devotional
+INSERT INTO function (id, actionname, deleted, description, menuname, name, submenuname, uri)
+  VALUES (nextval('function_seq'), 'dailyDevotional', FALSE, 'ModifyDailyDevotional', 'devotional', 'modifyDailyDevotional', NULL, '/devotional/modify');
+-- Role types function
+INSERT INTO roletypefunction (id, deleted, disabledcause, enabled, function_id, roletype_id) VALUES (nextval('roletypefunction_seq'), false, NULL, true, currval('function_seq'), 1);
+-- Role types
+INSERT INTO rolefunction (id, deleted, disabledcause, enabled, function_id, role_id)SELECT nextval('rolefunction_seq'), false, NULL, true, currval('function_seq'), id_role_type.id FROM (SELECT distinct(r.id) FROM role r WHERE r.roletype_id = 1) as id_role_type;
+
+--Function: Search Daily Devotional
+INSERT INTO function (id, actionname, deleted, description, menuname, name, submenuname, uri)
+  VALUES (nextval('function_seq'), 'dailyDevotional', FALSE, 'SearchDailyDevotional', 'devotional', 'searchDailyDevotional', NULL , '/devotional/search');
+-- Role types function
+INSERT INTO roletypefunction (id, deleted, disabledcause, enabled, function_id, roletype_id) VALUES (nextval('roletypefunction_seq'), false, NULL, true, currval('function_seq'), 1);
+-- Role types
+INSERT INTO rolefunction (id, deleted, disabledcause, enabled, function_id, role_id)SELECT nextval('rolefunction_seq'), false, NULL, true, currval('function_seq'), id_role_type.id FROM (SELECT distinct(r.id) FROM role r WHERE r.roletype_id = 1) as id_role_type;
+
+--Function: List Daily Devotional
+INSERT INTO function (id, actionname, deleted, description, menuname, name, submenuname, uri)
+  VALUES (nextval('function_seq'), 'dailyDevotional', FALSE, 'ListDailyDevotional', 'devotional', 'listDailyDevotional', NULL, '/devotional/list');
+-- Role types function
+INSERT INTO roletypefunction (id, deleted, disabledcause, enabled, function_id, roletype_id) VALUES (nextval('roletypefunction_seq'), false, NULL, true, currval('function_seq'), 1);
+-- Role types
+INSERT INTO rolefunction (id, deleted, disabledcause, enabled, function_id, role_id)SELECT nextval('rolefunction_seq'), false, NULL, true, currval('function_seq'), id_role_type.id FROM (SELECT distinct(r.id) FROM role r WHERE r.roletype_id = 1) as id_role_type;
+
+--Role Type Parameters
+--Function: Create Role Type
+INSERT INTO function (id, actionname, deleted, description, menuname, name, submenuname, uri)
+  VALUES (nextval('function_seq'), 'roleType', FALSE, 'CreateRoleType', 'configuration', 'createRoleType', NULL, '/roleType/create');
+-- Role types function
+INSERT INTO roletypefunction (id, deleted, disabledcause, enabled, function_id, roletype_id) VALUES (nextval('roletypefunction_seq'), false, NULL, true, currval('function_seq'), 1);
+-- Role types
+INSERT INTO rolefunction (id, deleted, disabledcause, enabled, function_id, role_id)SELECT nextval('rolefunction_seq'), false, NULL, true, currval('function_seq'), id_role_type.id FROM (SELECT distinct(r.id) FROM role r WHERE r.roletype_id = 1) as id_role_type;
+
+--Function: Delete Role Type
+INSERT INTO function (id, actionname, deleted, description, menuname, name, submenuname, uri)
+  VALUES (nextval('function_seq'), 'roleType', FALSE, 'DeleteRoleType', 'configuration', 'deleteRoleType', NULL, '/roleType/delete');
+-- Role types function
+INSERT INTO roletypefunction (id, deleted, disabledcause, enabled, function_id, roletype_id) VALUES (nextval('roletypefunction_seq'), false, NULL, true, currval('function_seq'), 1);
+-- Role types
+INSERT INTO rolefunction (id, deleted, disabledcause, enabled, function_id, role_id)SELECT nextval('rolefunction_seq'), false, NULL, true, currval('function_seq'), id_role_type.id FROM (SELECT distinct(r.id) FROM role r WHERE r.roletype_id = 1) as id_role_type;
+
+--Function: Modify Role Type
+INSERT INTO function (id, actionname, deleted, description, menuname, name, submenuname, uri)
+  VALUES (nextval('function_seq'), 'roleType', FALSE, 'ModifyRoleType', 'configuration', 'modifyRoleType', NULL, '/roleType/modify');
+-- Role types function
+INSERT INTO roletypefunction (id, deleted, disabledcause, enabled, function_id, roletype_id) VALUES (nextval('roletypefunction_seq'), false, NULL, true, currval('function_seq'), 1);
+-- Role types
+INSERT INTO rolefunction (id, deleted, disabledcause, enabled, function_id, role_id)SELECT nextval('rolefunction_seq'), false, NULL, true, currval('function_seq'), id_role_type.id FROM (SELECT distinct(r.id) FROM role r WHERE r.roletype_id = 1) as id_role_type;
+
+--Function: Search Role Type
+INSERT INTO function (id, actionname, deleted, description, menuname, name, submenuname, uri)
+  VALUES (nextval('function_seq'), 'roleType', FALSE, 'SearchRoleType', 'configuration', 'searchRoleType', NULL, '/roleType/search');
+-- Role types function
+INSERT INTO roletypefunction (id, deleted, disabledcause, enabled, function_id, roletype_id) VALUES (nextval('roletypefunction_seq'), false, NULL, true, currval('function_seq'), 1);
+-- Role types
+INSERT INTO rolefunction (id, deleted, disabledcause, enabled, function_id, role_id)SELECT nextval('rolefunction_seq'), false, NULL, true, currval('function_seq'), id_role_type.id FROM (SELECT distinct(r.id) FROM role r WHERE r.roletype_id = 1) as id_role_type;
+
+--Function: List Role Type
+INSERT INTO function (id, actionname, deleted, description, menuname, name, submenuname, uri)
+  VALUES (nextval('function_seq'), 'roleType', FALSE, 'ListRoleType', 'configuration', 'listRoleType', NULL, '/roleType/list');
+-- Role types function
+INSERT INTO roletypefunction (id, deleted, disabledcause, enabled, function_id, roletype_id) VALUES (nextval('roletypefunction_seq'), false, NULL, true, currval('function_seq'), 1);
+-- Role types
+INSERT INTO rolefunction (id, deleted, disabledcause, enabled, function_id, role_id)SELECT nextval('rolefunction_seq'), false, NULL, true, currval('function_seq'), id_role_type.id FROM (SELECT distinct(r.id) FROM role r WHERE r.roletype_id = 1) as id_role_type;
+
+--Parameter Functions
+--Function: Create Parameter
+INSERT INTO function (id, actionname, deleted, description, menuname, name, submenuname, uri)
+  VALUES (nextval('function_seq'), 'parameter', FALSE, 'CreateParameter', 'configuration', 'createParameter', NULL, '/parameter/create');
+-- Role types function
+INSERT INTO roletypefunction (id, deleted, disabledcause, enabled, function_id, roletype_id) VALUES (nextval('roletypefunction_seq'), false, NULL, true, currval('function_seq'), 1);
+-- Role types
+INSERT INTO rolefunction (id, deleted, disabledcause, enabled, function_id, role_id)SELECT nextval('rolefunction_seq'), false, NULL, true, currval('function_seq'), id_role_type.id FROM (SELECT distinct(r.id) FROM role r WHERE r.roletype_id = 1) as id_role_type;
+
+--Function: Modify Parameter
+INSERT INTO function (id, actionname, deleted, description, menuname, name, submenuname, uri)
+  VALUES (nextval('function_seq'), 'parameter', FALSE, 'ModifyParameter', 'configuration', 'modifyParameter', NULL, '/parameter/modify');
+-- Role types function
+INSERT INTO roletypefunction (id, deleted, disabledcause, enabled, function_id, roletype_id) VALUES (nextval('roletypefunction_seq'), false, NULL, true, currval('function_seq'), 1);
+-- Role types
+INSERT INTO rolefunction (id, deleted, disabledcause, enabled, function_id, role_id)SELECT nextval('rolefunction_seq'), false, NULL, true, currval('function_seq'), id_role_type.id FROM (SELECT distinct(r.id) FROM role r WHERE r.roletype_id = 1) as id_role_type;
+
+--Function: Delete Parameter
+INSERT INTO function (id, actionname, deleted, description, menuname, name, submenuname, uri)
+  VALUES (nextval('function_seq'), 'parameter', FALSE, 'DeleteParameter', 'configuration', 'deleteParameter', NULL, '/parameter/delete');
+-- Role types function
+INSERT INTO roletypefunction (id, deleted, disabledcause, enabled, function_id, roletype_id) VALUES (nextval('roletypefunction_seq'), false, NULL, true, currval('function_seq'), 1);
+-- Role types
+INSERT INTO rolefunction (id, deleted, disabledcause, enabled, function_id, role_id)SELECT nextval('rolefunction_seq'), false, NULL, true, currval('function_seq'), id_role_type.id FROM (SELECT distinct(r.id) FROM role r WHERE r.roletype_id = 1) as id_role_type;
+
+--Function: Search Parameter
+INSERT INTO function (id, actionname, deleted, description, menuname, name, submenuname, uri)
+  VALUES (nextval('function_seq'), 'parameter', FALSE, 'SearchParameter', 'configuration', 'searchParameter', NULL, '/parameter/search');
+-- Role types function
+INSERT INTO roletypefunction (id, deleted, disabledcause, enabled, function_id, roletype_id) VALUES (nextval('roletypefunction_seq'), false, NULL, true, currval('function_seq'), 1);
+-- Role types
+INSERT INTO rolefunction (id, deleted, disabledcause, enabled, function_id, role_id)SELECT nextval('rolefunction_seq'), false, NULL, true, currval('function_seq'), id_role_type.id FROM (SELECT distinct(r.id) FROM role r WHERE r.roletype_id = 1) as id_role_type;
+
+--Function: List Parameter
+INSERT INTO function (id, actionname, deleted, description, menuname, name, submenuname, uri)
+  VALUES (nextval('function_seq'), 'parameter', FALSE, 'ListParameter', 'configuration', 'listParameter', NULL, '/parameter/list');
+-- Role types function
+INSERT INTO roletypefunction (id, deleted, disabledcause, enabled, function_id, roletype_id) VALUES (nextval('roletypefunction_seq'), false, NULL, true, currval('function_seq'), 1);
+-- Role types
+INSERT INTO rolefunction (id, deleted, disabledcause, enabled, function_id, role_id)SELECT nextval('rolefunction_seq'), false, NULL, true, currval('function_seq'), id_role_type.id FROM (SELECT distinct(r.id) FROM role r WHERE r.roletype_id = 1) as id_role_type;
+
+--Mail Functions
+--Function: Create Mail
+INSERT INTO function (id, actionname, deleted, description, menuname, name, submenuname, uri)
+  VALUES (nextval('function_seq'), 'mail', FALSE, 'CreateMail', 'configuration', 'createMail', NULL, '/mail/create');
+-- Role types function
+INSERT INTO roletypefunction (id, deleted, disabledcause, enabled, function_id, roletype_id) VALUES (nextval('roletypefunction_seq'), false, NULL, true, currval('function_seq'), 1);
+-- Role types
+INSERT INTO rolefunction (id, deleted, disabledcause, enabled, function_id, role_id)SELECT nextval('rolefunction_seq'), false, NULL, true, currval('function_seq'), id_role_type.id FROM (SELECT distinct(r.id) FROM role r WHERE r.roletype_id = 1) as id_role_type;
+
+--Function: Modify Mail
+INSERT INTO function (id, actionname, deleted, description, menuname, name, submenuname, uri)
+  VALUES (nextval('function_seq'), 'mail', FALSE, 'ModifyMail', 'configuration', 'modifyMail', NULL, '/mail/modify');
+-- Role types function
+INSERT INTO roletypefunction (id, deleted, disabledcause, enabled, function_id, roletype_id) VALUES (nextval('roletypefunction_seq'), false, NULL, true, currval('function_seq'), 1);
+-- Role types
+INSERT INTO rolefunction (id, deleted, disabledcause, enabled, function_id, role_id)SELECT nextval('rolefunction_seq'), false, NULL, true, currval('function_seq'), id_role_type.id FROM (SELECT distinct(r.id) FROM role r WHERE r.roletype_id = 1) as id_role_type;
+
+--Function: Delete Mail
+INSERT INTO function (id, actionname, deleted, description, menuname, name, submenuname, uri)
+  VALUES (nextval('function_seq'), 'mail', FALSE, 'DeleteMail', 'configuration', 'deleteMail', NULL, '/mail/delete');
+-- Role types function
+INSERT INTO roletypefunction (id, deleted, disabledcause, enabled, function_id, roletype_id) VALUES (nextval('roletypefunction_seq'), false, NULL, true, currval('function_seq'), 1);
+-- Role types
+INSERT INTO rolefunction (id, deleted, disabledcause, enabled, function_id, role_id)SELECT nextval('rolefunction_seq'), false, NULL, true, currval('function_seq'), id_role_type.id FROM (SELECT distinct(r.id) FROM role r WHERE r.roletype_id = 1) as id_role_type;
+
+--Function: Search Mail
+INSERT INTO function (id, actionname, deleted, description, menuname, name, submenuname, uri)
+  VALUES (nextval('function_seq'), 'mail', FALSE, 'SearchMail', 'configuration', 'searchMail', NULL, '/mail/search');
+-- Role types function
+INSERT INTO roletypefunction (id, deleted, disabledcause, enabled, function_id, roletype_id) VALUES (nextval('roletypefunction_seq'), false, NULL, true, currval('function_seq'), 1);
+-- Role types
+INSERT INTO rolefunction (id, deleted, disabledcause, enabled, function_id, role_id)SELECT nextval('rolefunction_seq'), false, NULL, true, currval('function_seq'), id_role_type.id FROM (SELECT distinct(r.id) FROM role r WHERE r.roletype_id = 1) as id_role_type;
+
+--Function: List Mail
+INSERT INTO function (id, actionname, deleted, description, menuname, name, submenuname, uri)
+  VALUES (nextval('function_seq'), 'mail', FALSE, 'ListeMail', 'configuration', 'listMail', NULL, '/mail/list');
+-- Role types function
+INSERT INTO roletypefunction (id, deleted, disabledcause, enabled, function_id, roletype_id) VALUES (nextval('roletypefunction_seq'), false, NULL, true, currval('function_seq'), 1);
+-- Role types
+INSERT INTO rolefunction (id, deleted, disabledcause, enabled, function_id, role_id)SELECT nextval('rolefunction_seq'), false, NULL, true, currval('function_seq'), id_role_type.id FROM (SELECT distinct(r.id) FROM role r WHERE r.roletype_id = 1) as id_role_type;
+
+--Function: Trigger  Mail
+INSERT INTO function (id, actionname, deleted, description, menuname, name, submenuname, uri)
+  VALUES (nextval('function_seq'), 'mail', FALSE, 'TriggerMail', 'configuration', 'triggerMail', NULL, '/mail/trigger');
+-- Role types function
+INSERT INTO roletypefunction (id, deleted, disabledcause, enabled, function_id, roletype_id) VALUES (nextval('roletypefunction_seq'), false, NULL, true, currval('function_seq'), 1);
+-- Role types
+INSERT INTO rolefunction (id, deleted, disabledcause, enabled, function_id, role_id)SELECT nextval('rolefunction_seq'), false, NULL, true, currval('function_seq'), id_role_type.id FROM (SELECT distinct(r.id) FROM role r WHERE r.roletype_id = 1) as id_role_type;
+
+--DocumentType Functions
+--Function: Create DocumentType
+INSERT INTO function (id, actionname, deleted, description, menuname, name, submenuname, uri)
+  VALUES (nextval('function_seq'), 'documentType', FALSE, 'CreateDocumentType', 'configuration', 'createDocumentType', NULL, '/documentType/create');
+-- Role types function
+INSERT INTO roletypefunction (id, deleted, disabledcause, enabled, function_id, roletype_id) VALUES (nextval('roletypefunction_seq'), false, NULL, true, currval('function_seq'), 1);
+-- Role types
+INSERT INTO rolefunction (id, deleted, disabledcause, enabled, function_id, role_id)SELECT nextval('rolefunction_seq'), false, NULL, true, currval('function_seq'), id_role_type.id FROM (SELECT distinct(r.id) FROM role r WHERE r.roletype_id = 1) as id_role_type;
+
+--Function: Modify DocumentType
+INSERT INTO function (id, actionname, deleted, description, menuname, name, submenuname, uri)
+  VALUES (nextval('function_seq'), 'documentType', FALSE, 'ModifyDocumentType', 'configuration', 'modifyDocumentType', NULL, '/documentType/modify');
+-- Role types function
+INSERT INTO roletypefunction (id, deleted, disabledcause, enabled, function_id, roletype_id) VALUES (nextval('roletypefunction_seq'), false, NULL, true, currval('function_seq'), 1);
+-- Role types
+INSERT INTO rolefunction (id, deleted, disabledcause, enabled, function_id, role_id)SELECT nextval('rolefunction_seq'), false, NULL, true, currval('function_seq'), id_role_type.id FROM (SELECT distinct(r.id) FROM role r WHERE r.roletype_id = 1) as id_role_type;
+
+--Function: Delete DocumentType
+INSERT INTO function (id, actionname, deleted, description, menuname, name, submenuname, uri)
+  VALUES (nextval('function_seq'), 'documentType', FALSE, 'DeleteDocumentType', 'configuration', 'deleteDocumentType', NULL, '/documentType/delete');
+-- Role types function
+INSERT INTO roletypefunction (id, deleted, disabledcause, enabled, function_id, roletype_id) VALUES (nextval('roletypefunction_seq'), false, NULL, true, currval('function_seq'), 1);
+-- Role types
+INSERT INTO rolefunction (id, deleted, disabledcause, enabled, function_id, role_id)SELECT nextval('rolefunction_seq'), false, NULL, true, currval('function_seq'), id_role_type.id FROM (SELECT distinct(r.id) FROM role r WHERE r.roletype_id = 1) as id_role_type;
+
+--Function: Search DocumentType
+INSERT INTO function (id, actionname, deleted, description, menuname, name, submenuname, uri)
+  VALUES (nextval('function_seq'), 'documentType', FALSE, 'SearchDocumentType', 'configuration', 'searchDocumentType', NULL, '/documentType/search');
+-- Role types function
+INSERT INTO roletypefunction (id, deleted, disabledcause, enabled, function_id, roletype_id) VALUES (nextval('roletypefunction_seq'), false, NULL, true, currval('function_seq'), 1);
+-- Role types
+INSERT INTO rolefunction (id, deleted, disabledcause, enabled, function_id, role_id)SELECT nextval('rolefunction_seq'), false, NULL, true, currval('function_seq'), id_role_type.id FROM (SELECT distinct(r.id) FROM role r WHERE r.roletype_id = 1) as id_role_type;
+
+--Function: List DocumentType
+INSERT INTO function (id, actionname, deleted, description, menuname, name, submenuname, uri)
+  VALUES (nextval('function_seq'), 'documentType', FALSE, 'ListDocumentType', 'configuration', 'listDocumentType', NULL, '/documentType/list');
+-- Role types function
+INSERT INTO roletypefunction (id, deleted, disabledcause, enabled, function_id, roletype_id) VALUES (nextval('roletypefunction_seq'), false, NULL, true, currval('function_seq'), 1);
+-- Role types
+INSERT INTO rolefunction (id, deleted, disabledcause, enabled, function_id, role_id)SELECT nextval('rolefunction_seq'), false, NULL, true, currval('function_seq'), id_role_type.id FROM (SELECT distinct(r.id) FROM role r WHERE r.roletype_id = 1) as id_role_type;
+
+--User Functions
+--Function: Create User
+INSERT INTO function (id, actionname, deleted, description, menuname, name, submenuname, uri)
+  VALUES (nextval('function_seq'), 'user', FALSE, 'CreateUser', 'configuration', 'createUser', NULL, '/user/create');
+-- Role types function
+INSERT INTO roletypefunction (id, deleted, disabledcause, enabled, function_id, roletype_id) VALUES (nextval('roletypefunction_seq'), false, NULL, true, currval('function_seq'), 1);
+-- Role types
+INSERT INTO rolefunction (id, deleted, disabledcause, enabled, function_id, role_id)SELECT nextval('rolefunction_seq'), false, NULL, true, currval('function_seq'), id_role_type.id FROM (SELECT distinct(r.id) FROM role r WHERE r.roletype_id = 1) as id_role_type;
+
+--Function: Modify User
+INSERT INTO function (id, actionname, deleted, description, menuname, name, submenuname, uri)
+  VALUES (nextval('function_seq'), 'user', FALSE, 'ModifyUser', 'configuration', 'modifyUser', NULL, '/user/modify');
+-- Role types function
+INSERT INTO roletypefunction (id, deleted, disabledcause, enabled, function_id, roletype_id) VALUES (nextval('roletypefunction_seq'), false, NULL, true, currval('function_seq'), 1);
+-- Role types
+INSERT INTO rolefunction (id, deleted, disabledcause, enabled, function_id, role_id)SELECT nextval('rolefunction_seq'), false, NULL, true, currval('function_seq'), id_role_type.id FROM (SELECT distinct(r.id) FROM role r WHERE r.roletype_id = 1) as id_role_type;
+
+--Function: Search User
+INSERT INTO function (id, actionname, deleted, description, menuname, name, submenuname, uri)
+  VALUES (nextval('function_seq'), 'user', FALSE, 'SearchUser', 'configuration', 'searchUser', NULL, '/user/search');
+-- Role types function
+INSERT INTO roletypefunction (id, deleted, disabledcause, enabled, function_id, roletype_id) VALUES (nextval('roletypefunction_seq'), false, NULL, true, currval('function_seq'), 1);
+-- Role types
+INSERT INTO rolefunction (id, deleted, disabledcause, enabled, function_id, role_id)SELECT nextval('rolefunction_seq'), false, NULL, true, currval('function_seq'), id_role_type.id FROM (SELECT distinct(r.id) FROM role r WHERE r.roletype_id = 1) as id_role_type;
+
+--Function: List User
+INSERT INTO function (id, actionname, deleted, description, menuname, name, submenuname, uri)
+  VALUES (nextval('function_seq'), 'user', FALSE, 'ListUser', 'configuration', 'listUser', NULL, '/user/list');
+-- Role types function
+INSERT INTO roletypefunction (id, deleted, disabledcause, enabled, function_id, roletype_id) VALUES (nextval('roletypefunction_seq'), false, NULL, true, currval('function_seq'), 1);
+-- Role types
+INSERT INTO rolefunction (id, deleted, disabledcause, enabled, function_id, role_id)SELECT nextval('rolefunction_seq'), false, NULL, true, currval('function_seq'), id_role_type.id FROM (SELECT distinct(r.id) FROM role r WHERE r.roletype_id = 1) as id_role_type;
+
+--Function: Enable User
+INSERT INTO function (id, actionname, deleted, description, menuname, name, submenuname, uri)
+  VALUES (nextval('function_seq'), 'user', FALSE, 'EnableUser', 'configuration', 'enableUser', NULL, '/user/enable');
+-- Role types function
+INSERT INTO roletypefunction (id, deleted, disabledcause, enabled, function_id, roletype_id) VALUES (nextval('roletypefunction_seq'), false, NULL, true, currval('function_seq'), 1);
+-- Role types
+INSERT INTO rolefunction (id, deleted, disabledcause, enabled, function_id, role_id)SELECT nextval('rolefunction_seq'), false, NULL, true, currval('function_seq'), id_role_type.id FROM (SELECT distinct(r.id) FROM role r WHERE r.roletype_id = 1) as id_role_type;
+
+--Function: Disable User
+INSERT INTO function (id, actionname, deleted, description, menuname, name, submenuname, uri)
+  VALUES (nextval('function_seq'), 'user', FALSE, 'DisableUser', 'configuration', 'disableUser', NULL, '/user/delete');
+-- Role types function
+INSERT INTO roletypefunction (id, deleted, disabledcause, enabled, function_id, roletype_id) VALUES (nextval('roletypefunction_seq'), false, NULL, true, currval('function_seq'), 1);
+-- Role types
+INSERT INTO rolefunction (id, deleted, disabledcause, enabled, function_id, role_id)SELECT nextval('rolefunction_seq'), false, NULL, true, currval('function_seq'), id_role_type.id FROM (SELECT distinct(r.id) FROM role r WHERE r.roletype_id = 1) as id_role_type;
+
+--Function: Modify User Functions
+INSERT INTO function (id, actionname, deleted, description, menuname, name, submenuname, uri)
+  VALUES (nextval('function_seq'), 'modifyUserFunctions', FALSE, 'ModifyUserFunctions', 'configuration', 'modifyUserFunctions', NULL, '/user/delete');
+-- Role types function
+INSERT INTO roletypefunction (id, deleted, disabledcause, enabled, function_id, roletype_id) VALUES (nextval('roletypefunction_seq'), false, NULL, true, currval('function_seq'), 1);
+-- Role types
+INSERT INTO rolefunction (id, deleted, disabledcause, enabled, function_id, role_id) SELECT nextval('rolefunction_seq'), false, NULL, true, currval('function_seq'), id_role_type.id FROM (SELECT distinct(r.id) FROM role r WHERE r.roletype_id = 1) as id_role_type;
