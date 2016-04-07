@@ -18,9 +18,10 @@ angular.module('routes', []).config(['$routeProvider', function($routeProvider) 
         {path: '/login', template: viewsPrefix+'/login/login.html', controller: 'LoginCtrl'},
         {path: '/pastor', template: viewsPrefix+'/pastor.html', controller: 'LoginCtrl'},
         {path: '/configuration/user', template: viewsPrefix+'/configuration/user/user.html', controller: 'UserCtrl'},
-        {path: '/configuration/function', template: viewsPrefix+'/configuration/function/function.html', controller: 'FunctionCtrl'},
-        {path: '/configuration/parameter', template: viewsPrefix+'/configuration/parameter/parameter.html', controller: 'ParameterCtrl'},
-        {path: '/devotional', template: viewsPrefix+'/devotional/devotional.html', controller: 'DailyDevotionalCtrl'},
+        //{path: '/configuration/function', template: viewsPrefix+'/configuration/function.html', controller: 'FunctionCtrl'},
+        {path: '/configuration/parameter', template: viewsPrefix+'/configuration/parameter.html', controller: 'ParameterCtrl'},
+        {path: '/configuration/roleType', template: viewsPrefix+'/configuration/user/roleType.html', controller: 'RoleTypeCtrl'},
+        {path: '/devotional/dailyDevotional', template: viewsPrefix+'/devotional/devotional.html', controller: 'DailyDevotionalCtrl'},
         {path: '/devocionales/detalle/:devotionalId', template: viewsPrefix+'/devotional/detalleDevocional.html', controller: 'DailyDevotionalCtrl'},
 
     ];

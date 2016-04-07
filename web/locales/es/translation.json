@@ -102,29 +102,8 @@
 					"name": "Refrescar Parámetros Globales"
 				}
 			},
-			"menuOrder": {
-				"name": "Orden de Menú",
-				"createMenuOrder": {
-					"name": "Crear Orden de Menú"
-				},
-				"modifyMenuOrder": {
-					"name": "Modificar Orden de Menú"
-				},
-				"deleteMenuOrder": {
-					"name": "Eliminar Orden de Menú"
-				},
-				"listMenuOrder": {
-					"name": "Listar Orden de Menú"
-				},
-				"searchMenuOrder": {
-					"name": "Buscar Orden de Menú"
-				}
-			}
-		},
-		"user": {
-			"name":"Usuarios",
-			"roleType": {
-				"name":"Tipos de Rol",
+		  	"roleType": {
+				"name": "Tipo de Rol",
 				"createRoleType": {
 					"name": "Crear Tipo de Rol"
 				},
@@ -135,21 +114,81 @@
 					"name": "Eliminar Tipo de Rol"
 				},
 				"listRoleType": {
-					"name": "Listar Tipos de Rol"
+					"name": "Listar Tipo de Rol"
 				},
 				"searchRoleType": {
-					"name": "Buscar Tipos de Rol"
+					"name": "Buscar Tipo de Rol"
 				}
-			},
-			"user": {
-				"name": "Usuarios",
-				"listUser": {
-					"name": "Listar Usuarios"
+		  	},
+		  	"user": {
+				"name":"Usuarios",
+				"roleType": {
+					"name":"Tipos de Rol",
+			  		"createRoleType": {
+						"name": "Crear Tipo de Rol"
+			  		},
+			  		"modifyRoleType": {
+						"name": "Modificar Tipo de Rol"
+				  	},
+			  		"deleteRoleType": {
+						"name": "Eliminar Tipo de Rol"
+			  		},
+			  		"listRoleType": {
+						"name": "Listar Tipos de Rol"
+			  		},
+			  		"searchRoleType": {
+						"name": "Buscar Tipos de Rol"
+			  		}
 				},
-				"resetAnyUserPassword": {
-					"name": "Resetear Contraseña de Usuario"
+				"user": {
+			  		"name": "Usuarios",
+					"listUser": {
+						"name": "Listar Usuarios"
+			  		},
+			  		"resetAnyUserPassword": {
+						"name": "Resetear Contraseña de Usuario"
+			  		}
 				}
-			}
+		  	},
+		 	"mail": {
+				"name": "Mails",
+				"createMail": {
+			  		"name": "Crear Mail"
+				},
+			    "modifyMail": {
+			  		"name": "Modificar Mail"
+				},
+				"deleteMail": {
+			  		"name": "Eliminar Mail"
+				},
+				"listMail": {
+			  		"name": "Listar Mails"
+				},
+				"searchMail": {
+			  		"name": "Buscar Mails"
+				},
+			  	"triggerMail": {
+			  		"name": "Envío Manual"
+				}
+		  	},
+		 	"documentType": {
+				"name": "Tipos de Documentos",
+				"createDocumentType": {
+			  		"name": "Crear Tipo de Documento"
+				},
+				"modifyDocumentType": {
+			  		"name": "Modificar Tipo de Documento"
+				},
+				"deleteDocumentType": {
+			  		"name": "Eliminar Tipo de Documento"
+				},
+				"listDocumentType": {
+			  		"name": "Listar Tipo de Documento"
+				},
+				"searchDocumentType": {
+			  		"name": "Buscar Tipo de Documento"
+				}
+		  	}
 		},
 		"changePassword": {
 			"name":"Cambiar Contraseña",
@@ -212,6 +251,16 @@
 					"name": "Ejecutar job"
 				}
 			}
+		},
+		"devotional":{
+		  	"name":"Devocionales",
+		  	"dailyDevotional":{
+			  	"name":"Devocionales Diarios"
+			},
+		  	"bibleStudy":{
+				"name":"Estudios Bíblicos"
+			}
+
 		},
 		"personalData": {
 			"name": "Datos personales",

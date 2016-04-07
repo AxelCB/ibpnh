@@ -12,17 +12,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="/resources/customCSS/main.css">
     <!--Bootstrap-->
-    <link rel="stylesheet" type="text/css" href="resources/bootstrap/css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="resources/bootstrap/css/bootstrap-theme.min.css" />
-    <link rel="stylesheet" type="text/css" href="resources/bootstrap/css/bootstrap-datetimepicker.min.css" />
+    <!--<link rel="stylesheet" type="text/css" href="resources/bootstrap/css/bootstrap.min.css" />-->
+    <!--<link rel="stylesheet" type="text/css" href="resources/bootstrap/css/bootstrap-theme.min.css" />-->
+    <!--<link rel="stylesheet" type="text/css" href="resources/bootstrap/css/bootstrap-datetimepicker.min.css" />-->
     <!--<link rel="stylesheet" type="text/css" href="/resources/customCSS/estilosnico.css">-->
-    <!--<link rel="stylesheet" type="text/css" href="/resources/semanticUI-2.1.8/semantic.min.css">-->
+    <!-- Semantic -->
+    <link rel="stylesheet" type="text/css" href="/resources/semanticUI-2.1.8/semantic.min.css">
   </head>
   <body>
     <div class="container">
         <div class="main">
             <!-- Menu -->
-            <div ng-include="'app/views/layout/menubar.html'"></div>
+            <div ng-include="'app/views/layout/menu.html'"></div>
 
             <!-- Messages -->
             <div ng-cloak ng-repeat="message in messages" class="ng-cloak ui message"
@@ -61,19 +62,21 @@
     <script src="app/controllers/ControllersModule.js"></script>
     <script src="app/controllers/login/LoginCtrl.js"></script>
     <script src="app/controllers/configuration/user/UserCtrl.js"></script>
-    <script src="app/controllers/configuration/function/FunctionCtrl.js"></script>
+    <script src="app/controllers/configuration/user/RoleTypeCtrl.js"></script>
+    <script src="app/controllers/configuration/FunctionCtrl.js"></script>
     <script src="app/controllers/login/MenuCtrl.js"></script>
     <script src="app/controllers/devotional/DailyDevotionalCtrl.js"></script>
-    <script src="app/controllers/configuration/parameter/ParameterCtrl.js"></script>
+    <script src="app/controllers/configuration/ParameterCtrl.js"></script>
     <script src="app/controllers/home/HomeCtrl.js"></script>
 
     <!-- Services -->
     <script src="app/services/IbpnhService.js"></script>
     <script src="app/services/login/LoginService.js"></script>
     <script src="app/services/configuration/user/UserService.js"></script>
-    <script src="app/services/configuration/function/FunctionService.js"></script>
+    <script src="app/services/configuration/user/RoleTypeService.js"></script>
+    <script src="app/services/configuration/FunctionService.js"></script>
     <script src="app/services/devotional/DailyDevotionalService.js"></script>
-    <script src="app/services/configuration/parameter/ParameterService.js"></script>
+    <script src="app/services/configuration/ParameterService.js"></script>
     <script src="app/services/FooterService.js"></script>
 
     <script src="app/directives/directives.js"></script>
@@ -83,17 +86,17 @@
     <script src="app/app.js"></script>
 
     <!--Bootstrap-->
-    <script src="resources/bootstrap/js/bootstrap.min.js"></script>
-    <script src="resources/bootstrap/js/modal.js"></script>
-    <script src="resources/bootstrap/js/tooltip.js"></script>
+    <!--<script src="resources/bootstrap/js/bootstrap.min.js"></script>-->
+    <!--<script src="resources/bootstrap/js/modal.js"></script>-->
+    <!--<script src="resources/bootstrap/js/tooltip.js"></script>-->
 
     <!--Semantic UI-->
-    <!--<script src="/resources/semanticUI-2.1.8/semantic.min.js"></script>-->
+    <script src="/resources/semanticUI-2.1.8/semantic.min.js"></script>
 
     <!-- Bootstrap DateTime Picker -->
-    <script src="resources/bootstrap/js/moment.min.js"></script>
-    <script src="resources/bootstrap/js/bootstrap-datetimepicker.js"></script>
-    <script src="resources/bootstrap/js/bootstrap-datetimepicker.es.js"></script>
+    <!--<script src="resources/bootstrap/js/moment.min.js"></script>-->
+    <!--<script src="resources/bootstrap/js/bootstrap-datetimepicker.js"></script>-->
+    <!--<script src="resources/bootstrap/js/bootstrap-datetimepicker.es.js"></script>-->
 
     <!-- Ng File Upload - danialfarid -->
     <script src="resources/ng-fileupload-danialfarid/ng-file-upload-shim.min.js"></script>

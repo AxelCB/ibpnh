@@ -278,4 +278,14 @@ angular.module('directives', [])
 			  $(elem).attr("colspan", "" + colspan(scope)); 
 		  });
 	  };
-  });
+  }).directive('loadDropdowns', ['$timeout', function ($timeout) {
+    return {
+        link: function ($scope, element, attrs) {
+            $scope.$on('menuloaded', function () {
+                $timeout(function () { // You might need this timeout to be sure its run after DOM render.
+                    $('.ui.dropdown').dropdown();
+                }, 0, false);
+            })
+        }
+    };
+}]);

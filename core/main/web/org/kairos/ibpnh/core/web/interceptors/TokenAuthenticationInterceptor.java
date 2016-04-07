@@ -152,7 +152,7 @@ public class TokenAuthenticationInterceptor extends HandlerInterceptorAdapter {
 					} else {
 						String uri = request.getRequestURI()
 								.replace(".json", "")
-								.replace("/ibpnh-core", "");
+								.replace("/core", "");
 
 						// if the handler doesn't implements the I_URIValidator
 						// interface

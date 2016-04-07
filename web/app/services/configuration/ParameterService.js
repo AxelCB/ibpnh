@@ -22,7 +22,7 @@ ibpnhModules.factory('ParameterService', function(IbpnhService){
 			return IbpnhService.authPost('/parameter/search.json', params, successFn, errorFn);
 		},
 		listParameterTypeForCreation: function(successFn, errorFn) {
-			return IbpnhService.authPost('/parameter/listParameterTypeForCreation.json', "", successFn, errorFn);
+			return IbpnhService.authPost('/parameter/listTypes.json', "", successFn, errorFn);
 		},
 	};
 });

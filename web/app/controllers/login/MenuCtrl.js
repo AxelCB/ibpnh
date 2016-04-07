@@ -39,27 +39,28 @@ ibpnhControllers.controller('MenuCtrl',['$scope', '$rootScope', '$location', '$r
 		
 		$rootScope.$watch("permissions", function() {
 			$scope.menuItems = [];
-			
+
 			for (var i = 0; i < $rootScope.permissions.length; i++) {
 				var parts = $rootScope.permissions[i].split(":");
 				var menuUri = parts[0];
 				var menuRoutes = parts[0].split("/");
-				menuRoutes.splice(0,1);
-				
+				menuRoutes.splice(0, 1);
+
 				var menuItem = null;
 				if (menuRoutes.length == 1) {
 					$scope.createOrGetMenuRoot($scope.menuItems, menuRoutes[0], menuUri);
 				} else {
 					menuItem = $scope.createOrGetMenuRoot($scope.menuItems, menuRoutes[0]);
 				}
-				
+
 				if (menuRoutes.length == 3) {
 					var subMenuItem = $scope.createOrGetMenuRoot(menuItem.options, menuRoutes[0] + "." + menuRoutes[1]);
 					$scope.createOrGetMenuRoot(subMenuItem.options, menuRoutes[0] + "." + menuRoutes[1] + '.' + menuRoutes[2], menuUri);
 				} else if (menuRoutes.length == 2) {
 					$scope.createOrGetMenuRoot(menuItem.options, menuRoutes[0] + "." + menuRoutes[1], menuUri);
 				}
-			}
+			};
+			$scope.$broadcast('menuloaded');
 		});
 		
 		$scope.logout = function() {
