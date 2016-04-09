@@ -78,7 +78,7 @@ public class RoleVo extends AbstractVo implements Serializable {
 	 * @param roleTypeVo the role type to copy from. if null, uses it's current role type
 	 */
 	public void copyOrUpdateFromRoleType(RoleTypeVo roleTypeVo) {
-		if (roleTypeVo == null) {
+ 		if (roleTypeVo == null) {
 			roleTypeVo = this.getRoleType();
 		}
 		

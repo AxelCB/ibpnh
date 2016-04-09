@@ -50,6 +50,8 @@ INSERT INTO parameter (id, deleted, description, fixed, global, name, type, valu
 VALUES (nextval('parameter_seq'), FALSE, 'Cantidad de items por página', TRUE, TRUE, 'items.per.page', 'LONG','10','items,page',FALSE);
 
 INSERT INTO roletype (id, deleted, description, name, passwordreseter_id, roletypeenum) VALUES ( 1, false, 'Administrador general del sistema', 'Administrador', null, 0);
+INSERT INTO roletype (id, deleted, description, name, passwordreseter_id, roletypeenum) VALUES ( 2, false, 'Pastor', 'Pastor', 1, 1);
+INSERT INTO roletype (id, deleted, description, name, passwordreseter_id, roletypeenum) VALUES ( 3, false, 'Usuario común', 'Usuario', 1, 2);
 
 INSERT INTO role (id,deleted,roletype_id) VALUES (1,FALSE,1);
 

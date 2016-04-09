@@ -9,6 +9,6 @@ fileTree(dir: '.').matching { include 'artifact.*.gradle' }.each { confFile ->
 // export the projects configuration as a HashMap
 def projectArtifactsMap = [] as HashMap
 project.projectArtifacts.each { projectArtifactsItem ->
-	projectArtifactsMap.put(projectArtifactsItem.municipality, projectArtifactsItem)
+	projectArtifactsMap.put(projectArtifactsItem.module, projectArtifactsItem)
 }
 project.ext.set("projectArtifactsMap", projectArtifactsMap)

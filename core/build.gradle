@@ -7,10 +7,6 @@ buildscript {
   }
 }
 
-repositories {
-	maven { url "https://github.com/mercadopago/sdk-java/raw/master/releases" }
-}
-
 apply plugin: 'org.hidetake.ssh'
 
 // java and war plugins
@@ -19,9 +15,9 @@ apply plugin: 'war'
 
 apply from: 'artifacts.gradle'
 
-// set the source code to compile to Java 7
-project.sourceCompatibility = 1.7
-project.targetCompatibility = 1.7
+// set the source code to compile to Java 8
+project.sourceCompatibility = 1.8
+project.targetCompatibility = 1.8
 
 // directory properties
 project.webAppDirName = 'WebContent'
@@ -97,7 +93,7 @@ def replaceValues(fileName, replacements) {
 	file.write(fileContents, 'UTF-8')
 }
 
-// use maven as the main repositoryn for dependencies
+// use maven as the main repository for dependencies
 repositories {
     mavenCentral()
 }
@@ -184,56 +180,53 @@ task refreshArtifactDir << {
 	file.mkdir()
 }
 
-// creates the dinamic war tasks
-project.projectArtifactsMap.keySet().each { municipality ->
-	task "customWar$municipality"(type: War) {
-		exclude 'WEB-INF/lib/*', '**/*.bkp'
-		archiveName "ibpnh-core-${municipality}.war"
-		
-		doFirst {
-			// deletes the generated metamodel .java files (only .class needs to be copied) */
-			project.delete(fileTree(dir: sourceSets.main.output.classesDir, include: ['**/*.java']))
-			
-			// inform current municipality
-			print "Generating Core Artifact for: $municipality ... "
-	
-			// we need to replace the values of the resource files
-			projectArtifactsMap[municipality].resourceFileReplacements.each { resourceFileReplacement ->
-		 		replaceValues(resourceFileReplacement.fileName, resourceFileReplacement.replacements)
-			}
-			
-			// backup other files
-			rootProject.backupFiles(
-				projectDir,
-				projectArtifactsMap[municipality].otherCoreReplacements.collect { file -> file.fileName } as Set,
-				backupSuffix
-			)
-			
-			// we need to replace the values of the other files
-			projectArtifactsMap[municipality].otherCoreReplacements.each { otherCoreReplacement ->
-				replaceValues(fileTree(dir: projectDir, include: otherCoreReplacement.fileName).getSingleFile(), otherCoreReplacement.replacements)
-			}
+// creates the war task
+task createWar(type: War) {
+	exclude 'WEB-INF/lib/*', '**/*.bkp'
+	archiveName "ibpnh-core.war"
+
+	doFirst {
+		// deletes the generated metamodel .java files (only .class needs to be copied) */
+		project.delete(fileTree(dir: sourceSets.main.output.classesDir, include: ['**/*.java']))
+
+		print "Generating Core Artifact ... "
+
+		// we need to replace the values of the resource files
+		projectArtifactsMap['ibpnh'].resourceFileReplacements.each { resourceFileReplacement ->
+			replaceValues(resourceFileReplacement.fileName, resourceFileReplacement.replacements)
 		}
-		
-		doLast {
-			rootProject.restoreBackupedFiles(projectDir, backupSuffix)
-			
-			println "moving ibpnh-core.war"
-			
-			File newArtifactDir = new File(artifactsDir, "$municipality")
-			newArtifactDir.mkdir()
-			File artifactFile = new File(libsDir, "ibpnh-core-${municipality}.war")
-			File newArtifactFile = new File(newArtifactDir, "ibpnh-core.war")
-			
-			artifactFile.renameTo(newArtifactFile)
+
+		// backup other files
+		rootProject.backupFiles(
+			projectDir,
+			projectArtifactsMap['ibpnh'].otherCoreReplacements.collect { file -> file.fileName } as Set,
+			backupSuffix
+		)
+
+		// we need to replace the values of the other files
+		projectArtifactsMap['ibpnh'].otherCoreReplacements.each { otherCoreReplacement ->
+			replaceValues(fileTree(dir: projectDir, include: otherCoreReplacement.fileName).getSingleFile(), otherCoreReplacement.replacements)
 		}
-		
-		// force the generation of the war ALWAYS
-		outputs.upToDateWhen { false }
-		
-		// must run after the dependency
-		mustRunAfter 'refreshArtifactDir'
 	}
+
+	doLast {
+		rootProject.restoreBackupedFiles(projectDir, backupSuffix)
+
+		println "moving ibpnh-core.war"
+
+		File newArtifactDir = new File(artifactsDir, "ibpnh")
+		newArtifactDir.mkdir()
+		File artifactFile = new File(libsDir, "ibpnh-core.war")
+		File newArtifactFile = new File(newArtifactDir, "ibpnh-core.war")
+
+		artifactFile.renameTo(newArtifactFile)
+	}
+
+	// force the generation of the war ALWAYS
+	outputs.upToDateWhen { false }
+
+	// must run after the dependency
+	mustRunAfter 'refreshArtifactDir'
 }
 
 // Core Wars Only Generation Task
@@ -242,7 +235,7 @@ task coreWars {
 		println "Core Wars Generated"
 	}
 }
-coreWars.dependsOn = tasks.findAll { task -> task.name.startsWith('customWar') }
+coreWars.dependsOn(createWar);//= tasks.findAll { task -> task.name.startsWith('customWar') }
 
 // Task for downloading dependencies. 
 task downloadDep(type: Sync) {
@@ -258,10 +251,10 @@ task downloadDep(type: Sync) {
 }
 
 // Schema Update Download Task
+/*
 task schemaUpdate(dependsOn:'refreshArtifactDir') {
 	doLast {
 		println "About to donwload -> https://raw.githubusercontent.com/wiki/fgonzalez-cespi/ibpnh/Schema-Update-${ibpnhVersion}.md"
-//		ant.setproxy(proxyhost: '163.10.0.153', proxyport: '3128', proxyuser: 'fgonzalez', proxypassword:'fetofeto')
 		ant.get(src: "https://raw.githubusercontent.com/wiki/fgonzalez-cespi/ibpnh/Schema-Update-${ibpnhVersion}.md", dest: './schema_aux')
 		
 		File downloadedFile = new File('./schema_aux')
@@ -279,13 +272,11 @@ task schemaUpdate(dependsOn:'refreshArtifactDir') {
 		generatedFile.write(downloadedFileContents, 'UTF-8')
 		
 		downloadedFile.delete()
-		
-		project.projectArtifactsMap.keySet().each { municipality ->
-			File newArtifactDir = new File(artifactsDir, "$municipality")
-			copy {
-				from generatedFile.absolutePath
-				into newArtifactDir.absolutePath
-			}
+
+		File newArtifactDir = new File(artifactsDir, 'core')
+		copy {
+			from generatedFile.absolutePath
+			into newArtifactDir.absolutePath
 		}
 		
 		generatedFile.delete()
@@ -294,9 +285,9 @@ task schemaUpdate(dependsOn:'refreshArtifactDir') {
 	// must run after the dependency
 	mustRunAfter 'refreshArtifactDir'
 }
-
+*/
 // Super Task
-task wars(dependsOn:['refreshArtifactDir', 'coreWars']) << { //, ':' + project.webProject + ':webWars'
+task wars(dependsOn:['refreshArtifactDir', 'coreWars', ':' + project.webProject + ':webWars']) << { //
 	println 'All wars generated'
 }
 if (hasProperty('ibpnhVersion')) {
@@ -310,16 +301,14 @@ tasks.withType (JavaCompile) {
 
 // SSH Deploys configuration
 remotes {
-	project.projectArtifactsMap.keySet().each { municipality ->
-		if (project.projectArtifactsMap[municipality].deploy) {
-			"$municipality" {
-				host = project.projectArtifactsMap[municipality].hostIp
-				user = project.projectArtifactsMap[municipality].user
-				password = project.projectArtifactsMap[municipality].password
-				knownHosts = allowAnyHosts
-			}
+//	if (project.projectArtifactsMap['ibpnh'].deploy) {
+		'ibpnh' {
+			host = project.projectArtifactsMap['ibpnh'].hostIp
+			user = project.projectArtifactsMap['ibpnh'].user
+			password = project.projectArtifactsMap['ibpnh'].password
+			knownHosts = allowAnyHosts
 		}
-	}
+//	}
 }
 
 // SSH Deploy
@@ -337,19 +326,19 @@ task deploy << {
 	}
 	
 	if (willDeploy) {
-		project.projectArtifactsMap.keySet().each { municipality ->
-			if (project.projectArtifactsMap[municipality].deploy && (onlyDeployArtifactsSet.isEmpty() || onlyDeployArtifactsSet.contains(municipality))) {
-				println "Deploying to $municipality"
+
+			if (project.projectArtifactsMap['ibpnh'].deploy && (onlyDeployArtifactsSet.isEmpty() || onlyDeployArtifactsSet.contains(core))) {
+				println "Deploying to VM"
 				ssh.run {
-					session(remotes["$municipality"]) {
-						put from: fileTree(new File(artifactsDir, "$municipality")), into: project.projectArtifactsMap[municipality].preDeployDir
-						project.projectArtifactsMap[municipality].execute.each { command ->
+					session(remotes['ibpnh']) {
+						put from: fileTree(new File(artifactsDir, 'ibpnh')), into: project.projectArtifactsMap['ibpnh'].preDeployDir
+						project.projectArtifactsMap['ibpnh'].execute.each { command ->
 							println execute(command)
 						}
 					}
 				}
 			}
-		}
+
 	}
 }
 if (!hasProperty('onlyDeploy') || !onlyDeploy) {

@@ -7,52 +7,52 @@ project.webAppDirName = 'WebContent'
 project.buildDir = 'gradleWebBuild'
 
 // creates the dinamic web war tasks
-project.projectArtifactsMap.keySet().each { municipality ->
-	task "customWebWar$municipality"(type: War) {
-		exclude 'WEB-INF/lib/*', '**/*.bkp'
-		archiveName "universe-web-${municipality}.war"
+task createWar(type: War) {
+	exclude 'WEB-INF/lib/*', '**/*.bkp'
+	archiveName "ibpnh-web.war"
 		
-		doFirst {
-			// inform current municipality
-			print "Generating Web Artifact for: $municipality ... "
-			
-			// Backups files
-			rootProject.backupFiles(
-				webAppDir,
-				rootProject.projectArtifactsMap[municipality].webFileReplacements.collect { file -> file.fileName } as Set,
-				rootProject.backupSuffix
-			)
-	
-			// make replacements
-			rootProject.projectArtifactsMap[municipality].webFileReplacements.each { webFileReplacement ->
-				 rootProject.replaceValues(fileTree(dir: webAppDir, include: webFileReplacement.fileName).getSingleFile(), webFileReplacement.replacements)
-			}
-		}
-		
-		doLast {
-			rootProject.restoreBackupedFiles(webAppDir, rootProject.backupSuffix)
-		
-			println "moving universe-web.war"
-			
-			File newArtifactDir = new File(rootProject.artifactsDir, "$municipality")
-			newArtifactDir.mkdir()
-			File artifactFile = new File(libsDir, "universe-web-${municipality}.war")
-			File newArtifactFile = new File(newArtifactDir, "universe-web.war")
-			
-			artifactFile.renameTo(newArtifactFile)
-		}
-		
-		// force the generation of the war ALWAYS
-		outputs.upToDateWhen { false }
-		
-		// must run after the dependency
-		mustRunAfter ':refreshArtifactDir'
+//	doFirst {
+		// inform current municipality
+//		print "Generating Web Artifact"
+
+		// Backups files
+//		rootProject.backupFiles(
+//			webAppDir,
+//			rootProject.projectArtifactsMap['ibpnh'].webFileReplacements.collect { file -> file.fileName } as Set,
+//			rootProject.backupSuffix
+//		)
+
+		// make replacements
+//		rootProject.projectArtifactsMap['ibpnh'].webFileReplacements.each { webFileReplacement ->
+//			 rootProject.replaceValues(fileTree(dir: webAppDir, include: webFileReplacement.fileName).getSingleFile(), webFileReplacement.replacements)
+//		}
+//	}
+
+	doLast {
+		//rootProject.restoreBackupedFiles(webAppDir, rootProject.backupSuffix)
+
+		println "moving ibpnh-web.war"
+
+		File newArtifactDir = new File(rootProject.artifactsDir, 'ibpnh')
+		newArtifactDir.mkdir()
+		File artifactFile = new File(libsDir, "ibpnh-web.war")
+		File newArtifactFile = new File(newArtifactDir, "ibpnh-web.war")
+
+		artifactFile.renameTo(newArtifactFile)
 	}
+
+	// force the generation of the war ALWAYS
+	outputs.upToDateWhen { false }
+
+	// must run after the dependency
+	mustRunAfter ':refreshArtifactDir'
 }
+
 
 task webWars {
 	doFirst {
 		println "Web artifacts generated"
 	}
 }
-webWars.dependsOn = tasks.findAll { task -> task.name.startsWith('customWebWar') }
+webWars.dependsOn(createWar)
+//= tasks.findAll { task -> task.name.startsWith('customWebWar') }

@@ -1,0 +1,38 @@
+// Test
+project.projectArtifacts.add(
+	new Expando(module: "ibpnh", resourceFileReplacements: [
+		new Expando(fileName:"config.properties", replacements: [
+			new Expando(regexp: "cache\\.servers=.*", text: "cache.servers=localhost:11222"),
+			new Expando(regexp: "jms\\.url=.*", text: "jms.url=tcp://localhost:61613"),
+			new Expando(regexp: "message\\.defaultMessageLocale=.*", text: "message.defaultMessageLocale=es"),
+		]),
+		new Expando(fileName:"log4j.properties", replacements: [
+			new Expando(regexp: "log4j\\.appender\\.eclipseLinkFile\\.File=.*", text: "log4j.appender.eclipseLinkFile.File=/opt/apache-tomcat-8.0.24.daemon/logs/eclipselink/eclipseLinkSql.log")
+		]),
+//		new Expando(fileName:"spring/servletContext.xml", replacements: [
+//		]),
+//		new Expando(fileName:"spring/mainContext.xml", replacements: [
+//			new Expando(regexp: "<bean autowire-candidate=\".*\" id=\"testMailSender\"", text: "<bean autowire-candidate=\"true\" id=\"testMailSender\""),
+//			new Expando(regexp: "<bean autowire-candidate=\".*\" id=\"mailSender\"", text: "<bean autowire-candidate=\"false\" id=\"mailSender\"")
+//		]),
+		new Expando(fileName:"jpa/schema.xml", replacements: [
+			new Expando(regexp: "<schema>.*<", text: "<schema>ibpnh<")
+		]),
+	], otherCoreReplacements: [
+		new Expando(fileName:"WebContent/META-INF/context.xml", replacements: [
+			new Expando(regexp: "username=\".*?\"", text: "username=\"ibpnh\""),
+			new Expando(regexp: "password=\".*?\"", text: "password=\"k4ir0s\""),
+			new Expando(regexp: "url=\".*?\"", text: "url=\"jdbc:postgresql://localhost:5432/ibpnh\"")
+		])
+	], webFileReplacements: [
+//		new Expando(fileName:"app/IbpnhServiceParameters.js", replacements: [
+//			new Expando(regexp: "universeServiceUrl\\s=\\s'.*'", text: "universeServiceUrl = 'http://163.10.20.80/universe-core'"),
+//			new Expando(regexp: "defaultLang\\s=\\s'.*'", text: "defaultLang = 'es'")
+//		]),
+//		new Expando(fileName:"index.html", replacements: [
+//			new Expando(regexp: "host_name=[^\\.]*", text: "host_name=test")
+//		])
+	],
+	deploy: true, hostIp: "192.168.1.103", user: "desarrollo", password: "n1c0l4s", preDeployDir: "/opt/apache-tomcat-8.0.24/ibpnh-to-deploy",
+	execute: [])
+)
