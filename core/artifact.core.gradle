@@ -34,5 +34,5 @@ project.projectArtifacts.add(
 //		])
 	],
 	deploy: true, hostIp: "192.168.1.103", user: "desarrollo", password: "n1c0l4s", preDeployDir: "/opt/apache-tomcat-8.0.24/ibpnh-to-deploy",
-	execute: [])
+	execute: ['bash /home/desarrollo/deploy.sh '+project.ext.get("warsCompiled")+' n1c0l4s'])
 )

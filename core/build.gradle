@@ -235,6 +235,7 @@ task coreWars {
 		println "Core Wars Generated"
 	}
 }
+
 coreWars.dependsOn(createWar);//= tasks.findAll { task -> task.name.startsWith('customWar') }
 
 // Task for downloading dependencies. 
@@ -286,10 +287,21 @@ task schemaUpdate(dependsOn:'refreshArtifactDir') {
 	mustRunAfter 'refreshArtifactDir'
 }
 */
+
 // Super Task
-task wars(dependsOn:['refreshArtifactDir', 'coreWars', ':' + project.webProject + ':webWars']) << { //
+task wars() << { //
 	println 'All wars generated'
 }
+//If parameter web is present, do not generate core wars
+//If parameter web is not present and parameter core is present, generate only core wars. Else, generate All
+if(hasProperty('web')) {
+	wars.dependsOn(['refreshArtifactDir',':' + project.webProject + ':webWars'])
+}else if(hasProperty('core')){
+	wars.dependsOn(['refreshArtifactDir', 'coreWars'])
+}else{
+	wars.dependsOn(['refreshArtifactDir', 'coreWars', ':' + project.webProject + ':webWars'])
+}
+
 if (hasProperty('ibpnhVersion')) {
 	wars.dependsOn schemaUpdate
 }

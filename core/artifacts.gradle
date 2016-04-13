@@ -1,5 +1,13 @@
 project.ext.set("projectArtifacts", [])
 
+if(hasProperty('web')) {
+	project.ext.set("warsCompiled","web")
+}else if(hasProperty('core')){
+	project.ext.set("warsCompiled","core")
+}else{
+	project.ext.set("warsCompiled","both")
+}
+
 // list of artifact configurations per municipality
 fileTree(dir: '.').matching { include 'artifact.*.gradle' }.each { confFile ->
 	println "Applying configurations from " + confFile.name
