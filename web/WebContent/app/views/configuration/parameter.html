@@ -7,8 +7,7 @@
         </div>
         <div class="inline field">
             <label for="value">{{ 'parameter.label.value' | translate }}</label>
-            <input type="text" ng-model="parameter.value" id="value" required
-               placeholder="{{ 'parameter.placeholder.value' | translate }}" name="value"/>
+            <div ui-codemirror="editorOptions" ng-model="parameter.value" id="value" required name="value"/>
         </div>
         <div class="inline field">
             <label for="description">{{ 'parameter.label.description' | translate }}</label>

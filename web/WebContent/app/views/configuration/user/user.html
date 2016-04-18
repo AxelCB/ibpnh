@@ -17,23 +17,19 @@
         </div>
     </form>
 </div>
-<button class="ui green button" id="btn_create" ng-click="create();" ng-disabled="editing" ng-show="!user.id">
-    <!--canAccess('/configuration/user:createUser') &&-->
+<button class="ui green button" id="btn_create" ng-click="create();" ng-disabled="editing" ng-show="canAccess('/configuration/user:createUser') && !user.id">
     {{ 'default.create.new' | translate }}
 </button>
-<button class="ui green button" id="btn_modify" ng-click="modify();" ng-disabled="!editing" ng-show="user.id">
-    <!--canAccess('/configuration/user:modifyUser') &&-->
+<button class="ui green button" id="btn_modify" ng-click="modify();" ng-disabled="!editing" ng-show="canAccess('/configuration/user:modifyUser') && user.id">
     {{ 'default.edit' | translate }}
 </button>
 <button class="ui red button" id="btn_cancel" ng-click="cancel();" ng-disabled="!editing" ng-show="user.id">
     {{ 'default.cancel' | translate }}
 </button>
-<button class="ui button" id="btn_search" ng-click="search();" ng-disabled="editing">
-    <!--ng-show="canAccess('/configuration/user:searchUser')"-->
+<button class="ui button" id="btn_search" ng-click="search();" ng-disabled="editing" ng-show="canAccess('/configuration/user:searchUser')">
     {{ 'default.search' | translate }}
 </button>
-<button class="ui button" id="btn_list" ng-click="list();" ng-disabled="editing">
-    <!--ng-show="canAccess('/configuration/user:listUser')"-->
+<button class="ui button" id="btn_list" ng-click="list();" ng-disabled="editing" ng-show="canAccess('/configuration/user:listUser')">
     {{ 'default.list.all' | translate }}
 </button>
 <button class="ui button" id="btn_clean" ng-click="clean();" ng-disabled="editing">

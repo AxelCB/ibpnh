@@ -56,6 +56,8 @@ Repository and Service layers
 		
 		<!-- Mail Parameters FX -->
 		<!--<bean id='mailTest' class='org.kairos.ibpnh.core.fx.configuration.mail.parameters.Fx_Mail_Test' scope="prototype"/>-->
+		<bean id='activation' class='org.kairos.ibpnh.core.fx.configuration.mail.parameters.Fx_Mail_Activation' scope="prototype"/>
+		<bean id='passwordRecoverMail' class='org.kairos.ibpnh.core.fx.configuration.mail.parameters.Fx_Mail_PasswordRecover' scope="prototype"/>
 
 		<!-- Mail -->
 		<bean id='createDailyDevotional' class='org.kairos.ibpnh.core.fx.devotional.Fx_CreateDailyDevotional' scope="prototype"/>

@@ -349,28 +349,108 @@
 			"CreateRoleType":"Crear Tipo de Rol"
 		}
 	},
-	
-	"roleType": {
-		"column": {
-			"name": "Nombre",
-			"description": "Descripción"
-		},
-		"placeholder": {
-			"name": "Ingrese el nombre...",
-			"description": "Ingrese la descripción..."
-		},
-		"label": {
-			"name": "Nombre",
-			"description": "Descripción",
-			"resetter": "Reset por",
-			"internalType": "Tipo (interno)",
-			"menuOrder": "Orden de Menú"
-		},
+ 	"roleType": {
 	  	"name": {
+			"ADMIN":"Administrador",
 			"PASTOR":"Pastor",
 		  	"USER":"Usuario"
+	  	},
+		"column": {
+	  		"name": "Nombre",
+	  		"description": "Descripción",
+	  		"function": "Función",
+	  		"action": "Acción"
+		},
+		"placeholder": {
+	  		"name": "Ingrese el nombre...",
+	  		"description": "Ingrese la descripción...",
+	  		"functionSearch": "Buscar funciones..."
+		},
+		"label": {
+	  		"name": "Nombre",
+	  		"description": "Descripción",
+	  		"resetter": "Reset por",
+	  		"internalType": "Tipo (interno)",
+	  		"menuOrder": "Orden de Menú",
+	  		"noFunction": "No hay ninguna función seleccionada",
+	  		"modifyFunctions": "Modificar Funciones",
+	  		"orderFunctions": "Ordenar Funciones"
+		},
+		"panel": {
+	  		"editFunctions": {
+			"title": "Seleccionar Funciones"
+	  	},
+	  	"orderFunctions": {
+			"title": "Ordenar Funciones"
+		  }
 		}
-	},
+  	},
+  	"documentType": {
+		"label": {
+		  	"acronym": "Siglas",
+	  		"description": "Descripción"
+		},
+		"column": {
+		  	"acronym": "Siglas",
+		  	"description": "Descripción"
+		},
+		"placeholder": {
+			"acronym": "Ingrese las siglas...",
+		  	"description": "Ingrese la descripción..."
+		}
+  	},
+  	"mail": {
+		"label": {
+			"name": "Nombre",
+	  		"subject": "Asunto",
+	  		"sender": "Remitente",
+	  		"toList": "Destinatarios",
+	  		"ccList": "Lista de CC",
+	  		"ccoList": "Lista de CCO",
+	  		"body": "Cuerpo",
+	  		"footer": "Footer",
+	  		"repetition": "Repetición",
+	  		"sendTimestamp": "Fecha/Hora de envio",
+	  		"enabled": "Habilitado",
+	  		"fx": "FX Asociada",
+	  		"fxParameters": "Parámetros Expuestos",
+	  		"images": "Imágenes",
+	  		"bodyJavascript": "Javascript (Cuerpo)",
+	  		"bodyJavascriptNotice": "El cuerpo debe setear una variable 'html' de la cual se obtendrá el markup a utilizar.",
+	  		"error": "Error",
+	  		"cron": "Automático"
+		},
+		"column": {
+	  		"name": "Nombre",
+	  		"subject": "Asunto",
+	  		"sender": "Remitente",
+	  		"repetition": "Repetición",
+	  		"sendTimestamp": "Fecha/Hora de envio",
+	  		"enabled": "Habilitado"
+		},
+		"placeholder": {
+	  		"name": "Ingrese el nombre...",
+	  		"subject": "Ingrese el asunto",
+	  		"sender": "Ingrese el remitente...",
+	  		"toList": "Ingrese la lista de destinatarios...",
+	  		"ccList": "Ingrese la lista de CC...",
+	  		"ccoList": "Ingrese la lista de CCO...",
+	  		"body": "Ingrese el cuerpo del mail...",
+	  		"footer": "Ingrese el footer del mail...",
+	  		"sendTimestamp": "Ingrese la fecha y hora de envio..."
+		},
+		"repetition": {
+	  		"DAY": "Diaria",
+	  		"WEEK": "Semanal",
+	  		"MONTH": "Mensual",
+	  		"YEAR": "Anual"
+		},
+		"panel": {
+		  	"test": {
+				"title": "Resultado Mail"
+	  		}
+		}
+  	},
 	"user": {
 	  	"label":{
 			"username":"Nombre de Usuario",

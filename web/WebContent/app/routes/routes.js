@@ -20,6 +20,8 @@ angular.module('routes', []).config(['$routeProvider', function($routeProvider) 
         {path: '/configuration/user', template: viewsPrefix+'/configuration/user/user.html', controller: 'UserCtrl'},
         //{path: '/configuration/function', template: viewsPrefix+'/configuration/function.html', controller: 'FunctionCtrl'},
         {path: '/configuration/parameter', template: viewsPrefix+'/configuration/parameter.html', controller: 'ParameterCtrl'},
+        {path: '/configuration/mail', template: viewsPrefix+'/configuration/mail.html', controller: 'MailCtrl'},
+        {path: '/configuration/documentType', template: viewsPrefix+'/configuration/documentType.html', controller: 'DocumentTypeCtrl'},
         {path: '/configuration/roleType', template: viewsPrefix+'/configuration/user/roleType.html', controller: 'RoleTypeCtrl'},
         {path: '/devotional/dailyDevotional', template: viewsPrefix+'/devotional/devotional.html', controller: 'DailyDevotionalCtrl'},
         {path: '/devocionales/detalle/:devotionalId', template: viewsPrefix+'/devotional/detalleDevocional.html', controller: 'DailyDevotionalCtrl'},

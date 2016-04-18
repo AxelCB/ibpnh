@@ -8,7 +8,7 @@ import org.kairos.ibpnh.core.model.user.RoleFunction;
 import org.kairos.ibpnh.core.model.user.RoleType;
 import org.kairos.ibpnh.core.model.user.User;
 
-@Generated(value="EclipseLink-2.5.1.v20130918-rNA", date="2016-03-29T21:10:13")
+@Generated(value="EclipseLink-2.5.1.v20130918-rNA", date="2016-04-16T17:35:11")
 @StaticMetamodel(Role.class)
 public class Role_ { 
 

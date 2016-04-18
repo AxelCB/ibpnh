@@ -50,6 +50,9 @@ Repository and Service layers
 		<!-- Document Type Ctrl -->
 		<bean id='documentTypeCtrl' class='org.kairos.ibpnh.core.controller.configuration.documentType.DocumentTypeCtrl' scope='request'/>
 
+		<!-- Mail Ctrl -->
+		<bean id='mailCtrl' class='org.kairos.ibpnh.core.controller.configuration.mail.MailCtrl' scope='request'/>
+
 		<!-- Personal Data Ctrl.  -->
 		<bean id='personalDataCtrl' class='org.kairos.ibpnh.core.controller.user.PersonalDataCtrl' scope='request'/>
 		

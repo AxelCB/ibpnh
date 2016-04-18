@@ -6,7 +6,7 @@ import javax.persistence.metamodel.StaticMetamodel;
 import org.kairos.ibpnh.core.model.user.Function;
 import org.kairos.ibpnh.core.model.user.Role;
 
-@Generated(value="EclipseLink-2.5.1.v20130918-rNA", date="2016-03-29T21:10:13")
+@Generated(value="EclipseLink-2.5.1.v20130918-rNA", date="2016-04-16T17:35:11")
 @StaticMetamodel(RoleFunction.class)
 public class RoleFunction_ { 
 
