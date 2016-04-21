@@ -25,3 +25,8 @@ html {
 
 /* Style for Angular UI Bootstrap & cursor*/
 .nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
+.CodeMirror {
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+}
