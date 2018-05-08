@@ -23,8 +23,8 @@ let package = Package(
         // 🔵 Swift ORM (queries, models, relations, etc) built on PostgreSQL.
         .package(url: "https://github.com/vapor/fluent-postgresql.git", .upToNextMajor(from: "1.0.0-rc")),
         
-        .package(url: "https://github.com/vapor/routing.git", .upToNextMajor(from: "3.0.1")),
-        //.package(url: "https://github.com/vapor/auth.git", .upToNextMajor(from: "2.0.0-rc")),
+//        .package(url: "https://github.com/vapor/routing.git", .upToNextMajor(from: "3.0.1")),
+//        .package(url: "https://github.com/vapor/auth.git", .upToNextMajor(from: "2.0.0-rc")),
 //        .package(url: "https://github.com/vapor/validation.git", .upToNextMajor(from: "2.0.0")),
 //        .package(url: "https://github.com/vapor/jwt.git", .upToNextMajor(from: "3.0.0-rc")),
 
