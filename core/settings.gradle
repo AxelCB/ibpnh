@@ -1,9 +1,0 @@
-// include web project
-def currentIbpnhCoreDir = new File("").absoluteFile
-println "Current dir is " + currentIbpnhCoreDir.absolutePath
-def suffix = currentIbpnhCoreDir.name.replaceAll("core", "")
-println "Suffix is " + suffix
-def webInclude = '../web' + suffix
-println "About to include " + webInclude
-
-include webInclude
